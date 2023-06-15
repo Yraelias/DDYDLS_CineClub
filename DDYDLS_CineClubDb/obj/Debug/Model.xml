@@ -251,6 +251,29 @@
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
 		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_T_User_ToTable]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[T_User].[ID_UserRole]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[T_User]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[T_Role].[Id_Role]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[T_Role]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
+		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_T_Casting]">
 			<Relationship Name="ColumnSpecifications">
 				<Entry>
@@ -268,7 +291,7 @@
 					<References Name="[dbo].[T_Casting]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_T_Country]">
 			<Relationship Name="ColumnSpecifications">
@@ -287,7 +310,7 @@
 					<References Name="[dbo].[T_Country]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_T_Genre]">
 			<Relationship Name="ColumnSpecifications">
@@ -306,7 +329,7 @@
 					<References Name="[dbo].[T_Genre]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_T_Movie]">
 			<Relationship Name="ColumnSpecifications">
@@ -325,7 +348,7 @@
 					<References Name="[dbo].[T_Movie]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_T_MovieToGenre]">
 			<Relationship Name="ColumnSpecifications">
@@ -344,7 +367,7 @@
 					<References Name="[dbo].[T_MovieToGenre]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_T_Person]">
 			<Relationship Name="ColumnSpecifications">
@@ -363,7 +386,7 @@
 					<References Name="[dbo].[T_Person]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_T_Rating]">
 			<Relationship Name="ColumnSpecifications">
@@ -382,7 +405,7 @@
 					<References Name="[dbo].[T_Rating]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_T_Role]">
 			<Relationship Name="ColumnSpecifications">
@@ -401,7 +424,7 @@
 					<References Name="[dbo].[T_Role]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_T_Studio]">
 			<Relationship Name="ColumnSpecifications">
@@ -420,7 +443,7 @@
 					<References Name="[dbo].[T_Studio]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_T_User]">
 			<Relationship Name="ColumnSpecifications">
@@ -439,7 +462,7 @@
 					<References Name="[dbo].[T_User]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[T_Casting]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -517,7 +540,7 @@
 			<AttachedAnnotation Disambiguator="3" />
 			<AttachedAnnotation Disambiguator="5" />
 			<AttachedAnnotation Disambiguator="6" />
-			<AttachedAnnotation Disambiguator="12" />
+			<AttachedAnnotation Disambiguator="13" />
 		</Element>
 		<Element Type="SqlIndex" Name="[dbo].[T_Casting].[FK_2]">
 			<Relationship Name="ColumnSpecifications">
@@ -615,7 +638,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="13" />
+			<AttachedAnnotation Disambiguator="14" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[T_Genre]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -659,7 +682,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="14" />
+			<AttachedAnnotation Disambiguator="15" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[T_Movie]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -752,7 +775,7 @@
 				</Entry>
 			</Relationship>
 			<AttachedAnnotation Disambiguator="9" />
-			<AttachedAnnotation Disambiguator="15" />
+			<AttachedAnnotation Disambiguator="16" />
 		</Element>
 		<Element Type="SqlIndex" Name="[dbo].[T_Movie].[FK_2]">
 			<Relationship Name="ColumnSpecifications">
@@ -831,7 +854,7 @@
 			</Relationship>
 			<AttachedAnnotation Disambiguator="7" />
 			<AttachedAnnotation Disambiguator="8" />
-			<AttachedAnnotation Disambiguator="16" />
+			<AttachedAnnotation Disambiguator="17" />
 		</Element>
 		<Element Type="SqlIndex" Name="[dbo].[T_MovieToGenre].[FK_2]">
 			<Relationship Name="ColumnSpecifications">
@@ -905,13 +928,29 @@
 						</Relationship>
 					</Element>
 				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[T_Person].[Country]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
 			</Relationship>
 			<Relationship Name="Schema">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="17" />
+			<AttachedAnnotation Disambiguator="18" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[T_Rating]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1004,7 +1043,7 @@
 			</Relationship>
 			<AttachedAnnotation Disambiguator="4" />
 			<AttachedAnnotation Disambiguator="11" />
-			<AttachedAnnotation Disambiguator="18" />
+			<AttachedAnnotation Disambiguator="19" />
 		</Element>
 		<Element Type="SqlIndex" Name="[dbo].[T_Rating].[FK_2]">
 			<Relationship Name="ColumnSpecifications">
@@ -1084,7 +1123,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="19" />
+			<AttachedAnnotation Disambiguator="20" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[T_Studio]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1145,7 +1184,7 @@
 				</Entry>
 			</Relationship>
 			<AttachedAnnotation Disambiguator="10" />
-			<AttachedAnnotation Disambiguator="20" />
+			<AttachedAnnotation Disambiguator="21" />
 		</Element>
 		<Element Type="SqlIndex" Name="[dbo].[T_Studio].[FK_2]">
 			<Relationship Name="ColumnSpecifications">
@@ -1219,22 +1258,6 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[T_User].[Country]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Property Name="Length" Value="50" />
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[varchar]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
 					<Element Type="SqlSimpleColumn" Name="[dbo].[T_User].[IsActive]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
@@ -1267,22 +1290,6 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[T_User].[Language]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Property Name="Length" Value="50" />
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[varchar]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
 					<Element Type="SqlSimpleColumn" Name="[dbo].[T_User].[Email]">
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -1299,30 +1306,13 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[T_User].[Is_Admin]">
-						<Property Name="IsNullable" Value="False" />
+					<Element Type="SqlSimpleColumn" Name="[dbo].[T_User].[ID_UserRole]">
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[bit]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[T_User].[Is_Moderator]">
-						<Property Name="IsNullable" Value="False" />
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[bit]" />
+											<References ExternalSource="BuiltIns" Name="[int]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -1336,7 +1326,8 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="21" />
+			<AttachedAnnotation Disambiguator="22" />
+			<AttachedAnnotation Disambiguator="12" />
 		</Element>
 	</Model>
 </DataSchemaModel>
