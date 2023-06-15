@@ -5,11 +5,11 @@ using System.Data.SqlClient;
 using System.Text;
 using ADO_Toolbox;
 
-namespace YraesportDAL.Repository
+namespace DDYDLS_CineClubDAL.Repository
 {
     public class BaseRepository
     {
-        internal  Connection _connection;
+        internal Connection _connection;
 
         IConfiguration _config;
         public SqlConnection Connection()

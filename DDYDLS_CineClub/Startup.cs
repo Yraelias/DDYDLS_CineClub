@@ -1,13 +1,13 @@
+using DDYDLS_CineClubDAL.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using DDYDLS_CineClubDAL.Repository;
+using DDYDLS_CineClubDAL.Models;
+using DDYDLS_CineClubLocalModel.Services.Interfaces ;
+using DDYDLS_CineClubLocalModel.Services;
 
 namespace DDYDLS_CineClub
 {
@@ -24,6 +24,15 @@ namespace DDYDLS_CineClub
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddControllers();
+
+            #region Repository
+            services.AddScoped<IUserRepository<User>, UserRepository>();
+            #endregion
+
+            #region Services
+            services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IUserService, UserService>();
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,9 +56,11 @@ namespace DDYDLS_CineClub
 
             app.UseAuthorization();
 
+
+
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapControllers ();
             });
         }
     }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CineClubDAL.Models
+namespace DDYDLS_CineClubDAL.Models
 {
     public class User
     {

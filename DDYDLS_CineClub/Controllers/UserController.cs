@@ -51,12 +51,13 @@ namespace DDYDLS_CineClubApi.Controllers
 
         // POST api/<User>
         [HttpPost]
-        public IActionResult Post([FromBody] api.UserCreate user)
+        public IActionResult Post([FromForm] api.UserCreate user)
+        //public IActionResult Post(api.UserCreate user)
         {
             User newUser = new User();
             try
             {
-                _userService.Insert(user.toModelUser());
+                _userService.RegistrationUser(user.toModelUser());
                 return Ok();
             }
             catch (Exception e)

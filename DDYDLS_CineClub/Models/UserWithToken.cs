@@ -18,6 +18,6 @@ namespace DDYDLS_CineClubApi.Models
         public bool IsActive { get; set; }
         public DateTime Registration_Date { get; set; }
         public bool IsAdministrator { get; set; }
-        public bool isModerator { get; set; }
+        public bool IsModerator { get; set; }
     }
 }

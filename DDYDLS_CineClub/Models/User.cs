@@ -19,6 +19,6 @@ namespace DDYDLS_CineClubApi.Models
         public bool IsAdministrator { get; set; }
         public bool IsPlayer { get; set; }
         public bool IsOrganisator { get; set; }
-        public bool isPlayer { get; set; }
+        public bool IsModerator { get; set; }
     }
 }

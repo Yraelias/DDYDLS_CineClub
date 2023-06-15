@@ -1,4 +1,4 @@
-﻿using dal = CineClubDAL.Models;
+﻿using dal = DDYDLS_CineClubDAL.Models;
 
 namespace DDYDLS_CineClubLocalModel.Tools
 {

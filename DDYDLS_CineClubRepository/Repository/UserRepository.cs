@@ -1,6 +1,6 @@
 ﻿using ADO_Toolbox;
-using CineClubDAL.Interfaces;
-using CineClubDAL.Models;
+using DDYDLS_CineClubDAL.Interfaces;
+using DDYDLS_CineClubDAL.Models;
 using DAL.Tools;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace YraesportDAL.Repository
+namespace DDYDLS_CineClubDAL.Repository
 {
     public class UserRepository : BaseRepository, IUserRepository<User>
     {
@@ -19,7 +19,7 @@ namespace YraesportDAL.Repository
             string Query = "SELECT ID_User FROM [T_User] WHERE Email = @email AND Password = @pass";
             Command cmd = new Command(Query);
             cmd.AddParameter("email", u.Email);
-            
+
             cmd.AddParameter("pass", u.Password);
 
 
@@ -42,7 +42,7 @@ namespace YraesportDAL.Repository
         public IEnumerable<User> GetAll()
         {
             Command cmd = new Command("SELECT * FROM [T_User]");
-            return _connection.ExecuteReader<User>(cmd, Converters.UserConvert);
+            return _connection.ExecuteReader(cmd, Converters.UserConvert);
         }
 
         public User GetByEmail(string email)
@@ -61,18 +61,20 @@ namespace YraesportDAL.Repository
 
         public void Insert(User u)
         {
-            Command cmd = new Command("INSERT INTO [dbo].[T_User] ([Login],[Password],[Email],[UserName],[Language],[Country],[isActive],[Registration_Date],[IsAdministrator],[IsModerator]) VALUES (@Login, @Password, @Email, @UserName, @Language, @Country, @isActive, @Registration_Date, @IsAdministrator, @IsModerator)");
+            //Command cmd = new Command("INSERT INTO [dbo].[T_User] ([Login],[Password],[Email],[UserName],[Language],[Country],[isActive],[Registration_Date],[IsAdministrator],[IsModerator]) VALUES (@Login, @Password, @Email, @UserName, @Language, @Country, @isActive, @Registration_Date, @IsAdministrator, @IsModerator)");
+            Command cmd = new Command("INSERT INTO [dbo].[T_User] ([Password],[UserName],[ID_UserRole]) VALUES (@Password, @UserName, @UserRole)");
             u.Login = u.Email;
             cmd.AddParameter("Login", u.Login);
             cmd.AddParameter("Password", u.Password);
             cmd.AddParameter("Email", u.Email);
             if (u.Username != null) cmd.AddParameter("UserName", u.Username); else cmd.AddParameter("Username", "");
-            if (u.Language != null) cmd.AddParameter("Language", u.Language); else cmd.AddParameter("Language", "");
-            if (u.Country != null) cmd.AddParameter("Country", u.Country); else cmd.AddParameter("Country", "");
-            cmd.AddParameter("isActive", u.IsActive);
-            cmd.AddParameter("Registration_Date", u.Registration_Date);
-            cmd.AddParameter("IsAdministrator", u.IsAdministrator);
-            cmd.AddParameter("IsModerator", u.IsModerator);
+            cmd.AddParameter("UserRole", (int)1 );
+            //if (u.Language != null) cmd.AddParameter("Language", u.Language); else cmd.AddParameter("Language", "");
+            //if (u.Country != null) cmd.AddParameter("Country", u.Country); else cmd.AddParameter("Country", "");
+            //cmd.AddParameter("isActive", u.IsActive);
+            //cmd.AddParameter("Registration_Date", u.Registration_Date);
+            //cmd.AddParameter("IsAdministrator", u.IsAdministrator);
+            //cmd.AddParameter("IsModerator", u.IsModerator);
             _connection.ExecuteNonQuery(cmd);
         }
 
@@ -97,7 +99,7 @@ namespace YraesportDAL.Repository
         public bool Delete(int iD)
         {
             Command cmd = new Command("DELETE FROM [dbo].[T_User] WHERE ID_User = @Id AND isActive = 0");
-            cmd.AddParameter("Id",iD);
+            cmd.AddParameter("Id", iD);
             return _connection.ExecuteNonQuery(cmd) == 1;
         }
 
@@ -115,7 +117,7 @@ namespace YraesportDAL.Repository
             return _connection.ExecuteNonQuery(cmd) == 1;
         }
 
-       
+
 
     }
 }

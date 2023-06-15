@@ -1,4 +1,4 @@
-﻿using CineClubDAL.Models;
+﻿using DDYDLS_CineClubDAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;

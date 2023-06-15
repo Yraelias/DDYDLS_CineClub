@@ -1,7 +1,7 @@
-﻿using CineClubDAL.Models;
+﻿using DDYDLS_CineClubDAL.Models;
 using System.Collections.Generic;
 
-namespace DDYDLS_CineClubDAL.Services.Interfaces
+namespace DDYDLS_CineClubDAL.Interfaces
 {
     public interface IUserService
     {
@@ -15,6 +15,6 @@ namespace DDYDLS_CineClubDAL.Services.Interfaces
         User GetByEmail(string email);
         bool checkIfOrganisator(int Id);
         bool checkIfPlayer(int Id);
-        
+
     }
 }

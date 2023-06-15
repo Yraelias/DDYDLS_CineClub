@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DDYDLS_CineClubRepository
+namespace DDYDLS_CineClubDAL.Repository
 {
     class Program
     {
