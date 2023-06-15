@@ -25,5 +25,13 @@ namespace DAL.Tools
                 IsModerator = (bool)reader["IsModerator"]
             };
         }
+        public static Genre GenreConvert(SqlDataReader reader)
+        {
+            return new Genre
+            {
+                Id_Genre = (int)reader["ID_Genre"],
+                Name = reader["Name"].ToString()
+            };
+        }
     }
 }
