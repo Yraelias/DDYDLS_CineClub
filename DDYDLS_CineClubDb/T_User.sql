@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [T_User]
 (
- [Id_User]           int NOT NULL ,
+ [Id_User]           int NOT NULL IDENTITY ,
  [Username]          varchar(50) NOT NULL ,
  [Password]          varchar(50) NOT NULL ,
  [IsActive]          bit NOT NULL ,
