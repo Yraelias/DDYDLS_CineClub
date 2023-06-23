@@ -38,5 +38,21 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 IsAdministrator = newUser.IsAdministrator
             };
         }
+        public static Models.Genre toLocal(this dal.Genre newGenre)
+        {
+            return new Models.Genre
+            {
+                ID_Genre = newGenre.Id_Genre,
+                Name  = newGenre.Name
+            };
+        }
+        public static dal.Genre toDal(this Models.Genre newGenre)
+        {
+            return new dal.Genre
+            {
+                Id_Genre = newGenre.ID_Genre, 
+                Name = newGenre.Name
+            };
+        }
     }
 }

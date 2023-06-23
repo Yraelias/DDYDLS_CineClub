@@ -54,6 +54,23 @@ namespace DDYDLS_CineClubApi.Tools
                 IsAdministrator = newUser.IsAdministrator
             };
         }
+        public static model.Genre toLocal(this api.Genre newGenre)
+        {
+            return new model.Genre
+            {
+                ID_Genre = newGenre.ID_Genre,
+                Name = newGenre.Name
+            };
+        }
+
+        public static api.Genre toApi(this model.Genre newGenre)
+        {
+            return new api.Genre
+            {
+                ID_Genre = newGenre.ID_Genre,
+                Name = newGenre.Name
+            };
+        }
 
     }
 }
