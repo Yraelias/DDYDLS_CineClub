@@ -30,12 +30,14 @@ namespace DDYDLS_CineClub
             services.AddScoped<IUserRepository<User>, UserRepository>();
             services.AddScoped<IGenreRepository<Genre>, GenreRepository>();
             services.AddScoped<IPersonRepository<Person>, PersonRepository>();
+            services.AddScoped<IRoleRepository<Role>, RoleRepository>();
             #endregion
 
             #region Services
             services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IUserService, UserService>();
             services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IGenreService, GenreService>();
             services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IPersonService, PersonService>();
+            services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IRoleService, RoleService>();
             #endregion
         }
 

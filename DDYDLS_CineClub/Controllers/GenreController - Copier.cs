@@ -13,20 +13,20 @@ namespace DDYDLS_CineClubApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RoleController : ControllerBase
+    public class GenreController : ControllerBase
     {
-        private IRoleService _RoleService;
-        public RoleController(IRoleService RoleService)
+        private IGenreService _genreService;
+        public GenreController(IGenreService genreService)
         {
-            _RoleService = RoleService;
+            _genreService = genreService;
         }
-        // GET: api/<Role>
+        // GET: api/<Genre>
         [HttpGet]
         public IActionResult Get()
         {
             try
             {
-                return Ok(_RoleService.GetAll());
+                return Ok(_genreService.GetAll());
             }
             catch (Exception e)
             {
@@ -34,14 +34,14 @@ namespace DDYDLS_CineClubApi.Controllers
             }
         }
 
-        // GET api/<Role>/5
+        // GET api/<Genre>/5
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
             try
             {
                 
-                return Ok(_RoleService.GetOne(id));
+                return Ok(_genreService.GetOne(id));
             }
             catch (Exception e)
             {
@@ -49,15 +49,15 @@ namespace DDYDLS_CineClubApi.Controllers
             }
         }
 
-        // POST api/<Role>
+        // POST api/<Genre>
         [HttpPost]
-        public IActionResult Post([FromForm] api.Role Role)
+        public IActionResult Post([FromForm] api.Genre genre)
         //public IActionResult Post(api.UserCreate user)
         {
-            Role newUser = new Role();
+            Genre newUser = new Genre();
             try
             {
-                _RoleService.AddRole(Role.toLocal());
+                _genreService.AddGenre(genre.toLocal());
                 return Ok();
             }
             catch (Exception e)
@@ -68,12 +68,12 @@ namespace DDYDLS_CineClubApi.Controllers
 
         // PUT api/<User>/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] api.Role Role)
+        public IActionResult Put(int id, [FromBody] api.Genre genre)
         {
             try
             {
                 
-                _RoleService.Update(Role.toLocal());
+                _genreService.Update(genre.toLocal());
                 return Ok();
             }
             catch (Exception e)
@@ -88,7 +88,7 @@ namespace DDYDLS_CineClubApi.Controllers
         {
             try
             {
-                return Ok(_RoleService.Delete(id));
+                return Ok(_genreService.Delete(id));
             }
             catch (Exception e)
             {

@@ -37,13 +37,13 @@ namespace DDYDLS_CineClubDAL.Repository
 
         public void Update(Role g)
         {
-            Command cmd = new Command("UPDATE [dbo].[T_Role] SET[Name] = @Name WHERE ID_Role = @Id");
+            Command cmd = new Command("UPDATE [dbo].[T_Role] SET[Name] = @Name WHERE Id_Role = @Id");
             cmd.AddParameter("Name", g.Name);
             _connection.ExecuteNonQuery(cmd);
         }
         public bool Delete(int iD)
         {
-            Command cmd = new Command("DELETE FROM [dbo].[T_Role] WHERE ID_Role = @Id ");
+            Command cmd = new Command("DELETE FROM [dbo].[T_Role] WHERE Id_Role = @Id ");
             cmd.AddParameter("Id", iD);
             return _connection.ExecuteNonQuery(cmd) == 1;
         }

@@ -1019,6 +1019,7 @@
 				<Entry>
 					<Element Type="SqlSimpleColumn" Name="[dbo].[T_Role].[Id_Role]">
 						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">

@@ -92,6 +92,24 @@ namespace DDYDLS_CineClubApi.Tools
                 FirstName = newPerson.FirstName
             };
         }
+        public static model.Role toLocal(this api.Role newRole)
+        {
+            return new model.Role
+            {
+                ID_Role = newRole.ID_Role,
+                Name = newRole.Name
+            };
+        }
+
+        public static api.Role toApi(this model.Role newRole)
+        {
+            return new api.Role
+            {
+                ID_Role = newRole.ID_Role,
+                Name = newRole.Name
+            };
+        }
+
 
     }
 }
