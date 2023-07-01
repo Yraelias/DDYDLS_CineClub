@@ -12,8 +12,8 @@ namespace DDYDLS_CineClubLocalModel.Services
 {
     public class GenreService : Interfaces.IGenreService
     {
-        private IUserRepository<dal.Genre> _genreRepository;
-        public GenreService(IUserRepository<dal.Genre> genreRepository)
+        private IGenreRepository<dal.Genre> _genreRepository;
+        public GenreService(IGenreRepository<dal.Genre> genreRepository)
         {
             _genreRepository = genreRepository;
         }
@@ -21,11 +21,6 @@ namespace DDYDLS_CineClubLocalModel.Services
         public bool Delete(int Id)
         {
             return _genreRepository.Delete(Id);
-        }
-
-        public bool Desactive(int Id)
-        {
-            return _genreRepository.DesactiveUser(Id);
         }
 
         public IEnumerable<Genre> GetAll()

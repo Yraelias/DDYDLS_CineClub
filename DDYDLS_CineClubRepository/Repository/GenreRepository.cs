@@ -30,7 +30,7 @@ namespace DDYDLS_CineClubDAL.Repository
 
         public void Insert(Genre g)
         {
-            Command cmd = new Command("INSERT INTO [dbo].[T_Genre] [Name] VALUES (@Name)");
+            Command cmd = new Command("INSERT INTO [dbo].[T_Genre] ([Name]) VALUES (@Name)");
             cmd.AddParameter("Name", g.Name);
             _connection.ExecuteNonQuery(cmd);
         }

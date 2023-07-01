@@ -28,10 +28,14 @@ namespace DDYDLS_CineClub
 
             #region Repository
             services.AddScoped<IUserRepository<User>, UserRepository>();
+            services.AddScoped<IGenreRepository<Genre>, GenreRepository>();
+            services.AddScoped<IPersonRepository<Person>, PersonRepository>();
             #endregion
 
             #region Services
             services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IUserService, UserService>();
+            services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IGenreService, GenreService>();
+            services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IPersonService, PersonService>();
             #endregion
         }
 

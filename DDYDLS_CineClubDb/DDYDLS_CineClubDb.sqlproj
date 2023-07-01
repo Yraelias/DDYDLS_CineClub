@@ -60,7 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="T_User.sql" />
-    <Build Include="T_Country.sql" />
     <Build Include="T_Studio.sql" />
     <Build Include="T_Genre.sql" />
     <Build Include="T_Role.sql" />

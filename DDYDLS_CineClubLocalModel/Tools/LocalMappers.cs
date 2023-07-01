@@ -54,5 +54,25 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Name = newGenre.Name
             };
         }
+        public static Models.Person toLocal(this dal.Person newPerson)
+        {
+            return new Models.Person
+            {
+                Id_Person = newPerson.Id_Person,
+                Name = newPerson.Name,
+                Country = newPerson.Country,
+                FirstName = newPerson.FirstName
+            };
+        }
+        public static dal.Person toDal(this Models.Person newPerson)
+        {
+            return new dal.Person
+            {
+                Id_Person = newPerson.Id_Person,
+                Name = newPerson.Name,
+                Country = newPerson.Country,
+                FirstName = newPerson.FirstName
+            };
+        }
     }
 }

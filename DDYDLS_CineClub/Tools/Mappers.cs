@@ -71,6 +71,27 @@ namespace DDYDLS_CineClubApi.Tools
                 Name = newGenre.Name
             };
         }
+        public static model.Person toLocal(this api.Person newPerson)
+        {
+            return new model.Person
+            {
+                Id_Person = newPerson.Id_Person, 
+                Name = newPerson.Name,
+                Country = newPerson.Country,
+                FirstName = newPerson.FirstName
+            };
+        }
+
+        public static api.Person toApi(this model.Person newPerson)
+        {
+            return new api.Person
+            {
+                Id_Person = newPerson.Id_Person,
+                Name = newPerson.Name,
+                Country = newPerson.Country,
+                FirstName = newPerson.FirstName
+            };
+        }
 
     }
 }

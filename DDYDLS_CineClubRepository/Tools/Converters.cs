@@ -33,5 +33,15 @@ namespace DAL.Tools
                 Name = reader["Name"].ToString()
             };
         }
+        public static Person PersonConvert( SqlDataReader reader) 
+        {
+            return new Person
+            {
+                Id_Person = (int)reader["Id_Person"],
+                Name = reader["Name"].ToString(),
+                FirstName = reader["Name"].ToString(),
+                Country = reader["Country"].ToString()
+            };
+        }
     }
 }

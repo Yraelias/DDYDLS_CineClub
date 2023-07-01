@@ -5,7 +5,6 @@
  [Id_Country]  int NOT NULL ,
 
 
- CONSTRAINT [FK_7] FOREIGN KEY ([Id_Country])  REFERENCES [T_Country]([Id_Country]), 
     CONSTRAINT [PK_T_Studio] PRIMARY KEY ([Id_Studio]) 
 );
 GO
