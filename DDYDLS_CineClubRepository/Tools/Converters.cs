@@ -43,5 +43,13 @@ namespace DAL.Tools
                 Country = reader["Country"].ToString()
             };
         }
+        public static Role RoleConvert(SqlDataReader reader)
+        {
+            return new Role
+            {
+                Id_Role = (int)reader["Id_Role"],
+                Name = reader["Name"].ToString()
+            };
+        }
     }
 }

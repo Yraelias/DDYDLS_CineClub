@@ -72,7 +72,6 @@ namespace DDYDLS_CineClubApi.Controllers
         {
             try
             {
-                
                 _PersonService.Update(Person.toLocal());
                 return Ok();
             }
@@ -81,7 +80,7 @@ namespace DDYDLS_CineClubApi.Controllers
                 return BadRequest(e.Message);
             }
         }
-
+         
         // DELETE api/<User>/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)

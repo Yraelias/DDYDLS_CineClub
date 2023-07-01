@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [T_Role]
 (
- [Id_Role] int NOT NULL ,
+ [Id_Role] int NOT NULL IDENTITY ,
  [Name]    varchar(50) NOT NULL, 
     CONSTRAINT [PK_T_Role] PRIMARY KEY ([Id_Role]) ,
 
