@@ -74,6 +74,14 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 FirstName = newPerson.FirstName
             };
         }
+        public static Models.Role toLocal(this dal.Role newRole)
+        {
+            return new Models.Role
+            {
+                ID_Role = newRole.Id_Role,
+                Name = newRole.Name
+            };
+        }
         public static dal.Role toDal(this Models.Role newRole)
         {
             return new dal.Role
