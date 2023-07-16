@@ -90,5 +90,23 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Name = newRole.Name
             };
         }
+        public static Models.Studio toLocal(this dal.Studio newStudio)
+        {
+            return new Models.Studio
+            {
+                Id_Studio = newStudio.Id_Studio,
+                Name = newStudio.Name,
+                Country = newStudio.Country
+            };
+        }
+        public static dal.Studio toDal(this Models.Studio newStudio)
+        {
+            return new dal.Studio
+            {
+                Id_Studio = newStudio.Id_Studio,
+                Name = newStudio.Name,
+                Country = newStudio.Country
+            };
+        }
     }
 }

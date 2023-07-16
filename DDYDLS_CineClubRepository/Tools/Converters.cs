@@ -51,5 +51,14 @@ namespace DAL.Tools
                 Name = reader["Name"].ToString()
             };
         }
+        public static Studio StudioConvert(SqlDataReader reader)
+        {
+            return new Studio
+            {
+                Id_Studio = (int)reader["Id_Studio"],
+                Name = reader["Name"].ToString(),
+                Country = reader["Country"].ToString()
+            };
+        }
     }
 }

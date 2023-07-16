@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [T_Studio]
 (
- [Id_Studio]  int NOT NULL ,
+ [Id_Studio]  int NOT NULL IDENTITY ,
  [Name]       varchar(50) NOT NULL ,
  [Id_Country]  int NOT NULL ,
 
