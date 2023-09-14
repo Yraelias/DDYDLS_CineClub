@@ -10,6 +10,7 @@ const appRoutes: Routes = [
     path: '**',
     component: HomeComponent,
   }];
+   
 @NgModule({
   declarations: [
     AppComponent,
