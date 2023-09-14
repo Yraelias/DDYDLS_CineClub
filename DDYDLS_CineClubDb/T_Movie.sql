@@ -3,7 +3,7 @@
  [Id_Movie]  int NOT NULL IDENTITY ,
  [Name]      varchar(50) NOT NULL ,
  [Id_Studio] int NULL ,
- [Synopsis]  varchar(50) NOT NULL ,
+ [Synopsis]  varchar(MAX) NOT NULL ,
  [Year]      int NOT NULL ,
 
  

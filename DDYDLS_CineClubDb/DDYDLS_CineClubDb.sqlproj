@@ -69,4 +69,7 @@
     <Build Include="T_MovieGenre.sql" />
     <Build Include="T_Casting.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="AddStudio.sql" />
+  </ItemGroup>
 </Project>

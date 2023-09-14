@@ -2,7 +2,7 @@
 (
  [Id_Studio]  int NOT NULL IDENTITY ,
  [Name]       varchar(50) NOT NULL ,
- [Id_Country]  int NOT NULL ,
+ [Id_Country]  int NULL ,
 
 
     CONSTRAINT [PK_T_Studio] PRIMARY KEY ([Id_Studio]) 
