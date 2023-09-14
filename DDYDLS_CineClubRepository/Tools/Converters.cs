@@ -60,5 +60,16 @@ namespace DAL.Tools
                 Country = reader["Country"].ToString()
             };
         }
+        public static Movie MovieConvert(SqlDataReader reader)
+        {
+            return new Movie
+            {
+                Id_Movie = (int)reader["Id_Movie"],
+                Name = reader["Name"].ToString(),
+                Id_Studio = (int)reader["Id_Studio"],
+                Synopsis = reader["Synopsis"].ToString(),
+                Year = (int)reader["Year"]
+            };
+        }
     }
 }
