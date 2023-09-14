@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [T_Movie]
 (
- [Id_Movie]  int NOT NULL ,
+ [Id_Movie]  int NOT NULL IDENTITY ,
  [Name]      varchar(50) NOT NULL ,
  [Id_Studio] int NULL ,
  [Synopsis]  varchar(50) NOT NULL ,

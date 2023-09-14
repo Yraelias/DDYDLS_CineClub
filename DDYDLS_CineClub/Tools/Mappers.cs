@@ -109,7 +109,28 @@ namespace DDYDLS_CineClubApi.Tools
                 Name = newRole.Name
             };
         }
-
+        public static model.Movie toLocal(this api.Movie newMovie)
+        {
+            return new model.Movie
+            {
+                Id_Movie = newMovie.Id_Movie,
+                Name = newMovie.Name,
+                Id_Studio = newMovie.Id_Studio,
+                Synopsis = newMovie.Synopsis,
+                Year = newMovie.Year
+            };
+        }
+        public static api.Movie toApi(this model.Movie newMovie)
+        {
+            return new api.Movie
+            {
+                Id_Movie = newMovie.Id_Movie,
+                Name = newMovie.Name,
+                Id_Studio = newMovie.Id_Studio,
+                Synopsis = newMovie.Synopsis,
+                Year = newMovie.Year
+            };
+        }
 
     }
 }

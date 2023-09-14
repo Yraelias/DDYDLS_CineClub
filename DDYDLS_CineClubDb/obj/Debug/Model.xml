@@ -605,6 +605,7 @@
 				<Entry>
 					<Element Type="SqlSimpleColumn" Name="[dbo].[T_Movie].[Id_Movie]">
 						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">

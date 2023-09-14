@@ -13,20 +13,20 @@ namespace DDYDLS_CineClubApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class GenreController : ControllerBase
+    public class MovieController : ControllerBase
     {
-        private IGenreService _genreService;
-        public GenreController(IGenreService genreService)
+        private IMovieService _MovieService;
+        public MovieController(IMovieService MovieService)
         {
-            _genreService = genreService;
+            _MovieService = MovieService;
         }
-        // GET: api/<Genre>
+        // GET: api/<Movie>
         [HttpGet]
         public IActionResult Get()
         {
             try
             {
-                return Ok(_genreService.GetAll());
+                return Ok(_MovieService.GetAll());
             }
             catch (Exception e)
             {
@@ -34,14 +34,14 @@ namespace DDYDLS_CineClubApi.Controllers
             }
         }
 
-        // GET api/<Genre>/5
+        // GET api/<Movie>/5
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
             try
             {
                 
-                return Ok(_genreService.GetOne(id));
+                return Ok(_MovieService.GetOne(id));
             }
             catch (Exception e)
             {
@@ -49,15 +49,15 @@ namespace DDYDLS_CineClubApi.Controllers
             }
         }
 
-        // POST api/<Genre>
+        // POST api/<Movie>
         [HttpPost]
-        public IActionResult Post([FromForm] api.Genre genre)
+        public IActionResult Post([FromForm] api.Movie Movie)
         //public IActionResult Post(api.UserCreate user)
         {
-            Genre newUser = new Genre();
+            Movie newUser = new Movie();
             try
             {
-                _genreService.AddGenre(genre.toLocal());
+                _MovieService.AddMovie(Movie.toLocal());
                 return Ok();
             }
             catch (Exception e)
@@ -68,12 +68,12 @@ namespace DDYDLS_CineClubApi.Controllers
 
         // PUT api/<User>/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] api.Genre genre)
+        public IActionResult Put(int id, [FromBody] api.Movie Movie)
         {
             try
             {
                 
-                _genreService.Update(genre.toLocal());
+                _MovieService.Update(Movie.toLocal());
                 return Ok();
             }
             catch (Exception e)
@@ -88,7 +88,7 @@ namespace DDYDLS_CineClubApi.Controllers
         {
             try
             {
-                return Ok(_genreService.Delete(id));
+                return Ok(_MovieService.Delete(id));
             }
             catch (Exception e)
             {

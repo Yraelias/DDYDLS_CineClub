@@ -108,5 +108,27 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Country = newStudio.Country
             };
         }
+        public static Models.Movie toLocal(this dal.Movie newMovie)
+        {
+            return new Models.Movie
+            {
+                Id_Movie = newMovie.Id_Movie,
+                Name = newMovie.Name,
+                Id_Studio = newMovie.Id_Studio,
+                Synopsis = newMovie.Synopsis,
+                Year = newMovie.Year
+            };
+        }
+        public static dal.Movie toDal(this Models.Movie newStudio)
+        {
+            return new dal.Movie
+            {
+                Id_Movie = newStudio.Id_Movie,
+                Id_Studio = newStudio.Id_Studio,
+                Name = newStudio.Name,
+                Synopsis = newStudio.Synopsis,
+                Year = newStudio.Year
+            };
+        }
     }
 }
