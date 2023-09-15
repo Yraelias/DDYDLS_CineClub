@@ -58,17 +58,15 @@ namespace DDYDLS_CineClub
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
-
-
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers ();
+                endpoints.MapControllers();
             });
         }
     }
