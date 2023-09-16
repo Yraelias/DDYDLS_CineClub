@@ -8,6 +8,8 @@ import { Movie } from '../movie';
   styleUrls: ['./movieslist.component.css']
 })
 export class MoviesListComponent implements OnInit {
+  displayedColumns: string[] = ['name','id_studio','synopsis','year'];
+  dataSource : any;
 
   movies : Movie[] = [];
   constructor( private _movieService : MovieService
@@ -16,9 +18,13 @@ export class MoviesListComponent implements OnInit {
 
   ngOnInit(): void {
     
-    
+    this._movieService.getMovies().subscribe( {
+      next: (data : Movie[]) =>  this.dataSource = data,
+      error : (error : any) => console.log(error)}
+     )
     this._movieService.getMovies();
-    this.movies = this._movieService.movies
+    this.movies = this._movieService.movies;
+    this.dataSource = this.movies;
   }
 
 }

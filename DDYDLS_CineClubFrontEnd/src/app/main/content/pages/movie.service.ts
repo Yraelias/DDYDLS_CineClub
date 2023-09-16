@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Movie } from './movie/movie';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +12,7 @@ export class MovieService {
   private _bookListUrl = 'https://localhost:44379/api/movie';
   constructor(private httpClient: HttpClient) { }
 
-  getMovies()  {
-    this.httpClient.get<Movie[]>(this._bookListUrl).subscribe(
-      response => {
-        this.movies = response;
-        console.log(this.movies)
-        return this.movies;
-        });
+  getMovies() : Observable<Movie[]> {
+      return this.httpClient.get<Movie[]>('https://localhost:44379/api/movie');
   }
 }
