@@ -1,9 +1,12 @@
+import { Studio } from "./studio";
+
 export class Movie {
     Id_Movie : number;
     Name : string;
     Id_Studio : number;
     Synopsis : string;
     Year : number;
+    studio : Studio;
 
     
     constructor(movie : Movie) {
@@ -12,5 +15,6 @@ export class Movie {
      this.Id_Studio = movie.Id_Studio;
      this.Synopsis = movie.Synopsis;
      this.Year = movie.Year;
+     this.studio = movie.studio || 0;
     }
 }

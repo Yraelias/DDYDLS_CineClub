@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Movie } from './movie/movie';
+import { Movie } from '../../../models/movie';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
