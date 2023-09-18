@@ -11,5 +11,6 @@ namespace DDYDLS_CineClubLocalModel.Models
         public int Id_Studio { get; set; }
         public string Synopsis { get; set; }
         public int Year { get; set; }
+        public Studio Studio { get; set; }
     }
 }

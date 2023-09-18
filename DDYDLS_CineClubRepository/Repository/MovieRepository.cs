@@ -8,12 +8,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
 namespace DDYDLS_CineClubDAL.Repository
 {
     public class MovieRepository : BaseRepository, IMovieRepository<Movie>
     {
+        
         public MovieRepository(IConfiguration config) : base(config)
-        { }
+        {
+            
+        }
 
         public IEnumerable<Movie> GetAll()
         {

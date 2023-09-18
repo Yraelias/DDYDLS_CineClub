@@ -1,4 +1,6 @@
-﻿using dal = DDYDLS_CineClubDAL.Models;
+﻿using DDYDLS_CineClubDAL.Interfaces;
+using DDYDLS_CineClubDAL.Models;
+using dal = DDYDLS_CineClubDAL.Models;
 
 namespace DDYDLS_CineClubLocalModel.Tools
 {
@@ -108,7 +110,7 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Country = newStudio.Country
             };
         }
-        public static Models.Movie toLocal(this dal.Movie newMovie)
+        public static Models.Movie toLocal(this dal.Movie newMovie, IStudioRepository<dal.Studio> studioRepository)
         {
             return new Models.Movie
             {
@@ -116,7 +118,8 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Name = newMovie.Name,
                 Id_Studio = newMovie.Id_Studio,
                 Synopsis = newMovie.Synopsis,
-                Year = newMovie.Year
+                Year = newMovie.Year,
+                Studio = studioRepository.GetOne(newMovie.Id_Studio).toLocal()             
             };
         }
         public static dal.Movie toDal(this Models.Movie newStudio)

@@ -7,15 +7,18 @@ using System.Linq;
 using dal = DDYDLS_CineClubDAL.Models;
 using System;
 using DDYDLS_CineClubDAL.Interfaces;
+using DDYDLS_CineClubDAL.Repository;
 
 namespace DDYDLS_CineClubLocalModel.Services
 {
     public class MovieService : Interfaces.IMovieService
     {
         private IMovieRepository<dal.Movie> _MovieRepository;
-        public MovieService(IMovieRepository<dal.Movie> MovieRepository)
+        private IStudioRepository<dal.Studio> _studioRepo;
+        public MovieService(IMovieRepository<dal.Movie> MovieRepository, IStudioRepository<dal.Studio> studioRepository)
         {
             _MovieRepository = MovieRepository;
+            _studioRepo = studioRepository;
         }
 
         public bool Delete(int Id)
@@ -25,12 +28,12 @@ namespace DDYDLS_CineClubLocalModel.Services
 
         public IEnumerable<Movie> GetAll()
         {
-            return _MovieRepository.GetAll().Select(g => g.toLocal());
+            return _MovieRepository.GetAll().Select(g => g.toLocal(_studioRepo));
         }
 
         public Movie GetOne(int Id)
         {
-            return _MovieRepository.GetOne(Id).toLocal();
+            return _MovieRepository.GetOne(Id).toLocal(_studioRepo);
         }
 
         public bool AddMovie(Movie g)

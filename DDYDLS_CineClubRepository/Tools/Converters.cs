@@ -57,7 +57,7 @@ namespace DAL.Tools
             {
                 Id_Studio = (int)reader["Id_Studio"],
                 Name = reader["Name"].ToString(),
-                Country = reader["Country"].ToString()
+                Country = (int)reader["Id_Country"]
             };
         }
         public static Movie MovieConvert(SqlDataReader reader)

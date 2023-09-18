@@ -8,6 +8,6 @@ namespace DDYDLS_CineClubLocalModel.Models
     {
         public int Id_Studio { get; set; }
         public string Name { get; set; }
-        public string Country { get; set; }
+        public int Country { get; set; }
     }
 }

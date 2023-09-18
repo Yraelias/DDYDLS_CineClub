@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DDYDLS_CineClubDAL.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,7 @@ namespace DDYDLS_CineClubApi.Models
         public int Id_Studio { get; set; }
         public string Synopsis { get; set; }
         public int Year { get; set; }
+
+        public Studio Studio { get; set; }
     }
 }
