@@ -15,4 +15,7 @@ export class MovieService {
   getMovies() : Observable<Movie[]> {
       return this.httpClient.get<Movie[]>('https://localhost:44379/api/movie');
   }
+  getOneMovie(Id : number ) : Observable<Movie> {
+    return this.httpClient.get<Movie>('https://localhost:44379/api/movie/'+Id);
+}       
 }

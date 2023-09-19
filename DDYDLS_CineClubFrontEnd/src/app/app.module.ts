@@ -12,13 +12,20 @@ import {MatListModule} from '@angular/material/list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
+import { MovieDetailsComponent } from './main/content/pages/movie/details/movie-details.component';
+import { MovieResolverService } from './navigation/resolver.service';
 
 
 const appRoutes: Routes = [
   {
+    path:'movies/:id',
+    component: MovieDetailsComponent,
+    resolve:{model: MovieResolverService}
+  },
+  {
     path:'movies',
     component: MoviesListComponent,
-    resolve: {data: MovieService}
+    //resolve: {data: MovieService}
   },
   {
     path: '**',
@@ -30,7 +37,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    MoviesListComponent
+    MoviesListComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +51,7 @@ const appRoutes: Routes = [
     MatTableModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
