@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class MovieDetailsComponent implements OnInit {
   id:number
   movie : Movie = {id_movie : 0, name : '', id_studio : 0, year:0, synopsis : '', studio : {Id_Country:0, Id_Studio:0, name:''} };
+  URLimg:any = "url/vers/mon/image.jpg";
 
   constructor(private movie_service : MovieService, private activedRoute : ActivatedRoute) {
     this.id  = activedRoute.snapshot.params['id'];

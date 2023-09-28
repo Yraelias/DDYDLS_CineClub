@@ -15,6 +15,12 @@ import {MatCardModule} from '@angular/material/card';
 import { MovieDetailsComponent } from './main/content/pages/movie/details/movie-details.component';
 import { MovieResolverService } from './navigation/resolver.service';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatMenuModule} from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { TopNavBarComponent } from './navigation/navbar/top-nav-bar/top-nav-bar.component';
+import {MatIconModule} from '@angular/material/icon';
+
+
 
 
 const appRoutes: Routes = [
@@ -37,6 +43,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    TopNavBarComponent,
     HomeComponent,
     MoviesListComponent,
     MovieDetailsComponent
@@ -51,7 +58,10 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatTableModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]
