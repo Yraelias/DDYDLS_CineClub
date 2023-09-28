@@ -1,11 +1,11 @@
 export class Studio {
     Id_Studio : number;
-    Name : string;
+    name : string;
     Id_Country : number
 
     constructor(studio : Studio) {
         this.Id_Studio = studio.Id_Studio;
-        this.Name = studio.Name;
+        this.name = studio.name;
         this.Id_Country = studio.Id_Country;
        }
 }

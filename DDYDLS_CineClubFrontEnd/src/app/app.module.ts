@@ -14,6 +14,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
 import { MovieDetailsComponent } from './main/content/pages/movie/details/movie-details.component';
 import { MovieResolverService } from './navigation/resolver.service';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 const appRoutes: Routes = [
@@ -49,7 +50,8 @@ const appRoutes: Routes = [
     MatListModule,
     BrowserAnimationsModule,
     MatTableModule,
-    MatCardModule
+    MatCardModule,
+    MatGridListModule
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]
