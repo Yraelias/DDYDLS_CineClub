@@ -135,5 +135,27 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Year = newStudio.Year
             };
         }
+        public static Models.Rating toLocal(this dal.Rating newRating)
+        {
+            return new Models.Rating
+            {
+               Id_Rating = newRating.Id_Rating,
+               Id_Movie = newRating.Id_Movie,
+               Id_User = newRating.Id_User,
+               Ratings = newRating.Ratings,
+               Date = newRating.Date
+            };
+        }
+        public static dal.Rating toDal(this Models.Rating newRating)
+        {
+            return new dal.Rating
+            {
+                Id_Rating = newRating.Id_Rating,
+                Id_Movie = newRating.Id_Movie,
+                Id_User = newRating.Id_User,
+                Ratings = newRating.Ratings,
+                Date = newRating.Date
+            };
+        }
     }
 }

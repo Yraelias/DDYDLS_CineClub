@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace DDYDLS_CineClubDAL.Interfaces
+{
+    public interface IRatingRepository<Rating>
+    {
+        IEnumerable<Rating> GetAll();
+        Rating GetOne(int Id);
+        void Insert(Rating r);
+        void Update(Rating r);
+        bool Delete(int Id);
+    }
+}

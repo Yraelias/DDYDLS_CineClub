@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [T_Rating]
 (
- [ID_Rating] int NOT NULL ,
+ [ID_Rating] int NOT NULL IDENTITY ,
  [Id_User]   int NOT NULL ,
  [Id_Movie]  int NOT NULL ,
  [Rating]    int NOT NULL ,

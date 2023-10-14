@@ -71,5 +71,16 @@ namespace DAL.Tools
                 Year = (int)reader["Year"]
             };
         }
+        public static Rating RatingConvert(SqlDataReader reader)
+        {
+            return new Rating
+            {
+                Id_Rating = (int)reader["Id_Rating"],
+                Id_User = (int)reader["Id_User"],
+                Id_Movie = (int)reader["Id_Movie"],
+                Ratings = (int)reader["Rating"],
+                Date =  (DateTime)reader["Date"]
+            };
+        }
     }
 }

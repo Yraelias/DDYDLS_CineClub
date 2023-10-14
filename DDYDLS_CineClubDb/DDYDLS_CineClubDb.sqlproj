@@ -68,5 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="AddMovies.sql" />
+    <None Include="AddUser.sql" />
   </ItemGroup>
 </Project>
