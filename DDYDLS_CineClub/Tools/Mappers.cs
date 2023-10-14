@@ -1,7 +1,11 @@
 ﻿using System;
 
+#pragma warning disable CS8981 // Le nom de type contient uniquement des caractères ascii en minuscules. De tels noms peuvent devenir réservés pour la langue.
 using api = DDYDLS_CineClubApi.Models;
+#pragma warning restore CS8981 // Le nom de type contient uniquement des caractères ascii en minuscules. De tels noms peuvent devenir réservés pour la langue.
+#pragma warning disable CS8981 // Le nom de type contient uniquement des caractères ascii en minuscules. De tels noms peuvent devenir réservés pour la langue.
 using model = DDYDLS_CineClubLocalModel.Models;
+#pragma warning restore CS8981 // Le nom de type contient uniquement des caractères ascii en minuscules. De tels noms peuvent devenir réservés pour la langue.
 
 namespace DDYDLS_CineClubApi.Tools
 {

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YU2Ago4Ip0AJa/8ZXW03UMtKVfw6I+5dUljNlur3/ODox6dTISf27W3qpJhOxARs/Xq6VM+2azseQ7Ar5qMSAA==",
+  "dgSpecHash": "gA8mNDXOA8kSdE7CNdS1dHIGCz5UU4FcYI/bZczP+b1+/MP1vVsHHpwdtmcVzrrdtRhRWToDMSB/V4rspJKu6g==",
   "success": true,
   "projectFilePath": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubLocalModel\\DDYDLS_CineClubLocalModel.csproj",
   "expectedPackageFiles": [
@@ -24,8 +24,6 @@
     "C:\\Users\\dav23\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\dav23\\.nuget\\packages\\system.data.sqlclient\\4.8.4\\system.data.sqlclient.4.8.4.nupkg.sha512",
     "C:\\Users\\dav23\\.nuget\\packages\\system.identitymodel.tokens.jwt\\5.6.0\\system.identitymodel.tokens.jwt.5.6.0.nupkg.sha512",
-    "C:\\Users\\dav23\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
-    "C:\\Users\\dav23\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\dav23\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\dav23\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512",
     "C:\\Users\\dav23\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",

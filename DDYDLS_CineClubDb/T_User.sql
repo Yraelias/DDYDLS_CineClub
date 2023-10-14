@@ -9,8 +9,7 @@
  [ID_UserRole]       int,
  
 
-    CONSTRAINT [PK_T_User] PRIMARY KEY ([Id_User]), 
-    CONSTRAINT [FK_T_User_ToTable] FOREIGN KEY ([ID_UserRole]) REFERENCES [T_Role]([ID_Role])
+    CONSTRAINT [PK_T_User] PRIMARY KEY ([Id_User])
 );
 
 GO

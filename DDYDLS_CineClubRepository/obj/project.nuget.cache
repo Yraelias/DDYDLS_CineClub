@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9M3TdI2QfqgRVSxqTrCpYprwSOF9bmugvTgS4/XTmCdibPCIF9iX09Hi5SW4AVs9S0UBcylQfNla8AclGVmEgQ==",
+  "dgSpecHash": "FM0T+e59JerZEXNvGg4gRjXS+sBYUIGgQynfd+WowVFrDi0hX4LagB3M3aiLN8taopS/NgJ7z0AV675aHYEWEQ==",
   "success": true,
   "projectFilePath": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\DDYDLS_CineClubDAL.csproj",
   "expectedPackageFiles": [
@@ -13,8 +13,6 @@
     "C:\\Users\\dav23\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\dav23\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\dav23\\.nuget\\packages\\system.data.sqlclient\\4.8.4\\system.data.sqlclient.4.8.4.nupkg.sha512",
-    "C:\\Users\\dav23\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
-    "C:\\Users\\dav23\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\dav23\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\dav23\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],

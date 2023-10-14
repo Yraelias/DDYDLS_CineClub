@@ -1,9 +1,7 @@
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\bin\Debug\net7.0\DDYDLS_CineClubLocalModel.deps.json
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\bin\Debug\net7.0\DDYDLS_CineClubLocalModel.runtimeconfig.json
-G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\bin\Debug\net7.0\DDYDLS_CineClubLocalModel.runtimeconfig.dev.json
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\bin\Debug\net7.0\DDYDLS_CineClubDAL.deps.json
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\bin\Debug\net7.0\DDYDLS_CineClubDAL.runtimeconfig.json
-G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\bin\Debug\net7.0\DDYDLS_CineClubDAL.runtimeconfig.dev.json
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\bin\Debug\net7.0\DDYDLS_CineClubDAL.exe
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\bin\Debug\net7.0\DDYDLS_CineClubLocalModel.exe
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\bin\Debug\net7.0\appsettings.Development.json

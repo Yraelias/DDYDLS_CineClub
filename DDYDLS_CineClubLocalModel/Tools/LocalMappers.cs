@@ -1,6 +1,8 @@
 ﻿using DDYDLS_CineClubDAL.Interfaces;
 using DDYDLS_CineClubDAL.Models;
+#pragma warning disable CS8981 // Le nom de type contient uniquement des caractères ascii en minuscules. De tels noms peuvent devenir réservés pour la langue.
 using dal = DDYDLS_CineClubDAL.Models;
+#pragma warning restore CS8981 // Le nom de type contient uniquement des caractères ascii en minuscules. De tels noms peuvent devenir réservés pour la langue.
 
 namespace DDYDLS_CineClubLocalModel.Tools
 {

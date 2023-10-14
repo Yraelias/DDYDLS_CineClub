@@ -6,7 +6,9 @@ using DDYDLS_CineClubLocalModel.Models;
 using DDYDLS_CineClubLocalModel.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using DDYDLS_CineClubApi.Tools;
+#pragma warning disable CS8981 // Le nom de type contient uniquement des caractères ascii en minuscules. De tels noms peuvent devenir réservés pour la langue.
 using api = DDYDLS_CineClubApi.Models;
+#pragma warning restore CS8981 // Le nom de type contient uniquement des caractères ascii en minuscules. De tels noms peuvent devenir réservés pour la langue.
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace DDYDLS_CineClubApi.Controllers

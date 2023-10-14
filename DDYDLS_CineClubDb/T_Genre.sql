@@ -5,5 +5,5 @@
     CONSTRAINT [PK_T_Genre] PRIMARY KEY ([Id_Genre]) ,
 
 
-);
+);  
 GO

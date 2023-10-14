@@ -60,16 +60,13 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="T_User.sql" />
-    <Build Include="T_Studio.sql" />
     <Build Include="T_Genre.sql" />
-    <Build Include="T_Role.sql" />
     <Build Include="T_Person.sql" />
     <Build Include="T_Movie.sql" />
     <Build Include="T_Rating.sql" />
     <Build Include="T_MovieGenre.sql" />
-    <Build Include="T_Casting.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="AddStudio.sql" />
+    <PostDeploy Include="AddMovies.sql" />
   </ItemGroup>
 </Project>

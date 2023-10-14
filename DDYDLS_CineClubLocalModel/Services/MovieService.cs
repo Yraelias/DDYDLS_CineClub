@@ -4,7 +4,9 @@ using DDYDLS_CineClubLocalModel.Models;
 using DDYDLS_CineClubLocalModel.Tools;
 using System.Collections.Generic;
 using System.Linq;
+#pragma warning disable CS8981 // Le nom de type contient uniquement des caractères ascii en minuscules. De tels noms peuvent devenir réservés pour la langue.
 using dal = DDYDLS_CineClubDAL.Models;
+#pragma warning restore CS8981 // Le nom de type contient uniquement des caractères ascii en minuscules. De tels noms peuvent devenir réservés pour la langue.
 using System;
 using DDYDLS_CineClubDAL.Interfaces;
 using DDYDLS_CineClubDAL.Repository;

@@ -423,7 +423,7 @@
       },
       "DDYDLS_CineClubDAL/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "ADO Toolbox": "1.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
@@ -438,7 +438,7 @@
       },
       "DDYDLS_CineClubLocalModel/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "DDYDLS_CineClubDAL": "1.0.0",
           "IdentityServer4": "4.1.2",

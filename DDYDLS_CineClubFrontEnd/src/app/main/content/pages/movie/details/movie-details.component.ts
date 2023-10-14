@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../../movie.service';
 import { Movie } from 'src/app/models/movie';
 import { ActivatedRoute } from '@angular/router';
+import { TMDBMovie, Result } from 'src/app/models/tmdbmovie';
 
 
 @Component({
@@ -12,7 +13,9 @@ import { ActivatedRoute } from '@angular/router';
 export class MovieDetailsComponent implements OnInit {
   id:number
   movie : Movie = {id_movie : 0, name : '', id_studio : 0, year:0, synopsis : '', studio : {Id_Country:0, Id_Studio:0, name:''} };
-  URLimg:any = "url/vers/mon/image.jpg";
+  tmdbmovie!: TMDBMovie;
+  result !: Result; 
+  URLimg:any = "https://image.tmdb.org/t/p/w500//gEU2QniE6E77NI6lCU6MxlNBvIx.jpg";
 
   constructor(private movie_service : MovieService, private activedRoute : ActivatedRoute) {
     this.id  = activedRoute.snapshot.params['id'];
@@ -20,10 +23,6 @@ export class MovieDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadMovie();
-    console.log('ici');
-    console.log(this.movie.name);
-    console.log(this.movie);
-    console.log(this.movie);
   }
 
   loadMovie():void{
@@ -32,6 +31,18 @@ export class MovieDetailsComponent implements OnInit {
       {
         console.log(data);
         this.movie = data;
+        this.loadTMDBMovie();
+      }
+    })
+  }
+
+  loadTMDBMovie(): void{
+    this.movie_service.getTMDBMovie(this.movie.name).subscribe({
+      next:(data :Result) =>
+      {
+        console.log(data);
+        this.result = data;
+        this.URLimg = "https://image.tmdb.org/t/p/w500/" + this.result.results[0].poster_path;
       }
     })
   }
