@@ -14,6 +14,5 @@ namespace DDYDLS_CineClubLocalModel.Models
         public int Ratings { get; set; }
 
         public DateTime Date { get; set; }
-        public Rating rating{ get; set; }
     }
 }

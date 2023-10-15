@@ -112,7 +112,7 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Country = newStudio.Country
             };
         }
-        public static Models.Movie toLocal(this dal.Movie newMovie, IStudioRepository<dal.Studio> studioRepository)
+        public static Models.Movie toLocal(this dal.Movie newMovie, IStudioRepository<dal.Studio> studioRepository, IRatingRepository<dal.Rating> ratingRepository)
         {
             return new Models.Movie
             {
@@ -121,7 +121,8 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Id_Studio = newMovie.Id_Studio,
                 Synopsis = newMovie.Synopsis,
                 Year = newMovie.Year,
-                Studio = studioRepository.GetOne(newMovie.Id_Studio).toLocal()             
+                Studio = studioRepository.GetOne(newMovie.Id_Studio).toLocal(),     
+                Rating = ratingRepository.GetOne(newMovie.Id_Movie).toLocal()
             };
         }
         public static dal.Movie toDal(this Models.Movie newStudio)
@@ -142,7 +143,6 @@ namespace DDYDLS_CineClubLocalModel.Tools
                Id_Rating = newRating.Id_Rating,
                Id_Movie = newRating.Id_Movie,
                Id_User = newRating.Id_User,
-               Ratings = newRating.Ratings,
                Date = newRating.Date
             };
         }
@@ -153,7 +153,6 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Id_Rating = newRating.Id_Rating,
                 Id_Movie = newRating.Id_Movie,
                 Id_User = newRating.Id_User,
-                Ratings = newRating.Ratings,
                 Date = newRating.Date
             };
         }

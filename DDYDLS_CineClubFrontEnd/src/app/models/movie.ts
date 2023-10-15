@@ -15,6 +15,6 @@ export class Movie {
      this.id_studio = movie.id_studio || 0;
      this.synopsis = movie.synopsis || 'null';
      this.year = movie.year || 0;
-     this.studio = movie.studio || 0;
+     this.studio = movie.studio || 0;0
     }
 }

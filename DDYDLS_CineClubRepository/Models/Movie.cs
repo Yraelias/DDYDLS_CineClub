@@ -13,5 +13,6 @@ namespace DDYDLS_CineClubDAL.Models
         public int Id_Studio { get; set; }
         public string Synopsis { get; set; }
         public int Year { get; set; }
+        public Rating Rating { get; set; }
     }
 }
