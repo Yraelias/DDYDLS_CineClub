@@ -8,7 +8,7 @@ import { Movie } from '../../../../../models/movie';
   styleUrls: ['./movieslist.component.css']
 })
 export class MoviesListComponent implements OnInit {
-  displayedColumns: string[] = ['name','id_studio','synopsis','year'];
+  displayedColumns: string[] = ['name','synopsis','year','details'];
   dataSource : any;
 
   movies : Movie[] = [];
@@ -17,7 +17,11 @@ export class MoviesListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
+    this.loadMovies();
+    console.log(this.movies);
+  }
+
+  loadMovies() : void{
     this._movieService.getMovies().subscribe( {
       next: (data : Movie[]) =>  this.dataSource = data,
       error : (error : any) => console.log(error)}
@@ -25,6 +29,7 @@ export class MoviesListComponent implements OnInit {
     this._movieService.getMovies();
     this.movies = this._movieService.movies;
     this.dataSource = this.movies;
+    console.log(this.dataSource)
   }
 
 }

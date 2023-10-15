@@ -1,4 +1,4 @@
-import { Studio } from "./studio";
+import { Rating } from "./rating";
 
 export class Movie {
     id_movie : number;
@@ -6,7 +6,7 @@ export class Movie {
     id_studio : number;
     synopsis : string;
     year : number;
-    studio : Studio;
+    rating : Rating;
 
     
     constructor(movie : Movie) {
@@ -15,6 +15,6 @@ export class Movie {
      this.id_studio = movie.id_studio || 0;
      this.synopsis = movie.synopsis || 'null';
      this.year = movie.year || 0;
-     this.studio = movie.studio || 0;0
+     this.rating = movie.rating || 0;
     }
 }
