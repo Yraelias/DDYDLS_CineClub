@@ -7,6 +7,7 @@ export class Movie {
     synopsis : string;
     year : number;
     rating : Rating;
+    avgRating : number;
 
     
     constructor(movie : Movie) {
@@ -16,5 +17,6 @@ export class Movie {
      this.synopsis = movie.synopsis || 'null';
      this.year = movie.year || 0;
      this.rating = movie.rating || 0;
+     this.avgRating = movie.avgRating || 0;
     }
 }

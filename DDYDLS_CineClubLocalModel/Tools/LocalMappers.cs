@@ -1,5 +1,6 @@
 ﻿using DDYDLS_CineClubDAL.Interfaces;
 using DDYDLS_CineClubDAL.Models;
+using DDYDLS_CineClubDAL.Repository;
 #pragma warning disable CS8981 // Le nom de type contient uniquement des caractères ascii en minuscules. De tels noms peuvent devenir réservés pour la langue.
 using dal = DDYDLS_CineClubDAL.Models;
 #pragma warning restore CS8981 // Le nom de type contient uniquement des caractères ascii en minuscules. De tels noms peuvent devenir réservés pour la langue.
@@ -94,25 +95,8 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Name = newRole.Name
             };
         }
-        public static Models.Studio toLocal(this dal.Studio newStudio)
-        {
-            return new Models.Studio
-            {
-                Id_Studio = newStudio.Id_Studio,
-                Name = newStudio.Name,
-                Country = newStudio.Country
-            };
-        }
-        public static dal.Studio toDal(this Models.Studio newStudio)
-        {
-            return new dal.Studio
-            {
-                Id_Studio = newStudio.Id_Studio,
-                Name = newStudio.Name,
-                Country = newStudio.Country
-            };
-        }
-        public static Models.Movie toLocal(this dal.Movie newMovie, IStudioRepository<dal.Studio> studioRepository, IRatingRepository<dal.Rating> ratingRepository)
+        
+        public static Models.Movie toLocal(this dal.Movie newMovie)
         {
             return new Models.Movie
             {
@@ -120,9 +104,21 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Name = newMovie.Name,
                 Id_Studio = newMovie.Id_Studio,
                 Synopsis = newMovie.Synopsis,
-                Year = newMovie.Year,
-                Studio = studioRepository.GetOne(newMovie.Id_Studio).toLocal(),     
-                Rating = ratingRepository.GetOne(newMovie.Id_Movie).toLocal()
+                Year = newMovie.Year
+
+            };
+        }
+        public static Models.Movie toLocal(this dal.Movie newMovie, IRatingRepository<dal.Rating> ratingRepository)
+        {
+            return new Models.Movie
+            {
+                Id_Movie = newMovie.Id_Movie,
+                Name = newMovie.Name,
+                Id_Studio = newMovie.Id_Studio,
+                Synopsis = newMovie.Synopsis,
+                Year = newMovie.Year,  
+                Rating = ratingRepository.GetOne(newMovie.Id_Movie).toLocal(),
+                AvgRating = ratingRepository.AvgRate(newMovie.Id_Movie)
             };
         }
         public static dal.Movie toDal(this Models.Movie newStudio)
@@ -138,12 +134,14 @@ namespace DDYDLS_CineClubLocalModel.Tools
         }
         public static Models.Rating toLocal(this dal.Rating newRating)
         {
+            if (newRating == null) { return new Models.Rating(); }
             return new Models.Rating
             {
-               Id_Rating = newRating.Id_Rating,
+               Id_Rating = newRating.Id_Rating ,
                Id_Movie = newRating.Id_Movie,
                Id_User = newRating.Id_User,
-               Date = newRating.Date
+               Date = newRating.Date,
+               Ratings = newRating.Ratings
             };
         }
         public static dal.Rating toDal(this Models.Rating newRating)
@@ -153,7 +151,8 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Id_Rating = newRating.Id_Rating,
                 Id_Movie = newRating.Id_Movie,
                 Id_User = newRating.Id_User,
-                Date = newRating.Date
+                Date = newRating.Date,
+                Ratings = newRating.Ratings
             };
         }
     }

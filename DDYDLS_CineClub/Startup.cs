@@ -32,7 +32,7 @@ namespace DDYDLS_CineClub
             services.AddScoped<IPersonRepository<Person>, PersonRepository>();
             services.AddScoped<IRoleRepository<Role>, RoleRepository>();
             services.AddScoped<IMovieRepository<Movie>, MovieRepository>();
-            services.AddScoped<IStudioRepository<Studio>, StudioRepository>(); 
+            services.AddScoped<IRatingRepository<Rating>, RatingRepository>();
             #endregion
 
             #region Services
@@ -41,7 +41,7 @@ namespace DDYDLS_CineClub
             services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IPersonService, PersonService>();
             services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IRoleService, RoleService>();
             services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IMovieService,MovieService>();
-            services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IStudioService, StudioService>();
+            services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IRatingService, RatingService>();
             #endregion
         }
 

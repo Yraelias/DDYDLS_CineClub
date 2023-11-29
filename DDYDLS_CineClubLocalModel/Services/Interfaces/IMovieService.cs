@@ -10,6 +10,7 @@ namespace DDYDLS_CineClubLocalModel.Services.Interfaces
         void Update(Movie m);
         bool AddMovie(Movie m);
         bool Delete(int Id);
-        
+
+
     }
 }

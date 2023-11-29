@@ -11,5 +11,6 @@ namespace DDYDLS_CineClubDAL.Interfaces
         void Insert(Rating r);
         void Update(Rating r);
         bool Delete(int Id);
+        public int AvgRate(int iD);
     }
 }

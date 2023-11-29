@@ -16,11 +16,11 @@ namespace DDYDLS_CineClubLocalModel.Services
     public class MovieService : Interfaces.IMovieService
     {
         private IMovieRepository<dal.Movie> _MovieRepository;
-        private IStudioRepository<dal.Studio> _studioRepo;
-        public MovieService(IMovieRepository<dal.Movie> MovieRepository, IStudioRepository<dal.Studio> studioRepository)
+        private IRatingRepository<dal.Rating> _ratingRepo;
+        public MovieService(IMovieRepository<dal.Movie> MovieRepository, IRatingRepository<dal.Rating> ratingRepo)
         {
             _MovieRepository = MovieRepository;
-            _studioRepo = studioRepository;
+            _ratingRepo = ratingRepo;
         }
 
         public bool Delete(int Id)
@@ -30,12 +30,12 @@ namespace DDYDLS_CineClubLocalModel.Services
 
         public IEnumerable<Movie> GetAll()
         {
-            return _MovieRepository.GetAll().Select(g => g.toLocal(_studioRepo));
+            return _MovieRepository.GetAll().Select(g => g.toLocal());
         }
 
         public Movie GetOne(int Id)
         {
-            return _MovieRepository.GetOne(Id).toLocal(_studioRepo);
+            return _MovieRepository.GetOne(Id).toLocal(_ratingRepo);
         }
 
         public bool AddMovie(Movie g)

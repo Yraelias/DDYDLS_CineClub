@@ -51,23 +51,13 @@ namespace DAL.Tools
                 Name = reader["Name"].ToString()
             };
         }
-        public static Studio StudioConvert(SqlDataReader reader)
-        {
-            return new Studio
-            {
-                Id_Studio = (int)reader["Id_Studio"],
-                Name = reader["Name"].ToString(),
-                Country = (int)reader["Id_Country"]
-            };
-        }
+        
         public static Movie MovieConvert(SqlDataReader reader)
         {
             return new Movie
             {
                 Id_Movie = (int)reader["Id_Movie"],
                 Name = reader["Name"].ToString(),
-                Id_Studio = (int)reader["Id_Studio"],
-                Synopsis = reader["Synopsis"].ToString(),
                 Year = (int)reader["Year"]
             };
         }
@@ -75,11 +65,11 @@ namespace DAL.Tools
         {
             return new Rating
             {
-                Id_Rating = (int)reader["Id_Rating"],
-                Id_User = (int)reader["Id_User"],
-                Id_Movie = (int)reader["Id_Movie"],
-                Ratings = (int)reader["Rating"],
-                Date =  (DateTime)reader["Date"]
+                Id_Rating = Convert.IsDBNull((int)reader["Id_Rating"]) ? 0 : (int)reader["ID_Rating"],
+                Id_User = Convert.IsDBNull((int)reader["Id_User"]) ? 0 : (int)reader["Id_User"],
+                Id_Movie = Convert.IsDBNull((int)reader["Id_Movie"]) ? 0 : (int)reader["Id_Movie"],
+                Ratings = Convert.IsDBNull((int)reader["Rating"]) ? 0 : (int)reader["Rating"],
+                Date = Convert.IsDBNull((DateTime)reader["Date"]) ? new DateTime() : (DateTime)reader["Date"]
             };
         }
     }

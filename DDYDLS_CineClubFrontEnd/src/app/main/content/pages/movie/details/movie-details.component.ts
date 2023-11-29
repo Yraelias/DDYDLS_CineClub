@@ -12,7 +12,7 @@ import { TMDBMovie, Result } from 'src/app/models/tmdbmovie';
 })
 export class MovieDetailsComponent implements OnInit {
   id:number
-  movie : Movie = {id_movie : 0, name : '', id_studio : 0, year:0, synopsis : '', rating:{ id_movie :0, id_user:0,id_rating:0,date : new Date, ratings : 0} };
+  movie : Movie = {id_movie : 0, name : '', id_studio : 0, year:0, synopsis : '', rating:{ id_movie :0, id_user:0,id_rating:0,date : new Date, ratings : 0}, avgRating:0 };
   tmdbmovie!: TMDBMovie;
   result !: Result; 
   URLimg:any = "https://image.tmdb.org/t/p/w500//gEU2QniE6E77NI6lCU6MxlNBvIx.jpg";
