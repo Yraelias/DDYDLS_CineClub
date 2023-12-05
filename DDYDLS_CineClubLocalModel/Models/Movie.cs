@@ -13,5 +13,6 @@ namespace DDYDLS_CineClubLocalModel.Models
         public int Year { get; set; }
         public Rating Rating { get; set; }
         public int AvgRating { get; set; }
+        public int RatingForUser { get; set; }
     }
 }

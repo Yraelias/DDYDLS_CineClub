@@ -17,5 +17,6 @@ namespace DDYDLS_CineClubApi.Models
 
         public Rating Rating { get; set; }
         public int AvgRating { get; set; }
+        public int RatingForUser { get; set; }
     }
 }

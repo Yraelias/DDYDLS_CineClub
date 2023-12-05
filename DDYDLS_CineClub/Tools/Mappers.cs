@@ -132,7 +132,9 @@ namespace DDYDLS_CineClubApi.Tools
                 Name = newMovie.Name,
                 Id_Studio = newMovie.Id_Studio,
                 Synopsis = newMovie.Synopsis,
-                Year = newMovie.Year
+                Year = newMovie.Year,
+                RatingForUser = newMovie.RatingForUser
+
             };
         }
 

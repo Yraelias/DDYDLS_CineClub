@@ -105,6 +105,7 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Id_Studio = newMovie.Id_Studio,
                 Synopsis = newMovie.Synopsis,
                 Year = newMovie.Year
+                
 
             };
         }
@@ -116,8 +117,8 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Name = newMovie.Name,
                 Id_Studio = newMovie.Id_Studio,
                 Synopsis = newMovie.Synopsis,
-                Year = newMovie.Year,  
-                Rating = ratingRepository.GetOne(newMovie.Id_Movie).toLocal(),
+                Year = newMovie.Year,
+                Rating = null,
                 AvgRating = ratingRepository.AvgRate(newMovie.Id_Movie)
             };
         }

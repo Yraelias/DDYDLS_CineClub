@@ -33,9 +33,12 @@ namespace DDYDLS_CineClubLocalModel.Services
             return _MovieRepository.GetAll().Select(g => g.toLocal());
         }
 
-        public Movie GetOne(int Id)
+        public Movie GetOne(int userId, int Id)
         {
-            return _MovieRepository.GetOne(Id).toLocal(_ratingRepo);
+            Movie movie = new Movie();
+            movie = _MovieRepository.GetOne(Id).toLocal(_ratingRepo);
+            movie.RatingForUser = _ratingRepo.RatebyIdMovieAndIdUser(Id, userId);
+            return movie;
         }
 
         public bool AddMovie(Movie g)
@@ -50,6 +53,11 @@ namespace DDYDLS_CineClubLocalModel.Services
         {
             _MovieRepository.Update(g.toDal());
         }
-        
+        /*
+        public int GetRatingForOneUser(int movieId, int userId)
+        {
+            return _ratingRepo.RatebyIdMovieAndIdUser(movieId, userId);
+        }
+        */
     }
 }

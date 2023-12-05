@@ -5,12 +5,13 @@ namespace DDYDLS_CineClubLocalModel.Services.Interfaces
 {
     public interface IMovieService
     {
-        Movie GetOne(int Id);
+        Movie GetOne(int movieId,int Id);
         IEnumerable<Movie> GetAll();
         void Update(Movie m);
         bool AddMovie(Movie m);
         bool Delete(int Id);
 
+        //int GetRatingForOneUser(int movieId, int userId);
 
     }
 }
