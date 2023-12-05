@@ -35,6 +35,10 @@ namespace DDYDLS_CineClubDAL.Repository
             cmd.AddParameter("Id_User", g.Id_User);
             cmd.AddParameter("Id_Movie",g.Id_Movie);
             cmd.AddParameter("Rating",g.Ratings);
+            if (g.Date == null)
+            {
+                g.Date = DateTime.Now;
+            }
             cmd.AddParameter("Date",g.Date);
             _connection.ExecuteNonQuery(cmd);
         }

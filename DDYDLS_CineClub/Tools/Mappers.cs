@@ -138,5 +138,29 @@ namespace DDYDLS_CineClubApi.Tools
             };
         }
 
+        public static model.Rating toLocal(this api.Rating newMovie)
+        {
+            return new model.Rating
+            {
+                Id_Movie = newMovie.Id_Movie,
+                Id_Rating = newMovie.Id_Rating,
+                Id_User = newMovie.Id_User, 
+                Ratings = newMovie.Ratings,
+                Date = newMovie.Date 
+    };
+        }
+        public static api.Rating toApi(this model.Rating newMovie)
+        {
+            return new api.Rating
+            {
+                Id_Movie = newMovie.Id_Movie,
+                Id_Rating = newMovie.Id_Rating,
+                Id_User = newMovie.Id_User,
+                Ratings = newMovie.Ratings,
+                Date = newMovie.Date
+
+            };
+        }
+
     }
 }
