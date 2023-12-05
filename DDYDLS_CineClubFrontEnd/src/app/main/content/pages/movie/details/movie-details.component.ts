@@ -11,14 +11,14 @@ import { TMDBMovie, Result } from 'src/app/models/tmdbmovie';
   styleUrls: ['./movie-details.component.css']
 })
 export class MovieDetailsComponent implements OnInit {
-  id:number
-  movie : Movie = {id_movie : 0, name : '', id_studio : 0, year:0, synopsis : '', rating:{ id_movie :0, id_user:0,id_rating:0,date : new Date, ratings : 0}, avgRating:0 };
+  id_User:number
+  movie : Movie = {id_movie : 1, name : '', id_studio : 0, year:0, synopsis : '', rating:{ id_movie :0, id_user:0,id_rating:0,date : new Date, ratings : 0}, avgRating:0 ,ratingForUser:0 };
   tmdbmovie!: TMDBMovie;
   result !: Result; 
   URLimg:any = "https://image.tmdb.org/t/p/w500//gEU2QniE6E77NI6lCU6MxlNBvIx.jpg";
 
   constructor(private movie_service : MovieService, private activedRoute : ActivatedRoute) {
-    this.id  = activedRoute.snapshot.params['id'];
+    this.id_User  = activedRoute.snapshot.params['id'];
    }
 
   ngOnInit(): void {
@@ -26,7 +26,7 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   loadMovie():void{
-    this.movie_service.getOneMovie(this.id).subscribe({
+    this.movie_service.getOneMovie(this.id_User,this.movie.id_movie).subscribe({
       next: (data :Movie) =>
       {
         console.log(data);

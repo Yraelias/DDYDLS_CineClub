@@ -16,8 +16,8 @@ export class MovieService {
   getMovies() : Observable<Movie[]> {
       return this.httpClient.get<Movie[]>('https://localhost:44379/api/movie');
   }
-  getOneMovie(Id : number ) : Observable<Movie> {
-    return this.httpClient.get<Movie>('https://localhost:44379/api/movie/'+Id);
+  getOneMovie(Id_User : number, Id_Movie : number ) : Observable<Movie> {
+    return this.httpClient.get<Movie>('https://localhost:44379/api/movie/'+Id_User+'/'+Id_Movie);
   }
   getTMDBMovie(title : string ): Observable<Result>{
     return this.httpClient.get<Result>('https://api.themoviedb.org/3/search/movie?query='+ title +'&api_key=ba39746f310980f977035c97c2cfff66&language=fr');

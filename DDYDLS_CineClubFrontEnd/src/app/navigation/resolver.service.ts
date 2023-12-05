@@ -11,7 +11,7 @@ export class MovieResolverService implements Resolve<Movie> {
 
   constructor(private _service : MovieService) { }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):  Observable<Movie> {
-    return this._service.getOneMovie(route.params['id']);
+    return this._service.getOneMovie(route.params['id'],1);
   }
 }
 
