@@ -16,6 +16,5 @@ namespace DDYDLS_CineClubDAL.Models
         public int UserRole { get; set; }
         public bool IsAdministrator { get; set; }
         public bool IsModerator { get; set; }
-        public bool IsPlayer { get; set; }
     }
 }

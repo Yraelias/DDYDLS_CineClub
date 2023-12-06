@@ -17,7 +17,5 @@ namespace DDYDLS_CineClubLocalModel.Models
         public DateTime Registration_Date { get; set; }
         public bool IsAdministrator { get; set; }
         public bool isOrganisator {get;set;}
-        public bool isPlayer { get; set; }
-        public int ID_Team { get; set; }
     }
 }
