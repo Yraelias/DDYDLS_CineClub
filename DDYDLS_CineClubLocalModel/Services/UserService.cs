@@ -55,7 +55,7 @@ namespace DDYDLS_CineClubLocalModel.Services
 
         public User GetByEmail(string email)
         {
-            throw new System.NotImplementedException();
+            return _userRepository.GetByEmail(email).toLocal();
         }
 
         public User GetOne(int Id)

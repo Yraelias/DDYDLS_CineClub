@@ -57,3 +57,4 @@ G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\obj\Debug\net7.0\refint\DDYDL
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\obj\Debug\net7.0\DDYDLS_CineClubApi.pdb
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\obj\Debug\net7.0\DDYDLS_CineClubApi.genruntimeconfig.cache
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\obj\Debug\net7.0\ref\DDYDLS_CineClubApi.dll
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

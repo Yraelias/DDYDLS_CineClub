@@ -14,15 +14,12 @@ namespace DAL.Tools
             return new User
             {
                 ID_User = (int)reader["ID_User"],
-                Login = reader["Login"].ToString(),
+                Username = (string)reader["Username"],
                 Password = reader["Password"].ToString(),
                 Email = reader["Email"].ToString(),
-                Language = Convert.IsDBNull(reader["Language"]) ? null : reader["Language"].ToString(),
-                Country = Convert.IsDBNull(reader["Country"]) ? null : reader["Country"].ToString(),
                 IsActive = (bool)reader["isActive"],
                 Registration_Date = (DateTime)reader["Registration_Date"],
-                IsAdministrator = (bool)reader["IsAdministrator"],
-                IsModerator = (bool)reader["IsModerator"]
+                UserRole = (int)reader["ID_UserRole"]
             };
         }
         public static Genre GenreConvert(SqlDataReader reader)
