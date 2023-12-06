@@ -20,3 +20,5 @@ DDYDLS_CineClubDb/DDYDLS_CineClubDb.dbmdl
 DDYDLS_CineClubDb/DDYDLS_CineClubDb.dbmdl
 *.jfm
 DDYDLS_CineClubDb/DDYDLS_CineClubDb.jfm
+*.dbmdl
+*.jfm

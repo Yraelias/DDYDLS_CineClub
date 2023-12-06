@@ -1,20 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MovieService } from '../../movie.service';
 import { Movie } from '../../../../../models/movie';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-movieslist',
   templateUrl: './movieslist.component.html',
   styleUrls: ['./movieslist.component.css']
 })
-export class MoviesListComponent implements OnInit {
-  displayedColumns: string[] = ['name','synopsis','year','details'];
+export class MoviesListComponent implements OnInit, AfterViewInit  {
+  
   dataSource : any;
-
+  displayedColumns: string[] = ['name','synopsis','year','details'];
   movies : Movie[] = [];
+
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
+
+  
   constructor( private _movieService : MovieService
 
   ) { }
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+  }
 
   ngOnInit(): void {
     this.loadMovies();

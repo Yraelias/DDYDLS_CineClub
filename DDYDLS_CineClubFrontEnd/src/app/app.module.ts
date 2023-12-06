@@ -10,7 +10,7 @@ import { MovieService } from './main/content/pages/movie.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatListModule} from '@angular/material/list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatTableModule} from '@angular/material/table';
+import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
 import { MovieDetailsComponent } from './main/content/pages/movie/details/movie-details.component';
 import { MovieResolverService } from './navigation/resolver.service';
@@ -19,6 +19,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { TopNavBarComponent } from './navigation/navbar/top-nav-bar/top-nav-bar.component';
 import {MatIconModule} from '@angular/material/icon';
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -61,7 +62,8 @@ const appRoutes: Routes = [
     MatGridListModule,
     MatMenuModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatPaginatorModule
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]
