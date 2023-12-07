@@ -9,12 +9,17 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./top-nav-bar.component.scss']
 })
 export class TopNavBarComponent implements OnInit {
-  
+  isConnected:boolean
   constructor(
     
   ) {  
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (sessionStorage.getItem('isConnected'))
+    {
+      this.isConnected = true;
+    }
+  }
 
 }

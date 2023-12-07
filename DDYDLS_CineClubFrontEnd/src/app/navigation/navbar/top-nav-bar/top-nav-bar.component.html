@@ -13,7 +13,8 @@
   <button mat-menu-item>Item 1</button>
   <button mat-menu-item>Item 2</button>
 </mat-menu>
-<button mat-button [routerLink]="['/user']">Utilisateur</button>
-<button mat-button [routerLink]="['/connexion']">Connexion</button>
+<button *ngIf="isConnected" [routerLink]="['/user']">Utilisateur</button>
+<button *ngIf="!isConnected" mat-button [routerLink]="['/connexion']">Connexion</button>
+<button *ngIf="isConnected" mat-button [routerLink]="['/connexion']">Déconnexion</button>
 
 
