@@ -19,12 +19,18 @@ import {MatMenuModule} from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { TopNavBarComponent } from './navigation/navbar/top-nav-bar/top-nav-bar.component';
 import {MatIconModule} from '@angular/material/icon';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
-
-
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator'; 
+import { LoginComponent } from './auth/login/login.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 
 const appRoutes: Routes = [
+  {
+    path:'connexion',
+    component: LoginComponent,
+    //resolve: {data: MovieService}
+  },
   {
     path:'movies/:id',
     component: MovieDetailsComponent,
@@ -47,7 +53,8 @@ const appRoutes: Routes = [
     TopNavBarComponent,
     HomeComponent,
     MoviesListComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +70,10 @@ const appRoutes: Routes = [
     MatMenuModule,
     MatButtonModule,
     MatIconModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]
