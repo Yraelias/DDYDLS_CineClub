@@ -23,6 +23,7 @@ import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import { LoginComponent } from './auth/login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { AuthService } from './auth/auth.service';
 
 
 const appRoutes: Routes = [
@@ -75,7 +76,7 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule
   ],
-  providers: [MovieService],
+  providers: [MovieService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

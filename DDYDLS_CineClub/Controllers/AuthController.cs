@@ -24,7 +24,7 @@ namespace DDYDLS_CineClubApi.Controllers
             _tokenService = tokenService;
             _userService = userService;
         }
-        public IActionResult Auth([FromForm] LoginInfo model)
+        public IActionResult Auth([FromBody] LoginInfo model)
         {
             UserWithToken user = _tokenService.Authenticate(model.Email, model.Password);
 
