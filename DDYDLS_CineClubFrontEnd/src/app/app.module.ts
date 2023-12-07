@@ -24,6 +24,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { AuthService } from './auth/auth.service';
+import { UserComponent } from './main/content/pages/user/user.component';
 
 
 const appRoutes: Routes = [
@@ -43,6 +44,11 @@ const appRoutes: Routes = [
     //resolve: {data: MovieService}
   },
   {
+    path:'user',
+    component: UserComponent,
+    //resolve: {data: MovieService}
+  },
+  {
     path: '**',
     component: HomeComponent
   }
@@ -55,7 +61,8 @@ const appRoutes: Routes = [
     HomeComponent,
     MoviesListComponent,
     MovieDetailsComponent,
-    LoginComponent
+    LoginComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
