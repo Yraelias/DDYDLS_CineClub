@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { User } from 'src/app/models/user';
+import { SharedDataService } from 'src/app/navigation/shared.service';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit {
     private _builder : FormBuilder,
     private _authService : AuthService,
     private _router : Router,
+    private sharedDataService: SharedDataService
   ) { }
 
   ngOnInit(): void {
@@ -37,8 +39,8 @@ export class LoginComponent implements OnInit {
               sessionStorage.setItem('isAdmin',data.isAdministrator.toString());
               sessionStorage.setItem('isConnected',"True");
               sessionStorage.setItem('Username',data.username);
-              
-              this._router.navigate(['/home']);
+              this.sharedDataService.updateBarreTacheData('');
+              this._router.navigate(['/user']);
               console.log(data);
 
             }

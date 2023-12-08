@@ -15,6 +15,6 @@
 </mat-menu>
 <button *ngIf="isConnected" [routerLink]="['/user']">Utilisateur</button>
 <button *ngIf="!isConnected" mat-button [routerLink]="['/connexion']">Connexion</button>
-<button *ngIf="isConnected" mat-button [routerLink]="['/connexion']">Déconnexion</button>
+<button *ngIf="isConnected" mat-button (click)="clearSession()" [routerLink]="['/connexion']">Déconnexion</button>
 
 
