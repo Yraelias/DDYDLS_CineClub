@@ -8,13 +8,15 @@
   <button mat-menu-item>Liste</button>
 </mat-menu>
 
-<button mat-button [matMenuTriggerFor]="beforeMenu">Cinéclub</button>
-<mat-menu #beforeMenu="matMenu" xPosition="before">
-  <button mat-menu-item>Item 1</button>
-  <button mat-menu-item>Item 2</button>
-</mat-menu>
-<button *ngIf="isConnected" [routerLink]="['/user']">Utilisateur</button>
+<button mat-button >Cinéclub</button>
+<mat-icon *ngIf="isConnected" >person</mat-icon>
 <button *ngIf="!isConnected" mat-button [routerLink]="['/connexion']">Connexion</button>
-<button *ngIf="isConnected" mat-button (click)="clearSession()" [routerLink]="['/connexion']">Déconnexion</button>
+
+<button mat-button *ngIf="isConnected" [matMenuTriggerFor]="beforeMenu">Utilisateur</button>
+<mat-menu #beforeMenu="matMenu"  xPosition="before">
+  <button mat-menu-item [routerLink]="['/user']">Profil</button>
+  <button mat-menu-item (click)="clearSession()" [routerLink]="['/connexion']">Déconnexion</button>
+</mat-menu>
+
 
 
