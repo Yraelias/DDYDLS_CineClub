@@ -11,6 +11,7 @@ import { SharedDataService } from '../../shared.service';
 })
 export class TopNavBarComponent implements OnInit {
   isConnected:boolean
+  Username:string | null
   constructor(
   private sharedDataService: SharedDataService
   ) {  
@@ -20,6 +21,7 @@ export class TopNavBarComponent implements OnInit {
     if (sessionStorage.getItem('isConnected'))
     {
       this.isConnected = true;
+      this.Username = sessionStorage.getItem('Username');
     }
     this.sharedDataService.barreTacheData$.subscribe((data) =>
      this.ngOnInit()

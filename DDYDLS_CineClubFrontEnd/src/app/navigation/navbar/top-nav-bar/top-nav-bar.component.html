@@ -12,7 +12,7 @@
 <mat-icon *ngIf="isConnected" >person</mat-icon>
 <button *ngIf="!isConnected" mat-button [routerLink]="['/connexion']">Connexion</button>
 
-<button mat-button *ngIf="isConnected" [matMenuTriggerFor]="beforeMenu">Utilisateur</button>
+<button mat-button *ngIf="isConnected" [matMenuTriggerFor]="beforeMenu">{{Username}}</button>
 <mat-menu #beforeMenu="matMenu"  xPosition="before">
   <button mat-menu-item [routerLink]="['/user']">Profil</button>
   <button mat-menu-item (click)="clearSession()" [routerLink]="['/connexion']">Déconnexion</button>
