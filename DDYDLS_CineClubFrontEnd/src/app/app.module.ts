@@ -25,6 +25,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { AuthService } from './auth/auth.service';
 import { UserComponent } from './main/content/pages/user/user.component';
+import { AuthGuardService } from './auth/auth-guard.service';
 
 
 const appRoutes: Routes = [
@@ -46,7 +47,7 @@ const appRoutes: Routes = [
   {
     path:'user',
     component: UserComponent,
-    //resolve: {data: MovieService}
+    canActivate :[AuthGuardService]
   },
   {
     path: '**',
@@ -83,7 +84,7 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule
   ],
-  providers: [MovieService,AuthService],
+  providers: [MovieService,AuthService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
