@@ -5,7 +5,7 @@
 
 <button mat-button [matMenuTriggerFor]="belowMenu">Films</button>
 <mat-menu #belowMenu="matMenu" yPosition="below">
-  <button mat-menu-item>Liste</button>
+  <button mat-menu-item [routerLink]="['/movies']">Liste</button>
 </mat-menu>
 
 <button mat-button >Cinéclub</button>
