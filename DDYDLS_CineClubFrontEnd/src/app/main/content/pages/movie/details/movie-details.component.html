@@ -8,7 +8,10 @@
 
         <a *ngIf="isConnected" >MA NOTE :  {{movie.ratingForUser}}</a><br>
         
-        NOTE YOSHI : {{movie.avgRating}}</p>
+        NOTE YOSHI : {{movie.avgRating}}<br>
+        
+        <button mat-raised-button (click)="openDialog('0ms', '0ms')" >Ajouter ma note</button> </p>
+
     </mat-grid-tile>
     
   </mat-grid-list>

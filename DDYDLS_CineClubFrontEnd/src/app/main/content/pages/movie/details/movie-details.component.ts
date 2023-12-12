@@ -3,6 +3,8 @@ import { MovieService } from '../../movie.service';
 import { Movie } from 'src/app/models/movie';
 import { ActivatedRoute } from '@angular/router';
 import { TMDBMovie, Result } from 'src/app/models/tmdbmovie';
+import { DialogAddorUpdateRatingComponent } from '../../rating/AddOrUpdateRating/dialog-addor-update-rating.component';
+import { MatDialog, MatDialogRef, MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent } from '@angular/material/dialog';
 
 
 @Component({
@@ -17,8 +19,9 @@ export class MovieDetailsComponent implements OnInit {
   result !: Result; 
   URLimg:any = "https://image.tmdb.org/t/p/w500//gEU2QniE6E77NI6lCU6MxlNBvIx.jpg";
   isConnected:boolean
+  myNoteIsNull : boolean
 
-  constructor(private movie_service : MovieService, private activedRoute : ActivatedRoute) {
+  constructor(private movie_service : MovieService, private activedRoute : ActivatedRoute, public dialog: MatDialog) {
     this.movie.id_movie  = activedRoute.snapshot.params['id'];
    }
 
@@ -53,4 +56,9 @@ export class MovieDetailsComponent implements OnInit {
     })
   }
 
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    this.dialog.open(DialogAddorUpdateRatingComponent,{
+      data: {movie : this.movie}
+    });
+  }
 }
