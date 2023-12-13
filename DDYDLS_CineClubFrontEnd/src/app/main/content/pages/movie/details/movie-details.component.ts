@@ -58,7 +58,7 @@ export class MovieDetailsComponent implements OnInit {
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
     this.dialog.open(DialogAddorUpdateRatingComponent,{
-      data: {movie : this.movie}
+      data: {movie : this.movie} 
     });
   }
 }

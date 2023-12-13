@@ -8,7 +8,7 @@ import { Movie } from 'src/app/models/movie';
   styleUrls: ['./dialog-addor-update-rating.component.css']
 })
 export class DialogAddorUpdateRatingComponent implements OnInit {
-
+  URLimg :string
   movie : any
   constructor(public dialogRef: MatDialogRef<DialogAddorUpdateRatingComponent>, @Inject(MAT_DIALOG_DATA) public data: Movie) {
     this.movie = data;
@@ -16,6 +16,7 @@ export class DialogAddorUpdateRatingComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.movie.movie)
     console.log(this.movie.movie.name)
+ 
   }
   
   

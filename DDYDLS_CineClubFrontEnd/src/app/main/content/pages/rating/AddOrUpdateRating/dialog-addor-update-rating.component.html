@@ -1,13 +1,25 @@
 <h1 mat-dialog-title>{{movie.movie.name}}</h1>
 <div mat-dialog-content>
   Combien d'oeufs lui donnez vous ? <br>
-  Oeuf oeuf Oueuf Oeuf oeuf Oueuf  <br>
+  <img mat-card-image src="/assets/icons/OeufNB.png">
+  <img mat-card-image src="/assets/icons/OeufNB.png">
+  <img mat-card-image src="/assets/icons/OeufNB.png">
+  <img mat-card-image src="/assets/icons/OeufNB.png">
+  <img mat-card-image src="/assets/icons/OeufNB.png">
+  <img mat-card-image src="/assets/icons/OeufNB.png"><br>
   Le recommandez vous ? <br>
-  Oui | NON  <br>
+  <img mat-card-image src="/assets/icons/OeufGreen.png">  <img mat-card-image src="/assets/icons/OeufRed.png"> <br>
   Commentaire <br>
-  BLABLABLABLA <br>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Message</mat-label>
+      <input matInput #message maxlength="500" placeholder="Ex. I need help with...">
+      <mat-hint align="start"><strong>caractères maximum</strong> </mat-hint>
+      <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+    </mat-form-field>
+  </form>
 </div>
 <div mat-dialog-actions>
-  <button mat-button mat-dialog-close>No</button>
-  <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
+  <button mat-button mat-dialog-close>Annuler</button>
+  <button mat-button mat-dialog-close cdkFocusInitial>Valider le vote</button>
 </div>
