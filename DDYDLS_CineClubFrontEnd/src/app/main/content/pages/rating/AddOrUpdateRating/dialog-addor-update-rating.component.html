@@ -1,14 +1,23 @@
 <h1 mat-dialog-title>{{movie.movie.name}}</h1>
 <div mat-dialog-content>
   Combien d'oeufs lui donnez vous ? <br>
-  <img mat-card-image src="/assets/icons/OeufNB.png">
-  <img mat-card-image src="/assets/icons/OeufNB.png">
-  <img mat-card-image src="/assets/icons/OeufNB.png">
-  <img mat-card-image src="/assets/icons/OeufNB.png">
-  <img mat-card-image src="/assets/icons/OeufNB.png">
-  <img mat-card-image src="/assets/icons/OeufNB.png"><br>
+  <img mat-card-image src="/assets/icons/OeufNB.png"   *ngIf="ratingSelectionned == 0" (click)="onClickRating(1)">
+  <img mat-card-image src="/assets/icons/OeufBlue.png" *ngIf="ratingSelectionned >= 1" (click)="onClickRating(1)">
+  <img mat-card-image src="/assets/icons/OeufNB.png"   *ngIf="ratingSelectionned <= 1" (click)="onClickRating(2)">
+  <img mat-card-image src="/assets/icons/OeufBlue.png" *ngIf="ratingSelectionned >= 2" (click)="onClickRating(2)">
+  <img mat-card-image src="/assets/icons/OeufNB.png"   *ngIf="ratingSelectionned <= 2" (click)="onClickRating(3)">
+  <img mat-card-image src="/assets/icons/OeufBlue.png" *ngIf="ratingSelectionned >= 3" (click)="onClickRating(3)">
+  <img mat-card-image src="/assets/icons/OeufNB.png"   *ngIf="ratingSelectionned <= 3" (click)="onClickRating(4)">
+  <img mat-card-image src="/assets/icons/OeufBlue.png" *ngIf="ratingSelectionned >= 4" (click)="onClickRating(4)">
+  <img mat-card-image src="/assets/icons/OeufNB.png"   *ngIf="ratingSelectionned <= 4" (click)="onClickRating(5)">
+  <img mat-card-image src="/assets/icons/OeufBlue.png" *ngIf="ratingSelectionned >= 5" (click)="onClickRating(5)">
+  <img mat-card-image src="/assets/icons/OeufNB.png"   *ngIf="ratingSelectionned <= 5" (click)="onClickRating(6)">
+  <img mat-card-image src="/assets/icons/OeufBlue.png" *ngIf="ratingSelectionned >= 6"><br>
   Le recommandez vous ? <br>
-  <img mat-card-image src="/assets/icons/OeufGreen.png">  <img mat-card-image src="/assets/icons/OeufRed.png"> <br>
+  <img mat-card-image src="/assets/icons/OeufGreen.png" *ngIf="Reco == 0 || Reco == 1" (click)="onClickRecom(1)">
+  <img mat-card-image src="/assets/icons/OeufNB.png" *ngIf="Reco == 2" (click)="onClickRecom(1)">
+  <img mat-card-image src="/assets/icons/OeufRed.png" *ngIf="Reco == 0 || Reco == 2" (click)="onClickRecom(2)">
+  <img mat-card-image src="/assets/icons/OeufNB.png" *ngIf="Reco == 1" (click)="onClickRecom(2)"> <br>
   Commentaire <br>
   <form class="example-form">
     <mat-form-field class="example-full-width">
@@ -21,5 +30,5 @@
 </div>
 <div mat-dialog-actions>
   <button mat-button mat-dialog-close>Annuler</button>
-  <button mat-button mat-dialog-close cdkFocusInitial>Valider le vote</button>
+  <button mat-button mat-dialog-close cdkFocusInitial (click)="validateRating(message.value)">Valider le vote</button>
 </div>

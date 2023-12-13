@@ -8,7 +8,8 @@ import { Movie } from 'src/app/models/movie';
   styleUrls: ['./dialog-addor-update-rating.component.css']
 })
 export class DialogAddorUpdateRatingComponent implements OnInit {
-  URLimg :string
+  ratingSelectionned : number = 0;
+  Reco : number = 0
   movie : any
   constructor(public dialogRef: MatDialogRef<DialogAddorUpdateRatingComponent>, @Inject(MAT_DIALOG_DATA) public data: Movie) {
     this.movie = data;
@@ -16,9 +17,26 @@ export class DialogAddorUpdateRatingComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.movie.movie)
     console.log(this.movie.movie.name)
- 
+    
   }
   
-  
+  onClickRating(rating : number)  {
+    console.log ("Je choisis le " +rating);
+    this.ratingSelectionned = rating;
+  }
+
+  onClickRecom(reco : number)  {
+    console.log ("Je choisis le " +reco);
+    if(this.Reco == reco) this.Reco = 0;
+    else this.Reco = reco; 
+  }
+
+  validateRating(message : string){
+    console.log(this.ratingSelectionned);
+    console.log(this.Reco);
+    console.log(message);
+    console.log(sessionStorage.getItem("id"));
+    console.log(this.movie.movie.name)
+  }
 
 }

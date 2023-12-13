@@ -13,7 +13,7 @@ export class RatingService {
   private _bookListUrl = 'https://localhost:44379/api/rating';
   constructor(private httpClient: HttpClient) { }
   
-  postratingforMovie(Id_User : number, Id_Movie : number, rating : number ) : Observable<Rating> {
+  postRatingForMovie(Id_User : number, Id_Movie : number, rating : number ) : Observable<Rating> {
     
     return this.httpClient.post<Rating>('https://localhost:44379/api/rating/' , {
       Id_User : Id_User,
