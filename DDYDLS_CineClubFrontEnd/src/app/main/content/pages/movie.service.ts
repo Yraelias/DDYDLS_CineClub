@@ -10,7 +10,7 @@ import { Result, TMDBMovie } from 'src/app/models/tmdbmovie';
 export class MovieService {
   
   public movies : Movie[] = []
-  private _bookListUrl =  'https://localhost:44379/api/movie';
+  private _bookListUrl = 'https://localhost:44379/api/movie';
   constructor(private httpClient: HttpClient) { }
 
   getMovies() : Observable<Movie[]> {
