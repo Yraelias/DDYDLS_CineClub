@@ -28,6 +28,7 @@ import { UserComponent } from './main/content/pages/user/user.component';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { DialogAddorUpdateRatingComponent } from './main/content/pages/rating/AddOrUpdateRating/dialog-addor-update-rating.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { RatingService } from './main/content/pages/rating/rating.service';
 
 
 const appRoutes: Routes = [
@@ -88,7 +89,7 @@ const appRoutes: Routes = [
     MatInputModule,
     MatDialogModule 
   ],
-  providers: [MovieService,AuthService,AuthGuardService],
+  providers: [MovieService,AuthService,AuthGuardService,RatingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

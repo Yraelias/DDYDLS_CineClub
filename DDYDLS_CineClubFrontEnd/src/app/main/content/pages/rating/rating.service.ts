@@ -11,15 +11,28 @@ export class RatingService {
   public ratings : Rating[] = []
   public today = new Date();
   private _bookListUrl = 'https://localhost:44379/api/rating';
-  constructor(private httpClient: HttpClient) { }
+  constructor( private httpClient: HttpClient) { }
   
-  postRatingForMovie(Id_User : number, Id_Movie : number, rating : number ) : Observable<Rating> {
+  addRatingForMovie(Id_User : number, Id_Movie : number, rating : number ) : Observable<Rating> {
     
     return this.httpClient.post<Rating>('https://localhost:44379/api/rating/' , {
       Id_User : Id_User,
       Id_Movie : Id_Movie,
       date : this.today,
       rating : rating
+  });
+  }
+
+  updateRatingForMovie(Id_User : number, Id_Movie : number, rating : number ) : Observable<Rating> {
+    console.log(Id_User)
+    console.log(Id_Movie)
+    console.log(rating)
+    console.log(this.today)
+    return this.httpClient.put<Rating>('https://localhost:44379/api/rating/' , {
+      Id_User : Id_User,
+      Id_Movie : Id_Movie,
+      date : this.today,
+      Ratings : rating
   });
   }
 }

@@ -45,7 +45,7 @@ namespace DDYDLS_CineClubDAL.Repository
 
         public void Update(Rating g)
         {
-            Command cmd = new Command("UPDATE [dbo].[T_Rating] SET ([Id_User] = Id_User,[Id_Movie] = Id_Movie,[Rating] = Rating,[Date] = Date) WHERE ID_Rating = @Id_Rating");
+            Command cmd = new Command("UPDATE [dbo].[T_Rating] SET [Rating] = @Rating,[Date] = @Date WHERE Id_User = @Id_User AND Id_Movie = @Id_Movie");
             cmd.AddParameter("Id_Rating", g.Id_Rating);
             cmd.AddParameter("Id_User", g.Id_User);
             cmd.AddParameter("Id_Movie", g.Id_Movie);

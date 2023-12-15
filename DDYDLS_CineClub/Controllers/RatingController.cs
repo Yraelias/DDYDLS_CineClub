@@ -69,8 +69,8 @@ namespace DDYDLS_CineClubApi.Controllers
 }
 
         // PUT api/<User>/5
-        [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] api.Rating Rating)
+        [HttpPut]
+        public IActionResult Put([FromBody] api.Rating Rating)
         {
             try
             {

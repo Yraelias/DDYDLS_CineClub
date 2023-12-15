@@ -14,7 +14,7 @@ import { MatDialog, MatDialogRef, MatDialogActions, MatDialogClose, MatDialogTit
 })
 export class MovieDetailsComponent implements OnInit {
   id_User:any  = 1
-  movie : Movie = {id_movie : 1, name : '', id_studio : 0, year:0, synopsis : '', rating:{ id_movie :0, id_user:0,id_rating:0,date : new Date, ratings : 0}, avgRating:0 ,ratingForUser:0 };
+  movie : Movie = {id_movie : 1, name : '', id_studio : 0, year:0, synopsis : '', rating:{ id_Movie :0, id_User:0,id_Rating:0,date : new Date, Ratings : 0}, avgRating:0 ,ratingForUser:0 };
   tmdbmovie!: TMDBMovie;
   result !: Result; 
   URLimg:any = "https://image.tmdb.org/t/p/w500//gEU2QniE6E77NI6lCU6MxlNBvIx.jpg";

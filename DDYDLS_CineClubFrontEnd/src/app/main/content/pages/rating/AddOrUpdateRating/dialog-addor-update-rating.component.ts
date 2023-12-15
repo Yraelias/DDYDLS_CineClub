@@ -2,6 +2,9 @@ import { Component, Inject, OnInit, inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { MatInput } from '@angular/material/input';
 import { Movie } from 'src/app/models/movie';
+import { RatingService } from '../rating.service';
+import { Rating } from 'src/app/models/rating';
+import { error } from 'console';
 
 @Component({
   selector: 'app-dialog-addor-update-rating',
@@ -13,8 +16,9 @@ export class DialogAddorUpdateRatingComponent implements OnInit {
   Reco : number = 0
   movie : any
   message : MatInput
+  id_User : number;
   AddOrUpdate : boolean = false //False = Add and True = Update
-  constructor(public dialogRef: MatDialogRef<DialogAddorUpdateRatingComponent>, @Inject(MAT_DIALOG_DATA) public data: Movie) {
+  constructor(private ratingservice : RatingService, public dialogRef: MatDialogRef<DialogAddorUpdateRatingComponent>, @Inject(MAT_DIALOG_DATA) public data: Movie) {
     this.movie = data;
    }
   ngOnInit(): void {
@@ -38,13 +42,24 @@ export class DialogAddorUpdateRatingComponent implements OnInit {
   }
 
   validateRating(message : string){
+    let ok : Boolean;
     console.log(this.ratingSelectionned);
     console.log(this.Reco);
     console.log(message);
     console.log(sessionStorage.getItem("id"));
+    this.id_User = parseInt(sessionStorage.getItem("id") || "0") ;
     console.log(this.movie.movie.name)
-    if(!this.AddOrUpdate) console.log("Ajout"); //Service Ajout
-    else console.log("Modifier") //Service modifié
+    if(!this.AddOrUpdate) {
+      this.ratingservice.addRatingForMovie(this.id_User, this.movie.movie.id_Movie, this.ratingSelectionned).subscribe({
+        next : (data : any) => {ok = true},
+        error : (error) => {console.log(error)},
+    }); //Service Ajout
+    }
+    else this.ratingservice.updateRatingForMovie(this.id_User, this.movie.movie.id_Movie, this.ratingSelectionned).subscribe({
+      next : (data : any) => {ok = true},
+      error : (error) => {console.log(error)},
+  });  //Service modifié
+    console.log("note ajoutée ou modifié");
   }
 
 }
