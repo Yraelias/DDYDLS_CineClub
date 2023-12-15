@@ -6,7 +6,7 @@
     <mat-grid-tile>
         <p>ANNEE :  {{result.results[0].release_date}} <br>
 
-        <a *ngIf="isConnected" >MA NOTE :  {{movie.ratingForUser}}</a><br>
+        <a *ngIf="isConnected && movie.ratingForUser != 10" >MA NOTE :  {{movie.ratingForUser}}</a><br>
         
         NOTE YOSHI : {{movie.avgRating}}<br>
         

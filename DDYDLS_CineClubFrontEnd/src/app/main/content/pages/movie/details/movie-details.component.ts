@@ -13,7 +13,7 @@ import { MatDialog, MatDialogRef, MatDialogActions, MatDialogClose, MatDialogTit
   styleUrls: ['./movie-details.component.css']
 })
 export class MovieDetailsComponent implements OnInit {
-  id_User:any  = 1
+  id_User:any  
   movie : Movie = {id_Movie : 1, name : '', id_Studio : 0, year:0, synopsis : '', rating:{ id_Movie :0, id_User:0,id_Rating:0,date : new Date, Ratings : 0}, avgRating:0 ,ratingForUser:0 };
   tmdbmovie!: TMDBMovie;
   result !: Result; 
@@ -23,17 +23,28 @@ export class MovieDetailsComponent implements OnInit {
 
   constructor(private movie_service : MovieService, private activedRoute : ActivatedRoute, public dialog: MatDialog) {
     this.movie.id_Movie  = activedRoute.snapshot.params['id'];
+    this.id_User = sessionStorage.getItem('id');
    }
 
   ngOnInit(): void {
-    this.loadMovie();
+    if (this.id_User == null || this.id_User == undefined) this.loadMovieVisitor();
+    else this.loadMovie();
     if (sessionStorage.getItem('isConnected'))
     {
       this.isConnected = true;
       this.id_User = sessionStorage.getItem('id');
     }
   }
-
+  loadMovieVisitor():void{
+    this.movie_service.getOneMovieVisitor(this.movie.id_Movie).subscribe({
+      next: (data :Movie) =>
+      {
+        console.log(data);
+        this.movie = data;
+        this.loadTMDBMovie();
+      }
+    })
+  }
   loadMovie():void{
     this.movie_service.getOneMovie(this.id_User,this.movie.id_Movie).subscribe({
       next: (data :Movie) =>

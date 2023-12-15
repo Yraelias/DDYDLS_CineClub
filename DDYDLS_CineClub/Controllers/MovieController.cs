@@ -35,7 +35,20 @@ namespace DDYDLS_CineClubApi.Controllers
                 return BadRequest(e.Message);
             }
         }
-
+        // GET api/<Movie>/UserId/5
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+            /* try
+             {
+                 */
+            return Ok(_MovieService.GetOnevisitor(id));
+            /*}
+            catch (Exception e)
+            { */
+            //return BadRequest(e.Message);
+            //}
+        }
         // GET api/<Movie>/UserId/5
         [HttpGet("{UserId}/{id}")]
         public IActionResult Get(int userId, int id)
