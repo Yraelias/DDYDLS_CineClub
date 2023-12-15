@@ -62,4 +62,6 @@ export class DialogAddorUpdateRatingComponent implements OnInit {
     console.log("note ajoutée ou modifié");
   }
 
+  
+
 }

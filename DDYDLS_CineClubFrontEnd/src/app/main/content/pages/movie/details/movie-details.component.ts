@@ -14,7 +14,7 @@ import { MatDialog, MatDialogRef, MatDialogActions, MatDialogClose, MatDialogTit
 })
 export class MovieDetailsComponent implements OnInit {
   id_User:any  = 1
-  movie : Movie = {id_movie : 1, name : '', id_studio : 0, year:0, synopsis : '', rating:{ id_Movie :0, id_User:0,id_Rating:0,date : new Date, Ratings : 0}, avgRating:0 ,ratingForUser:0 };
+  movie : Movie = {id_Movie : 1, name : '', id_Studio : 0, year:0, synopsis : '', rating:{ id_Movie :0, id_User:0,id_Rating:0,date : new Date, Ratings : 0}, avgRating:0 ,ratingForUser:0 };
   tmdbmovie!: TMDBMovie;
   result !: Result; 
   URLimg:any = "https://image.tmdb.org/t/p/w500//gEU2QniE6E77NI6lCU6MxlNBvIx.jpg";
@@ -22,7 +22,7 @@ export class MovieDetailsComponent implements OnInit {
   myNoteIsNull : boolean
 
   constructor(private movie_service : MovieService, private activedRoute : ActivatedRoute, public dialog: MatDialog) {
-    this.movie.id_movie  = activedRoute.snapshot.params['id'];
+    this.movie.id_Movie  = activedRoute.snapshot.params['id'];
    }
 
   ngOnInit(): void {
@@ -35,7 +35,7 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   loadMovie():void{
-    this.movie_service.getOneMovie(this.id_User,this.movie.id_movie).subscribe({
+    this.movie_service.getOneMovie(this.id_User,this.movie.id_Movie).subscribe({
       next: (data :Movie) =>
       {
         console.log(data);
@@ -45,6 +45,14 @@ export class MovieDetailsComponent implements OnInit {
     })
   }
 
+  loadOnlyMovie():void{
+    this.movie_service.getOneMovie(this.id_User,this.movie.id_Movie).subscribe({
+      next: (data :Movie) =>
+      {
+        this.movie = data;
+      }
+    })
+  }
   loadTMDBMovie(): void{
     this.movie_service.getTMDBMovie(this.movie.name).subscribe({
       next:(data :Result) =>
@@ -56,9 +64,14 @@ export class MovieDetailsComponent implements OnInit {
     })
   }
 
-  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
-    this.dialog.open(DialogAddorUpdateRatingComponent,{
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string) : void {
+    const dialogRef =  this.dialog.open(DialogAddorUpdateRatingComponent,{
       data: {movie : this.movie} 
+    });
+
+    dialogRef.afterClosed().subscribe(data => {
+      console.log ("Dialog fermé : "+ data);
+      this.loadOnlyMovie()
     });
   }
 }
