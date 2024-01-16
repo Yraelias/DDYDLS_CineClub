@@ -75,16 +75,14 @@ namespace DDYDLS_CineClubDAL.Repository
             if (_connection.ExecuteScalar(cmd)  == null) return 10;
             else return (int)_connection.ExecuteScalar(cmd);
         }
-        public int RatebyIdMovie(int ID_Movie, int ID_User)
+        public IEnumerable<Rating> RatingsbyIdMovie(int ID_Movie)
         {
             object rep;
             Command cmd = new Command("SELECT ID_Rating, Id_User, ID_Movie, Rating, Date FROM (SELECT ID_Rating,Id_User,ID_Movie,Rating,Date," +
                 "                      ROW_NUMBER() OVER (PARTITION BY Id_User ORDER BY Date DESC) as row_num" +
                 "                      FROM [T_Rating] WHERE ID_Movie = @Id_Movie) AS ranked WHERE row_num = 1;");
             cmd.AddParameter("Id_Movie", ID_Movie);
-            cmd.AddParameter("Id_User", ID_User);
-            if (_connection.ExecuteScalar(cmd) == null) return 10;
-            else return (int)_connection.ExecuteScalar(cmd);
+            return _connection.ExecuteReader(cmd, Converters.RatingConvert);
         }
     }
 }
