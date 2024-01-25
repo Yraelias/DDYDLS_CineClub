@@ -35,4 +35,9 @@ export class RatingService {
       Ratings : rating
   });
   }
+
+  getRatingForMovie(Id_Movie :number ) : Observable<Rating[]>{
+    console.log("test");
+    return this.httpClient.get<Rating[]>('https://localhost:44379/api/rating/'+Id_Movie)
+  }
 }
