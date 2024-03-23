@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit, inject } from '@angular/core';
-import { MatDialog, MatDialogRef, MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { MatInput } from '@angular/material/input';
+import { MatLegacyDialog as MatDialog, MatLegacyDialogRef as MatDialogRef, MatLegacyDialogActions as MatDialogActions, MatLegacyDialogClose as MatDialogClose, MatLegacyDialogTitle as MatDialogTitle, MatLegacyDialogContent as MatDialogContent, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA} from '@angular/material/legacy-dialog';
+import { MatLegacyInput as MatInput } from '@angular/material/legacy-input';
 import { Movie } from 'src/app/models/movie';
 import { RatingService } from '../rating.service';
 import { Rating } from 'src/app/models/rating';
