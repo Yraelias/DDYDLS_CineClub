@@ -51,10 +51,11 @@ G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\obj\Debug\net7.0\staticwebass
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\obj\Debug\net7.0\staticwebassets.build.json
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\obj\Debug\net7.0\staticwebassets.development.json
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\obj\Debug\net7.0\scopedcss\bundle\DDYDLS_CineClubApi.styles.css
-G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\obj\Debug\net7.0\DDYDLS_CineClubApi.csproj.CopyComplete
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\obj\Debug\net7.0\DDYDLS_CineClubApi.dll
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\obj\Debug\net7.0\refint\DDYDLS_CineClubApi.dll
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\obj\Debug\net7.0\DDYDLS_CineClubApi.pdb
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\obj\Debug\net7.0\DDYDLS_CineClubApi.genruntimeconfig.cache
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\obj\Debug\net7.0\ref\DDYDLS_CineClubApi.dll
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\obj\Debug\net7.0\DDYDLS_CineClubApi.sourcelink.json
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\obj\Debug\net7.0\DDYDLS_C.F803754F.Up2Date

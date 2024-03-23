@@ -1123,7 +1123,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dav23\\.nuget\\packages\\": {},
+    "C:\\Users\\david\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
@@ -1132,14 +1132,14 @@
       "projectUniqueName": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubLocalModel\\DDYDLS_CineClubLocalModel.csproj",
       "projectName": "DDYDLS_CineClubLocalModel",
       "projectPath": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubLocalModel\\DDYDLS_CineClubLocalModel.csproj",
-      "packagesPath": "C:\\Users\\dav23\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
       "outputPath": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubLocalModel\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\dav23\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1164,6 +1164,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -1195,8 +1200,30 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Le package 'System.Data.SqlClient' 4.8.4 présente une vulnérabilité de gravité moyenne connue, https://github.com/advisories/GHSA-8g2p-5pqh-5jmc.",
+      "libraryId": "System.Data.SqlClient",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Le package 'System.Data.SqlClient' 4.8.4 présente une vulnérabilité de gravité élevé(e) connue, https://github.com/advisories/GHSA-98g6-xh36-x2p7.",
+      "libraryId": "System.Data.SqlClient",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

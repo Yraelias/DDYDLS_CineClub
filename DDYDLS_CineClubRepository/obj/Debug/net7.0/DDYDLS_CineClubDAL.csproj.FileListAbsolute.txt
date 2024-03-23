@@ -18,9 +18,10 @@ G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\obj\Debug\net7.0\DD
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\obj\Debug\net7.0\DDYDLS_CineClubDAL.AssemblyInfoInputs.cache
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\obj\Debug\net7.0\DDYDLS_CineClubDAL.AssemblyInfo.cs
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\obj\Debug\net7.0\DDYDLS_CineClubDAL.csproj.CoreCompileInputs.cache
-G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\obj\Debug\net7.0\DDYDLS_CineClubDAL.csproj.CopyComplete
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\obj\Debug\net7.0\DDYDLS_CineClubDAL.dll
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\obj\Debug\net7.0\refint\DDYDLS_CineClubDAL.dll
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\obj\Debug\net7.0\DDYDLS_CineClubDAL.pdb
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\obj\Debug\net7.0\DDYDLS_CineClubDAL.genruntimeconfig.cache
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\obj\Debug\net7.0\ref\DDYDLS_CineClubDAL.dll
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\obj\Debug\net7.0\DDYDLS_CineClubDAL.sourcelink.json
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\obj\Debug\net7.0\DDYDLS_C.826FB8FF.Up2Date
