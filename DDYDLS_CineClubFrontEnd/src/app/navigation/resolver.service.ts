@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Movie } from '../models/movie';
 import { MovieService } from '../main/content/pages/movie.service';
@@ -7,7 +7,7 @@ import { MovieService } from '../main/content/pages/movie.service';
 @Injectable({
   providedIn: 'root'
 })
-export class MovieResolverService implements Resolve<Movie> {
+export class MovieResolverService  {
 
   constructor(private _service : MovieService) { }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):  Observable<Movie> {
