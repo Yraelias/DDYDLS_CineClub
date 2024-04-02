@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -31,6 +32,7 @@ import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/lega
 import { RatingService } from './main/content/pages/rating/rating.service';
 import { CommentaryComponent } from './main/content/pages/movie/commentary/commentary.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+
 
 
 const appRoutes: Routes = [
@@ -92,7 +94,8 @@ const appRoutes: Routes = [
     MatInputModule,
     MatDialogModule,
     MatToolbarModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCardModule
   ],
   providers: [MovieService,AuthService,AuthGuardService,RatingService],
   bootstrap: [AppComponent]
