@@ -94,8 +94,7 @@ const appRoutes: Routes = [
     MatInputModule,
     MatDialogModule,
     MatToolbarModule,
-    MatGridListModule,
-    MatCardModule
+    MatGridListModule
   ],
   providers: [MovieService,AuthService,AuthGuardService,RatingService],
   bootstrap: [AppComponent]
