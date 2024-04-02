@@ -30,6 +30,7 @@ import { DialogAddorUpdateRatingComponent } from './main/content/pages/rating/Ad
 import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
 import { RatingService } from './main/content/pages/rating/rating.service';
 import { CommentaryComponent } from './main/content/pages/movie/commentary/commentary.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 const appRoutes: Routes = [
@@ -89,7 +90,8 @@ const appRoutes: Routes = [
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDialogModule 
+    MatDialogModule,
+    MatToolbarModule
   ],
   providers: [MovieService,AuthService,AuthGuardService,RatingService],
   bootstrap: [AppComponent]
