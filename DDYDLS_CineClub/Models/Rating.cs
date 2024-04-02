@@ -14,5 +14,9 @@ namespace DDYDLS_CineClubApi.Models
         public int Ratings { get; set; }
 
         public DateTime Date { get; set; }
+
+        public int Approbate { get; set; }
+
+        public string Commentary { get; set; }
     }
 }

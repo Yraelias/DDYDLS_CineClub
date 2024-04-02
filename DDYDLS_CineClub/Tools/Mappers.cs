@@ -146,7 +146,9 @@ namespace DDYDLS_CineClubApi.Tools
                 Id_Rating = newMovie.Id_Rating,
                 Id_User = newMovie.Id_User, 
                 Ratings = newMovie.Ratings,
-                Date = newMovie.Date 
+                Date = newMovie.Date ,
+                Commentary = newMovie.Commentary,
+                Approbate = newMovie.Approbate
     };
         }
         public static api.Rating toApi(this model.Rating newMovie)
@@ -157,7 +159,9 @@ namespace DDYDLS_CineClubApi.Tools
                 Id_Rating = newMovie.Id_Rating,
                 Id_User = newMovie.Id_User,
                 Ratings = newMovie.Ratings,
-                Date = newMovie.Date
+                Date = newMovie.Date,
+                Commentary = newMovie.Commentary,
+                Approbate = newMovie.Approbate
 
             };
         }

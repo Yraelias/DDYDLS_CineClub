@@ -142,7 +142,9 @@ namespace DDYDLS_CineClubLocalModel.Tools
                Id_Movie = newRating.Id_Movie,
                Id_User = newRating.Id_User,
                Date = newRating.Date,
-               Ratings = newRating.Ratings
+               Ratings = newRating.Ratings,
+               Commentary = newRating.Commentary,
+               Approbate = newRating.Approbate
             };
         }
         public static dal.Rating toDal(this Models.Rating newRating)
@@ -153,7 +155,9 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Id_Movie = newRating.Id_Movie,
                 Id_User = newRating.Id_User,
                 Date = newRating.Date,
-                Ratings = newRating.Ratings
+                Ratings = newRating.Ratings,
+                Commentary = newRating.Commentary,
+                Approbate = newRating.Approbate
             };
         }
     }

@@ -63,6 +63,7 @@ namespace DDYDLS_CineClubDAL.Repository
         {
             Command cmd = new Command("SELECT AVG (Rating) FROM [T_Rating] WHERE Id_Movie = @Id ");
             cmd.AddParameter("Id", iD);
+            if (_connection.ExecuteScalar(cmd) == null) return 0;
             return (int)_connection.ExecuteScalar(cmd);
         }
 

@@ -44,6 +44,22 @@
 				</Entry>
 			</Relationship>
 		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[0]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[T_Rating]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[T_Rating].[Approbate]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_10]">
 			<Relationship Name="Columns">
 				<Entry>
@@ -65,7 +81,7 @@
 					<References Name="[dbo].[T_Movie]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_4]">
 			<Relationship Name="Columns">
@@ -88,7 +104,7 @@
 					<References Name="[dbo].[T_Movie]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_5]">
 			<Relationship Name="Columns">
@@ -111,7 +127,7 @@
 					<References Name="[dbo].[T_Genre]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_9]">
 			<Relationship Name="Columns">
@@ -134,7 +150,7 @@
 					<References Name="[dbo].[T_User]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_1]">
 			<Relationship Name="ColumnSpecifications">
@@ -153,7 +169,7 @@
 					<References Name="[dbo].[T_Movie]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_T_Genre]">
 			<Relationship Name="ColumnSpecifications">
@@ -172,7 +188,7 @@
 					<References Name="[dbo].[T_Genre]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_T_MovieToGenre]">
 			<Relationship Name="ColumnSpecifications">
@@ -191,7 +207,7 @@
 					<References Name="[dbo].[T_MovieToGenre]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_T_Person]">
 			<Relationship Name="ColumnSpecifications">
@@ -210,7 +226,7 @@
 					<References Name="[dbo].[T_Person]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_T_Rating]">
 			<Relationship Name="ColumnSpecifications">
@@ -229,7 +245,7 @@
 					<References Name="[dbo].[T_Rating]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_T_User]">
 			<Relationship Name="ColumnSpecifications">
@@ -248,7 +264,7 @@
 					<References Name="[dbo].[T_User]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[T_Genre]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -293,7 +309,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="8" />
+			<AttachedAnnotation Disambiguator="9" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[T_Movie]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -370,7 +386,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="7" />
+			<AttachedAnnotation Disambiguator="8" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[T_MovieToGenre]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -429,9 +445,9 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="4" />
 			<AttachedAnnotation Disambiguator="5" />
-			<AttachedAnnotation Disambiguator="9" />
+			<AttachedAnnotation Disambiguator="6" />
+			<AttachedAnnotation Disambiguator="10" />
 		</Element>
 		<Element Type="SqlIndex" Name="[dbo].[T_MovieToGenre].[FK_2]">
 			<Relationship Name="ColumnSpecifications">
@@ -544,7 +560,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="10" />
+			<AttachedAnnotation Disambiguator="11" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[T_Rating]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -646,15 +662,32 @@
 						</Relationship>
 					</Element>
 				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[T_Rating].[Approbate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="3" />
+					</Element>
+				</Entry>
 			</Relationship>
 			<Relationship Name="Schema">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="3" />
-			<AttachedAnnotation Disambiguator="6" />
-			<AttachedAnnotation Disambiguator="11" />
+			<AttachedAnnotation Disambiguator="4" />
+			<AttachedAnnotation Disambiguator="7" />
+			<AttachedAnnotation Disambiguator="12" />
 		</Element>
 		<Element Type="SqlIndex" Name="[dbo].[T_Rating].[FK_2]">
 			<Relationship Name="ColumnSpecifications">
@@ -815,7 +848,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="12" />
+			<AttachedAnnotation Disambiguator="13" />
 		</Element>
 	</Model>
 </DataSchemaModel>

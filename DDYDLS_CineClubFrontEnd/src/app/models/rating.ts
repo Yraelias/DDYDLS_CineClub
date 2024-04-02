@@ -4,4 +4,6 @@ export class Rating {
     id_User : number;
     Ratings : number;
     date : Date;
+    approbate : number;
+    commentary : string;
 }

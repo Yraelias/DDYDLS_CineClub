@@ -66,7 +66,9 @@ namespace DAL.Tools
                 Id_User = Convert.IsDBNull((int)reader["Id_User"]) ? 0 : (int)reader["Id_User"],
                 Id_Movie = Convert.IsDBNull((int)reader["Id_Movie"]) ? 0 : (int)reader["Id_Movie"],
                 Ratings = Convert.IsDBNull((int)reader["Rating"]) ? 0 : (int)reader["Rating"],
-                Date = Convert.IsDBNull((DateTime)reader["Date"]) ? new DateTime() : (DateTime)reader["Date"]
+                Date = Convert.IsDBNull((DateTime)reader["Date"]) ? new DateTime() : (DateTime)reader["Date"],
+                Approbate = Convert.IsDBNull((int)reader["Approbate"]) ? 0 : (int)reader["Approbate"],
+                Commentary = reader["Commentary"].ToString()
             };
         }
     }

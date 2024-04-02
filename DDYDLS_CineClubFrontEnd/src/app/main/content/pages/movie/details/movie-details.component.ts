@@ -7,6 +7,7 @@ import { DialogAddorUpdateRatingComponent } from '../../rating/AddOrUpdateRating
 import { MatLegacyDialog as MatDialog, MatLegacyDialogRef as MatDialogRef, MatLegacyDialogActions as MatDialogActions, MatLegacyDialogClose as MatDialogClose, MatLegacyDialogTitle as MatDialogTitle, MatLegacyDialogContent as MatDialogContent } from '@angular/material/legacy-dialog';
 
 
+
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
@@ -14,7 +15,7 @@ import { MatLegacyDialog as MatDialog, MatLegacyDialogRef as MatDialogRef, MatLe
 })
 export class MovieDetailsComponent implements OnInit {
   id_User:any  
-  movie : Movie = {id_Movie : 1, name : '', id_Studio : 0, year:0, synopsis : '', rating:{ id_Movie :0, id_User:0,id_Rating:0,date : new Date, Ratings : 0}, avgRating:0 ,ratingForUser:0 };
+  movie : Movie = {id_Movie : 1, name : '', id_Studio : 0, year:0, synopsis : '', rating:{ id_Movie :0, id_User:0,id_Rating:0,date : new Date, Ratings : 0,  approbate:0, commentary:""}, avgRating:0 ,ratingForUser:0 };
   tmdbmovie!: TMDBMovie;
   result !: Result; 
   URLimg:any = "https://image.tmdb.org/t/p/w500//gEU2QniE6E77NI6lCU6MxlNBvIx.jpg";

@@ -51,7 +51,7 @@ INSERT INTO [dbo].[T_User]
            ,[ID_UserRole])
      VALUES
            ('Yraelias',
-            '0000',
+            'mvFbM25qlhmShTffMLLmojdlafz51+dz7M7eZWBlKaA=',
             1,
             '01/01/2024',
            'davidflemal@gmail.com'
@@ -70,7 +70,7 @@ INSERT INTO [dbo].[T_User]
            ,[ID_UserRole])
      VALUES
            ('Yraelis',
-            '0000',
+            'mvFbM25qlhmShTffMLLmojdlafz51+dz7M7eZWBlKaA=',
             1,
             '01/01/2024',
            'yraelias@gmail.com'
@@ -83,27 +83,31 @@ INSERT INTO [dbo].[T_Rating]
            ,[Rating]
            ,[Date]
            ,[Commentary]
+           ,[Approbate]
            )
      VALUES
            (1
            ,1
            ,5
            ,'01/01/2024'
-           ,'Commentaire sur Star Wars')
+           ,'Commentaire sur Star Wars'
+           ,1)
 GO
 INSERT INTO [dbo].[T_Rating]
            ([Id_User]
            ,[Id_Movie]
            ,[Rating]
            ,[Date]
-           ,[Commentary]
+           ,[Commentary],
+           [Approbate]
            )
      VALUES
            (2
            ,1
            ,2
            ,'01/01/2024'
-           ,'Commentaire sur Star Wars Yralis')
+           ,'Commentaire sur Star Wars Yralis'
+           ,0)
 GO
 INSERT INTO [dbo].[T_Rating]
            ([Id_User]
@@ -111,13 +115,15 @@ INSERT INTO [dbo].[T_Rating]
            ,[Rating]
            ,[Date]
            ,[Commentary]
+           ,[Approbate]
            )
      VALUES
            (1
            ,3
            ,6
            ,'01/01/2024'
-           ,'Commentaire sur Gladiator')
+           ,'Commentaire sur Gladiator'
+           ,0)
 GO
 INSERT INTO [dbo].[T_Rating]
            ([Id_User]
@@ -125,13 +131,15 @@ INSERT INTO [dbo].[T_Rating]
            ,[Rating]
            ,[Date]
            ,[Commentary]
+           ,[Approbate]
            )
      VALUES
            (2
            ,1
            ,6
            ,'01/01/2024'
-           ,'Commentaire sur Gladiator Yralis')
+           ,'Commentaire sur Gladiator Yralis'
+           ,1)
 GO
 INSERT INTO [dbo].[T_Rating]
            ([Id_User]
@@ -139,11 +147,13 @@ INSERT INTO [dbo].[T_Rating]
            ,[Rating]
            ,[Date]
            ,[Commentary]
+           ,[Approbate]
            )
      VALUES
            (1
            ,1
            ,5
            ,'01/01/2024'
-           ,'Commentaire Pikachu')
+           ,'Commentaire Pikachu'
+           ,1)
 GO
