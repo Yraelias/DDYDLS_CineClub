@@ -1,7 +1,7 @@
 
 <title>{{movie.name}}</title>
 <h1>TITRE  : {{movie.name}}</h1>
-<mat-grid-list cols="2" rowHeight="2:1">
+<mat-grid-list cols="2" rowHeight="3:1">
     <mat-grid-tile><img [src]="URLimg"/></mat-grid-tile>
     <mat-grid-tile>
         <p>ANNEE :  {{result.results[0].release_date}} <br>
@@ -15,11 +15,13 @@
 
     </mat-grid-tile>
     
+    
   </mat-grid-list>
-  <p>SYNOPSIS : {{result.results[0].overview}}</p>
 
-
-
+  <mat-grid-list cols="1" rowHeight="2:1">
+    <mat-grid-tile><p>SYNOPSIS : {{result.results[0].overview}}</p></mat-grid-tile>
+  </mat-grid-list>
+  
 
 
 

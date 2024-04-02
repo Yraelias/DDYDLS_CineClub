@@ -27,6 +27,8 @@ export class MovieDetailsComponent implements OnInit {
     this.id_User = sessionStorage.getItem('id');
    }
 
+   
+
   ngOnInit(): void {
     if (this.id_User == null || this.id_User == undefined) this.loadMovieVisitor();
     else this.loadMovie();
@@ -86,4 +88,7 @@ export class MovieDetailsComponent implements OnInit {
       this.loadOnlyMovie()
     });
   }
+
+
 }
+
