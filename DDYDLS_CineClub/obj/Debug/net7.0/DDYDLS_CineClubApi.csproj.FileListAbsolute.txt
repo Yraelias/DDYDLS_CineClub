@@ -59,3 +59,5 @@ G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\obj\Debug\net7.0\ref\DDYDLS_C
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\obj\Debug\net7.0\DDYDLS_CineClubApi.sourcelink.json
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\obj\Debug\net7.0\DDYDLS_C.F803754F.Up2Date
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Abstractions.dll
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClub\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll

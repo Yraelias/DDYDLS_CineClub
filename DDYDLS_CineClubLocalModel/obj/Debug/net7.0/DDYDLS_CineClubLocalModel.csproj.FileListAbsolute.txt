@@ -39,3 +39,5 @@ G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubLocalModel\obj\Debug\net7.0\DD
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubLocalModel\obj\Debug\net7.0\ref\DDYDLS_CineClubLocalModel.dll
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubLocalModel\obj\Debug\net7.0\DDYDLS_CineClubLocalModel.sourcelink.json
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubLocalModel\obj\Debug\net7.0\DDYDLS_C.5891622A.Up2Date
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubLocalModel\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Abstractions.dll
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubLocalModel\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll

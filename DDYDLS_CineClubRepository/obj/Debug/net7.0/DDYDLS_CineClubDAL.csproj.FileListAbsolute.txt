@@ -25,3 +25,14 @@ G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\obj\Debug\net7.0\DD
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\obj\Debug\net7.0\ref\DDYDLS_CineClubDAL.dll
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\obj\Debug\net7.0\DDYDLS_CineClubDAL.sourcelink.json
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\obj\Debug\net7.0\DDYDLS_C.826FB8FF.Up2Date
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\bin\Debug\net7.0\IdentityModel.dll
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\bin\Debug\net7.0\IdentityServer4.dll
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\bin\Debug\net7.0\IdentityServer4.Storage.dll
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\bin\Debug\net7.0\Newtonsoft.Json.dll
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubRepository\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll

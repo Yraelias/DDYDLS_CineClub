@@ -26,3 +26,10 @@ DDYDLS_CineClubDb/DDYDLS_CineClubDb.jfm
 DDYDLS_CineClubDb/DDYDLS_CineClubDb.dbmdl
 *.dbmdl
 *.jfm
+*.dll
+*.pdb
+*.pdb
+*.dll
+*.cache
+*.dbmdl
+*.jfm

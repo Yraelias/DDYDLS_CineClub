@@ -9,6 +9,9 @@ Modèle de script de post-déploiement
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
+USE [DDYDLS_CineClubDb]
+GO
+
 INSERT INTO [dbo].[T_User]
            ([Username]
            ,[Password]
@@ -20,9 +23,27 @@ INSERT INTO [dbo].[T_User]
            ('Yraelias',
             '0000',
             1,
-            '2023-10-15',
+            '01/01/2024',
            'davidflemal@gmail.com'
            ,1)
 GO
 
+USE [DDYDLS_CineClubDb]
+GO
+
+INSERT INTO [dbo].[T_User]
+           ([Username]
+           ,[Password]
+           ,[IsActive]
+           ,[Registration_Date]
+           ,[Email]
+           ,[ID_UserRole])
+     VALUES
+           ('Yraelis',
+            '0000',
+            1,
+            '01/01/2024',
+           'yraelias@gmail.com'
+           ,1)
+GO
 

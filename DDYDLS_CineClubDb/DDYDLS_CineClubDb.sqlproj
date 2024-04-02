@@ -65,6 +65,7 @@
     <Build Include="T_Movie.sql" />
     <Build Include="T_Rating.sql" />
     <Build Include="T_MovieGenre.sql" />
+    <None Include="AddRatings.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="AddMovies.sql" />

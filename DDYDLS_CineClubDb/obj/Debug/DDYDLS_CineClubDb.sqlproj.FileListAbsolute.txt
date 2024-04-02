@@ -4,3 +4,7 @@ G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubDb\obj\Debug\DDYDLS_CineClubDb
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubDb\bin\Debug\DDYDLS_CineClubDb.dll
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubDb\bin\Debug\DDYDLS_CineClubDb.pdb
 G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubDb\obj\Debug\DDYDLS_CineClubDb.sqlproj.AssemblyReference.cache
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubDb\obj\Debug\Model.xml
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubDb\obj\Debug\refactor.xml
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubDb\obj\Debug\postdeploy.sql
+G:\DDYDLS_CineClub\DDYDLS_CineClub\DDYDLS_CineClubDb\obj\Debug\predeploy.sql
