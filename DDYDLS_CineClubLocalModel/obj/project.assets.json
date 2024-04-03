@@ -1205,8 +1205,8 @@
     },
     "ADO Toolbox/1.0.0": {
       "type": "project",
-      "path": "../../../Cineclub/Yraesport/Yraesport/ADO Toolbox/ADO Toolbox.csproj",
-      "msbuildProject": "../../../Cineclub/Yraesport/Yraesport/ADO Toolbox/ADO Toolbox.csproj"
+      "path": "../ADO Toolbox/ADO Toolbox.csproj",
+      "msbuildProject": "../ADO Toolbox/ADO Toolbox.csproj"
     },
     "DDYDLS_CineClubDAL/1.0.0": {
       "type": "project",

@@ -1,0 +1,21 @@
+.mat-dialog
+{
+    background-color: black;
+}
+.mat-dialog-content
+{
+     opacity: 90%;
+}
+.mat-card-image{
+    width: 10%;
+    height: 10%;
+    display: inline;
+}
+
+mat-dialog-container{
+    background-color: aliceblue;
+  }
+
+  .background{
+    background-color: white;
+  }

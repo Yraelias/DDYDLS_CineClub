@@ -1188,8 +1188,8 @@
     },
     "ADO Toolbox/1.0.0": {
       "type": "project",
-      "path": "../../../Cineclub/Yraesport/Yraesport/ADO Toolbox/ADO Toolbox.csproj",
-      "msbuildProject": "../../../Cineclub/Yraesport/Yraesport/ADO Toolbox/ADO Toolbox.csproj"
+      "path": "../ADO Toolbox/ADO Toolbox.csproj",
+      "msbuildProject": "../ADO Toolbox/ADO Toolbox.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1233,8 +1233,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "G:\\Cineclub\\Yraesport\\Yraesport\\ADO Toolbox\\ADO Toolbox.csproj": {
-              "projectPath": "G:\\Cineclub\\Yraesport\\Yraesport\\ADO Toolbox\\ADO Toolbox.csproj"
+            "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\ADO Toolbox\\ADO Toolbox.csproj": {
+              "projectPath": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\ADO Toolbox\\ADO Toolbox.csproj"
             }
           }
         }

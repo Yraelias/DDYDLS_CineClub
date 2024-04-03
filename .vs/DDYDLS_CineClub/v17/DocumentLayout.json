@@ -1,12 +1,172 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B927FA7B-1D6D-43DD-9916-53462B867E37}|DDYDLS_CineClubRepository\\DDYDLS_CineClubDAL.csproj|g:\\ddydls_cineclub\\ddydls_cineclub\\ddydls_cineclubrepository\\repository\\movierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B927FA7B-1D6D-43DD-9916-53462B867E37}|DDYDLS_CineClubRepository\\DDYDLS_CineClubDAL.csproj|solutionrelative:ddydls_cineclubrepository\\repository\\movierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B927FA7B-1D6D-43DD-9916-53462B867E37}|DDYDLS_CineClubRepository\\DDYDLS_CineClubDAL.csproj|g:\\ddydls_cineclub\\ddydls_cineclub\\ddydls_cineclubrepository\\repository\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B927FA7B-1D6D-43DD-9916-53462B867E37}|DDYDLS_CineClubRepository\\DDYDLS_CineClubDAL.csproj|solutionrelative:ddydls_cineclubrepository\\repository\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B927FA7B-1D6D-43DD-9916-53462B867E37}|DDYDLS_CineClubRepository\\DDYDLS_CineClubDAL.csproj|g:\\ddydls_cineclub\\ddydls_cineclub\\ddydls_cineclubrepository\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B927FA7B-1D6D-43DD-9916-53462B867E37}|DDYDLS_CineClubRepository\\DDYDLS_CineClubDAL.csproj|solutionrelative:ddydls_cineclubrepository\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B927FA7B-1D6D-43DD-9916-53462B867E37}|DDYDLS_CineClubRepository\\DDYDLS_CineClubDAL.csproj|g:\\ddydls_cineclub\\ddydls_cineclub\\ddydls_cineclubrepository\\repository\\personrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B927FA7B-1D6D-43DD-9916-53462B867E37}|DDYDLS_CineClubRepository\\DDYDLS_CineClubDAL.csproj|solutionrelative:ddydls_cineclubrepository\\repository\\personrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B927FA7B-1D6D-43DD-9916-53462B867E37}|DDYDLS_CineClubRepository\\DDYDLS_CineClubDAL.csproj|g:\\ddydls_cineclub\\ddydls_cineclub\\ddydls_cineclubrepository\\repository\\ratingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B927FA7B-1D6D-43DD-9916-53462B867E37}|DDYDLS_CineClubRepository\\DDYDLS_CineClubDAL.csproj|solutionrelative:ddydls_cineclubrepository\\repository\\ratingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B927FA7B-1D6D-43DD-9916-53462B867E37}|DDYDLS_CineClubRepository\\DDYDLS_CineClubDAL.csproj|g:\\ddydls_cineclub\\ddydls_cineclub\\ddydls_cineclubrepository\\repository\\genrerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B927FA7B-1D6D-43DD-9916-53462B867E37}|DDYDLS_CineClubRepository\\DDYDLS_CineClubDAL.csproj|solutionrelative:ddydls_cineclubrepository\\repository\\genrerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B927FA7B-1D6D-43DD-9916-53462B867E37}|DDYDLS_CineClubRepository\\DDYDLS_CineClubDAL.csproj|g:\\ddydls_cineclub\\ddydls_cineclub\\ddydls_cineclubrepository\\repository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B927FA7B-1D6D-43DD-9916-53462B867E37}|DDYDLS_CineClubRepository\\DDYDLS_CineClubDAL.csproj|solutionrelative:ddydls_cineclubrepository\\repository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AEBCFB5-988D-458D-8E8D-8672E3D9981C}|ADO Toolbox\\ADO Toolbox.csproj|g:\\ddydls_cineclub\\ddydls_cineclub\\ado toolbox\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AEBCFB5-988D-458D-8E8D-8672E3D9981C}|ADO Toolbox\\ADO Toolbox.csproj|solutionrelative:ado toolbox\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AEBCFB5-988D-458D-8E8D-8672E3D9981C}|ADO Toolbox\\ADO Toolbox.csproj|g:\\ddydls_cineclub\\ddydls_cineclub\\ado toolbox\\command.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AEBCFB5-988D-458D-8E8D-8672E3D9981C}|ADO Toolbox\\ADO Toolbox.csproj|solutionrelative:ado toolbox\\command.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MovieRepository.cs",
+              "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\Repository\\MovieRepository.cs",
+              "RelativeDocumentMoniker": "DDYDLS_CineClubRepository\\Repository\\MovieRepository.cs",
+              "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\Repository\\MovieRepository.cs",
+              "RelativeToolTip": "DDYDLS_CineClubRepository\\Repository\\MovieRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T14:39:43.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RoleRepository.cs",
+              "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\Repository\\RoleRepository.cs",
+              "RelativeDocumentMoniker": "DDYDLS_CineClubRepository\\Repository\\RoleRepository.cs",
+              "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\Repository\\RoleRepository.cs",
+              "RelativeToolTip": "DDYDLS_CineClubRepository\\Repository\\RoleRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T14:39:34.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\Repository\\UserRepository.cs",
+              "RelativeDocumentMoniker": "DDYDLS_CineClubRepository\\Repository\\UserRepository.cs",
+              "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\Repository\\UserRepository.cs",
+              "RelativeToolTip": "DDYDLS_CineClubRepository\\Repository\\UserRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T14:39:31.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PersonRepository.cs",
+              "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\Repository\\PersonRepository.cs",
+              "RelativeDocumentMoniker": "DDYDLS_CineClubRepository\\Repository\\PersonRepository.cs",
+              "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\Repository\\PersonRepository.cs",
+              "RelativeToolTip": "DDYDLS_CineClubRepository\\Repository\\PersonRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T14:39:28.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RatingRepository.cs",
+              "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\Repository\\RatingRepository.cs",
+              "RelativeDocumentMoniker": "DDYDLS_CineClubRepository\\Repository\\RatingRepository.cs",
+              "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\Repository\\RatingRepository.cs",
+              "RelativeToolTip": "DDYDLS_CineClubRepository\\Repository\\RatingRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T14:39:23.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GenreRepository.cs",
+              "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\Repository\\GenreRepository.cs",
+              "RelativeDocumentMoniker": "DDYDLS_CineClubRepository\\Repository\\GenreRepository.cs",
+              "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\Repository\\GenreRepository.cs",
+              "RelativeToolTip": "DDYDLS_CineClubRepository\\Repository\\GenreRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T14:39:18.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\Repository\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "DDYDLS_CineClubRepository\\Repository\\BaseRepository.cs",
+              "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\Repository\\BaseRepository.cs",
+              "RelativeToolTip": "DDYDLS_CineClubRepository\\Repository\\BaseRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T14:38:58.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Connection.cs",
+              "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\ADO Toolbox\\Connection.cs",
+              "RelativeDocumentMoniker": "ADO Toolbox\\Connection.cs",
+              "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\ADO Toolbox\\Connection.cs",
+              "RelativeToolTip": "ADO Toolbox\\Connection.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T14:35:26.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Command.cs",
+              "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\ADO Toolbox\\Command.cs",
+              "RelativeDocumentMoniker": "ADO Toolbox\\Command.cs",
+              "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\ADO Toolbox\\Command.cs",
+              "RelativeToolTip": "ADO Toolbox\\Command.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T14:35:26.414Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

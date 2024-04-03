@@ -4,7 +4,7 @@ import { Movie } from 'src/app/models/movie';
 import { ActivatedRoute } from '@angular/router';
 import { TMDBMovie, Result } from 'src/app/models/tmdbmovie';
 import { DialogAddorUpdateRatingComponent } from '../../rating/AddOrUpdateRating/dialog-addor-update-rating.component';
-import { MatLegacyDialog as MatDialog, MatLegacyDialogRef as MatDialogRef, MatLegacyDialogActions as MatDialogActions, MatLegacyDialogClose as MatDialogClose, MatLegacyDialogTitle as MatDialogTitle, MatLegacyDialogContent as MatDialogContent } from '@angular/material/legacy-dialog';
+import { MatDialog,  MatDialogRef, MatDialogActions, MatDialogClose,  MatDialogTitle,  MatDialogContent } from '@angular/material/dialog';
 
 
 
@@ -80,7 +80,8 @@ export class MovieDetailsComponent implements OnInit {
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string) : void {
     const dialogRef =  this.dialog.open(DialogAddorUpdateRatingComponent,{
-      data: {movie : this.movie} 
+      data: {movie : this.movie},
+      width: '90%'
     });
 
     dialogRef.afterClosed().subscribe(data => {

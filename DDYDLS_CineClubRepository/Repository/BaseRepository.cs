@@ -1,9 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
+﻿using ADO_Toolbox;
+using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
-using System.Text;
-using ADO_Toolbox;
 
 namespace DDYDLS_CineClubDAL.Repository
 {

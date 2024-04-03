@@ -1,5 +1,6 @@
-<h1 mat-dialog-title>{{movie.movie.name}}</h1>
-<div mat-dialog-content>
+<div class='background'>
+ <h1 mat-dialog-title>{{movie.movie.name}}</h1>
+
   Combien d'oeufs lui donnez vous ? <br>
   <img mat-card-image src="/assets/icons/OeufNB.png"   *ngIf="ratingSelectionned == 0" (click)="onClickRating(1)">
   <img mat-card-image src="/assets/icons/OeufBlue.png" *ngIf="ratingSelectionned >= 1" (click)="onClickRating(1)">
@@ -22,13 +23,14 @@
   <form class="example-form">
     <mat-form-field class="example-full-width">
       <mat-label>Message</mat-label>
-      <input matInput #message  maxlength="500" >
+      <input matInput #message  maxlength="256" >
       <mat-hint align="start"><strong>caractères maximum</strong> </mat-hint>
       <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
     </mat-form-field>
   </form>
-</div>
+
 <div mat-dialog-actions>
   <button mat-button mat-dialog-close>Annuler</button>
   <button mat-button mat-dialog-close cdkFocusInitial (click)="validateRating(message.value)">Valider le vote</button>
+</div>
 </div>

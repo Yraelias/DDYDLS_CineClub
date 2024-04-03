@@ -1,0 +1,9 @@
+.DetailsMoviecontent{
+    align-items: top;
+    justify-content: top;
+    color: yellow;
+  }
+
+  mat-dialog-container{
+    background-color: aliceblue;
+  }

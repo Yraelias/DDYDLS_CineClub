@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Cineclub\Yraesport\Yraesport\ADO Toolbox\ADO Toolbox.csproj" />
+    <ProjectReference Include="..\ADO Toolbox\ADO Toolbox.csproj" />
   </ItemGroup>
 
 </Project>

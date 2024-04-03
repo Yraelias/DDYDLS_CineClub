@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32228.343
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DDYDLS_CineClubApi", "DDYDLS_CineClub\DDYDLS_CineClubApi.csproj", "{3BCEA1CC-C997-4ACA-975F-5C244DD3D8B2}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DDYDLS_CineClubDb", "DDYDLS_CineClubDb\DDYDLS_CineClubDb.sqlproj", "{6A1A10D1-55C0-48D1-914F-CF8F6426325B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADO Toolbox", "..\..\Cineclub\Yraesport\Yraesport\ADO Toolbox\ADO Toolbox.csproj", "{C55FE8F1-E210-4D8E-A5E5-3E78F4BF40EF}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DDYDLS_CineClubDAL", "DDYDLS_CineClubRepository\DDYDLS_CineClubDAL.csproj", "{B927FA7B-1D6D-43DD-9916-53462B867E37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDYDLS_CineClubLocalModel", "DDYDLS_CineClubLocalModel\DDYDLS_CineClubLocalModel.csproj", "{975A26FD-F61D-4BDE-B9E6-3BBB8A383931}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DDYDLS_CineClubLocalModel", "DDYDLS_CineClubLocalModel\DDYDLS_CineClubLocalModel.csproj", "{975A26FD-F61D-4BDE-B9E6-3BBB8A383931}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADO Toolbox", "ADO Toolbox\ADO Toolbox.csproj", "{7AEBCFB5-988D-458D-8E8D-8672E3D9981C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,6 @@ Global
 		{6A1A10D1-55C0-48D1-914F-CF8F6426325B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A1A10D1-55C0-48D1-914F-CF8F6426325B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6A1A10D1-55C0-48D1-914F-CF8F6426325B}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{C55FE8F1-E210-4D8E-A5E5-3E78F4BF40EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C55FE8F1-E210-4D8E-A5E5-3E78F4BF40EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C55FE8F1-E210-4D8E-A5E5-3E78F4BF40EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C55FE8F1-E210-4D8E-A5E5-3E78F4BF40EF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B927FA7B-1D6D-43DD-9916-53462B867E37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B927FA7B-1D6D-43DD-9916-53462B867E37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B927FA7B-1D6D-43DD-9916-53462B867E37}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,6 +37,10 @@ Global
 		{975A26FD-F61D-4BDE-B9E6-3BBB8A383931}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{975A26FD-F61D-4BDE-B9E6-3BBB8A383931}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{975A26FD-F61D-4BDE-B9E6-3BBB8A383931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AEBCFB5-988D-458D-8E8D-8672E3D9981C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AEBCFB5-988D-458D-8E8D-8672E3D9981C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AEBCFB5-988D-458D-8E8D-8672E3D9981C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AEBCFB5-988D-458D-8E8D-8672E3D9981C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
