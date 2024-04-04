@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DDYDLS_CineClubDAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a27d6ccd5ad51faffa45212f26e8a0527f53c4f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76e674b320567c703b70ff1024eec0c00aacfb2e")]
 [assembly: System.Reflection.AssemblyProductAttribute("DDYDLS_CineClubDAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DDYDLS_CineClubDAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

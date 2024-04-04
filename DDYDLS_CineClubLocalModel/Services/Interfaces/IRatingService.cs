@@ -10,6 +10,6 @@ namespace DDYDLS_CineClubLocalModel.Services.Interfaces
         void Update(Rating g);
         bool AddRating(Rating g);
         bool Delete(int Id);
-        
+        IEnumerable<Rating> GetRatingbyMovie(int MovieID);
     }
 }

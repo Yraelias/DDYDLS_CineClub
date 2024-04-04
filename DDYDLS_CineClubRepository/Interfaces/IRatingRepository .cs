@@ -14,5 +14,7 @@ namespace DDYDLS_CineClubDAL.Interfaces
         public int AvgRate(int iD);
 
         public int RatebyIdMovieAndIdUser (int  movieId, int userId);
+
+        public IEnumerable<Rating> RatingsbyIdMovie(int ID_Movie);
     }
 }

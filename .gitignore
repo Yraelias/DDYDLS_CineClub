@@ -33,3 +33,7 @@ DDYDLS_CineClubDb/DDYDLS_CineClubDb.dbmdl
 *.cache
 *.dbmdl
 *.jfm
+*.dll
+*.pdb
+*.pdb
+*.cache

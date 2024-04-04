@@ -79,16 +79,12 @@ namespace DDYDLS_CineClubDAL.Repository
         public IEnumerable<Rating> RatingsbyIdMovie(int ID_Movie)
         {
             object rep;
-            Command cmd = new Command("SELECT ID_Rating, Id_User, ID_Movie, Rating, Date,  Commentary, Approbate  FROM (SELECT ID_Rating,Id_User,ID_Movie,Rating,Date," +
-                "                       Commentary, Approbate ,ROW_NUMBER() OVER (PARTITION BY Id_User ORDER BY Date DESC) as row_num" +
-                "                      FROM [T_Rating] WHERE ID_Movie = @Id_Movie) AS ranked WHERE row_num = 1;");
+            Command cmd = new Command("SELECT  T_User.Username, [Id_Movie], [Rating], [Date], [Commentary], [Approbate], [Id_Rating], [T_Rating].[Id_User] " +
+                "FROM[DDYDLS_CineClubDb].[dbo].[T_Rating], [T_User] WHERE T_Rating.Id_Movie = @Id_Movie AND T_Rating.Id_User = T_User.Id_User");
             cmd.AddParameter("Id_Movie", ID_Movie);
             return _connection.ExecuteReader(cmd, Converters.RatingConvert);
         }
 
-        IEnumerable<Rating> IRatingRepository<Rating>.RatebyIdMovieAndIdUser(int movieId, int userId)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

@@ -51,6 +51,21 @@ namespace DDYDLS_CineClubApi.Controllers
             }
         }
 
+        // GET api/<Rating>/5
+        [HttpGet("movie/{id}")]
+        public IActionResult GetRatingForMovie(int id)
+        {
+            try
+            {
+
+                return Ok(_RatingService.GetRatingbyMovie(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
         // POST api/<Rating>
         [HttpPost]
         public IActionResult Post([FromForm] api.Rating Rating)

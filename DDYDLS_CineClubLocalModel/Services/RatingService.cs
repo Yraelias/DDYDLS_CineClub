@@ -47,6 +47,9 @@ namespace DDYDLS_CineClubLocalModel.Services
         {
             _RatingRepository.Update(g.toDal());
         }
-        
+        public IEnumerable<Rating> GetRatingbyMovie(int MovieId)
+        {
+            return _RatingRepository.RatingsbyIdMovie(MovieId).Select(g => g.toLocal());
+        }
     }
 }
