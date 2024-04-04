@@ -30,7 +30,7 @@ import { AuthGuardService } from './auth/auth-guard.service';
 import { DialogAddorUpdateRatingComponent } from './main/content/pages/rating/AddOrUpdateRating/dialog-addor-update-rating.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RatingService } from './main/content/pages/rating/rating.service';
-import { CommentaryComponent } from './main/content/pages/movie/commentary/commentary.component';
+import { CommentaryComponent } from './main/content/pages/rating/commentary/commentary.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
 
@@ -63,40 +63,40 @@ const appRoutes: Routes = [
   ];
    
 @NgModule({
-  declarations: [
-    AppComponent,
-    TopNavBarComponent,
-    HomeComponent,
-    MoviesListComponent,
-    MovieDetailsComponent,
-    LoginComponent,
-    UserComponent,
-    DialogAddorUpdateRatingComponent,
-    CommentaryComponent
-  ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(appRoutes),
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    MatListModule,
-    BrowserAnimationsModule,
-    MatTableModule,
-    MatCardModule,
-    MatGridListModule,
-    MatMenuModule,
-    MatButtonModule,
-    MatIconModule,
-    MatPaginatorModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatDialogModule,
-    MatToolbarModule,
-    MatGridListModule
-  ],
-  providers: [MovieService,AuthService,AuthGuardService,RatingService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        TopNavBarComponent,
+        HomeComponent,
+        MoviesListComponent,
+        MovieDetailsComponent,
+        LoginComponent,
+        UserComponent,
+        DialogAddorUpdateRatingComponent,
+        CommentaryComponent
+    ],
+    providers: [MovieService, AuthService, AuthGuardService, RatingService],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot(appRoutes),
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        MatListModule,
+        BrowserAnimationsModule,
+        MatTableModule,
+        MatCardModule,
+        MatGridListModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatIconModule,
+        MatPaginatorModule,
+        MatIconModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatDialogModule,
+        MatToolbarModule,
+        MatGridListModule
+    ]
 })
 export class AppModule { }
