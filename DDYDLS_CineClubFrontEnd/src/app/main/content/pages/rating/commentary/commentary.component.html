@@ -1,10 +1,10 @@
-<mat-card>
-    <mat-card-header>
-        Yraelias
-    </mat-card-header>
-    J'ai passé un excellent moment !
-    <p>6</p>
-    <p>Approuvé</p>
-</mat-card>
-
-{{id_movie}}
+<li *ngFor="let rating of listRatings"  >
+    <mat-card>
+        <mat-card-header>
+            {{ rating.id_User }}
+        </mat-card-header>
+        {{ rating.commentary }}
+        <p>NOTE : {{ rating.Ratings }}</p>
+        <p>Approuvé {{ rating.approbate }}</p>
+    </mat-card>
+</li>
