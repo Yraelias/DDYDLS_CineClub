@@ -162,5 +162,37 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Username=newRating.Username,
             };
         }
+        public static Models.Cineclub toLocal(this dal.Cineclub newRating, IMovieRepository<dal.Movie> movieRepository)
+        {
+            return new Models.Cineclub
+            {
+                Id_Cineclub = newRating.Id_Cineclub,
+                Movie_1 = movieRepository.GetOne(newRating.Id_Movie_1).toLocal(),
+                Movie_2 = movieRepository.GetOne(newRating.Id_Movie_2).toLocal(),
+                Movie_3 = movieRepository.GetOne(newRating.Id_Movie_3).toLocal(),
+                Movie_4 = movieRepository.GetOne(newRating.Id_Movie_4).toLocal(),
+                Movie_5 = movieRepository.GetOne(newRating.Id_Movie_5).toLocal(),
+                NumberOfCineclub = newRating.NumberOfCineclub,
+                Begin = newRating.Begin,
+                End = newRating.End,
+                Link_Yt = newRating.Link_Yt
+            };
+        }
+        public static dal.Cineclub toDal(this Models.Cineclub newRating)
+        {
+            return new dal.Cineclub
+            {
+                Id_Cineclub = newRating.Id_Cineclub,
+                Id_Movie_1 = newRating.Movie_1.Id_Movie,
+                Id_Movie_2 = newRating.Movie_2.Id_Movie,
+                Id_Movie_3 = newRating.Movie_3.Id_Movie,
+                Id_Movie_4 = newRating.Movie_4.Id_Movie,
+                Id_Movie_5 = newRating.Movie_5.Id_Movie,
+                NumberOfCineclub = newRating.NumberOfCineclub,
+                Begin = newRating.Begin,
+                End = newRating.End,
+                Link_Yt = newRating.Link_Yt
+            };
+        }
     }
 }
