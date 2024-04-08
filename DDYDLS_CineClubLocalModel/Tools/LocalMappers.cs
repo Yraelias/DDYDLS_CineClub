@@ -144,7 +144,8 @@ namespace DDYDLS_CineClubLocalModel.Tools
                Date = newRating.Date,
                Ratings = newRating.Ratings,
                Commentary = newRating.Commentary,
-               Approbate = newRating.Approbate
+               Approbate = newRating.Approbate,
+               Username = newRating.Username,
             };
         }
         public static dal.Rating toDal(this Models.Rating newRating)
@@ -157,7 +158,8 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Date = newRating.Date,
                 Ratings = newRating.Ratings,
                 Commentary = newRating.Commentary,
-                Approbate = newRating.Approbate
+                Approbate = newRating.Approbate,
+                Username=newRating.Username,
             };
         }
     }

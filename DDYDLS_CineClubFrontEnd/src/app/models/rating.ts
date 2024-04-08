@@ -6,4 +6,5 @@ export class Rating {
     date : Date;
     approbate : number;
     commentary : string;
+    username:string;
 }

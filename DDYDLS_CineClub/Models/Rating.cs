@@ -18,5 +18,6 @@ namespace DDYDLS_CineClubApi.Models
         public int Approbate { get; set; }
 
         public string Commentary { get; set; }
+        public string Username { get; set; }
     }
 }

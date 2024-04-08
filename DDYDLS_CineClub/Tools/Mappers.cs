@@ -148,7 +148,8 @@ namespace DDYDLS_CineClubApi.Tools
                 Ratings = newMovie.Ratings,
                 Date = newMovie.Date ,
                 Commentary = newMovie.Commentary,
-                Approbate = newMovie.Approbate
+                Approbate = newMovie.Approbate,
+                Username = newMovie.Username,
     };
         }
         public static api.Rating toApi(this model.Rating newMovie)
@@ -161,8 +162,8 @@ namespace DDYDLS_CineClubApi.Tools
                 Ratings = newMovie.Ratings,
                 Date = newMovie.Date,
                 Commentary = newMovie.Commentary,
-                Approbate = newMovie.Approbate
-
+                Approbate = newMovie.Approbate,
+                Username = newMovie.Username,
             };
         }
 
