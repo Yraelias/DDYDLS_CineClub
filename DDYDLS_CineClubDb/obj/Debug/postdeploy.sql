@@ -119,7 +119,7 @@ INSERT INTO [dbo].[T_Rating]
            )
      VALUES
            (1
-           ,3
+           ,2
            ,6
            ,'01/01/2024'
            ,'Commentaire sur Gladiator'
@@ -135,7 +135,7 @@ INSERT INTO [dbo].[T_Rating]
            )
      VALUES
            (2
-           ,1
+           ,2
            ,6
            ,'01/01/2024'
            ,'Commentaire sur Gladiator Yralis'
@@ -151,7 +151,7 @@ INSERT INTO [dbo].[T_Rating]
            )
      VALUES
            (1
-           ,1
+           ,3
            ,5
            ,'01/01/2024'
            ,'Commentaire Pikachu'
