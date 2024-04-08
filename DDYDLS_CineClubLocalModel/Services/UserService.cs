@@ -1,15 +1,18 @@
 ﻿using IdentityServer4.Models;
-using CineClubDAL.Interfaces;
 using DDYDLS_CineClubLocalModel.Services.Interfaces;
 using DDYDLS_CineClubLocalModel.Models;
 using DDYDLS_CineClubLocalModel.Tools;
 using System.Collections.Generic;
 using System.Linq;
-using dal = CineClubDAL.Models;
+#pragma warning disable CS8981 // Le nom de type contient uniquement des caractères ascii en minuscules. De tels noms peuvent devenir réservés pour la langue.
+using dal = DDYDLS_CineClubDAL.Models;
+#pragma warning restore CS8981 // Le nom de type contient uniquement des caractères ascii en minuscules. De tels noms peuvent devenir réservés pour la langue.
+using System;
+using DDYDLS_CineClubDAL.Interfaces;
 
-namespace DDYDLS_DDYDLS_CineClubLocalModel.Services
+namespace DDYDLS_CineClubLocalModel.Services
 {
-    public class UserService : IUserService
+    public class UserService : Interfaces.IUserService
     {
         private IUserRepository<dal.User> _userRepository;
         public UserService(IUserRepository<dal.User> userRepository)
@@ -52,7 +55,7 @@ namespace DDYDLS_DDYDLS_CineClubLocalModel.Services
 
         public User GetByEmail(string email)
         {
-            throw new System.NotImplementedException();
+            return _userRepository.GetByEmail(email).toLocal();
         }
 
         public User GetOne(int Id)
@@ -60,11 +63,15 @@ namespace DDYDLS_DDYDLS_CineClubLocalModel.Services
             throw new System.NotImplementedException();
         }
 
-        public void Insert(User m)
+        public bool RegistrationUser(User m)
         {
+            
+            m.Registration_Date = DateTime.Now;
             m.Password = m.Password.Sha256();
 
             _userRepository.Insert(m.toDal());
+
+            return true;
         }
 
         public void Update(User m)

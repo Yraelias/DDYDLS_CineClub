@@ -1,0 +1,21 @@
+﻿** Met en surbrillance
+     Tables qui seront recréées avec les données migrées
+       [dbo].[T_Person]
+     Index ordonnés en clusters à supprimer
+       Aucun
+     Index ordonnés en clusters à créer.
+       Aucun
+     Problèmes de données possibles
+       Aucun
+
+** Actions de l'utilisateur
+     Supprimer
+       [dbo].[FK_7] (Clé étrangère)
+     Recréer la table
+       [dbo].[T_Person] (Table)
+
+** Actions de support
+     Supprimer
+       [dbo].[FK_2] (Clé étrangère)
+     Créer
+       [dbo].[FK_2] (Clé étrangère)

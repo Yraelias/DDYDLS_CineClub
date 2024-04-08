@@ -16,12 +16,13 @@
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetLanguage>CS</TargetLanguage>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -59,14 +60,19 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="T_User.sql" />
-    <Build Include="T_Country.sql" />
-    <Build Include="T_Studio.sql" />
     <Build Include="T_Genre.sql" />
-    <Build Include="T_Role.sql" />
     <Build Include="T_Person.sql" />
     <Build Include="T_Movie.sql" />
     <Build Include="T_Rating.sql" />
     <Build Include="T_MovieGenre.sql" />
-    <Build Include="T_Casting.sql" />
+    <None Include="AddRatings.sql" />
+    <Build Include="T_Cineclub.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="AddMovies.sql" />
+    <None Include="AddUser.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="DDYDLS_CineClubDb.refactorlog" />
   </ItemGroup>
 </Project>

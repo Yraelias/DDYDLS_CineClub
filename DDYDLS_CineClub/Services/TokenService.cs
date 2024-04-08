@@ -55,7 +55,8 @@ namespace DDYDLS_CineClubApi.Services
                 Login = user.Login,
                 IsActive = user.IsActive,
                 IsAdministrator = user.IsAdministrator,
-                Token = tokenHandler.WriteToken(token)
+                Token = tokenHandler.WriteToken(token),
+                IsModerator = user.IsModerator
             };
         }
     }

@@ -1,0 +1,36 @@
+<div class='background'>
+ <h1 mat-dialog-title>{{movie.movie.name}}</h1>
+
+  Combien d'oeufs lui donnez vous ? <br>
+  <img mat-card-image src="/assets/icons/OeufNB.png"   *ngIf="ratingSelectionned == 0" (click)="onClickRating(1)">
+  <img mat-card-image src="/assets/icons/OeufBlue.png" *ngIf="ratingSelectionned >= 1" (click)="onClickRating(1)">
+  <img mat-card-image src="/assets/icons/OeufNB.png"   *ngIf="ratingSelectionned <= 1" (click)="onClickRating(2)">
+  <img mat-card-image src="/assets/icons/OeufBlue.png" *ngIf="ratingSelectionned >= 2" (click)="onClickRating(2)">
+  <img mat-card-image src="/assets/icons/OeufNB.png"   *ngIf="ratingSelectionned <= 2" (click)="onClickRating(3)">
+  <img mat-card-image src="/assets/icons/OeufBlue.png" *ngIf="ratingSelectionned >= 3" (click)="onClickRating(3)">
+  <img mat-card-image src="/assets/icons/OeufNB.png"   *ngIf="ratingSelectionned <= 3" (click)="onClickRating(4)">
+  <img mat-card-image src="/assets/icons/OeufBlue.png" *ngIf="ratingSelectionned >= 4" (click)="onClickRating(4)">
+  <img mat-card-image src="/assets/icons/OeufNB.png"   *ngIf="ratingSelectionned <= 4" (click)="onClickRating(5)">
+  <img mat-card-image src="/assets/icons/OeufBlue.png" *ngIf="ratingSelectionned >= 5" (click)="onClickRating(5)">
+  <img mat-card-image src="/assets/icons/OeufNB.png"   *ngIf="ratingSelectionned <= 5" (click)="onClickRating(6)">
+  <img mat-card-image src="/assets/icons/OeufBlue.png" *ngIf="ratingSelectionned >= 6"><br>
+  Le recommandez vous ? <br>
+  <img mat-card-image src="/assets/icons/OeufGreen.png" *ngIf="Reco == 0 || Reco == 1" (click)="onClickRecom(1)">
+  <img mat-card-image src="/assets/icons/OeufNB.png" *ngIf="Reco == 2" (click)="onClickRecom(1)">
+  <img mat-card-image src="/assets/icons/OeufRed.png" *ngIf="Reco == 0 || Reco == 2" (click)="onClickRecom(2)">
+  <img mat-card-image src="/assets/icons/OeufNB.png" *ngIf="Reco == 1" (click)="onClickRecom(2)"> <br>
+  Commentaire <br>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Message</mat-label>
+      <input matInput #message  maxlength="256" >
+      <mat-hint align="start"><strong>caractères maximum</strong> </mat-hint>
+      <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+    </mat-form-field>
+  </form>
+
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Annuler</button>
+  <button mat-button mat-dialog-close cdkFocusInitial (click)="validateRating(message.value)">Valider le vote</button>
+</div>
+</div>

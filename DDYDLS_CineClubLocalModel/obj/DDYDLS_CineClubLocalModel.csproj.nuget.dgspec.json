@@ -4,20 +4,20 @@
     "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubLocalModel\\DDYDLS_CineClubLocalModel.csproj": {}
   },
   "projects": {
-    "G:\\Cineclub\\Yraesport\\Yraesport\\ADO Toolbox\\ADO Toolbox.csproj": {
+    "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\ADO Toolbox\\ADO Toolbox.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Cineclub\\Yraesport\\Yraesport\\ADO Toolbox\\ADO Toolbox.csproj",
+        "projectUniqueName": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\ADO Toolbox\\ADO Toolbox.csproj",
         "projectName": "ADO Toolbox",
-        "projectPath": "G:\\Cineclub\\Yraesport\\Yraesport\\ADO Toolbox\\ADO Toolbox.csproj",
-        "packagesPath": "C:\\Users\\dav23\\.nuget\\packages\\",
-        "outputPath": "G:\\Cineclub\\Yraesport\\Yraesport\\ADO Toolbox\\obj\\",
+        "projectPath": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\ADO Toolbox\\ADO Toolbox.csproj",
+        "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
+        "outputPath": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\ADO Toolbox\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dav23\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -38,15 +38,32 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "IdentityServer4": {
+              "target": "Package",
+              "version": "[4.1.2, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.19.6, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
-              "version": "[4.8.4, )"
+              "version": "[4.8.6, )"
             }
           },
           "imports": [
@@ -65,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -75,27 +92,27 @@
         "projectUniqueName": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubLocalModel\\DDYDLS_CineClubLocalModel.csproj",
         "projectName": "DDYDLS_CineClubLocalModel",
         "projectPath": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubLocalModel\\DDYDLS_CineClubLocalModel.csproj",
-        "packagesPath": "C:\\Users\\dav23\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
         "outputPath": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubLocalModel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dav23\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {
               "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\DDYDLS_CineClubDAL.csproj": {
                 "projectPath": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\DDYDLS_CineClubDAL.csproj"
@@ -107,19 +124,32 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "IdentityServer4": {
               "target": "Package",
               "version": "[4.1.2, )"
             },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.19.6, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
-              "version": "[4.8.4, )"
+              "version": "[4.8.6, )"
             }
           },
           "imports": [
@@ -138,7 +168,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -148,30 +178,30 @@
         "projectUniqueName": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\DDYDLS_CineClubDAL.csproj",
         "projectName": "DDYDLS_CineClubDAL",
         "projectPath": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\DDYDLS_CineClubDAL.csproj",
-        "packagesPath": "C:\\Users\\dav23\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
         "outputPath": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dav23\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {
-              "G:\\Cineclub\\Yraesport\\Yraesport\\ADO Toolbox\\ADO Toolbox.csproj": {
-                "projectPath": "G:\\Cineclub\\Yraesport\\Yraesport\\ADO Toolbox\\ADO Toolbox.csproj"
+              "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\ADO Toolbox\\ADO Toolbox.csproj": {
+                "projectPath": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\ADO Toolbox\\ADO Toolbox.csproj"
               }
             }
           }
@@ -180,19 +210,32 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
+            "IdentityServer4": {
+              "target": "Package",
+              "version": "[4.1.2, )"
+            },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.19.6, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",
-              "version": "[4.8.4, )"
+              "version": "[4.8.6, )"
             }
           },
           "imports": [
@@ -211,7 +254,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

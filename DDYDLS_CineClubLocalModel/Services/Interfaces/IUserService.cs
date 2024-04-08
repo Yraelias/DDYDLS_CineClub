@@ -9,7 +9,7 @@ namespace DDYDLS_CineClubLocalModel.Services.Interfaces
         User GetOne(int Id);
         IEnumerable<User> GetAll();
         void Update(User m);
-        void Insert(User m);
+        bool RegistrationUser(User m);
         bool Delete(int Id);
         bool Desactive(int Id);
         User GetByEmail(string email);

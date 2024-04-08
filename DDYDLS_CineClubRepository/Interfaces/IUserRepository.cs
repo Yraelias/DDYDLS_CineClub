@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CineClubDAL.Interfaces
+namespace DDYDLS_CineClubDAL.Interfaces
 {
     public interface IUserRepository<User>
     {

@@ -1,0 +1,10 @@
+<li *ngFor="let rating of listRatings"  >
+    <mat-card>
+        <mat-card-header>
+            {{ rating.username }}
+        </mat-card-header>
+        {{ rating.commentary }}
+        <p>NOTE : {{ rating.ratings }}</p>
+        <p>Approuvé {{ rating.approbate }}</p>
+    </mat-card>
+</li>

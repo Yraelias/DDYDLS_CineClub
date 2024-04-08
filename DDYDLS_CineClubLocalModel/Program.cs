@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DDYDLS_DDYDLS_CineClubLocalModel
+namespace DDYDLS_CineClubLocalModel
 {
     class Program
     {

@@ -1,0 +1,34 @@
+
+<title>{{movie.name}}</title>
+<h1>TITRE  : {{movie.name}}</h1>
+<mat-grid-list cols="3" rowHeight="3:2">
+    <mat-grid-tile>
+      
+          <img [src]="URLimg" class="image"/>
+        
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class='DetailsMoviecontent'>
+        <p>ANNEE :  {{result.results[0].release_date}} <br>
+
+        <a *ngIf="isConnected && movie.ratingForUser != 10" >MA NOTE :  {{movie.ratingForUser}}</a><br>
+        
+        NOTE YOSHI : {{movie.avgRating}}<br>
+        
+        <button *ngIf="isConnected && movie.ratingForUser != 10" mat-raised-button (click)="openDialog('0ms', '0ms')" >Modifer ma note</button> 
+        <button *ngIf="isConnected && movie.ratingForUser == 10" mat-raised-button (click)="openDialog('0ms', '0ms')" >Ajouter ma note</button> </p>
+      </div>
+    </mat-grid-tile>
+    
+    <mat-grid-tile><p>SYNOPSIS : {{result.results[0].overview}}</p></mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-card></mat-card>
+
+  <app-commentary></app-commentary>
+
+
+
+
+
+
