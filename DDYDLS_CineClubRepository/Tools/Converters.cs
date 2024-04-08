@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Text;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace DAL.Tools
 {
@@ -70,6 +71,23 @@ namespace DAL.Tools
                 Approbate = Convert.IsDBNull((int)reader["Approbate"]) ? 0 : (int)reader["Approbate"],
                 Commentary = reader["Commentary"].ToString(),
                 Username = reader["Username"].ToString()
+            };
+        }
+        public static Cineclub CineclubConvert(SqlDataReader reader)
+        {
+            return new Cineclub
+            {
+                Id_Cineclub = Convert.IsDBNull((int)reader["Id_Cineclub"]) ? 0 : (int)reader["Id_Rating"],
+                Id_Movie_1 = Convert.IsDBNull((int)reader["Id_Movie_1"]) ? 0 : (int)reader["Id_Movie_1"],
+                Id_Movie_2 = Convert.IsDBNull((int)reader["Id_Movie_2"]) ? 0 : (int)reader["Id_Movie_2"],
+                Id_Movie_3 = Convert.IsDBNull((int)reader["Id_Movie_3"]) ? 0 : (int)reader["Id_Movie_3"],
+                Id_Movie_4 = Convert.IsDBNull((int)reader["Id_Movie_4"]) ? 0 : (int)reader["Id_Movie_4"],
+                Id_Movie_5 = Convert.IsDBNull((int)reader["Id_Movie_5"]) ? 0 : (int)reader["Id_Movie_4"],
+                NumberOfCineclub = Convert.IsDBNull((int)reader["NumberOfCineclub"]) ? 0 : (int)reader["NumberOfCineclub"],
+                Begin = Convert.IsDBNull((DateTime)reader["Begin"]) ? new DateTime() : (DateTime)reader["Begin"],
+                End  =  Convert.IsDBNull((DateTime)reader["End"]) ? new DateTime() : (DateTime)reader["End"],
+                Link_Yt = reader["link_Yt"].ToString()
+
             };
         }
     }
