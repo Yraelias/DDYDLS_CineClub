@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iFvJYKKgA1hhmAZ14xxnDYTYvRER6UO/57XZ9cZIbQzN6YqUz3hvZgU3p5gxhkHs3rMwqSm33dW1/74ecGDz0A==",
+  "dgSpecHash": "6/TaTEDgbYmA3LRPkckarU1sP2t4CTfcH7oUdfEuUfPQokultUjdp2eyJeb6jqnYHOeBSRifYJsp/M3mshSm+g==",
   "success": true,
   "projectFilePath": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubApi.csproj",
   "expectedPackageFiles": [
@@ -18,7 +18,6 @@
     "C:\\Users\\david\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.15.1\\microsoft.identitymodel.protocols.openidconnect.6.15.1.nupkg.sha512",
     "C:\\Users\\david\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.15.1\\microsoft.identitymodel.tokens.6.15.1.nupkg.sha512",
     "C:\\Users\\david\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
-    "C:\\Users\\david\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.6\\microsoft.visualstudio.azure.containers.tools.targets.1.19.6.nupkg.sha512",
     "C:\\Users\\david\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\david\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\david\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",

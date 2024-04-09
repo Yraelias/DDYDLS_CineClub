@@ -50,8 +50,8 @@
               "Title": "DDYDLS_CineClubApi",
               "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubApi.csproj",
               "RelativeDocumentMoniker": "DDYDLS_CineClub\\DDYDLS_CineClubApi.csproj",
-              "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubApi.csproj",
-              "RelativeToolTip": "DDYDLS_CineClub\\DDYDLS_CineClubApi.csproj",
+              "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubApi.csproj*",
+              "RelativeToolTip": "DDYDLS_CineClub\\DDYDLS_CineClubApi.csproj*",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-04-09T15:56:45.728Z",
@@ -63,8 +63,8 @@
               "Title": "ADO Toolbox",
               "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\ADO Toolbox\\ADO Toolbox.csproj",
               "RelativeDocumentMoniker": "ADO Toolbox\\ADO Toolbox.csproj",
-              "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\ADO Toolbox\\ADO Toolbox.csproj",
-              "RelativeToolTip": "ADO Toolbox\\ADO Toolbox.csproj",
+              "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\ADO Toolbox\\ADO Toolbox.csproj*",
+              "RelativeToolTip": "ADO Toolbox\\ADO Toolbox.csproj*",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-04-09T15:56:42.262Z",
@@ -93,7 +93,8 @@
               "RelativeToolTip": "DDYDLS_CineClub\\Models\\Cineclub.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T16:26:19.927Z"
+              "WhenOpened": "2024-04-08T16:26:19.927Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -105,7 +106,8 @@
               "RelativeToolTip": "DDYDLS_CineClub\\Tools\\Mappers.cs",
               "ViewState": "AQIAAKQAAAAAAAAAAAAiwMAAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T15:29:57.218Z"
+              "WhenOpened": "2024-04-08T15:29:57.218Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -115,9 +117,10 @@
               "RelativeDocumentMoniker": "DDYDLS_CineClubLocalModel\\Services\\MovieService.cs",
               "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubLocalModel\\Services\\MovieService.cs",
               "RelativeToolTip": "DDYDLS_CineClubLocalModel\\Services\\MovieService.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAACYAAAA3AAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAIBJwCYAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T15:10:47.334Z"
+              "WhenOpened": "2024-04-08T15:10:47.334Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -127,9 +130,10 @@
               "RelativeDocumentMoniker": "DDYDLS_CineClubLocalModel\\Tools\\LocalMappers.cs",
               "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubLocalModel\\Tools\\LocalMappers.cs",
               "RelativeToolTip": "DDYDLS_CineClubLocalModel\\Tools\\LocalMappers.cs",
-              "ViewState": "AQIAAFYAAAAAAAAAAAAAAGsAAAAQAAAA",
+              "ViewState": "AQIAAFMAAAAAAAAAAIBJwGsAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T08:53:58.56Z"
+              "WhenOpened": "2024-04-08T08:53:58.56Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -141,7 +145,8 @@
               "RelativeToolTip": "DDYDLS_CineClubLocalModel\\Services\\Interfaces\\ICineclubService.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAxwA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T14:51:15.427Z"
+              "WhenOpened": "2024-04-08T14:51:15.427Z",
+              "EditorCaption": ""
             }
           ]
         }
