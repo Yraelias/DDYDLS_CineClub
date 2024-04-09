@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DDYDLS_CineClubLocalModel.Tools;
+using System;
 
 #pragma warning disable CS8981 // Le nom de type contient uniquement des caractères ascii en minuscules. De tels noms peuvent devenir réservés pour la langue.
 using api = DDYDLS_CineClubApi.Models;
@@ -164,6 +165,39 @@ namespace DDYDLS_CineClubApi.Tools
                 Commentary = newMovie.Commentary,
                 Approbate = newMovie.Approbate,
                 Username = newMovie.Username,
+            };
+        }
+
+        public static model.Cineclub toLocal(this api.Cineclub newCineclub)   
+        {
+            return new model.Cineclub
+            {
+                Id_Cineclub = newCineclub.Id_Cineclub,
+                Movie_1 = newCineclub.Movie_1.toLocal(),
+                Movie_2 = newCineclub.Movie_2.toLocal(),
+                Movie_3 = newCineclub.Movie_3.toLocal(),
+                Movie_4 = newCineclub.Movie_4.toLocal(),
+                Movie_5 = newCineclub.Movie_5.toLocal(),
+                NumberOfCineclub = newCineclub.NumberOfCineclub,
+                Begin = newCineclub.Begin,
+                End = newCineclub.End,
+                Link_Yt = newCineclub.Link_Yt
+            };
+        }
+        public static api.Cineclub toApi(this model.Cineclub newCineclub)
+        {
+            return new api.Cineclub
+            {
+                Id_Cineclub = newCineclub.Id_Cineclub,
+                Movie_1 = newCineclub.Movie_1.toApi(),
+                Movie_2 = newCineclub.Movie_2.toApi(),
+                Movie_3 = newCineclub.Movie_3.toApi(),
+                Movie_4 = newCineclub.Movie_4.toApi(),
+                Movie_5 = newCineclub.Movie_5.toApi(),
+                NumberOfCineclub = newCineclub.NumberOfCineclub,
+                Begin = newCineclub.Begin,
+                End = newCineclub.End,
+                Link_Yt = newCineclub.Link_Yt
             };
         }
 
