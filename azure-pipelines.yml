@@ -24,6 +24,6 @@ stages:
       displayName: Build an image
       inputs:
         command: build
-        dockerfile: '$(Build.SourcesDirectory)/DDYDLS_CineClub/Dockerfile'
+        dockerfile: '$(Build.SourcesDirectory)/DDYDLS_CineClub/DDYDLS_CineClub/Dockerfile'
         tags: |
           $(tag)
