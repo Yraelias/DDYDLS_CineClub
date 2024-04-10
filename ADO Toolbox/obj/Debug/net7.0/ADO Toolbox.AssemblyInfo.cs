@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ADO Toolbox")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c42e1edac645f235713b68d520816b7bc1e71931")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0e54d9d1f5829759fa2a5424b5a289a7a6dc9752")]
 [assembly: System.Reflection.AssemblyProductAttribute("ADO Toolbox")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ADO Toolbox")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
