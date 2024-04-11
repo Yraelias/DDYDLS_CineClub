@@ -82,6 +82,88 @@ INSERT INTO [dbo].[T_Movie]
            ,447404)
 GO
 
+INSERT INTO [dbo].[T_Movie]
+           ([Name]
+           ,[Year]
+           ,[TMDB_Id])
+     VALUES
+           ('Elfe'
+           ,2003
+           ,10719)
+GO
+
+INSERT INTO [dbo].[T_Movie]
+           ([Name]
+           ,[Year]
+           ,[TMDB_Id])
+     VALUES
+           ('Le Roi Lion'
+           ,2019
+           ,420818)
+GO
+
+INSERT INTO [dbo].[T_Movie]
+           ([Name]
+           ,[Year]
+           ,[TMDB_Id])
+     VALUES
+           ('Le livre de la jungle'
+           ,2016
+           ,278927)
+GO
+
+INSERT INTO [dbo].[T_Movie]
+           ([Name]
+           ,[Year]
+           ,[TMDB_Id])
+     VALUES
+           ('Zathura : Une aventure spatiale'
+           ,2005
+           ,6795)
+GO
+
+INSERT INTO [dbo].[T_Cineclub]
+           ([Id_Movie_1]
+           ,[Id_Movie_2]
+           ,[Id_Movie_3]
+           ,[Id_Movie_4]
+           
+           ,[NumberOfCineclub]
+           ,[Begin]
+           ,[End]
+           ,[Title])
+     VALUES
+           (3,
+           4,
+           5,
+           6,
+           1,
+           '01/06/2023',
+           '30/06/2023'
+           ,'Dark Fantasy')
+GO
+
+INSERT INTO [dbo].[T_Cineclub]
+           ([Id_Movie_1]
+           ,[Id_Movie_2]
+           ,[Id_Movie_3]
+           ,[Id_Movie_4]
+           
+           ,[NumberOfCineclub]
+           ,[Begin]
+           ,[End]
+           ,[Title])
+     VALUES
+           (8,
+            9,
+           10,
+           11,
+           2,
+           '19/07/2023',
+           '23/08/2023'
+           ,'Jon Favreau')
+GO
+
 INSERT INTO [dbo].[T_User]
            ([Username]
            ,[Password]
