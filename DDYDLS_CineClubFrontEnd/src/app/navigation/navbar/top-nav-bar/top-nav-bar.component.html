@@ -9,7 +9,7 @@
   <button mat-menu-item [routerLink]="['/movies']">Liste</button>
 </mat-menu>
 
-<button mat-button >Cinéclub</button>
+<button mat-button [routerLink]="['/cineclub']">Cinéclub</button>
 <span class="example-spacer"></span>
 <mat-icon *ngIf="isConnected" >person</mat-icon>
 <button *ngIf="!isConnected" mat-button [routerLink]="['/connexion']">Connexion</button>

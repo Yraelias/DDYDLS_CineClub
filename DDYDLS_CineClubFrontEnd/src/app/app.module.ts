@@ -32,6 +32,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { RatingService } from './main/content/pages/rating/rating.service';
 import { CommentaryComponent } from './main/content/pages/rating/commentary/commentary.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { CineclubListComponent } from './main/content/pages/cineclub/cineclub-list/cineclub-list.component';
 
 
 
@@ -50,6 +51,11 @@ const appRoutes: Routes = [
     path:'movies',
     component: MoviesListComponent,
     //resolve: {data: MovieService}
+  },
+  {
+    path:'cineclub',
+    component: CineclubListComponent,
+    //canActivate :[AuthGuardService]
   },
   {
     path:'user',
