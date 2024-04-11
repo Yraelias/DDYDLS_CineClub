@@ -82,6 +82,27 @@ INSERT INTO [dbo].[T_Movie]
            ,447404)
 GO
 
+INSERT INTO [dbo].[T_Cineclub]
+           ([Id_Movie_1]
+           ,[Id_Movie_2]
+           ,[Id_Movie_3]
+           ,[Id_Movie_4]
+           
+           ,[NumberOfCineclub]
+           ,[Begin]
+           ,[End]
+           ,[Title])
+     VALUES
+           (3,
+           4,
+           5,
+           6,
+           1,
+           '01/06/2023',
+           '30/06/2023'
+           ,'Dark Fantasy')
+GO
+
 INSERT INTO [dbo].[T_User]
            ([Username]
            ,[Password]
