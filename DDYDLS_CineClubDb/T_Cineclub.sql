@@ -10,6 +10,7 @@
     [Begin] DATE NOT NULL , 
     [End] DATE NULL, 
     [Link_Yt] NCHAR(10) NULL, 
+    [Title] NCHAR(10) NOT NULL, 
     CONSTRAINT [FK_Id_Movie_1_T_Movie] FOREIGN KEY ([Id_Movie_1]) REFERENCES [T_Movie]([Id_Movie]),
     CONSTRAINT [FK_Id_Movie_2_T_Movie] FOREIGN KEY ([Id_Movie_2]) REFERENCES [T_Movie]([Id_Movie]),
     CONSTRAINT [FK_Id_Movie_3_T_Movie] FOREIGN KEY ([Id_Movie_3]) REFERENCES [T_Movie]([Id_Movie]),

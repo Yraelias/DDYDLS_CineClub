@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7AEBCFB5-988D-458D-8E8D-8672E3D9981C}|ADO Toolbox\\ADO Toolbox.csproj|g:\\ddydls_cineclub\\ddydls_cineclub\\ado toolbox\\ado toolbox.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{7AEBCFB5-988D-458D-8E8D-8672E3D9981C}|ADO Toolbox\\ADO Toolbox.csproj|solutionrelative:ado toolbox\\ado toolbox.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{3BCEA1CC-C997-4ACA-975F-5C244DD3D8B2}|DDYDLS_CineClub\\DDYDLS_CineClubApi.csproj|g:\\ddydls_cineclub\\ddydls_cineclub\\ddydls_cineclub\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{3BCEA1CC-C997-4ACA-975F-5C244DD3D8B2}|DDYDLS_CineClub\\DDYDLS_CineClubApi.csproj|solutionrelative:ddydls_cineclub\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3BCEA1CC-C997-4ACA-975F-5C244DD3D8B2}|DDYDLS_CineClub\\DDYDLS_CineClubApi.csproj|g:\\ddydls_cineclub\\ddydls_cineclub\\ddydls_cineclub\\ddydls_cineclubapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{3BCEA1CC-C997-4ACA-975F-5C244DD3D8B2}|DDYDLS_CineClub\\DDYDLS_CineClubApi.csproj|solutionrelative:ddydls_cineclub\\ddydls_cineclubapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AEBCFB5-988D-458D-8E8D-8672E3D9981C}|ADO Toolbox\\ADO Toolbox.csproj|g:\\ddydls_cineclub\\ddydls_cineclub\\ado toolbox\\ado toolbox.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7AEBCFB5-988D-458D-8E8D-8672E3D9981C}|ADO Toolbox\\ADO Toolbox.csproj|solutionrelative:ado toolbox\\ado toolbox.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3BCEA1CC-C997-4ACA-975F-5C244DD3D8B2}|DDYDLS_CineClub\\DDYDLS_CineClubApi.csproj|g:\\ddydls_cineclub\\ddydls_cineclub\\ddydls_cineclub\\controllers\\cineclubcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,37 +46,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClub\\Dockerfile",
+              "RelativeDocumentMoniker": "DDYDLS_CineClub\\Dockerfile",
+              "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClub\\Dockerfile",
+              "RelativeToolTip": "DDYDLS_CineClub\\Dockerfile",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-10T16:19:22.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DDYDLS_CineClubApi",
+              "Title": "DDYDLS_CineClubApi.csproj",
               "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubApi.csproj",
               "RelativeDocumentMoniker": "DDYDLS_CineClub\\DDYDLS_CineClubApi.csproj",
               "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubApi.csproj",
               "RelativeToolTip": "DDYDLS_CineClub\\DDYDLS_CineClubApi.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAVAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-04-09T15:56:45.728Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ADO Toolbox",
-              "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\ADO Toolbox\\ADO Toolbox.csproj",
-              "RelativeDocumentMoniker": "ADO Toolbox\\ADO Toolbox.csproj",
-              "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\ADO Toolbox\\ADO Toolbox.csproj",
-              "RelativeToolTip": "ADO Toolbox\\ADO Toolbox.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-04-09T15:56:42.262Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-09T15:56:45.728Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ADO Toolbox.csproj",
+              "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\ADO Toolbox\\ADO Toolbox.csproj",
+              "RelativeDocumentMoniker": "ADO Toolbox\\ADO Toolbox.csproj",
+              "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\ADO Toolbox\\ADO Toolbox.csproj",
+              "RelativeToolTip": "ADO Toolbox\\ADO Toolbox.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-09T15:56:42.262Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "CineclubController.cs",
               "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClub\\Controllers\\CineclubController.cs",
               "RelativeDocumentMoniker": "DDYDLS_CineClub\\Controllers\\CineclubController.cs",
@@ -80,12 +95,11 @@
               "RelativeToolTip": "DDYDLS_CineClub\\Controllers\\CineclubController.cs",
               "ViewState": "AQIAAEMAAAAAAAAAAAAqwGQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T16:28:47.906Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T16:28:47.906Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Cineclub.cs",
               "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClub\\Models\\Cineclub.cs",
               "RelativeDocumentMoniker": "DDYDLS_CineClub\\Models\\Cineclub.cs",
@@ -93,12 +107,11 @@
               "RelativeToolTip": "DDYDLS_CineClub\\Models\\Cineclub.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T16:26:19.927Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T16:26:19.927Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Mappers.cs",
               "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClub\\Tools\\Mappers.cs",
               "RelativeDocumentMoniker": "DDYDLS_CineClub\\Tools\\Mappers.cs",
@@ -106,12 +119,11 @@
               "RelativeToolTip": "DDYDLS_CineClub\\Tools\\Mappers.cs",
               "ViewState": "AQIAAKQAAAAAAAAAAAAiwMAAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T15:29:57.218Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T15:29:57.218Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "MovieService.cs",
               "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubLocalModel\\Services\\MovieService.cs",
               "RelativeDocumentMoniker": "DDYDLS_CineClubLocalModel\\Services\\MovieService.cs",
@@ -119,12 +131,11 @@
               "RelativeToolTip": "DDYDLS_CineClubLocalModel\\Services\\MovieService.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAIBJwCYAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T15:10:47.334Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T15:10:47.334Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "LocalMappers.cs",
               "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubLocalModel\\Tools\\LocalMappers.cs",
               "RelativeDocumentMoniker": "DDYDLS_CineClubLocalModel\\Tools\\LocalMappers.cs",
@@ -132,12 +143,11 @@
               "RelativeToolTip": "DDYDLS_CineClubLocalModel\\Tools\\LocalMappers.cs",
               "ViewState": "AQIAAFMAAAAAAAAAAIBJwGsAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T08:53:58.56Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T08:53:58.56Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ICineclubService.cs",
               "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubLocalModel\\Services\\Interfaces\\ICineclubService.cs",
               "RelativeDocumentMoniker": "DDYDLS_CineClubLocalModel\\Services\\Interfaces\\ICineclubService.cs",
@@ -145,8 +155,7 @@
               "RelativeToolTip": "DDYDLS_CineClubLocalModel\\Services\\Interfaces\\ICineclubService.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAxwA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T14:51:15.427Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T14:51:15.427Z"
             }
           ]
         }
