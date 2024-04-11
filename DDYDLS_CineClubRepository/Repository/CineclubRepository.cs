@@ -46,7 +46,7 @@ namespace DDYDLS_CineClubDAL.Repository
             cmd.AddParameter("NumberOfCineclub", g.NumberOfCineclub);
             cmd.AddParameter("Begin", g.Begin);
             cmd.AddParameter("End", g.End);
-            cmd.AddParameter("Link_Yt", g.Link_Yt);
+            cmd.AddParameter("Title", g.Title);
             _connection.ExecuteNonQuery(cmd);
         }
 
@@ -63,7 +63,7 @@ namespace DDYDLS_CineClubDAL.Repository
             cmd.AddParameter("NumberOfCineclub", g.NumberOfCineclub);
             cmd.AddParameter("Begin", g.Begin);
             cmd.AddParameter("End", g.End);
-            cmd.AddParameter("Link_Yt", g.Link_Yt);
+            cmd.AddParameter("Link_Yt", g.Title);
             cmd.AddParameter("Id_Cineclub", g.Id_Cineclub);
             _connection.ExecuteNonQuery(cmd);
         }

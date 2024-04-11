@@ -181,7 +181,7 @@ namespace DDYDLS_CineClubApi.Tools
                 NumberOfCineclub = newCineclub.NumberOfCineclub,
                 Begin = newCineclub.Begin,
                 End = newCineclub.End,
-                Link_Yt = newCineclub.Link_Yt
+                Title = newCineclub.Title
             };
         }
         public static api.Cineclub toApi(this model.Cineclub newCineclub)
@@ -197,7 +197,7 @@ namespace DDYDLS_CineClubApi.Tools
                 NumberOfCineclub = newCineclub.NumberOfCineclub,
                 Begin = newCineclub.Begin,
                 End = newCineclub.End,
-                Link_Yt = newCineclub.Link_Yt
+                Title = newCineclub.Title
             };
         }
 

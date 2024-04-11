@@ -5,7 +5,7 @@
     [Id_Movie_2] INT NOT NULL, 
     [Id_Movie_3] INT NOT NULL, 
     [Id_Movie_4] INT NOT NULL, 
-    [Id_Movie_5] INT NULL, 
+    [Id_Movie_5] INT NULL DEFAULT 0, 
     [NumberOfCineclub] INT NOT NULL, 
     [Begin] DATE NOT NULL , 
     [End] DATE NULL, 

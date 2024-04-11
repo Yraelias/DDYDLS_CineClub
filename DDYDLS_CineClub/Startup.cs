@@ -37,6 +37,7 @@ namespace DDYDLS_CineClub
             services.AddScoped<IRoleRepository<Role>, RoleRepository>();
             services.AddScoped<IMovieRepository<Movie>, MovieRepository>();
             services.AddScoped<IRatingRepository<Rating>, RatingRepository>();
+            services.AddScoped<ICineclubRepository<Cineclub>, CineclubRepository>();
             #endregion
 
             #region Services
@@ -46,6 +47,7 @@ namespace DDYDLS_CineClub
             services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IRoleService, RoleService>();
             services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IMovieService,MovieService>();
             services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IRatingService, RatingService>();
+            services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.ICineclubService, CineclubService>();
             #endregion
 
             #region Config JWToken

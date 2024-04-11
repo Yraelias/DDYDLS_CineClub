@@ -122,12 +122,15 @@ INSERT INTO [dbo].[T_Movie]
            ,6795)
 GO
 
+USE [DDYDLS_CineClubDb]
+GO
+
 INSERT INTO [dbo].[T_Cineclub]
            ([Id_Movie_1]
            ,[Id_Movie_2]
            ,[Id_Movie_3]
            ,[Id_Movie_4]
-           
+		   ,[Id_Movie_5]
            ,[NumberOfCineclub]
            ,[Begin]
            ,[End]
@@ -137,6 +140,7 @@ INSERT INTO [dbo].[T_Cineclub]
            4,
            5,
            6,
+           1,
            1,
            '01/06/2023',
            '30/06/2023'
@@ -148,7 +152,7 @@ INSERT INTO [dbo].[T_Cineclub]
            ,[Id_Movie_2]
            ,[Id_Movie_3]
            ,[Id_Movie_4]
-           
+           ,[Id_Movie_5]
            ,[NumberOfCineclub]
            ,[Begin]
            ,[End]
@@ -158,6 +162,7 @@ INSERT INTO [dbo].[T_Cineclub]
             9,
            10,
            11,
+           1,
            2,
            '19/07/2023',
            '23/08/2023'

@@ -175,7 +175,7 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 NumberOfCineclub = newRating.NumberOfCineclub,
                 Begin = newRating.Begin,
                 End = newRating.End,
-                Link_Yt = newRating.Link_Yt
+                Title = newRating.Title
             };
         }
         public static dal.Cineclub toDal(this Models.Cineclub newRating)
@@ -191,7 +191,7 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 NumberOfCineclub = newRating.NumberOfCineclub,
                 Begin = newRating.Begin,
                 End = newRating.End,
-                Link_Yt = newRating.Link_Yt
+                Title = newRating.Title
             };
         }
     }

@@ -77,7 +77,7 @@ namespace DAL.Tools
         {
             return new Cineclub
             {
-                Id_Cineclub = Convert.IsDBNull((int)reader["Id_Cineclub"]) ? 0 : (int)reader["Id_Rating"],
+                Id_Cineclub = Convert.IsDBNull((int)reader["Id_Cineclub"]) ? 0 : (int)reader["Id_Cineclub"],
                 Id_Movie_1 = Convert.IsDBNull((int)reader["Id_Movie_1"]) ? 0 : (int)reader["Id_Movie_1"],
                 Id_Movie_2 = Convert.IsDBNull((int)reader["Id_Movie_2"]) ? 0 : (int)reader["Id_Movie_2"],
                 Id_Movie_3 = Convert.IsDBNull((int)reader["Id_Movie_3"]) ? 0 : (int)reader["Id_Movie_3"],
@@ -86,8 +86,7 @@ namespace DAL.Tools
                 NumberOfCineclub = Convert.IsDBNull((int)reader["NumberOfCineclub"]) ? 0 : (int)reader["NumberOfCineclub"],
                 Begin = Convert.IsDBNull((DateTime)reader["Begin"]) ? new DateTime() : (DateTime)reader["Begin"],
                 End  =  Convert.IsDBNull((DateTime)reader["End"]) ? new DateTime() : (DateTime)reader["End"],
-                Link_Yt = reader["link_Yt"].ToString()
-
+                Title = reader["Title"].ToString()
             };
         }
     }

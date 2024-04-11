@@ -17,6 +17,6 @@ namespace DDYDLS_CineClubDAL.Models
         public int NumberOfCineclub { get; set; }
         public DateTime Begin {  get; set; }
         public DateTime End { get; set; }
-        public string Link_Yt { get; set; }
+        public string Title { get; set; }
     }
 }
