@@ -52,7 +52,7 @@ namespace DDYDLS_CineClubDAL.Repository
 
         public void Update(Cineclub g)
         {
-            Command cmd = new Command("UPDATE [dbo].[T_Cineclub]([Id_Movie_1],[Id_Movie_2],[Id_Movie_3],[Id_Movie_4],[Id_Movie_5],[NumberOfCineclub],[Begin],[End],[Link_Yt]) " +
+            Command cmd = new Command("UPDATE [dbo].[T_Cineclub]([Id_Movie_1],[Id_Movie_2],[Id_Movie_3],[Id_Movie_4],[Id_Movie_5],[NumberOfCineclub],[Begin],[End],[Title]) " +
                                       "VALUES (@Id_Movie_1,@Id_Movie_2,@Id_Movie_3,@Id_Movie_4,@Id_Movie_5,@NumberOfCineclub,@Begin,@End,@Link_Yt) GO" +
                                       "WHERE @Id_Cineclub == @Id_Cineclub" );
             cmd.AddParameter("Id_Movie_1", g.Id_Movie_1);
@@ -63,7 +63,7 @@ namespace DDYDLS_CineClubDAL.Repository
             cmd.AddParameter("NumberOfCineclub", g.NumberOfCineclub);
             cmd.AddParameter("Begin", g.Begin);
             cmd.AddParameter("End", g.End);
-            cmd.AddParameter("Link_Yt", g.Title);
+            cmd.AddParameter("Title", g.Title);
             cmd.AddParameter("Id_Cineclub", g.Id_Cineclub);
             _connection.ExecuteNonQuery(cmd);
         }

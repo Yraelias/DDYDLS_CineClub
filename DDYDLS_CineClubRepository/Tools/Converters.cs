@@ -82,7 +82,7 @@ namespace DAL.Tools
                 Id_Movie_2 = Convert.IsDBNull((int)reader["Id_Movie_2"]) ? 0 : (int)reader["Id_Movie_2"],
                 Id_Movie_3 = Convert.IsDBNull((int)reader["Id_Movie_3"]) ? 0 : (int)reader["Id_Movie_3"],
                 Id_Movie_4 = Convert.IsDBNull((int)reader["Id_Movie_4"]) ? 0 : (int)reader["Id_Movie_4"],
-                Id_Movie_5 = Convert.IsDBNull((int)reader["Id_Movie_5"]) ? 0 : (int)reader["Id_Movie_4"],
+                Id_Movie_5 = Convert.IsDBNull((int)reader["Id_Movie_5"]) ? 0 : (int)reader["Id_Movie_5"],
                 NumberOfCineclub = Convert.IsDBNull((int)reader["NumberOfCineclub"]) ? 0 : (int)reader["NumberOfCineclub"],
                 Begin = Convert.IsDBNull((DateTime)reader["Begin"]) ? new DateTime() : (DateTime)reader["Begin"],
                 End  =  Convert.IsDBNull((DateTime)reader["End"]) ? new DateTime() : (DateTime)reader["End"],

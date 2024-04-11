@@ -9,14 +9,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B927FA7B-1D6D-43DD-9916-53462B867E37}|DDYDLS_CineClubRepository\\DDYDLS_CineClubDAL.csproj|g:\\ddydls_cineclub\\ddydls_cineclub\\ddydls_cineclubrepository\\repository\\cineclubrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B927FA7B-1D6D-43DD-9916-53462B867E37}|DDYDLS_CineClubRepository\\DDYDLS_CineClubDAL.csproj|solutionrelative:ddydls_cineclubrepository\\repository\\cineclubrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3BCEA1CC-C997-4ACA-975F-5C244DD3D8B2}|DDYDLS_CineClub\\DDYDLS_CineClubApi.csproj|g:\\ddydls_cineclub\\ddydls_cineclub\\ddydls_cineclub\\tools\\mappers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3BCEA1CC-C997-4ACA-975F-5C244DD3D8B2}|DDYDLS_CineClub\\DDYDLS_CineClubApi.csproj|solutionrelative:ddydls_cineclub\\tools\\mappers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{975A26FD-F61D-4BDE-B9E6-3BBB8A383931}|DDYDLS_CineClubLocalModel\\DDYDLS_CineClubLocalModel.csproj|g:\\ddydls_cineclub\\ddydls_cineclub\\ddydls_cineclublocalmodel\\tools\\localmappers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{975A26FD-F61D-4BDE-B9E6-3BBB8A383931}|DDYDLS_CineClubLocalModel\\DDYDLS_CineClubLocalModel.csproj|solutionrelative:ddydls_cineclublocalmodel\\tools\\localmappers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,32 +18,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Mappers.cs",
-              "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClub\\Tools\\Mappers.cs",
-              "RelativeDocumentMoniker": "DDYDLS_CineClub\\Tools\\Mappers.cs",
-              "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClub\\Tools\\Mappers.cs",
-              "RelativeToolTip": "DDYDLS_CineClub\\Tools\\Mappers.cs",
-              "ViewState": "AQIAAKMAAAAAAAAAAAAqwMcAAAAVAAAA",
+              "DocumentIndex": 0,
+              "Title": "Converters.cs",
+              "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\Tools\\Converters.cs",
+              "RelativeDocumentMoniker": "DDYDLS_CineClubRepository\\Tools\\Converters.cs",
+              "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\Tools\\Converters.cs",
+              "RelativeToolTip": "DDYDLS_CineClubRepository\\Tools\\Converters.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAAAAFQAAABmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T15:32:34.28Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LocalMappers.cs",
-              "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubLocalModel\\Tools\\LocalMappers.cs",
-              "RelativeDocumentMoniker": "DDYDLS_CineClubLocalModel\\Tools\\LocalMappers.cs",
-              "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubLocalModel\\Tools\\LocalMappers.cs",
-              "RelativeToolTip": "DDYDLS_CineClubLocalModel\\Tools\\LocalMappers.cs",
-              "ViewState": "AQIAAKMAAAAAAAAAAAAqwMEAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T15:32:18.477Z",
+              "WhenOpened": "2024-04-11T16:13:30.734Z",
               "EditorCaption": ""
             },
             {
@@ -62,22 +41,9 @@
               "RelativeDocumentMoniker": "DDYDLS_CineClubRepository\\Repository\\CineclubRepository.cs",
               "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\Repository\\CineclubRepository.cs",
               "RelativeToolTip": "DDYDLS_CineClubRepository\\Repository\\CineclubRepository.cs",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAiwEEAAAAvAAAA",
+              "ViewState": "AQIAACUAAAAAAAAAAAAAAEEAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T15:32:05.896Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Converters.cs",
-              "DocumentMoniker": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\Tools\\Converters.cs",
-              "RelativeDocumentMoniker": "DDYDLS_CineClubRepository\\Tools\\Converters.cs",
-              "ToolTip": "G:\\DDYDLS_CineClub\\DDYDLS_CineClub\\DDYDLS_CineClubRepository\\Tools\\Converters.cs*",
-              "RelativeToolTip": "DDYDLS_CineClubRepository\\Tools\\Converters.cs*",
-              "ViewState": "AQIAADgAAAAAAAAAAAArwFQAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T15:22:45.523Z",
+              "WhenOpened": "2024-04-11T16:12:51.545Z",
               "EditorCaption": ""
             }
           ]
