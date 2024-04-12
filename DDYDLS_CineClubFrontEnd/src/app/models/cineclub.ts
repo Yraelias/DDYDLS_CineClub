@@ -1,7 +1,7 @@
 import { Movie } from "./movie";
 
 export class Cineclub {
-    id_Movie : number;
+    id_Cineclub : number;
     numberOfCineclub : number;
     movie_1 : Movie
     movie_2 : Movie

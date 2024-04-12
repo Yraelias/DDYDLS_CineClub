@@ -1,7 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MovieService } from '../../movie.service';
 import { Movie } from '../../../../../models/movie';
-import { MatLegacyPaginator as MatPaginator } from '@angular/material/legacy-paginator';
 
 @Component({
   selector: 'app-movieslist',
@@ -14,15 +13,14 @@ export class MoviesListComponent implements OnInit, AfterViewInit  {
   displayedColumns: string[] = ['name','synopsis','year','details'];
   movies : Movie[] = [];
 
-  @ViewChild(MatPaginator)
-  paginator!: MatPaginator;
+  
 
   
   constructor( private _movieService : MovieService
 
   ) { }
   ngAfterViewInit(): void {
-    this.dataSource.paginator = this.paginator;
+    
   }
 
   ngOnInit(): void {
@@ -35,10 +33,6 @@ export class MoviesListComponent implements OnInit, AfterViewInit  {
       next: (data : Movie[]) =>  this.dataSource = data,
       error : (error : any) => console.log(error)}
      )
-    this._movieService.getMovies();
-    this.movies = this._movieService.movies;
-    this.dataSource = this.movies;
-    console.log(this.dataSource)
   }
 
 }

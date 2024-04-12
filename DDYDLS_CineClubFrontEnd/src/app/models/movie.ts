@@ -9,5 +9,5 @@ export class Movie {
     rating : Rating;
     avgRating : number;
     ratingForUser : number;
-
+    UrlIMG ?: string ;
 }
