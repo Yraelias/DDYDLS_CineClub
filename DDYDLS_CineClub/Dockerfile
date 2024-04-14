@@ -5,6 +5,9 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 
 COPY ["DDYDLS_CineClub/DDYDLS_CineClub.csproj", "DDYDLS_CineClub/"]
+COPY ["DDYDLS_CineClubLocalModel/DDYDLS_CineClubLocalModel.csproj", "DDYDLS_CineClubLocalModel/"]
+COPY ["DDYDLS_CineClubRepository/DDYDLS_CineClubDAL.csproj", "DDYDLS_CineClubRepository/"]
+COPY ["ADO Toolbox/ADO Toolbox.csproj", "ADO Toolbox/"]
 
 RUN dotnet restore "./DDYDLS_CineClub/DDYDLS_CineClub.csproj"
 COPY . ./
