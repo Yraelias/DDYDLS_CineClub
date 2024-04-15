@@ -38,3 +38,8 @@ DDYDLS_CineClubDb/DDYDLS_CineClubDb.dbmdl
 *.pdb
 *.cache
 *.jfm
+.vs/
+obj/
+bin/
+.user/
+.github/
