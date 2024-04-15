@@ -39,3 +39,5 @@ DDYDLS_CineClubDb/DDYDLS_CineClubDb.dbmdl
 *.cache
 *.jfm
 .vs/DDYDLS_CineClub/v17/.suo
+/DDYDLS_CineClubFrontEnd/.angular/cache
+/DDYDLS_CineClubFrontEnd/node_modules
