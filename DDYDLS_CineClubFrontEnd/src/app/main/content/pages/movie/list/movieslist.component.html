@@ -10,21 +10,21 @@
   
     <!-- Name Column -->  
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Titre </th>
-      <td mat-cell *matCellDef="let movie"> {{movie.name}} </td>
+      <th mat-header-cell *matHeaderCellDef class="base-card"> Titre </th>
+      <td mat-cell *matCellDef="let movie" class="base-card"> {{movie.name}} </td>
     </ng-container>
 
 
     <!-- synopsis Column -->
     <ng-container matColumnDef="synopsis">
       <th mat-header-cell *matHeaderCellDef> Synopsis </th>
-      <td mat-cell *matCellDef="let movie"> {{movie.synopsis}} </td>
+      <td mat-cell *matCellDef="let movie" class="base-card"> {{movie.synopsis}} </td>
     </ng-container>
 
     <!-- year Column -->
     <ng-container matColumnDef="year">
       <th mat-header-cell *matHeaderCellDef> Année </th>
-      <td mat-cell *matCellDef="let movie"> {{movie.year}} </td>
+      <td mat-cell *matCellDef="let movie" class="base-card"> {{movie.year}} </td>
     </ng-container>
 
     <!-- details Column -->
@@ -33,8 +33,8 @@
       <td mat-cell *matCellDef="let movie" ><button mat-stroked-button color="accent" [routerLink]="['/movies',movie.id_Movie]"> Details</button> </td>
     </ng-container>
   
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="base-card"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="base-card"></tr>
     <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of movies"></mat-paginator>
   </table>
 </mat-card-content>
