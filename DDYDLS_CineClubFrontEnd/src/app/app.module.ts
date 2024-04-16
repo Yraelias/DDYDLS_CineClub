@@ -34,6 +34,7 @@ import { CommentaryComponent } from './main/content/pages/rating/commentary/comm
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { CineclubListComponent } from './main/content/pages/cineclub/cineclub-list/cineclub-list.component';
 import { CineclubService } from './main/content/pages/cineclub/cineclub.service';
+import { FooterComponent } from './navigation/footer/footer.component';
 
 
 
@@ -80,7 +81,8 @@ const appRoutes: Routes = [
         UserComponent,
         DialogAddorUpdateRatingComponent,
         CommentaryComponent,
-        CineclubListComponent
+        CineclubListComponent,
+        FooterComponent
     ],
     providers: [MovieService, AuthService, AuthGuardService, RatingService,CineclubService ],
     bootstrap: [AppComponent],

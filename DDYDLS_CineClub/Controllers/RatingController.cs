@@ -70,16 +70,16 @@ namespace DDYDLS_CineClubApi.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] api.Rating Rating)
         {
-            //try
-            //{
+            try
+            {
                 _RatingService.AddRating(Rating.toLocal());
                 return Ok();
-            //}
-            //catch (Exception e)
-            //{
-            //    return BadRequest(e.Message);
-            //}
-}
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
 
         // PUT api/<User>/5
         [HttpPut]
