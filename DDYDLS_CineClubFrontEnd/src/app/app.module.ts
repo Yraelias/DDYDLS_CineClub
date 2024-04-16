@@ -79,7 +79,8 @@ const appRoutes: Routes = [
         LoginComponent,
         UserComponent,
         DialogAddorUpdateRatingComponent,
-        CommentaryComponent
+        CommentaryComponent,
+        CineclubListComponent
     ],
     providers: [MovieService, AuthService, AuthGuardService, RatingService,CineclubService ],
     bootstrap: [AppComponent],
