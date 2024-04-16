@@ -31,6 +31,7 @@
 
 <div mat-dialog-actions class="boxButtons">
   <button mat-button mat-dialog-close>Annuler</button>
-  <button mat-button mat-dialog-close cdkFocusInitial (click)="validateRating(message.value)">Valider le vote</button>
+  <button mat-button mat-dialog-close cdkFocusInitial *ngIf="!AddOrUpdate"(click)="validateRating(message.value)">Valider ma vote</button>
+  <button mat-button mat-dialog-close cdkFocusInitial *ngIf="AddOrUpdate" (click)="validateRating(message.value)">Modifier ma vote</button>
 </div>
 </div>

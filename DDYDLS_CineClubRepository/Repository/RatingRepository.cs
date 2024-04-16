@@ -31,10 +31,12 @@ namespace DDYDLS_CineClubDAL.Repository
 
         public void Insert(Rating g)
         {
-            Command cmd = new Command("INSERT INTO [dbo].[T_Rating] ([Id_User],[Id_Movie],[Rating],[Date]) VALUES (@Id_User,@Id_Movie,@Rating,@Date)");
+            Command cmd = new Command("INSERT INTO [dbo].[T_Rating] ([Id_User],[Id_Movie],[Rating],[Commentary],[Approbate],[Date]) VALUES (@Id_User,@Id_Movie,@Rating,@Commentary,@Approbate,@Date)");
             cmd.AddParameter("Id_User", g.Id_User);
             cmd.AddParameter("Id_Movie",g.Id_Movie);
             cmd.AddParameter("Rating",g.Ratings);
+            cmd.AddParameter("Commentary", g.Commentary);
+            cmd.AddParameter("Approbate", g.Approbate);
             if (g.Date == null)
             {
                 g.Date = DateTime.Now;
