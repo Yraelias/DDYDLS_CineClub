@@ -68,7 +68,7 @@ namespace DDYDLS_CineClubApi.Controllers
 
         // POST api/<Rating>
         [HttpPost]
-        public IActionResult Post([FromForm] api.Rating Rating)
+        public IActionResult Post([FromBody] api.Rating Rating)
         //public IActionResult Post(api.UserCreate user)
         {
             Rating newUser = new Rating();
