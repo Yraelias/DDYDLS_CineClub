@@ -21,10 +21,10 @@
   <img mat-card-image src="/assets/icons/OeufNB.png" *ngIf="Reco == 1" (click)="onClickRecom(2)">
   <h2>Commentaire</h2>
   <form class="example-form">
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width" >
       <mat-label>Message</mat-label>
-      <input matInput #message  maxlength="256" >
-      <mat-hint align="start"><strong>caractères maximum</strong> </mat-hint>
+      <input matInput #message  maxlength="256">
+      <mat-hint align="start" ><strong>caractères maximum</strong> </mat-hint>
       <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
     </mat-form-field>
   </form>
