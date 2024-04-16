@@ -53,7 +53,7 @@ export class DialogAddorUpdateRatingComponent implements OnInit {
         error : (error) => {console.log(error)},
     }); //Service Ajout
     }
-    else this.ratingservice.updateRatingForMovie(this.id_User, this.movie.movie.id_Movie, this.ratingSelectionned).subscribe({
+    else this.ratingservice.updateRatingForMovie(this.id_User, this.movie.movie.id_Movie, this.ratingSelectionned,message,this.Reco).subscribe({
       next : (data : any) => {ok = true},
       error : (error) => {console.log(error)},
   });  //Service modifié

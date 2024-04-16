@@ -29,7 +29,7 @@ export class RatingService {
   });
   }
 
-  updateRatingForMovie(Id_User : number, Id_Movie : number, rating : number ) : Observable<Rating> {
+  updateRatingForMovie(Id_User : number, Id_Movie : number, rating : number, commentary:string, approbate : number ) : Observable<Rating> {
     console.log(Id_User)
     console.log(Id_Movie)
     console.log(rating)
@@ -38,7 +38,9 @@ export class RatingService {
       Id_User : Id_User,
       Id_Movie : Id_Movie,
       date : this.today,
-      Ratings : rating
+      Ratings : rating,
+      commentary : commentary,
+      approbate : approbate
   });
   }
 
