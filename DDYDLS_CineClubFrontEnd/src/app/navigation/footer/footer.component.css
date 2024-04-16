@@ -1,9 +1,9 @@
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
     width: 100%;
-    background-color: purple;
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     text-align: center;
+    height: 10vh;
+    margin-top: 5%;
+    padding: 1%;
   }
