@@ -4,18 +4,45 @@
 }
 .mat-dialog-content
 {
-     opacity: 90%;
+    opacity: 90%;
 }
 .mat-card-image{
     width: 10%;
     height: 10%;
     display: inline;
 }
+img{
+  max-width: 15vw;
+}
 
 mat-dialog-container{
     background-color: aliceblue;
   }
 
-  .background{
-    background-color: white;
+.modal{
+    padding: 5%;
+    max-height: 95vh;
   }
+
+form{
+  height: 30vh;
+}
+mat-form-field{
+  min-height: 25vh;
+  width: 100%;
+}
+h2{
+  font-size: 20px;
+}
+h1{
+  text-align: center;
+  margin: 0;
+}
+.boxButtons{
+    display: flex;
+    justify-content: space-between;
+}
+button{
+  background-color: #D4D3DC;
+  padding: 2%;
+}
