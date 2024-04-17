@@ -1,6 +1,7 @@
 <mat-card class="base-card">
     <mat-card-header>
-        <mat-card-title>'Liste des films'</mat-card-title>
+        <mat-card-title>Liste des films</mat-card-title>
+        <button mat-stroked-button color="accent" [routerLink]="['add']"> Ajouter un film</button>
     </mat-card-header>
     <mat-card-content>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
