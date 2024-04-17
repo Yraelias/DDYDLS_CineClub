@@ -1,6 +1,6 @@
 <mat-card class="base-card">
     <mat-card-header>
-        <mat-card-title>'Liste des films'</mat-card-title>
+        <mat-card-title style="font-size: 25px;">Liste des films</mat-card-title>
     </mat-card-header>
     <mat-card-content>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 marginTop">
@@ -10,20 +10,13 @@
   
     <!-- Name Column -->  
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef class="base-card"> Titre </th>
-      <td mat-cell *matCellDef="let movie" class="base-card"> {{movie.name}} </td>
-    </ng-container>
-
-
-    <!-- synopsis Column -->
-    <ng-container matColumnDef="synopsis">
-      <th mat-header-cell *matHeaderCellDef> Synopsis </th>
-      <td mat-cell *matCellDef="let movie" class="base-card"> {{movie.synopsis}} </td>
+      <th mat-header-cell *matHeaderCellDef class="base-card" style="font-size: 20px;"> Titre </th>
+      <td mat-cell *matCellDef="let movie" class="base-card" style="font-size: 15px;"> {{movie.name}} </td>
     </ng-container>
 
     <!-- year Column -->
     <ng-container matColumnDef="year">
-      <th mat-header-cell *matHeaderCellDef> Année </th>
+      <th mat-header-cell *matHeaderCellDef style="font-size: 20px;"> Année </th>
       <td mat-cell *matCellDef="let movie" class="base-card"> {{movie.year}} </td>
     </ng-container>
 
