@@ -14,6 +14,7 @@ export class TMDBMovie {
     year : number;
     release_date : string;
     poster_path : string;
+    title : string;
 
     constructor(tmdbMovie : TMDBMovie) {
         

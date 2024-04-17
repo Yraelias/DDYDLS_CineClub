@@ -1,11 +1,19 @@
-<h2>CHOISISSEZ LE FILM </h2>
 
-<h1>{{data.name}}</h1>
-<p>
-{{result.results[selector].name}}
-<img [src]="URLimg" class="image"/>
-{{result.results[selector].release_date}}
-{{result.results[selector].overview}}</p>
-<button  (click)="PreviousMovie()" [disabled]="selector==0" >Précedent</button>
-<button  (click)="SelectMovie()" [mat-dialog-close]="result.results[selector]" >Sélectionner</button>
-<button (click)="NextMovie()" [disabled]="selector==maxResult">Suivant</button>
+<main>
+    <h1>CHOISISSEZ LE FILM</h1>
+    <p class="title">{{data.name}}</p>
+    <div class="blocData">
+        <img [src]="URLimg"/>
+        <div class="blocInfo">
+            <h2>{{result.results[selector].title}}</h2>
+            <p>{{result.results[selector].release_date}}</p>
+            <p>{{result.results[selector].overview}}</p>
+        </div>
+    </div>
+    <div class="blocButton">
+        <button  (click)="PreviousMovie()" [disabled]="selector==0" >Précedent</button>
+        <button  (click)="SelectMovie()" [mat-dialog-close]="result.results[selector]" >Sélectionner</button>
+        <button (click)="NextMovie()" [disabled]="selector==maxResult">Suivant</button>
+    </div>
+    
+</main>
