@@ -64,6 +64,7 @@ export class MovieDetailsComponent implements OnInit {
       next: (data :Movie) =>
       {
         this.movie = data;
+        console.log(this.movie)
       }
     })
   }

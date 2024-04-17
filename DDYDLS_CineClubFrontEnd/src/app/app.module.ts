@@ -35,6 +35,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { CineclubListComponent } from './main/content/pages/cineclub/cineclub-list/cineclub-list.component';
 import { CineclubService } from './main/content/pages/cineclub/cineclub.service';
 import { FooterComponent } from './navigation/footer/footer.component';
+import { MovieAddComponent } from './main/content/pages/movie/add/movie-add.component';
+import { SearchMovieComponent } from './main/content/pages/movie/search/search-movie.component';
 
 
 
@@ -43,6 +45,10 @@ const appRoutes: Routes = [
     path:'connexion',
     component: LoginComponent,
     //resolve: {data: MovieService}
+  },
+  {
+    path:'movies/add',
+    component: MovieAddComponent,
   },
   {
     path:'movies/:id',
@@ -82,7 +88,9 @@ const appRoutes: Routes = [
         DialogAddorUpdateRatingComponent,
         CommentaryComponent,
         CineclubListComponent,
-        FooterComponent
+        FooterComponent,
+        MovieAddComponent,
+        SearchMovieComponent
     ],
     providers: [MovieService, AuthService, AuthGuardService, RatingService,CineclubService ],
     bootstrap: [AppComponent],
