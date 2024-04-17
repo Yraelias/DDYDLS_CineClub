@@ -48,4 +48,8 @@ export class SearchMovieComponent implements OnInit  {
     this.selector = this.selector +1;
     this.URLimg = "https://image.tmdb.org/t/p/w500/" + this.result.results[this.selector].poster_path;
   }
+
+  SelectMovie():number{
+    return this.selector;                                                                                 
+  }
 }

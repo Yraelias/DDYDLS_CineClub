@@ -1,7 +1,7 @@
 <main>
     <div>
         <h1>
-            Titre du film
+            Ajouter un film
 
         </h1>
             <mat-form-field appearance="fill">
@@ -9,6 +9,10 @@
             </mat-form-field>                                    
             <button mat-raised-button type="submit" (click)="openDialog()" style="color: #87FF00"> Chercher le film</button>
     </div>
+
+       <div *ngIf="result"> {{result.name}}
+                            {{result.overview}}
+     </div>
 </main>
 
 

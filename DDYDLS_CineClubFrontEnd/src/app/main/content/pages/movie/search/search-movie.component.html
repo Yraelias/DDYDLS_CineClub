@@ -7,4 +7,5 @@
 {{result.results[selector].release_date}}
 {{result.results[selector].overview}}</p>
 <button  (click)="PreviousMovie()" [disabled]="selector==0" >Précedent</button>
+<button  (click)="SelectMovie()" [mat-dialog-close]="result.results[selector]" >Sélectionner</button>
 <button (click)="NextMovie()" [disabled]="selector==maxResult">Suivant</button>
