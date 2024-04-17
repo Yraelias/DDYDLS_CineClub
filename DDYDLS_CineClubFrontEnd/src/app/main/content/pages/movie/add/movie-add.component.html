@@ -2,12 +2,13 @@
     <div>
         <h1>
             Titre du film
-
         </h1>
+        <div class="form">
             <mat-form-field appearance="fill">
             <mat-label> Titre du film</mat-label> <input [(ngModel)]="moviename" matInput>
             </mat-form-field>                                    
-            <button mat-raised-button type="submit" (click)="openDialog()" style="color: #87FF00"> Chercher le film</button>
+            <button mat-raised-button type="submit" (click)="openDialog()" style="color: #87FF00; background-color: #333031" > Chercher le film</button>
+        </div>
     </div>
 </main>
 
