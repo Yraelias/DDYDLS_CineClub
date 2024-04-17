@@ -1,17 +1,14 @@
-<mat-card>
-    <mat-card-header>
-        <mat-card-title>
+<main>
+    <div>
+        <h1>
             Titre du film
-        </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
+        </h1>
         <form [formGroup]="movieFG" (ngSubmit)="openDialog('0ms', '0ms')">
             <mat-form-field appearance="fill">
             <mat-label> Titre du film</mat-label> <input formControlName="name"  matInput>
             </mat-form-field>                                    
-            <br>
-            <button mat-raised-button type="submit" [disabled]="movieFG.invalid"> Chercher le film</button>
+            <button mat-raised-button type="submit" [disabled]="movieFG.invalid" style="color: #87FF00"> Chercher le film</button>
         </form>
-    </mat-card-content>
-</mat-card>
+    </div>
+</main>
 
