@@ -8,14 +8,14 @@
 
 
       <div class='DetailsMoviecontent backgroundBloc'>
-        <p>ANNEE :  {{result.results[0].release_date}}
+        <p>ANNEE :  {{result.results[0].release_date}}</p>
 
         <a *ngIf="isConnected && movie.ratingForUser != 10" >MA NOTE :  {{movie.ratingForUser}}</a>
         
-        NOTE YOSHI : {{movie.avgRating}}
+        <p>NOTE YOSHI : {{movie.avgRating}}</p>
         
         <button *ngIf="isConnected && movie.ratingForUser != 10" mat-raised-button (click)="openDialog('0ms', '0ms')" >Modifer ma note</button> 
-        <button *ngIf="isConnected && movie.ratingForUser == 10" mat-raised-button (click)="openDialog('0ms', '0ms')" >Ajouter ma note</button> </p>
+        <button *ngIf="isConnected && movie.ratingForUser == 10" mat-raised-button (click)="openDialog('0ms', '0ms')" >Ajouter ma note</button> 
       </div>
     
     <div class="blocSyn backgroundBloc"><p>{{result.results[0].overview}}</p></div>

@@ -10,7 +10,7 @@ import { Movie } from '../../../../../models/movie';
 export class MoviesListComponent implements OnInit, AfterViewInit  {
   
   dataSource : any;
-  displayedColumns: string[] = ['name','synopsis','year','details'];
+  displayedColumns: string[] = ['name','year','details'];
   movies : Movie[] = [];
 
   
