@@ -17,5 +17,7 @@ namespace DDYDLS_CineClubDAL.Models
         public int AvgRating { get; set; }
 
         public int RatingdForUser { get; set; }
+        
+        public int TMDB_ID { get; set; }
     }
 }

@@ -56,7 +56,8 @@ namespace DAL.Tools
             {
                 Id_Movie = (int)reader["Id_Movie"],
                 Name = reader["Name"].ToString(),
-                Year = (int)reader["Year"]
+                Year = (int)reader["Year"],
+                TMDB_ID = (int)reader["TMDB_ID"]
             };
         }
         public static Rating RatingConvert(SqlDataReader reader)

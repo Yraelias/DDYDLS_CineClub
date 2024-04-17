@@ -1,8 +1,12 @@
 <main>
+    <button (click)="AddMovie()" > Ajouter ce film  </button>
+    <div *ngIf="result"> {{result.name}}
+        <img [src]="URLimg" class="image"/>
+        {{result.overview}}
+    </div>
     <div>
         <h1>
             Ajouter un film
-
         </h1>
             <mat-form-field appearance="fill">
             <mat-label> Titre du film</mat-label> <input [(ngModel)]="moviename" matInput>
@@ -10,9 +14,7 @@
             <button mat-raised-button type="submit" (click)="openDialog()" style="color: #87FF00"> Chercher le film</button>
     </div>
 
-       <div *ngIf="result"> {{result.name}}
-                            {{result.overview}}
-     </div>
+
 </main>
 
 
