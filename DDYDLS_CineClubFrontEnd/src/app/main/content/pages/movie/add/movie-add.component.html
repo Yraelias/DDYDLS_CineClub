@@ -1,17 +1,14 @@
-<mat-card>
-    <mat-card-header>
-        <mat-card-title>
+<main>
+    <div>
+        <h1>
             Titre du film
-        </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        
+
+        </h1>
             <mat-form-field appearance="fill">
             <mat-label> Titre du film</mat-label> <input [(ngModel)]="moviename" matInput>
             </mat-form-field>                                    
-            <br>
-            <button mat-raised-button (click)="openDialog()" > Chercher le film</button>
-        
-    </mat-card-content>
-</mat-card>
+            <button mat-raised-button type="submit" (click)="openDialog()" style="color: #87FF00"> Chercher le film</button>
+    </div>
+</main>
+
 
