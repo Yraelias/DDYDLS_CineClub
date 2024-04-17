@@ -1,0 +1,9 @@
+div{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+h1{
+    color: #FE277E;
+}
