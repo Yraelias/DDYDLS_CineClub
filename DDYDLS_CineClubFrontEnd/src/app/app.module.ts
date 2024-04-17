@@ -53,7 +53,7 @@ const appRoutes: Routes = [
   {
     path:'movies/:id',
     component: MovieDetailsComponent,
-    resolve:{model: MovieResolverService}
+    //resolve:{model: MovieResolverService}
   },
   {
     path:'movies',

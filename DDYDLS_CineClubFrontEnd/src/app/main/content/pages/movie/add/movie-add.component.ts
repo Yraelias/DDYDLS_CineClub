@@ -16,22 +16,19 @@ export class MovieAddComponent implements OnInit {
   constructor(private _builder : FormBuilder, public dialog: MatDialog) {
   }
   ngOnInit(): void {
-    this.movieFG = this._builder.group({
-      name:['',[ Validators.required]]           
+  }
+  
+  openDialog(): void {
+    const dialogRef = this.dialog.open(SearchMovieComponent, {
+      data: {name: this.moviename},
+      width: '90%', height :'90%'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      //this.animal = result;
     });
   }
-
-
-   openDialog(enterAnimationDuration: string, exitAnimationDuration: string) : void {
-      const dialogRef =  this.dialog.open(SearchMovieComponent,{
-        data: {movieName : this.moviename},
-        width: '90%'
-      });
   
-      dialogRef.afterClosed().subscribe(data => {
-        console.log ("Dialog fermé : "+ data);
-      });
-    }
-  
-
 }
+  
