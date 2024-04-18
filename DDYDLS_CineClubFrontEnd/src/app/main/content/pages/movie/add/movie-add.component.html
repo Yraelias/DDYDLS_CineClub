@@ -1,6 +1,6 @@
 <main>
-    <button mat-raised-button (click)="AddMovie()" style="color: #87FF00; background-color: #333031"> Ajouter ce film  </button>
-    <div *ngIf="result" class="blocResult"> {{result.name}}
+    <button mat-raised-button *ngIf="choose" (click)="AddMovie()" style="color: #87FF00; background-color: #333031"> Ajouter ce film  </button>
+    <div *ngIf="result" class="blocResult"> {{result.title}}
         <img [src]="URLimg" class="image"/>
         <p>{{result.overview}}</p>
     </div>
