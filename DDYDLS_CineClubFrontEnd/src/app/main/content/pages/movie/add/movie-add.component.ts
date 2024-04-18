@@ -45,6 +45,12 @@ export class MovieAddComponent implements OnInit {
     console.log("J'ajoute" +this.result.release_date)
     console.log("J'ajoute" + parseInt(this.result.release_date.split('-')[0], 10))
     console.log("J'ajoute" +this.result.id)
+    this.movieService.addMovie(this.result.title,parseInt(this.result.release_date.split('-')[0], 10),this.result.id).subscribe({
+      next :(data:any) => {
+        console.log("héhé")
+      },
+      error :  (error) => {console.log(error)}
+    })
   }
   
 }

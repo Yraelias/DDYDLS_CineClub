@@ -10,6 +10,7 @@ import { Result, TMDBMovie } from 'src/app/models/tmdbmovie';
 export class MovieService {
   
   public movies : Movie[] = []
+  public movie : Movie = new Movie;
   private _bookListUrl = 'https://localhost:44379/api/movie';
   constructor(private httpClient: HttpClient) { }
 
@@ -24,6 +25,14 @@ export class MovieService {
   }
   getTMDBMovie(title : string ): Observable<Result>{
     return this.httpClient.get<Result>('https://api.themoviedb.org/3/search/movie?query='+ title +'&api_key=ba39746f310980f977035c97c2cfff66&language=fr');
+  }
+  addMovie(title : string, year : number, tmdbId : number):Observable<Movie>{
+    console.log(title +" "+year +" "+tmdbId )
+    this.movie.name = title;
+    this.movie.year = year;
+    this.movie.TMDB_Id = tmdbId;
+    console.log(this.movie)
+    return this.httpClient.post<Movie>(this._bookListUrl, this.movie);
   }
        
 }
