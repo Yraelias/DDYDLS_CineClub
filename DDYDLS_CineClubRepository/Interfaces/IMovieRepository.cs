@@ -8,6 +8,7 @@ namespace DDYDLS_CineClubDAL.Interfaces
     {
         IEnumerable<Movie> GetAll();
         Movie GetOne(int Id);
+        Movie GetOnewithTMBD(int IdTMDB);
         void Insert(Movie m);
         void Update(Movie m);
         bool Delete(int Id);

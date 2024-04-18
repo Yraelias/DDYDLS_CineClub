@@ -72,8 +72,8 @@ namespace DDYDLS_CineClubApi.Controllers
             Movie newUser = new Movie();
             try
             {
-                _MovieService.AddMovie(Movie.toLocal());
-                return Ok();
+                
+                return Ok(_MovieService.AddMovie(Movie.toLocal()));
             }
             catch (Exception e)
             {

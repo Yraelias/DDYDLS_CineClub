@@ -56,5 +56,12 @@ namespace DDYDLS_CineClubDAL.Repository
             return _connection.ExecuteNonQuery(cmd) == 1;
         }
 
+        public Movie GetOnewithTMBD(int IdTMDB)
+        {
+            Command cmd = new Command("SELECT * FROM [T_Movie] WHERE TMDB_Id = @Id");
+            cmd.AddParameter("Id", IdTMDB);
+            return _connection.ExecuteReader(cmd, Converters.MovieConvert).FirstOrDefault();
+        }
+
     }
 }

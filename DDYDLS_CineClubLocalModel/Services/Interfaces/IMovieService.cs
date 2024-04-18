@@ -11,7 +11,7 @@ namespace DDYDLS_CineClubLocalModel.Services.Interfaces
         Movie GetOnevisitor(int Id);
         IEnumerable<Movie> GetAll();
         void Update(Movie m);
-        bool AddMovie(Movie m);
+        int AddMovie(Movie m);
         bool Delete(int Id);
 
         //int GetRatingForOneUser(int movieId, int userId);
