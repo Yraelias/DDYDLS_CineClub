@@ -1,10 +1,12 @@
-<li *ngFor="let rating of listRatings"  >
-    <mat-card class="blocCommentaire">
-        <mat-card-header style="font-size: 25px; padding: 1%;">
-            {{ rating.username }}
-        </mat-card-header>
-        {{ rating.commentary }}
-        <p>NOTE : {{ rating.ratings }}</p>
-        <p>Approuvé {{ rating.approbate }}</p>
-    </mat-card>
-</li>
+<article>
+    <li *ngFor="let rating of listRatings"  >
+        <mat-card class="blocCommentaire">
+            <mat-card-header style="font-size: 25px; padding: 1%;">
+                {{ rating.username }}
+            </mat-card-header>
+            <p class="commentaire">{{ rating.commentary }}</p>
+            <p>NOTE : {{ rating.ratings }}</p>
+            <p>Approuvé {{ rating.approbate }}</p>
+        </mat-card>
+    </li>
+</article>

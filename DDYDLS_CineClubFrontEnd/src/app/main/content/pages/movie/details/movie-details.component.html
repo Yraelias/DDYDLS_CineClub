@@ -1,12 +1,10 @@
-
-<title>{{movie.name}}</title>
-<h1>{{movie.name}}</h1>
-<div cols="3" rowHeight="3:2" class="blocDetails">
-    <div class="blocImg backgroundBloc">
-          <img [src]="URLimg" class="image"/>
-    </div>
-
-
+<main>
+  <title>{{movie.name}}</title>
+  <h1>{{movie.name}}</h1>
+  <div cols="3" rowHeight="3:2" class="blocDetails">
+      <div class="blocImg backgroundBloc">
+            <img [src]="URLimg" class="image"/>
+      </div>
       <div class='DetailsMoviecontent backgroundBloc'>
         <p>ANNEE :  {{result.results[0].release_date}}</p>
 
@@ -14,18 +12,14 @@
         
         <p>NOTE YOSHI : {{movie.avgRating}}</p>
         
-        <button *ngIf="isConnected && movie.ratingForUser != 10" mat-raised-button (click)="openDialog('0ms', '0ms')" style="color: #87FF00; background-color: #333031" >Modifer ma note</button> 
-        <button *ngIf="isConnected && movie.ratingForUser == 10" mat-raised-button (click)="openDialog('0ms', '0ms')"style="color: #87FF00; background-color: #333031" >Ajouter ma note</button> 
+        <button *ngIf="isConnected && movie.ratingForUser != 10" mat-raised-button (click)="openDialog('0ms', '0ms')" style="color: #2CCED2; background-color: #333031" >Modifer ma note</button> 
+        <button *ngIf="isConnected && movie.ratingForUser == 10" mat-raised-button (click)="openDialog('0ms', '0ms')"style="color: #2CCED2; background-color: #333031" >Ajouter ma note</button> 
       </div>
     
     <div class="blocSyn backgroundBloc"><p>{{result.results[0].overview}}</p></div>
   </div>
-
-  <mat-card class="blocCommentaire"></mat-card>
-
-  <app-commentary></app-commentary>
-
-
+  <app-commentary class="blocCommentaire"></app-commentary>
+</main>
 
 
 
