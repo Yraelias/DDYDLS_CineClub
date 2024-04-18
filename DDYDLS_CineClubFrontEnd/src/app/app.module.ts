@@ -49,6 +49,7 @@ const appRoutes: Routes = [
   {
     path:'movies/add',
     component: MovieAddComponent,
+    canActivate :[AuthGuardService]
   },
   {
     path:'movies/:id',
