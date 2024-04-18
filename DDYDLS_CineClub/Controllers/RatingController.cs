@@ -66,6 +66,50 @@ namespace DDYDLS_CineClubApi.Controllers
             }
         }
 
+        // GET api/<Rating>/5
+        [HttpGet("user/{id}")]
+        public IActionResult GetRatingsbyUser(int id)
+        {
+            try
+            {
+
+                return Ok(_RatingService.RatingsbyUser(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        // GET api/<Rating>/5
+        [HttpGet("user/year/{id}/{year}")]
+        public IActionResult GetRatingsbyUserbyYear(int id, int year)
+        {
+            try
+            {
+
+                return Ok(_RatingService.RatingsbyUserbyYear(id,year));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        // GET api/<Rating>/5
+        [HttpGet("user/month/{id}/{month}/{year}")]
+        public IActionResult GetRatingsbyUserbyMonthbyYear(int id,int Month, int Year)
+        {
+            try
+            {
+
+                return Ok(_RatingService.RatingsbyUserbyMonth(id,Month,Year));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
         // POST api/<Rating>
         [HttpPost]
         public IActionResult Post([FromBody] api.Rating Rating)

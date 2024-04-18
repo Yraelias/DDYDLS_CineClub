@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
+  Username : any = '';
+  isConnected : boolean;
+
   constructor() { }
 
   ngOnInit(): void {
+    if (sessionStorage.getItem('isConnected'))
+      {
+        this.isConnected = true;
+        this.Username = sessionStorage.getItem('Username');
+      }
   }
 
 }
