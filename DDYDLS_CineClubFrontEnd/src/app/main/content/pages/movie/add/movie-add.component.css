@@ -2,7 +2,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 24%;
     text-align: center;
 }
@@ -14,4 +14,18 @@ main{
 h1{
     color: #87FF00;
     margin-bottom: 15%;
+}
+img{
+    width: 300px;
+}
+.blocResult{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5%;
+    gap: 40px;
+    color: #87FF00;
+}
+p{
+    width: 65%;
 }
