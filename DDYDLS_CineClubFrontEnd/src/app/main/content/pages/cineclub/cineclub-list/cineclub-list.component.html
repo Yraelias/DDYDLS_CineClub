@@ -1,27 +1,28 @@
 
 @for (cineclub of cineclub; track cineclub){
 
-
-<div cols="2" rowHeight="4:1" class="blocCineClub">
-    <h1>
-        {{cineclub.title}}
-    </h1>
-    <div class="blocFilms">
-        <div>
-            <img [src]="cineclub.movie_1.UrlIMG" />
-        </div>
-        <div>
-            <img [src]="cineclub.movie_2.UrlIMG" />
-        </div>
-        
-        <div>
-            <img [src]="cineclub.movie_3.UrlIMG" />
-        </div>
+<main>
+    <article cols="2" rowHeight="4:1" class="blocCineClub">
+        <h1>
+            {{cineclub.title}}
+        </h1>
+        <article class="blocFilms">
             <div>
-                <img [src]="cineclub.movie_4.UrlIMG" />
-        </div>
-    </div> 
-    
-</div>
+                <img [src]="cineclub.movie_1.UrlIMG" />
+            </div>
+            <div>
+                <img [src]="cineclub.movie_2.UrlIMG" />
+            </div>
+            
+            <div>
+                <img [src]="cineclub.movie_3.UrlIMG" />
+            </div>
+                <div>
+                    <img [src]="cineclub.movie_4.UrlIMG" />
+            </div>
+        </article> 
+        
+    </article>
+</main>
 }
 

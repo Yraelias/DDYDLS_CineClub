@@ -1,27 +1,24 @@
-<mat-toolbar style="background-color: #242423;">
-<button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" [routerLink]="['/home']"> 
-  <mat-icon style="color: #FE277E;">home</mat-icon>
-</button>
-
-
-<button mat-button [matMenuTriggerFor]="belowMenu" style="color: #FE277E;">Films</button>
-<mat-menu #belowMenu="matMenu" yPosition="below">
-  <button mat-menu-item [routerLink]="['/movies']" style="color: #FE277E;">Liste</button>
-</mat-menu>
-
-<button mat-button [routerLink]="['/cineclub']" style="color: #FE277E;">Cinéclub</button>
-<span class="example-spacer"></span>
-<mat-icon *ngIf="isConnected" style="color: #FE277E;" >person</mat-icon>
-<button *ngIf="!isConnected" mat-button [routerLink]="['/connexion']" style="color: #FE277E;">Connexion</button>
-
-
-
-<button mat-button *ngIf="isConnected" [matMenuTriggerFor]="beforeMenu" style="color: #FE277E;">{{Username}}</button>
-
-<mat-menu #beforeMenu="matMenu"  xPosition="before">
-  <button mat-menu-item [routerLink]="['/user']" style="color: #FE277E;">Profil</button>
-  <button mat-menu-item (click)="clearSession()" [routerLink]="['/connexion']" style="color: #FE277E;">Déconnexion</button>
-</mat-menu>
-
-</mat-toolbar>
+<header>
+  <mat-toolbar style="background-color: #242423;">
+    <div>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" [routerLink]="['/home']"> 
+        <mat-icon style="color: #FE277E;">home</mat-icon>
+      </button>
+      <button mat-button [matMenuTriggerFor]="belowMenu" style="color: #FE277E;">Films</button>
+      <mat-menu #belowMenu="matMenu" yPosition="below">
+        <button mat-menu-item [routerLink]="['/movies']" style="color: #FE277E;">Liste</button>
+      </mat-menu>
+      <button mat-button [routerLink]="['/cineclub']" style="color: #FE277E;">Cinéclub</button>
+    </div>
+    <div>
+      <mat-icon *ngIf="isConnected" style="color: #FE277E;" >person</mat-icon>
+      <button *ngIf="!isConnected" mat-button [routerLink]="['/connexion']" style="color: #FE277E;">Connexion</button>
+      <button mat-button *ngIf="isConnected" [matMenuTriggerFor]="beforeMenu" style="color: #FE277E;">{{Username}}</button>
+      <mat-menu #beforeMenu="matMenu"  xPosition="before">
+        <button mat-menu-item [routerLink]="['/user']" style="color: #FE277E;">Profil</button>
+        <button mat-menu-item (click)="clearSession()" [routerLink]="['/connexion']" style="color: #FE277E;">Déconnexion</button>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+</header>
 
