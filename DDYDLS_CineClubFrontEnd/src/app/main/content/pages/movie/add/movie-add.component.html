@@ -1,5 +1,5 @@
 <main>
-    <button  (click)="AddMovie()" > Ajouter ce film  </button>
+    <button *ngIf="choose"  (click)="AddMovie()" > Ajouter ce film  </button>
     <div *ngIf="result"> {{result.title}}
         <img [src]="URLimg" class="image"/>
         {{result.overview}}

@@ -5,6 +5,8 @@ import { SearchMovieComponent } from '../search/search-movie.component';
 import { Result } from 'src/app/models/tmdbmovie';
 import { MovieService } from '../../movie.service';
 import { Router } from '@angular/router';
+import { ErrorSnackbarComponent } from 'src/app/Snackbar/error-snackbar/error-snackbar.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-movie-add',
@@ -20,9 +22,12 @@ export class MovieAddComponent implements OnInit {
   URLimg : string
   movieService : MovieService
   isConnected:boolean = false;
+  errorSnackBar : MatSnackBar;
+  choose : boolean = false;
 
-  constructor(private _builder : FormBuilder, public dialog: MatDialog, public _movieservice : MovieService,private _router : Router) {
+  constructor(private _builder : FormBuilder, public dialog: MatDialog, public _movieservice : MovieService,private _router : Router, _ErrorSnackbar : MatSnackBar) {
     this.movieService = _movieservice;
+    this.errorSnackBar = _ErrorSnackbar
   }
   ngOnInit(): void {
     if (sessionStorage.getItem('isConnected'))
@@ -40,7 +45,8 @@ export class MovieAddComponent implements OnInit {
     dialogRef.afterClosed().subscribe(Resul => {
       console.log('The dialog was closed');
       this.result = Resul;
-      this.URLimg = "https://image.tmdb.org/t/p/w500"+ this.result.poster_path; ;
+      this.URLimg = "https://image.tmdb.org/t/p/w500"+ this.result.poster_path;
+      if(this.result != null) this.choose = true;
       console.log(this.result);
     });
   }
@@ -51,7 +57,7 @@ export class MovieAddComponent implements OnInit {
       next :(data:any) => {
         data : this._router.navigate(['/movies/' +data])
       },
-      error :  (error) => {console.log(error)}
+      error :  (error) => {this.errorSnackBar.open(error,'Ok')}
     })
   }
   

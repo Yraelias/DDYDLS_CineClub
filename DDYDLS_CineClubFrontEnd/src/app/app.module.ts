@@ -37,6 +37,8 @@ import { CineclubService } from './main/content/pages/cineclub/cineclub.service'
 import { FooterComponent } from './navigation/footer/footer.component';
 import { MovieAddComponent } from './main/content/pages/movie/add/movie-add.component';
 import { SearchMovieComponent } from './main/content/pages/movie/search/search-movie.component';
+import { ErrorSnackbarComponent } from './Snackbar/error-snackbar/error-snackbar.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar'
 
 
 
@@ -91,7 +93,8 @@ const appRoutes: Routes = [
         CineclubListComponent,
         FooterComponent,
         MovieAddComponent,
-        SearchMovieComponent
+        SearchMovieComponent,
+        ErrorSnackbarComponent
     ],
     providers: [MovieService, AuthService, AuthGuardService, RatingService,CineclubService ],
     bootstrap: [AppComponent],
@@ -115,7 +118,8 @@ const appRoutes: Routes = [
         MatInputModule,
         MatDialogModule,
         MatToolbarModule,
-        MatGridListModule
+        MatGridListModule,
+        MatSnackBarModule
     ]
 })
 export class AppModule { }
