@@ -41,12 +41,15 @@ namespace DDYDLS_CineClubLocalModel.Services
             return movie;
         }
 
-        public bool AddMovie(Movie g)
+        public int AddMovie(Movie g)
         {
-            
-            _MovieRepository.Insert(g.toDal());
-
-            return true;
+            Movie newMovie = new Movie();
+            if(_MovieRepository.GetOnewithTMBD(g.TMDB_ID)  == null)
+            {
+                _MovieRepository.Insert(g.toDal());
+            }
+            newMovie = _MovieRepository.GetOnewithTMBD(g.TMDB_ID).toLocal();
+            return newMovie.Id_Movie;
         }
 
         public void Update(Movie g)

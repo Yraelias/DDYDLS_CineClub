@@ -1,33 +1,25 @@
-
-<title>{{movie.name}}</title>
-<h1>TITRE  : {{movie.name}}</h1>
-<mat-grid-list cols="3" rowHeight="3:2">
-    <mat-grid-tile>
-      
-          <img [src]="URLimg" class="image"/>
-        
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <div class='DetailsMoviecontent'>
-        <p>ANNEE :  {{result.results[0].release_date}} <br>
-
-        <a *ngIf="isConnected && movie.ratingForUser != 10" >MA NOTE :  {{movie.ratingForUser}}</a><br>
-        
-        NOTE YOSHI : {{movie.avgRating}}<br>
-        
-        <button *ngIf="isConnected && movie.ratingForUser != 10" mat-raised-button (click)="openDialog('0ms', '0ms')" >Modifer ma note</button> 
-        <button *ngIf="isConnected && movie.ratingForUser == 10" mat-raised-button (click)="openDialog('0ms', '0ms')" >Ajouter ma note</button> </p>
+<main>
+  <title>{{movie.name}}</title>
+  <h1>{{movie.name}}</h1>
+  <article cols="3" rowHeight="3:2" class="blocDetails">
+      <div class="blocImg backgroundBloc">
+            <img [src]="URLimg" class="image"/>
       </div>
-    </mat-grid-tile>
+      <div class='DetailsMoviecontent backgroundBloc'>
+        <p>{{result.results[0].release_date}}</p>
+
+        <a *ngIf="isConnected && movie.ratingForUser != 10" >Ma note :  {{movie.ratingForUser}}/6</a>
+        
+        <p>Moyenne : {{movie.avgRating}}/6</p>
+        
+        <button *ngIf="isConnected && movie.ratingForUser != 10" mat-raised-button (click)="openDialog('0ms', '0ms')" style="color: #2CCED2; background-color: #242423" >Modifer ma note</button> 
+        <button *ngIf="isConnected && movie.ratingForUser == 10" mat-raised-button (click)="openDialog('0ms', '0ms')" style="color: #2CCED2; background-color: #242423;" >Ajouter ma note</button> 
+      </div>
     
-    <mat-grid-tile><p>SYNOPSIS : {{result.results[0].overview}}</p></mat-grid-tile>
-  </mat-grid-list>
-
-  <mat-card></mat-card>
-
-  <app-commentary></app-commentary>
-
-
+    <div class="blocSyn backgroundBloc"><p>{{result.results[0].overview}}</p></div>
+  </article>
+  <app-commentary class="blocCommentaire"></app-commentary>
+</main>
 
 
 

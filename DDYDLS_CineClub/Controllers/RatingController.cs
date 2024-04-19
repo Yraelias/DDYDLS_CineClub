@@ -66,12 +66,54 @@ namespace DDYDLS_CineClubApi.Controllers
             }
         }
 
+        // GET api/<Rating>/5
+        [HttpGet("user/{id}")]
+        public IActionResult GetRatingsbyUser(int id)
+        {
+            try
+            {
+
+                return Ok(_RatingService.RatingsbyUser(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        // GET api/<Rating>/5
+        [HttpGet("user/year/{id}/{year}")]
+        public IActionResult GetRatingsbyUserbyYear(int id, int year)
+        {
+            try
+            {
+
+                return Ok(_RatingService.RatingsbyUserbyYear(id,year));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        // GET api/<Rating>/5
+        [HttpGet("user/month/{id}/{month}/{year}")]
+        public IActionResult GetRatingsbyUserbyMonthbyYear(int id,int Month, int Year)
+        {
+            try
+            {
+
+                return Ok(_RatingService.RatingsbyUserbyMonth(id,Month,Year));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
         // POST api/<Rating>
         [HttpPost]
-        public IActionResult Post([FromForm] api.Rating Rating)
-        //public IActionResult Post(api.UserCreate user)
+        public IActionResult Post([FromBody] api.Rating Rating)
         {
-            Rating newUser = new Rating();
             try
             {
                 _RatingService.AddRating(Rating.toLocal());
@@ -81,7 +123,7 @@ namespace DDYDLS_CineClubApi.Controllers
             {
                 return BadRequest(e.Message);
             }
-}
+        }
 
         // PUT api/<User>/5
         [HttpPut]

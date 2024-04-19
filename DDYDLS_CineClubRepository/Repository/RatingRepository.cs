@@ -31,10 +31,12 @@ namespace DDYDLS_CineClubDAL.Repository
 
         public void Insert(Rating g)
         {
-            Command cmd = new Command("INSERT INTO [dbo].[T_Rating] ([Id_User],[Id_Movie],[Rating],[Date]) VALUES (@Id_User,@Id_Movie,@Rating,@Date)");
+            Command cmd = new Command("INSERT INTO [dbo].[T_Rating] ([Id_User],[Id_Movie],[Rating],[Commentary],[Approbate],[Date]) VALUES (@Id_User,@Id_Movie,@Rating,@Commentary,@Approbate,@Date)");
             cmd.AddParameter("Id_User", g.Id_User);
             cmd.AddParameter("Id_Movie",g.Id_Movie);
             cmd.AddParameter("Rating",g.Ratings);
+            cmd.AddParameter("Commentary", g.Commentary);
+            cmd.AddParameter("Approbate", g.Approbate);
             if (g.Date == null)
             {
                 g.Date = DateTime.Now;
@@ -45,11 +47,13 @@ namespace DDYDLS_CineClubDAL.Repository
 
         public void Update(Rating g)
         {
-            Command cmd = new Command("UPDATE [dbo].[T_Rating] SET [Rating] = @Rating,[Date] = @Date WHERE Id_User = @Id_User AND Id_Movie = @Id_Movie");
+            Command cmd = new Command("UPDATE [dbo].[T_Rating] SET [Rating] = @Rating,[Date] = @Date, [Commentary] = @Commentary, [Approbate] = @Approbate  WHERE Id_User = @Id_User AND Id_Movie = @Id_Movie");
             cmd.AddParameter("Id_Rating", g.Id_Rating);
             cmd.AddParameter("Id_User", g.Id_User);
             cmd.AddParameter("Id_Movie", g.Id_Movie);
             cmd.AddParameter("Rating", g.Ratings);
+            cmd.AddParameter("Commentary", g.Commentary);
+            cmd.AddParameter("Approbate", g.Approbate);
             cmd.AddParameter("Date", g.Date);
             _connection.ExecuteNonQuery(cmd);
         }
@@ -85,6 +89,34 @@ namespace DDYDLS_CineClubDAL.Repository
             return _connection.ExecuteReader(cmd, Converters.RatingConvert);
         }
 
-        
+        public IEnumerable<Rating> RatingsbyUser(int ID_User) 
+        {
+            Command cmd = new Command("SELECT TOP (1000) [ID_Rating], [Id_User], [Id_Movie], [Rating], [Date], [Commentary], [Approbate],'' AS Username " +
+                "FROM[DDYDLS_CineClubDb].[dbo].[T_Rating] WHERE Id_User = @Id_User ORDER BY ID_Rating DESC");
+            cmd.AddParameter("Id_User", ID_User);
+            return _connection.ExecuteReader(cmd, Converters.RatingConvert);
+        }
+
+        public IEnumerable<Rating> RatingsbyUserbyYear(int ID_User, int Year)
+        {
+            Command cmd = new Command("SELECT TOP (1000) [ID_Rating], [Id_User], [Id_Movie], [Rating], [Date], [Commentary], [Approbate],'' AS Username " +
+                "FROM[DDYDLS_CineClubDb].[dbo].[T_Rating] WHERE Id_User = @Id_User AND YEAR([Date]) = @Year ORDER BY ID_Rating DESC");
+            cmd.AddParameter("Id_User", ID_User);
+            cmd.AddParameter("Year", Year);
+            return _connection.ExecuteReader(cmd, Converters.RatingConvert);
+        }
+
+        public IEnumerable<Rating> RatingsbyUserbyMonth(int ID_User,int Month,int Year)
+        {
+            Command cmd = new Command("SELECT TOP (1000) [ID_Rating], [Id_User], [Id_Movie], [Rating], [Date], [Commentary], [Approbate],'' AS Username " +
+                "FROM[DDYDLS_CineClubDb].[dbo].[T_Rating] WHERE Id_User = @Id_User AND MONTH([Date]) = @Month AND YEAR([Date]) = @Year " +
+                "ORDER BY ID_Rating DESC");
+            cmd.AddParameter("Id_User", ID_User);
+            cmd.AddParameter("Month", Month);
+            cmd.AddParameter("Year", Year);
+            return _connection.ExecuteReader(cmd, Converters.RatingConvert);
+        }
+
+
     }
 }

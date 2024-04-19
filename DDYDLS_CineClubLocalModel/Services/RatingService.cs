@@ -51,5 +51,20 @@ namespace DDYDLS_CineClubLocalModel.Services
         {
             return _RatingRepository.RatingsbyIdMovie(MovieId).Select(g => g.toLocal());
         }
+
+        public IEnumerable<Rating> RatingsbyUser(int ID_User)
+        {
+            return _RatingRepository.RatingsbyUser(ID_User).Select(g => g.toLocal());
+        }
+
+        public IEnumerable<Rating> RatingsbyUserbyYear(int ID_User, int Year)
+        {
+            return _RatingRepository.RatingsbyUserbyYear(ID_User,Year).Select(g => g.toLocal());
+        }
+
+        public IEnumerable<Rating> RatingsbyUserbyMonth(int ID_User, int Month, int Year)
+        {
+            return _RatingRepository.RatingsbyUserbyMonth(ID_User,Month,Year).Select(g => g.toLocal());
+        }
     }
 }

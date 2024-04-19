@@ -10,9 +10,9 @@ import { Movie } from '../../../../../models/movie';
 export class MoviesListComponent implements OnInit, AfterViewInit  {
   
   dataSource : any;
-  displayedColumns: string[] = ['name','synopsis','year','details'];
+  displayedColumns: string[] = ['name','year','details'];
   movies : Movie[] = [];
-
+  isConnected:boolean = false;
   
 
   
@@ -24,6 +24,10 @@ export class MoviesListComponent implements OnInit, AfterViewInit  {
   }
 
   ngOnInit(): void {
+    if (sessionStorage.getItem('isConnected'))
+      {
+        this.isConnected = true;
+      }
     this.loadMovies();
     console.log(this.movies);
   }

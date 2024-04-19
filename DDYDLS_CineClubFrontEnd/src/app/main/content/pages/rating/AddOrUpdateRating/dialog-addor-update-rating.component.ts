@@ -23,8 +23,6 @@ export class DialogAddorUpdateRatingComponent implements OnInit {
    }
   ngOnInit(): void {
     console.log(this.movie.movie)
-    console.log(this.movie.movie.name)
-    console.log(this.movie.movie.name)
     this.ratingSelectionned = this.movie.movie.ratingForUser
     if (this.ratingSelectionned == 10) this.AddOrUpdate = false;
     else this.AddOrUpdate = true;
@@ -50,12 +48,12 @@ export class DialogAddorUpdateRatingComponent implements OnInit {
     this.id_User = parseInt(sessionStorage.getItem("id") || "0") ;
     console.log(this.movie.movie.name)
     if(!this.AddOrUpdate) {
-      this.ratingservice.addRatingForMovie(this.id_User, this.movie.movie.id_Movie, this.ratingSelectionned).subscribe({
+      this.ratingservice.addRatingForMovie(this.id_User, this.movie.movie.id_Movie, this.ratingSelectionned,message,this.Reco).subscribe({
         next : (data : any) => {ok = true},
         error : (error) => {console.log(error)},
     }); //Service Ajout
     }
-    else this.ratingservice.updateRatingForMovie(this.id_User, this.movie.movie.id_Movie, this.ratingSelectionned).subscribe({
+    else this.ratingservice.updateRatingForMovie(this.id_User, this.movie.movie.id_Movie, this.ratingSelectionned,message,this.Reco).subscribe({
       next : (data : any) => {ok = true},
       error : (error) => {console.log(error)},
   });  //Service modifié

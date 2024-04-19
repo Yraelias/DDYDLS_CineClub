@@ -116,10 +116,10 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Id_Movie = newMovie.Id_Movie,
                 Name = newMovie.Name,
                 Id_Studio = newMovie.Id_Studio,
-                Synopsis = newMovie.Synopsis,
                 Year = newMovie.Year,
                 Rating = null,
-                AvgRating = ratingRepository.AvgRate(newMovie.Id_Movie)
+                AvgRating = ratingRepository.AvgRate(newMovie.Id_Movie),
+                TMDB_ID = newMovie.TMDB_ID
             };
         }
         public static dal.Movie toDal(this Models.Movie newStudio)
@@ -129,8 +129,8 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Id_Movie = newStudio.Id_Movie,
                 Id_Studio = newStudio.Id_Studio,
                 Name = newStudio.Name,
-                Synopsis = newStudio.Synopsis,
-                Year = newStudio.Year
+                Year = newStudio.Year,
+                TMDB_ID = newStudio.TMDB_ID,
             };
         }
         public static Models.Rating toLocal(this dal.Rating newRating)

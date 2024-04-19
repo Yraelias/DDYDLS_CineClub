@@ -10,4 +10,5 @@ export class Movie {
     avgRating : number;
     ratingForUser : number;
     UrlIMG ?: string ;
+    TMDB_Id ?: number ;
 }

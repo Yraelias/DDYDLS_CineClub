@@ -1,0 +1,19 @@
+
+<main>
+    <h1>CHOISISSEZ LE FILM</h1>
+    <p class="title">{{data.name}}</p>
+    <div class="blocData">
+        <img [src]="URLimg"/>
+        <div class="blocInfo">
+            <h2>{{result.results[selector].title}}</h2>
+            <p>{{result.results[selector].release_date}}</p>
+            <p>{{result.results[selector].overview}}</p>
+        </div>
+    </div>
+    <div class="blocButton">
+        <button mat-raised-button  (click)="PreviousMovie()" [disabled]="selector==0" style="color: #87FF00; background-color: #333031" >Précedent</button>
+        <button mat-raised-button (click)="SelectMovie()" [mat-dialog-close]="result.results[selector]" style="color: #87FF00; background-color: #333031" >Sélectionner</button>
+        <button mat-raised-button (click)="NextMovie()" [disabled]="selector==maxResult" style="color: #87FF00; background-color: #333031">Suivant</button>
+    </div>
+    
+</main>

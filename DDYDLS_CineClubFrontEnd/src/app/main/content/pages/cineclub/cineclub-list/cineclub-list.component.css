@@ -1,0 +1,61 @@
+img{
+    width: 250px;
+    box-shadow: 10px 3px 8px #242423;
+}
+.blocCineClub{
+    color: #2CCED2;
+    display: flex;
+    margin: 2%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2%;
+    box-shadow: 1px 0px 10px 4px #87FF00;
+    margin-bottom: 10%;
+    margin-top: 5%;
+}
+.blocFilms{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40%;
+}
+
+@media only screen and (max-width: 1358px) {
+    .blocFilms{
+        width: 50%;
+    }
+  }
+  @media only screen and (max-width: 1085px) {
+    .blocFilms{
+        width: 60%;
+    }
+  }
+  @media only screen and (max-width: 903px) {
+    .blocFilms{
+        width: 70%;
+    }
+  }
+  @media only screen and (max-width: 778px) {
+    .blocFilms{
+        width: 60%;
+    }
+    .blocCineClub{
+        flex-direction: column;
+    }
+    img{
+        width: 150px;
+    }
+  }
+  @media only screen and (max-width: 543px) {
+    img{
+        width: 100px;
+    }
+  }
+  @media only screen and (max-width: 362px) {
+    img{
+        width: 75px;
+    }
+  }

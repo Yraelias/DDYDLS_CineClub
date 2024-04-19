@@ -204,6 +204,22 @@ INSERT INTO [dbo].[T_User]
            ,1)
 GO
 
+INSERT INTO [dbo].[T_User]
+           ([Username]
+           ,[Password]
+           ,[IsActive]
+           ,[Registration_Date]
+           ,[Email]
+           ,[ID_UserRole])
+     VALUES
+           ('Equinoxia',
+            'mvFbM25qlhmShTffMLLmojdlafz51+dz7M7eZWBlKaA=',
+            1,
+            '01/01/2024',
+           'obellissens@gmail.com'
+           ,1)
+GO
+
 INSERT INTO [dbo].[T_Rating]
            ([Id_User]
            ,[Id_Movie]

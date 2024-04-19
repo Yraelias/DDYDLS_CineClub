@@ -1,56 +1,28 @@
 
-{{cineclub[0].id_Cineclub}}<br>
-{{cineclub[0].numberOfCineclub}}<br>
-{{cineclub[0].title}}<br>
-{{cineclub[0].movie_1.name}}<br>
-<img [src]="cineclub[0].movie_1.UrlIMG" class="image"/>
-{{cineclub[0].movie_1.rating}}<br>
-{{cineclub[0].movie_1.synopsis}}<br>
-{{cineclub[0].movie_1.year}}<br>
-{{cineclub[0].movie_2.name}}<br>
-<img [src]="cineclub[0].movie_2.UrlIMG" class="image"/>
-{{cineclub[0].movie_2.rating}}<br>
-{{cineclub[0].movie_2.synopsis}}<br>
-{{cineclub[0].movie_2.year}}<br>
-{{cineclub[0].movie_3.name}}<br>
-<img [src]="cineclub[0].movie_3.UrlIMG" class="image"/>
-{{cineclub[0].movie_3.rating}}<br>
-{{cineclub[0].movie_3.synopsis}}<br>
-{{cineclub[0].movie_3.year}}<br>
-{{cineclub[0].movie_4.name}}<br>
-<img [src]="cineclub[0].movie_4.UrlIMG" class="image"/>
-{{cineclub[0].movie_4.rating}}<br>
-{{cineclub[0].movie_4.synopsis}}<br>
-{{cineclub[0].movie_4.year}}<br>
-{{cineclub[0].movie_5.name}}<br>
-{{cineclub[0].movie_5.rating}}<br>
-{{cineclub[0].movie_5.synopsis}}<br>
-{{cineclub[0].movie_5.year}}<br>
+@for (cineclub of cineclub; track cineclub){
 
-{{cineclub[1].id_Cineclub}}<br>
-{{cineclub[1].numberOfCineclub}}<br>
-{{cineclub[1].title}}<br>
-{{cineclub[1].movie_1.name}}<br>
-<img [src]="cineclub[1].movie_1.UrlIMG" class="image"/>
-{{cineclub[1].movie_1.rating}}<br>
-{{cineclub[1].movie_1.synopsis}}<br>
-{{cineclub[1].movie_1.year}}<br>
-{{cineclub[1].movie_2.name}}<br>
-<img [src]="cineclub[1].movie_2.UrlIMG" class="image"/>
-{{cineclub[1].movie_2.rating}}<br>
-{{cineclub[1].movie_2.synopsis}}<br>
-{{cineclub[1].movie_2.year}}<br>
-{{cineclub[1].movie_3.name}}<br>
-<img [src]="cineclub[1].movie_3.UrlIMG" class="image"/>
-{{cineclub[1].movie_3.rating}}<br>
-{{cineclub[1].movie_3.synopsis}}<br>
-{{cineclub[1].movie_3.year}}<br>
-{{cineclub[1].movie_4.name}}<br>
-<img [src]="cineclub[1].movie_4.UrlIMG" class="image"/>
-{{cineclub[1].movie_4.rating}}<br>
-{{cineclub[1].movie_4.synopsis}}<br>
-{{cineclub[1].movie_4.year}}<br>
-{{cineclub[1].movie_5.name}}<br>
-{{cineclub[1].movie_5.rating}}<br>
-{{cineclub[1].movie_5.synopsis}}<br>
-{{cineclub[1].movie_5.year}}<br>
+<main>
+    <article cols="2" rowHeight="4:1" class="blocCineClub">
+        <h1>
+            {{cineclub.title}}
+        </h1>
+        <article class="blocFilms">
+            <div>
+                <img [src]="cineclub.movie_1.UrlIMG" />
+            </div>
+            <div>
+                <img [src]="cineclub.movie_2.UrlIMG" />
+            </div>
+            
+            <div>
+                <img [src]="cineclub.movie_3.UrlIMG" />
+            </div>
+                <div>
+                    <img [src]="cineclub.movie_4.UrlIMG" />
+            </div>
+        </article> 
+        
+    </article>
+</main>
+}
+

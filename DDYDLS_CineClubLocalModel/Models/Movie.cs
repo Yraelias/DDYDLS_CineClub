@@ -14,5 +14,6 @@ namespace DDYDLS_CineClubLocalModel.Models
         public Rating Rating { get; set; }
         public int AvgRating { get; set; }
         public int RatingForUser { get; set; }
+        public int TMDB_ID { get; set; }
     }
 }

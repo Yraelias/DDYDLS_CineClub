@@ -56,7 +56,8 @@ namespace DAL.Tools
             {
                 Id_Movie = (int)reader["Id_Movie"],
                 Name = reader["Name"].ToString(),
-                Year = (int)reader["Year"]
+                Year = (int)reader["Year"],
+                TMDB_ID = (int)reader["TMDB_ID"]
             };
         }
         public static Rating RatingConvert(SqlDataReader reader)
@@ -70,7 +71,7 @@ namespace DAL.Tools
                 Date = Convert.IsDBNull((DateTime)reader["Date"]) ? new DateTime() : (DateTime)reader["Date"],
                 Approbate = Convert.IsDBNull((int)reader["Approbate"]) ? 0 : (int)reader["Approbate"],
                 Commentary = reader["Commentary"].ToString(),
-                Username = reader["Username"].ToString()
+                Username = reader["Username"].ToString() 
             };
         }
         public static Cineclub CineclubConvert(SqlDataReader reader)

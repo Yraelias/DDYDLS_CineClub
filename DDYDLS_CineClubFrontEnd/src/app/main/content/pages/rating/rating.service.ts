@@ -13,17 +13,23 @@ export class RatingService {
   private _bookListUrl = 'https://localhost:44379/api/rating';
   constructor( private httpClient: HttpClient) { }
   
-  addRatingForMovie(Id_User : number, Id_Movie : number, rating : number ) : Observable<Rating> {
+  addRatingForMovie(Id_User : number, Id_Movie : number, rating : number, commentary:string, approbate : number ) : Observable<Rating> {
+    console.log(Id_User)
+    console.log(Id_Movie)
+    console.log(rating)
+    console.log(this.today)
     
     return this.httpClient.post<Rating>('https://localhost:44379/api/rating/' , {
       Id_User : Id_User,
       Id_Movie : Id_Movie,
       date : this.today,
-      rating : rating
+      Ratings : rating,
+      commentary : commentary,
+      approbate : approbate
   });
   }
 
-  updateRatingForMovie(Id_User : number, Id_Movie : number, rating : number ) : Observable<Rating> {
+  updateRatingForMovie(Id_User : number, Id_Movie : number, rating : number, commentary:string, approbate : number ) : Observable<Rating> {
     console.log(Id_User)
     console.log(Id_Movie)
     console.log(rating)
@@ -32,14 +38,26 @@ export class RatingService {
       Id_User : Id_User,
       Id_Movie : Id_Movie,
       date : this.today,
-      Ratings : rating
+      Ratings : rating,
+      commentary : commentary,
+      approbate : approbate
   });
   }
 
   getRatingForMovie(Id_Movie :number ) : Observable<Rating[]>{
-    console.log("test");
     return this.httpClient.get<Rating[]>('https://localhost:44379/api/rating/movie/'+Id_Movie)
   }
 
+  getRatingForUser(Id_User :number ) : Observable<Rating[]>{
+    return this.httpClient.get<Rating[]>('https://localhost:44379/api/rating/user/'+Id_User)
+  }
+
+  getRatingForUserbyYear(Id_User :number, Year :number ) : Observable<Rating[]>{
+    return this.httpClient.get<Rating[]>('https://localhost:44379/api/rating/user/year/'+Id_User+'/'+Year)
+  }
+
+  getRatingForUserbyMonth(Id_Movie :number, Month:number, Year:number ) : Observable<Rating[]>{
+    return this.httpClient.get<Rating[]>('https://localhost:44379/api/rating/user/month/'+Id_Movie+'/'+ Month + '/'+Year)
+  }
   
 }

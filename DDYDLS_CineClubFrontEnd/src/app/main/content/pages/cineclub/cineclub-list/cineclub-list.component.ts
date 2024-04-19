@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Cineclub } from 'src/app/models/cineclub';
 import { CineclubService } from '../cineclub.service';
 import { MovieService } from '../../movie.service';
@@ -7,12 +7,10 @@ import { TMDBMovie, Result } from 'src/app/models/tmdbmovie';
 
 @Component({
   selector: 'app-cineclub-list',
-  standalone: true,
-  imports: [],
   templateUrl: './cineclub-list.component.html',
   styleUrl: './cineclub-list.component.css'
 })
-export class CineclubListComponent {
+export class CineclubListComponent implements OnInit {
   cineclub : Cineclub[] = [];
   dataSource : any;
   tmdbmovie!: TMDBMovie;
