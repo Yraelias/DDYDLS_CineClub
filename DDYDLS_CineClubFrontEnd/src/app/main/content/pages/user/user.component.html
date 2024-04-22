@@ -11,6 +11,7 @@ Vos 5 dernieres Notes :
 <div *ngFor="let rating of listRatings"  >
     <p class="commentaire">{{ rating.commentary }}</p>
     <p>NOTE : {{ rating.ratings }}</p>
-    <p>Approuvé {{ rating.approbate }}</p>
+    <img mat-card-image src="/assets/icons/OeufGreen.png" *ngIf=" rating.approbate  == 1">
+    <img mat-card-image src="/assets/icons/OeufRed.png" *ngIf=" rating.approbate  == 0">
     <p>----------------------------</p>    
 </div>
