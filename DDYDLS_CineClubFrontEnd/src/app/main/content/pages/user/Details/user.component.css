@@ -11,11 +11,30 @@ h1{
 }
 .divCom{
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    width: 40%;
+    width: 20%;
+    box-shadow: 4px 4px 10px 1px #FE277E;
+    margin: 2%;
+    padding: 1%;
 }
 article{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+.commentaire{
+    word-wrap: break-word;
+    height: 7vh;
+    width: 90%;
+    overflow: scroll;
+}
+.divPara{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }

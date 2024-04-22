@@ -1,19 +1,20 @@
 <main>
-    <mat-icon *ngIf="isConnected" style="color: #FE277E;">settings</mat-icon>
+    <div class="divPara">
+        <mat-icon *ngIf="isConnected" style="color: #FE277E;">settings</mat-icon>
+    </div>
     <div class="pIntro">
         <p > Bonjour {{Username}}</p>
         <p>Vous avez noté {{MonthL}} de films ce mois-ci</p>
         <p>Vous avez noté {{YearL}} de films cette année</p>
         <p>Vous avez noté {{Lenght}} de films au total </p>
     </div>
-    <h1> Vos 5 dernieres Notes :</h1>
+    <h1> Vos 6 dernieres Notes :</h1>
     <article>
         <div *ngFor="let rating of listRatings" class="divCom" >
             <p class="commentaire">{{ rating.commentary }}</p>
             <p>NOTE : {{ rating.ratings }}</p>
             <img mat-card-image src="/assets/icons/OeufGreen.png" *ngIf=" rating.approbate  == 1">
-            <img mat-card-image src="/assets/icons/OeufRed.png" *ngIf=" rating.approbate  == 0">
-            <p>----------------------------</p>    
+            <img mat-card-image src="/assets/icons/OeufRed.png" *ngIf=" rating.approbate  == 0">  
         </div>
     </article>
 </main>
