@@ -17,8 +17,8 @@
   <h2>Le recommandez vous ?</h2>
   <img mat-card-image src="/assets/icons/OeufGreen.png" *ngIf="Reco == 0 || Reco == 1" (click)="onClickRecom(1)">
   <img mat-card-image src="/assets/icons/OeufNB.png" *ngIf="Reco == 2" (click)="onClickRecom(1)">
-  <img mat-card-image src="/assets/icons/OeufRed.png" *ngIf="Reco == 0 || Reco == 2" (click)="onClickRecom(2)">
-  <img mat-card-image src="/assets/icons/OeufNB.png" *ngIf="Reco == 1" (click)="onClickRecom(2)">
+  <img mat-card-image src="/assets/icons/OeufRed.png" *ngIf="Reco == 0 || Reco == 2" (click)="onClickRecom(0)">
+  <img mat-card-image src="/assets/icons/OeufNB.png" *ngIf="Reco == 1" (click)="onClickRecom(0)">
   <h2>Commentaire</h2>
   <form class="example-form">
     <div class="form">
