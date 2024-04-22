@@ -41,6 +41,7 @@ import { ErrorSnackbarComponent } from './Snackbar/error-snackbar/error-snackbar
 import {MatSnackBarModule} from '@angular/material/snack-bar'
 import { SettingsComponent } from './main/content/pages/user/settings/settings.component';
 import { UserService } from './main/content/pages/user/user.service';
+import { RegisterComponent } from './auth/register/register.component';
 
 
 
@@ -49,6 +50,10 @@ const appRoutes: Routes = [
     path:'connexion',
     component: LoginComponent,
     //resolve: {data: MovieService}
+  },
+  {
+    path:'inscription',
+    component: RegisterComponent
   },
   {
     path:'movies/add',
@@ -97,7 +102,8 @@ const appRoutes: Routes = [
         MovieAddComponent,
         SearchMovieComponent,
         ErrorSnackbarComponent,
-        SettingsComponent
+        SettingsComponent,
+        RegisterComponent
     ],
     providers: [MovieService, AuthService, AuthGuardService, RatingService,CineclubService,UserService ],
     bootstrap: [AppComponent],
