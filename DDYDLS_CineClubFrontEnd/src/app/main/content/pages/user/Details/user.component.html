@@ -13,8 +13,8 @@
         <div *ngFor="let rating of listRatings" class="divCom" >
             <p class="commentaire">{{ rating.commentary }}</p>
             <p>NOTE : {{ rating.ratings }}</p>
-            <img mat-card-image src="/assets/icons/OeufGreen.png" *ngIf=" rating.approbate  == 1">
-            <img mat-card-image src="/assets/icons/OeufRed.png" *ngIf=" rating.approbate  == 0">  
+            <img mat-card-image src="/assets/icons/OeufGreen.png" *ngIf=" rating.approbate  == 1" alt="Oeuf Vert">
+            <img mat-card-image src="/assets/icons/OeufRed.png" *ngIf=" rating.approbate  == 0" alt="Oeuf Rouge">  
         </div>
     </article>
 </main>

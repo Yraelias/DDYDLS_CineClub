@@ -67,8 +67,6 @@ p {
   .blocSyn{
     font-size: 15px;
   }
-}
-@media only screen and (max-width: 600px) {
   .blocDetails{
     display: flex;
     align-items: center;
@@ -79,9 +77,11 @@ p {
     gap: 2%;
     height: 80vh;
   }
-
   .backgroundBloc{
     width: 90%;
     height: 25vh;
+  }
+  p{
+    padding: 2%;
   }
 }
