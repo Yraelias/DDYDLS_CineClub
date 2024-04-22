@@ -70,7 +70,7 @@ namespace DDYDLS_CineClubApi.Controllers
 
         // PUT api/<User>/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] api.User user)
+        public IActionResult Put(int id, [FromForm] api.User user)
         {
             try
             {
