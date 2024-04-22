@@ -10,5 +10,7 @@ export class UserService {
 
   checkPassword() :void{}
   updatePassword() :void{}
-  DesactivateAccount() :void{}
+  DesactivateAccount() :void{
+    console.log ("je désactive")
+  }
 }

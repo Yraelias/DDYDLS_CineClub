@@ -13,7 +13,7 @@
     <div>
       <mat-icon *ngIf="isConnected" style="color: #FE277E;" >person</mat-icon>
       <button *ngIf="!isConnected" mat-button [routerLink]="['/connexion']" style="color: #FE277E;">Connexion</button>
-      <mat-icon *ngIf="isConnected" style="color: #FE277E;">settings</mat-icon>
+      <mat-icon *ngIf="isConnected" [routerLink]="['/settings']" style="color: #FE277E;">settings</mat-icon>
       <button mat-button *ngIf="isConnected" [matMenuTriggerFor]="beforeMenu" style="color: #FE277E;">{{Username}}</button>
       <mat-menu #beforeMenu="matMenu"  xPosition="before">
         <button mat-menu-item [routerLink]="['/user']" style="color: #FE277E;">Profil</button>

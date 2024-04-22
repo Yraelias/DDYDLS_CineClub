@@ -42,6 +42,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
 import { SettingsComponent } from './main/content/pages/user/settings/settings.component';
 import { UserService } from './main/content/pages/user/user.service';
 import { RegisterComponent } from './auth/register/register.component';
+import { DesactivateDialogComponent } from './main/content/pages/user/desactivate-dialog/desactivate-dialog.component';
 
 
 
@@ -54,6 +55,10 @@ const appRoutes: Routes = [
   {
     path:'inscription',
     component: RegisterComponent
+  },
+  {
+    path:'settings',
+    component: SettingsComponent
   },
   {
     path:'movies/add',
@@ -103,7 +108,8 @@ const appRoutes: Routes = [
         SearchMovieComponent,
         ErrorSnackbarComponent,
         SettingsComponent,
-        RegisterComponent
+        RegisterComponent,
+        DesactivateDialogComponent
     ],
     providers: [MovieService, AuthService, AuthGuardService, RatingService,CineclubService,UserService ],
     bootstrap: [AppComponent],

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { RatingService } from '../../rating/rating.service';
 import { Rating } from 'src/app/models/rating';
+import { SettingsComponent } from '../settings/settings.component';
+import { User } from 'src/app/models/user';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-user',
@@ -20,8 +23,9 @@ export class UserComponent implements OnInit {
  MonthL : number = 0;
  YearL : number = 0;
  Lenght : number = 0;
+ user : User;
 
-  constructor(ratingService : RatingService) 
+  constructor(ratingService : RatingService, public dialog: MatDialog) 
   {
     this._ratingService = ratingService;
   }
@@ -69,6 +73,17 @@ export class UserComponent implements OnInit {
           console.log(this.MonthL);
         }
       })
+  }
+
+  openDialog() : void {
+    const dialogRef =  this.dialog.open(SettingsComponent,{
+      data: {user : this.user},
+      width: '90%'
+    });
+
+    dialogRef.afterClosed().subscribe(data => {
+      console.log ("Dialog fermé : "+ data);
+    });
   }
 
 }
