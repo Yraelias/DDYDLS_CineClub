@@ -25,7 +25,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
 import { AuthService } from './auth/auth.service';
-import { UserComponent } from './main/content/pages/user/user.component';
+import { UserComponent } from './main/content/pages/user/Details/userDetails.component';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { DialogAddorUpdateRatingComponent } from './main/content/pages/rating/AddOrUpdateRating/dialog-addor-update-rating.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -39,6 +39,8 @@ import { MovieAddComponent } from './main/content/pages/movie/add/movie-add.comp
 import { SearchMovieComponent } from './main/content/pages/movie/search/search-movie.component';
 import { ErrorSnackbarComponent } from './Snackbar/error-snackbar/error-snackbar.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar'
+import { SettingsComponent } from './main/content/pages/user/settings/settings.component';
+import { UserService } from './main/content/pages/user/user.service';
 
 
 
@@ -94,9 +96,10 @@ const appRoutes: Routes = [
         FooterComponent,
         MovieAddComponent,
         SearchMovieComponent,
-        ErrorSnackbarComponent
+        ErrorSnackbarComponent,
+        SettingsComponent
     ],
-    providers: [MovieService, AuthService, AuthGuardService, RatingService,CineclubService ],
+    providers: [MovieService, AuthService, AuthGuardService, RatingService,CineclubService,UserService ],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,

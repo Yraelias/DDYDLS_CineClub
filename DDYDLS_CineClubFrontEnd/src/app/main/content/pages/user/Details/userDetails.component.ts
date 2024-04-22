@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RatingService } from '../rating/rating.service';
+import { RatingService } from '../../rating/rating.service';
 import { Rating } from 'src/app/models/rating';
 
 @Component({
