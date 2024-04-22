@@ -28,7 +28,7 @@ article{
     word-wrap: break-word;
     height: 7vh;
     width: 90%;
-    overflow: scroll;
+    overflow: auto;
 }
 .divPara{
     width: 50px;
@@ -37,7 +37,9 @@ article{
     align-items: center;
     justify-content: center;
 }
-
+.commentaire::-webkit-scrollbar {
+    display: none;
+}
 @media only screen and (max-width: 768px) {
     article{
         flex-direction: column;
