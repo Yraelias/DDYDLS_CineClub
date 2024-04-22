@@ -13,7 +13,7 @@ import { error } from 'console';
 })
 export class DialogAddorUpdateRatingComponent implements OnInit {
   ratingSelectionned : number = 0;
-  Reco : number = 0
+  Reco : number = 2
   movie : any
   message : MatInput
   id_User : number;
