@@ -43,6 +43,7 @@ import { SettingsComponent } from './main/content/pages/user/settings/settings.c
 import { UserService } from './main/content/pages/user/user.service';
 import { RegisterComponent } from './auth/register/register.component';
 import { DesactivateDialogComponent } from './main/content/pages/user/desactivate-dialog/desactivate-dialog.component';
+import { ChangePasswordComponent } from './main/content/pages/user/change-password/change-password.component';
 
 
 
@@ -109,7 +110,8 @@ const appRoutes: Routes = [
         ErrorSnackbarComponent,
         SettingsComponent,
         RegisterComponent,
-        DesactivateDialogComponent
+        DesactivateDialogComponent,
+        ChangePasswordComponent
     ],
     providers: [MovieService, AuthService, AuthGuardService, RatingService,CineclubService,UserService ],
     bootstrap: [AppComponent],
