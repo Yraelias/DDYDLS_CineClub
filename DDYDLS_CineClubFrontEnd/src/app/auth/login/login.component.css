@@ -14,3 +14,10 @@ form{
     align-items: center;
     margin: 10%;
 }
+.divButton{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 10vh;
+}
