@@ -44,6 +44,7 @@ import { UserService } from './main/content/pages/user/user.service';
 import { RegisterComponent } from './auth/register/register.component';
 import { DesactivateDialogComponent } from './main/content/pages/user/desactivate-dialog/desactivate-dialog.component';
 import { ChangePasswordComponent } from './main/content/pages/user/change-password/change-password.component';
+import { ChangeUsernameComponent } from './main/content/pages/user/change-username/change-username.component';
 
 
 
@@ -59,7 +60,8 @@ const appRoutes: Routes = [
   },
   {
     path:'settings',
-    component: SettingsComponent
+    component: SettingsComponent,
+    canActivate :[AuthGuardService]
   },
   {
     path:'movies/add',
@@ -111,7 +113,8 @@ const appRoutes: Routes = [
         SettingsComponent,
         RegisterComponent,
         DesactivateDialogComponent,
-        ChangePasswordComponent
+        ChangePasswordComponent,
+        ChangeUsernameComponent
     ],
     providers: [MovieService, AuthService, AuthGuardService, RatingService,CineclubService,UserService ],
     bootstrap: [AppComponent],

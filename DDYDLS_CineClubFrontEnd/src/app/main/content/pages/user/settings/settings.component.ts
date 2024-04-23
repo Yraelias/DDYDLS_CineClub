@@ -3,6 +3,8 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dial
 import { DesactivateDialogComponent } from '../desactivate-dialog/desactivate-dialog.component';
 import { UserService } from '../user.service';
 import { ChangePasswordComponent } from '../change-password/change-password.component';
+import { ChangeUsernameComponent } from '../change-username/change-username.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-settings',
@@ -13,7 +15,7 @@ export class SettingsComponent {
   Desac : boolean = false;
   userService : UserService
 
-  constructor(public dialog: MatDialog, _userService : UserService) {
+  constructor(public dialog: MatDialog, _userService : UserService, public _router : Router) {
     this.userService = _userService;
   }
   openDesactDialog(): void {
@@ -28,6 +30,8 @@ export class SettingsComponent {
       if(this.Desac == true)
         {
           this.userService.DesactivateAccount();
+          sessionStorage.clear();
+          window.location.reload();
         } 
     });
   }
@@ -45,6 +49,17 @@ export class SettingsComponent {
         {
           this.userService.DesactivateAccount();
         } 
+    });
+  }
+
+  openChangeusernameDialog(): void {
+    const dialogRef = this.dialog.open(ChangeUsernameComponent,{
+      width : '90%' 
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Username modifié')
+      window.location.reload();
     });
   }
 }
