@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class UserService {
   updatePassword(password : string) :void{
     console.log("je change les mdp en " +password);
   }
-  DesactivateAccount() :void{
-    console.log ("je désactive")
+  DesactivateAccount(id_User : number) :Observable<any>{
+      return this.httpClient.get<void>(this._Url+'/Desactive/'+id_User)
   }
 }

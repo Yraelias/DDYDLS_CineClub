@@ -51,6 +51,21 @@ namespace DDYDLS_CineClubApi.Controllers
             }
         }
 
+        // GET api/<User>/Desactive/5
+        [HttpGet("Desactive/{id}")]
+        public IActionResult DesactiveUser(int id)
+        {
+            try
+            {
+
+                return Ok(_userService.Desactive(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
         // POST api/<User>
         [HttpPost]
         public IActionResult Post([FromForm] api.UserCreate user)

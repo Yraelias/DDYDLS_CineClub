@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 export class SettingsComponent {
   Desac : boolean = false;
   userService : UserService
+  id_User : any
 
   constructor(public dialog: MatDialog, _userService : UserService, public _router : Router) {
     this.userService = _userService;
@@ -29,9 +30,11 @@ export class SettingsComponent {
       console.log(this.Desac);
       if(this.Desac == true)
         {
-          this.userService.DesactivateAccount();
+          this.id_User = sessionStorage.getItem('id');
+          this.userService.DesactivateAccount(this.id_User).subscribe(result =>{
           sessionStorage.clear();
           window.location.reload();
+          });
         } 
     });
   }
@@ -47,7 +50,8 @@ export class SettingsComponent {
       console.log(this.Desac);
       if(this.Desac == true)
         {
-          this.userService.DesactivateAccount();
+          this.id_User = sessionStorage.getItem('id');
+          this.userService.DesactivateAccount(this.id_User);
         } 
     });
   }

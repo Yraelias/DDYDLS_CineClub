@@ -30,7 +30,7 @@ namespace DDYDLS_CineClubDAL.Repository
                 Command checkActive = new Command("SELECT ID_User FROM [T_User] WHERE ID_User = " + Id + " AND IsActive = 1");
 
 
-                if ((int)_connection.ExecuteScalar(checkActive) > 0) return true;
+                if (_connection.ExecuteScalar(checkActive) != null) return true;
                 else return false;
             }
             else
