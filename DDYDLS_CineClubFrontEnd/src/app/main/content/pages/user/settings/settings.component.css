@@ -1,0 +1,8 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 45vh;
+    color: #87FF00
+}

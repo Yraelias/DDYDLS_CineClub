@@ -1,0 +1,16 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #87FF00
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 25vh;
+}
+button{
+    margin: 2%;
+}

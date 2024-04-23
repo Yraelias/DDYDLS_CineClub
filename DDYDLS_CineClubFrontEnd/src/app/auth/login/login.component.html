@@ -7,13 +7,15 @@
     <div>
         <form [formGroup]="loginFG" (ngSubmit)="onSubmit()">
             <mat-form-field appearance="fill">
-            <mat-label> Email</mat-label> <input  formControlName="email" matInput>
+                <mat-label> Email</mat-label> <input  formControlName="email" matInput>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                <mat-label>'Mot de passe </mat-label><input  formControlName="password" type="password" matInput>
             </mat-form-field>
-            <mat-form-field appearance="fill">
-            <mat-label>'Mot de passe </mat-label><input  formControlName="password" type="password" matInput>
-            </mat-form-field>
-            <button mat-raised-button type="submit" [disabled]="loginFG.invalid" style="color: #87FF00; background-color: #242423;">{{'Se connecter' }}</button>
+            <div class="divButton">
+                <button mat-raised-button type="submit" [disabled]="loginFG.invalid" style="color: #87FF00; background-color: #242423;">{{'Se connecter' }}</button>
+                <button mat-raised-button  style="color: #87FF00; background-color: #242423;" [routerLink]="['/inscription']">{{'inscription' }}</button>
+            </div>
         </form>
-        <button mat-raised-button  style="color: #87FF00; background-color: #242423;" [routerLink]="['/inscription']">{{'inscription' }}</button>
     </div>
 </div>
