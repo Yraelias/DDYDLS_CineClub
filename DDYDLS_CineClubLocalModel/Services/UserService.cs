@@ -20,6 +20,16 @@ namespace DDYDLS_CineClubLocalModel.Services
             _userRepository = userRepository;
         }
 
+        public bool changePassword(int Id, string password)
+        {
+            return _userRepository.changePassword(Id, password);
+        }
+
+        public bool changeUsername(int Id, string username)
+        {
+            return _userRepository.changeUsername(Id, username);
+        }
+
         public bool checkIfModerator(int Id)
         {
             throw new System.NotImplementedException();

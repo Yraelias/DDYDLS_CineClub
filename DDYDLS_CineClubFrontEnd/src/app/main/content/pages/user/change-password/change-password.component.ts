@@ -10,27 +10,30 @@ import { UserService } from '../user.service';
   styleUrl: './change-password.component.css'
 })
 export class ChangePasswordComponent implements OnInit {
-
+  data : any
   passwordFG : FormGroup 
   newPassword: string = '';
   confirmPassword: string = '';
   userService : UserService;
 
-  constructor(public dialogRef: MatDialogRef<SettingsComponent>,private _builder : FormBuilder, _userService : UserService) {
-    this.userService = _userService
+  constructor(public dialogRef: MatDialogRef<SettingsComponent>,private _builder : FormBuilder, _userService : UserService, @Inject(MAT_DIALOG_DATA) public datas: any) {
+    this.userService = _userService;
+    this.data = datas
+    
   }
  ngOnInit(){
   this.passwordFG = this._builder.group({
     newPassword:['',Validators.required],
     confirmPassword : ['',Validators.required]
   });
+  console.log(this.data)
  }
   onSubmit(){
     if (this.passwordFG.value.newPassword === this.passwordFG.value.confirmPassword) {
-      console.log("ok les mdp")
-      this.userService.updatePassword
+      this.userService.updatePassword(this.data.id_User,this.passwordFG.value.newPassword).subscribe(result =>{
+        this.dialogRef.close();
+        });
     }
-    else
-    console.log("nope")
+  
   }
 }

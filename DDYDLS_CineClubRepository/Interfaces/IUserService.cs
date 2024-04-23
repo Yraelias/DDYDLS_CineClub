@@ -16,5 +16,8 @@ namespace DDYDLS_CineClubDAL.Interfaces
         bool checkIfOrganisator(int Id);
         bool checkIfPlayer(int Id);
 
+        bool changePassword(int Id, string password);
+        bool changeUsername(int Id, string username);
+
     }
 }
