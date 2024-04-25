@@ -39,7 +39,6 @@ export class RegisterComponent implements OnInit {
               sessionStorage.setItem('isAdmin',data.isAdministrator.toString());
               sessionStorage.setItem('isConnected',"True");
               sessionStorage.setItem('Username',data.username);
-              this.sharedDataService.updateBarreTacheData('');
               this._router.navigate(['/user']);
               console.log(data);
 

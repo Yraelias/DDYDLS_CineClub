@@ -45,6 +45,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { DesactivateDialogComponent } from './main/content/pages/user/desactivate-dialog/desactivate-dialog.component';
 import { ChangePasswordComponent } from './main/content/pages/user/change-password/change-password.component';
 import { ChangeUsernameComponent } from './main/content/pages/user/change-username/change-username.component';
+import { SharedDataService } from './navigation/shared.service';
 
 
 
@@ -116,7 +117,7 @@ const appRoutes: Routes = [
         ChangePasswordComponent,
         ChangeUsernameComponent
     ],
-    providers: [MovieService, AuthService, AuthGuardService, RatingService,CineclubService,UserService ],
+    providers: [MovieService, AuthService, AuthGuardService, RatingService,CineclubService,UserService,SharedDataService ],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
