@@ -4,5 +4,6 @@ main{
     align-items: center;
     justify-content: space-around;
     height: 45vh;
-    color: #87FF00
+    color: #87FF00;
+    margin: 11%;
 }
