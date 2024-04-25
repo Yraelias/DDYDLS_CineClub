@@ -21,6 +21,7 @@ export class MovieDetailsComponent implements OnInit {
   URLimg:any = "https://image.tmdb.org/t/p/w500//gEU2QniE6E77NI6lCU6MxlNBvIx.jpg";
   isConnected:boolean
   myNoteIsNull : boolean
+  sameDate : boolean = false;
 
   constructor(private movie_service : MovieService, private activedRoute : ActivatedRoute, public dialog: MatDialog) {
     this.movie.id_Movie  = activedRoute.snapshot.params['id'];
@@ -69,12 +70,24 @@ export class MovieDetailsComponent implements OnInit {
     })
   }
   loadTMDBMovie(): void{
+    let a  = 0;
     this.movie_service.getTMDBMovie(this.movie.name).subscribe({
       next:(data :Result) =>
       {
         console.log(data);
         this.result = data;
         this.URLimg = "https://image.tmdb.org/t/p/w500/" + this.result.results[0].poster_path;
+        while(!this.sameDate && a < this.result.results.length)
+          {
+            if(this.movie.year == parseInt(this.result.results[a].release_date.split('-')[0], 10))
+              {
+                console.log ("je passe ici")
+                this.URLimg = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
+                this.movie.synopsis =  this.result.results[a].overview;
+                this.sameDate = true;
+              }
+              a++;
+          }
       }
     })
   }
