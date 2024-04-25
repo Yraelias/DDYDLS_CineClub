@@ -84,6 +84,7 @@ export class MovieDetailsComponent implements OnInit {
                 console.log ("je passe ici")
                 this.URLimg = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
                 this.movie.synopsis =  this.result.results[a].overview;
+                this.movie.EN_name = this.result.results[a].original_title
                 this.sameDate = true;
               }
               a++;

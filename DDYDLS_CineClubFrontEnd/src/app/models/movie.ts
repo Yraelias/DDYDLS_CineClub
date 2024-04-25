@@ -11,4 +11,5 @@ export class Movie {
     ratingForUser : number;
     UrlIMG ?: string ;
     TMDB_Id ?: number ;
+    EN_name ?: string
 }
