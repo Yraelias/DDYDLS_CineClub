@@ -34,14 +34,7 @@ export class RegisterComponent implements OnInit {
       next: (data:User) => {
             if(data.iD_User != 0 || data.iD_User != null)
             {
-              sessionStorage.setItem('token',data.token);
-              sessionStorage.setItem('id' , data.iD_User.toString());
-              sessionStorage.setItem('isAdmin',data.isAdministrator.toString());
-              sessionStorage.setItem('isConnected',"True");
-              sessionStorage.setItem('Username',data.username);
-              this._router.navigate(['/user']);
-              console.log(data);
-
+              this._router.navigate(['/login']);
             }
             else { console.log("Erreur de log"), this._router.navigate(['/login']);}
             
