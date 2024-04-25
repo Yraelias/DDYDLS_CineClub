@@ -2,23 +2,24 @@
  <h1>{{movie.movie.name}}</h1>
 
   <h2>Combien d'oeufs lui donnez vous ?</h2>
-  <img mat-card-image src="/assets/icons/OeufNB.png"   *ngIf="ratingSelectionned == 0" (click)="onClickRating(1)">
-  <img mat-card-image src="/assets/icons/OeufBlue.png" *ngIf="ratingSelectionned >= 1" (click)="onClickRating(1)">
-  <img mat-card-image src="/assets/icons/OeufNB.png"   *ngIf="ratingSelectionned <= 1" (click)="onClickRating(2)">
-  <img mat-card-image src="/assets/icons/OeufBlue.png" *ngIf="ratingSelectionned >= 2" (click)="onClickRating(2)">
-  <img mat-card-image src="/assets/icons/OeufNB.png"   *ngIf="ratingSelectionned <= 2" (click)="onClickRating(3)">
-  <img mat-card-image src="/assets/icons/OeufBlue.png" *ngIf="ratingSelectionned >= 3" (click)="onClickRating(3)">
-  <img mat-card-image src="/assets/icons/OeufNB.png"   *ngIf="ratingSelectionned <= 3" (click)="onClickRating(4)">
-  <img mat-card-image src="/assets/icons/OeufBlue.png" *ngIf="ratingSelectionned >= 4" (click)="onClickRating(4)">
-  <img mat-card-image src="/assets/icons/OeufNB.png"   *ngIf="ratingSelectionned <= 4" (click)="onClickRating(5)">
-  <img mat-card-image src="/assets/icons/OeufBlue.png" *ngIf="ratingSelectionned >= 5" (click)="onClickRating(5)">
-  <img mat-card-image src="/assets/icons/OeufNB.png"   *ngIf="ratingSelectionned <= 5" (click)="onClickRating(6)">
-  <img mat-card-image src="/assets/icons/OeufBlue.png" *ngIf="ratingSelectionned >= 6">
+  <img mat-card-image src="/assets/icons/OeufNB.webp"   *ngIf="ratingSelectionned == 0" (click)="onClickRating(1)">
+  <img mat-card-image src="/assets/icons/OeufBlue.webp" *ngIf="ratingSelectionned >= 1" (click)="onClickRating(1)">
+  <img mat-card-image src="/assets/icons/OeufNB.webp"   *ngIf="ratingSelectionned <= 1" (click)="onClickRating(2)">
+  <img mat-card-image src="/assets/icons/OeufBlue.webp" *ngIf="ratingSelectionned >= 2" (click)="onClickRating(2)">
+  <img mat-card-image src="/assets/icons/OeufNB.webp"   *ngIf="ratingSelectionned <= 2" (click)="onClickRating(3)">
+  <img mat-card-image src="/assets/icons/OeufBlue.webp" *ngIf="ratingSelectionned >= 3" (click)="onClickRating(3)">
+  <img mat-card-image src="/assets/icons/OeufNB.webp"   *ngIf="ratingSelectionned <= 3" (click)="onClickRating(4)">
+  <img mat-card-image src="/assets/icons/OeufBlue.webp" *ngIf="ratingSelectionned >= 4" (click)="onClickRating(4)">
+  <img mat-card-image src="/assets/icons/OeufNB.webp"   *ngIf="ratingSelectionned <= 4" (click)="onClickRating(5)">
+  <img mat-card-image src="/assets/icons/OeufBlue.webp" *ngIf="ratingSelectionned >= 5" (click)="onClickRating(5)">
+  <img mat-card-image src="/assets/icons/OeufNB.webp"   *ngIf="ratingSelectionned <= 5" (click)="onClickRating(6)">
+  <img mat-card-image src="/assets/icons/OeufBlue.webp" *ngIf="ratingSelectionned >= 6">
   <h2>Le recommandez vous ?</h2>
-  <img mat-card-image src="/assets/icons/OeufGreen.png" *ngIf="Reco == 0 || Reco == 1" (click)="onClickRecom(1)">
-  <img mat-card-image src="/assets/icons/OeufNB.png" *ngIf="Reco == 2" (click)="onClickRecom(1)">
-  <img mat-card-image src="/assets/icons/OeufRed.png" *ngIf="Reco == 0 || Reco == 2" (click)="onClickRecom(2)">
-  <img mat-card-image src="/assets/icons/OeufNB.png" *ngIf="Reco == 1" (click)="onClickRecom(2)">
+  <img mat-card-image src="/assets/icons/OeufGreen.webp" *ngIf="Reco == 2 || Reco == 1" (click)="onClickRecom(1)">
+  <img mat-card-image src="/assets/icons/OeufNB.webp" *ngIf="Reco == 0" (click)="onClickRecom(1)">
+  
+  <img mat-card-image src="/assets/icons/OeufRed.webp" *ngIf="Reco == 2 || Reco == 0" (click)="onClickRecom(0)">
+  <img mat-card-image src="/assets/icons/OeufNB.webp" *ngIf="Reco == 1" (click)="onClickRecom(0)">
   <h2>Commentaire</h2>
   <form class="example-form">
     <div class="form">

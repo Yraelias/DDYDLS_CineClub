@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
   }
   onSubmit() {
     const values = this.loginFG.value;
+    console.log(values)
     this._authService.login(values['email'], values['password']).subscribe({
       next: (data:User) => {
             if(data.iD_User != 0 || data.iD_User != null)
@@ -39,7 +40,8 @@ export class LoginComponent implements OnInit {
               sessionStorage.setItem('isAdmin',data.isAdministrator.toString());
               sessionStorage.setItem('isConnected',"True");
               sessionStorage.setItem('Username',data.username);
-              this.sharedDataService.updateBarreTacheData('');
+              this.sharedDataService.setLoggedIn(true)
+              this.sharedDataService.setUsername(data.username)
               this._router.navigate(['/user']);
               console.log(data);
 

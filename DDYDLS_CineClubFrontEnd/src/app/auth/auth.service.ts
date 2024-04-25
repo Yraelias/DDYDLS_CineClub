@@ -23,16 +23,14 @@ export class AuthService {
   }
 
   
-/*
-  register(user:User):Observable<object>
+
+  register(user:User):Observable<any>
   {
     console.log(user);
     console.log(environment.apiurl+"/user/");
-    return this._client.post<any>(environment.apiurl+"/user",user);
+    return this._client.post<User>(environment.apiurl+"/user",user);
   }
 
-
-*/
 }
 export class LoginInfo{
   email :string;

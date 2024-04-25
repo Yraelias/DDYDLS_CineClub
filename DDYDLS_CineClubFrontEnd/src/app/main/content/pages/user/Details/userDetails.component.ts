@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { RatingService } from '../rating/rating.service';
+import { RatingService } from '../../rating/rating.service';
 import { Rating } from 'src/app/models/rating';
+import { SettingsComponent } from '../settings/settings.component';
+import { User } from 'src/app/models/user';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-user',
@@ -12,7 +15,7 @@ export class UserComponent implements OnInit {
   Username : any = '';
   isConnected : boolean;
   _ratingService : RatingService
-  id_User : any = 0;
+  iD_User : any = 0;
   listRatings : Rating[];
  dateDuJour : Date = new Date();
  listRatingsByMonth : Rating[];
@@ -20,8 +23,9 @@ export class UserComponent implements OnInit {
  MonthL : number = 0;
  YearL : number = 0;
  Lenght : number = 0;
+ user : User;
 
-  constructor(ratingService : RatingService) 
+  constructor(ratingService : RatingService, public dialog: MatDialog) 
   {
     this._ratingService = ratingService;
   }
@@ -32,7 +36,7 @@ export class UserComponent implements OnInit {
       {
         this.isConnected = true;
         this.Username = sessionStorage.getItem('Username');
-        this.id_User = sessionStorage.getItem('id');
+        this.iD_User = sessionStorage.getItem('id');
       }
       this.getUserCommentary();
   
@@ -40,7 +44,7 @@ export class UserComponent implements OnInit {
 
   getUserCommentary(): void
   {
-      this._ratingService.getRatingForUser(this.id_User).subscribe({
+      this._ratingService.getRatingForUser(this.iD_User).subscribe({
         next: (data:Rating[]) =>
         {
           this.listRatings = data;
@@ -50,7 +54,7 @@ export class UserComponent implements OnInit {
         }
       })
 
-      this._ratingService.getRatingForUserbyYear(this.id_User, this.dateDuJour.getFullYear()).subscribe({
+      this._ratingService.getRatingForUserbyYear(this.iD_User, this.dateDuJour.getFullYear()).subscribe({
         next: (data:Rating[]) =>
         {
           this.listRatingsByYear = data;
@@ -60,7 +64,7 @@ export class UserComponent implements OnInit {
         }
       })
 
-      this._ratingService.getRatingForUserbyMonth(this.id_User,this.dateDuJour.getMonth() +1,this.dateDuJour.getFullYear()).subscribe({
+      this._ratingService.getRatingForUserbyMonth(this.iD_User,this.dateDuJour.getMonth() +1,this.dateDuJour.getFullYear()).subscribe({
         next: (data:Rating[]) =>
         {
           this.listRatingsByMonth = data;
@@ -71,4 +75,16 @@ export class UserComponent implements OnInit {
       })
   }
 
+  openDialog() : void {
+    const dialogRef =  this.dialog.open(SettingsComponent,{
+      data: {user : this.user},
+      width: '90%'
+    });
+
+    dialogRef.afterClosed().subscribe(data => {
+      console.log ("Dialog fermé : "+ data);
+    });
+  }
+
+  
 }

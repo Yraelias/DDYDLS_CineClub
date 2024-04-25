@@ -16,5 +16,9 @@ namespace DDYDLS_CineClubDAL.Interfaces
         bool DesactiveUser(int Id);
         bool ActiveUser(int Id);
         bool Delete(int Id);
+
+        bool changePassword(int Id, string password);
+        bool changeUsername(int Id, string username);
+
     }
 }

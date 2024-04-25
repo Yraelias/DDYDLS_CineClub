@@ -1,9 +1,9 @@
 <main>
   <title>{{movie.name}}</title>
-  <h1>{{movie.name}}</h1>
+  <h1>{{movie.name}} ( {{movie.EN_name}} ) </h1>
   <article cols="3" rowHeight="3:2" class="blocDetails">
       <div class="blocImg backgroundBloc">
-            <img [src]="URLimg" class="image"/>
+            <img [src]="URLimg" class="image" alt="affiche du film {{movie.name}}"/>
       </div>
       <div class='DetailsMoviecontent backgroundBloc'>
         <p>{{result.results[0].release_date}}</p>

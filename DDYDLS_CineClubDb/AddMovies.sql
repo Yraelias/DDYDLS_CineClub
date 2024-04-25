@@ -221,7 +221,7 @@ INSERT INTO [dbo].[T_User]
 GO
 
 INSERT INTO [dbo].[T_Rating]
-           ([Id_User]
+           ([ID_User]
            ,[Id_Movie]
            ,[Rating]
            ,[Date]
@@ -237,7 +237,7 @@ INSERT INTO [dbo].[T_Rating]
            ,1)
 GO
 INSERT INTO [dbo].[T_Rating]
-           ([Id_User]
+           ([ID_User]
            ,[Id_Movie]
            ,[Rating]
            ,[Date]
@@ -253,7 +253,7 @@ INSERT INTO [dbo].[T_Rating]
            ,0)
 GO
 INSERT INTO [dbo].[T_Rating]
-           ([Id_User]
+           ([ID_User]
            ,[Id_Movie]
            ,[Rating]
            ,[Date]
@@ -269,7 +269,7 @@ INSERT INTO [dbo].[T_Rating]
            ,0)
 GO
 INSERT INTO [dbo].[T_Rating]
-           ([Id_User]
+           ([ID_User]
            ,[Id_Movie]
            ,[Rating]
            ,[Date]
@@ -285,7 +285,7 @@ INSERT INTO [dbo].[T_Rating]
            ,1)
 GO
 INSERT INTO [dbo].[T_Rating]
-           ([Id_User]
+           ([ID_User]
            ,[Id_Movie]
            ,[Rating]
            ,[Date]

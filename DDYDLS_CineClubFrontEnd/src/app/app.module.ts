@@ -25,7 +25,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
 import { AuthService } from './auth/auth.service';
-import { UserComponent } from './main/content/pages/user/user.component';
+import { UserComponent } from './main/content/pages/user/Details/userDetails.component';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { DialogAddorUpdateRatingComponent } from './main/content/pages/rating/AddOrUpdateRating/dialog-addor-update-rating.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -39,6 +39,13 @@ import { MovieAddComponent } from './main/content/pages/movie/add/movie-add.comp
 import { SearchMovieComponent } from './main/content/pages/movie/search/search-movie.component';
 import { ErrorSnackbarComponent } from './Snackbar/error-snackbar/error-snackbar.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar'
+import { SettingsComponent } from './main/content/pages/user/settings/settings.component';
+import { UserService } from './main/content/pages/user/user.service';
+import { RegisterComponent } from './auth/register/register.component';
+import { DesactivateDialogComponent } from './main/content/pages/user/desactivate-dialog/desactivate-dialog.component';
+import { ChangePasswordComponent } from './main/content/pages/user/change-password/change-password.component';
+import { ChangeUsernameComponent } from './main/content/pages/user/change-username/change-username.component';
+import { SharedDataService } from './navigation/shared.service';
 
 
 
@@ -47,6 +54,15 @@ const appRoutes: Routes = [
     path:'connexion',
     component: LoginComponent,
     //resolve: {data: MovieService}
+  },
+  {
+    path:'inscription',
+    component: RegisterComponent
+  },
+  {
+    path:'settings',
+    component: SettingsComponent,
+    canActivate :[AuthGuardService]
   },
   {
     path:'movies/add',
@@ -94,9 +110,14 @@ const appRoutes: Routes = [
         FooterComponent,
         MovieAddComponent,
         SearchMovieComponent,
-        ErrorSnackbarComponent
+        ErrorSnackbarComponent,
+        SettingsComponent,
+        RegisterComponent,
+        DesactivateDialogComponent,
+        ChangePasswordComponent,
+        ChangeUsernameComponent
     ],
-    providers: [MovieService, AuthService, AuthGuardService, RatingService,CineclubService ],
+    providers: [MovieService, AuthService, AuthGuardService, RatingService,CineclubService,UserService,SharedDataService ],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,

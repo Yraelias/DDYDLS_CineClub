@@ -15,6 +15,8 @@ namespace DDYDLS_CineClubLocalModel.Services.Interfaces
         User GetByEmail(string email);
         bool checkIfModerator(int Id);
         bool checkIfPlayer(int Id);
-        
+        bool changePassword(int Id, string password);
+        bool changeUsername(int Id, string username);
+
     }
 }

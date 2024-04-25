@@ -1,0 +1,13 @@
+<aside>
+        <h2>Changer le pseudo</h2>
+        <mat-form-field appearance="fill">
+        <mat-label> Nouveau pseudo</mat-label> 
+        <input #newPseudo matInput>
+        </mat-form-field>
+        <button mat-raised-button [mat-dialog-close] [disabled]="!newPseudo.value.trim()" (click)="onSubmit(newPseudo.value)" style="color: #87FF00; background-color: #242423;">{{'Changer le pseudo' }}</button>
+        <button mat-raised-button [mat-dialog-close] style="color: #87FF00; background-color: #242423;">Annuler</button>
+</aside>
+
+
+
+        

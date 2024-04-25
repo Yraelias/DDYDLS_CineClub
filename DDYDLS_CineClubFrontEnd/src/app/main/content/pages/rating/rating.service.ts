@@ -13,14 +13,14 @@ export class RatingService {
   private _bookListUrl = 'https://localhost:44379/api/rating';
   constructor( private httpClient: HttpClient) { }
   
-  addRatingForMovie(Id_User : number, Id_Movie : number, rating : number, commentary:string, approbate : number ) : Observable<Rating> {
-    console.log(Id_User)
+  addRatingForMovie(iD_User : number, Id_Movie : number, rating : number, commentary:string, approbate : number ) : Observable<Rating> {
+    console.log(iD_User)
     console.log(Id_Movie)
     console.log(rating)
     console.log(this.today)
     
     return this.httpClient.post<Rating>('https://localhost:44379/api/rating/' , {
-      Id_User : Id_User,
+      iD_User : iD_User,
       Id_Movie : Id_Movie,
       date : this.today,
       Ratings : rating,
@@ -29,13 +29,13 @@ export class RatingService {
   });
   }
 
-  updateRatingForMovie(Id_User : number, Id_Movie : number, rating : number, commentary:string, approbate : number ) : Observable<Rating> {
-    console.log(Id_User)
+  updateRatingForMovie(iD_User : number, Id_Movie : number, rating : number, commentary:string, approbate : number ) : Observable<Rating> {
+    console.log(iD_User)
     console.log(Id_Movie)
     console.log(rating)
     console.log(this.today)
     return this.httpClient.put<Rating>('https://localhost:44379/api/rating/' , {
-      Id_User : Id_User,
+      iD_User : iD_User,
       Id_Movie : Id_Movie,
       date : this.today,
       Ratings : rating,
@@ -48,12 +48,12 @@ export class RatingService {
     return this.httpClient.get<Rating[]>('https://localhost:44379/api/rating/movie/'+Id_Movie)
   }
 
-  getRatingForUser(Id_User :number ) : Observable<Rating[]>{
-    return this.httpClient.get<Rating[]>('https://localhost:44379/api/rating/user/'+Id_User)
+  getRatingForUser(iD_User :number ) : Observable<Rating[]>{
+    return this.httpClient.get<Rating[]>('https://localhost:44379/api/rating/user/'+iD_User)
   }
 
-  getRatingForUserbyYear(Id_User :number, Year :number ) : Observable<Rating[]>{
-    return this.httpClient.get<Rating[]>('https://localhost:44379/api/rating/user/year/'+Id_User+'/'+Year)
+  getRatingForUserbyYear(iD_User :number, Year :number ) : Observable<Rating[]>{
+    return this.httpClient.get<Rating[]>('https://localhost:44379/api/rating/user/year/'+iD_User+'/'+Year)
   }
 
   getRatingForUserbyMonth(Id_Movie :number, Month:number, Year:number ) : Observable<Rating[]>{

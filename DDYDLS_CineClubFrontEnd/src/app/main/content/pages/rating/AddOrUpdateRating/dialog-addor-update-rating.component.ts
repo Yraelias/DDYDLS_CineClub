@@ -13,10 +13,10 @@ import { error } from 'console';
 })
 export class DialogAddorUpdateRatingComponent implements OnInit {
   ratingSelectionned : number = 0;
-  Reco : number = 0
+  Reco : number = 2
   movie : any
   message : MatInput
-  id_User : number;
+  iD_User : number;
   AddOrUpdate : boolean = false //False = Add and True = Update
   constructor(private ratingservice : RatingService, public dialogRef: MatDialogRef<DialogAddorUpdateRatingComponent>, @Inject(MAT_DIALOG_DATA) public data: Movie) {
     this.movie = data;
@@ -45,15 +45,15 @@ export class DialogAddorUpdateRatingComponent implements OnInit {
     console.log(this.Reco);
     console.log(message);
     console.log(sessionStorage.getItem("id"));
-    this.id_User = parseInt(sessionStorage.getItem("id") || "0") ;
+    this.iD_User = parseInt(sessionStorage.getItem("id") || "0") ;
     console.log(this.movie.movie.name)
     if(!this.AddOrUpdate) {
-      this.ratingservice.addRatingForMovie(this.id_User, this.movie.movie.id_Movie, this.ratingSelectionned,message,this.Reco).subscribe({
+      this.ratingservice.addRatingForMovie(this.iD_User, this.movie.movie.id_Movie, this.ratingSelectionned,message,this.Reco).subscribe({
         next : (data : any) => {ok = true},
         error : (error) => {console.log(error)},
     }); //Service Ajout
     }
-    else this.ratingservice.updateRatingForMovie(this.id_User, this.movie.movie.id_Movie, this.ratingSelectionned,message,this.Reco).subscribe({
+    else this.ratingservice.updateRatingForMovie(this.iD_User, this.movie.movie.id_Movie, this.ratingSelectionned,message,this.Reco).subscribe({
       next : (data : any) => {ok = true},
       error : (error) => {console.log(error)},
   });  //Service modifié

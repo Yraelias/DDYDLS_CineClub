@@ -9,5 +9,6 @@ namespace DDYDLS_CineClubApi.Services
     public interface ITokenService
     {
         UserWithToken Authenticate(string email, string password);
+        string HashPassword(string password);
     }
 }

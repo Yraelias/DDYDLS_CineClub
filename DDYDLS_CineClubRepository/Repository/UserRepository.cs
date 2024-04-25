@@ -30,7 +30,7 @@ namespace DDYDLS_CineClubDAL.Repository
                 Command checkActive = new Command("SELECT ID_User FROM [T_User] WHERE ID_User = " + Id + " AND IsActive = 1");
 
 
-                if ((int)_connection.ExecuteScalar(checkActive) > 0) return true;
+                if (_connection.ExecuteScalar(checkActive) != null) return true;
                 else return false;
             }
             else
@@ -108,12 +108,25 @@ namespace DDYDLS_CineClubDAL.Repository
 
         public bool ActiveUser(int Id)
         {
-            Command cmd = new Command("UPDATE [dbo].[T_User] SET[isActive] = 1  WHERE ID_User = @Id");
+            Command cmd = new Command("UPDATE [dbo].[T_User] SET [isActive] = 1  WHERE ID_User = @Id");
             cmd.AddParameter("Id", Id);
             return _connection.ExecuteNonQuery(cmd) == 1;
         }
 
+        public bool changePassword(int Id, string password)
+        {
+            Command cmd = new Command("UPDATE [dbo].[T_User] SET [Password] = @Pass  WHERE ID_User = @Id");
+            cmd.AddParameter("Id", Id);
+            cmd.AddParameter("Pass", password);
+            return _connection.ExecuteNonQuery(cmd) == 1;
+        }
 
-
+        public bool changeUsername(int Id, string username)
+        {
+            Command cmd = new Command("UPDATE [dbo].[T_User] SET [Username] = @Username  WHERE ID_User = @Id");
+            cmd.AddParameter("Id", Id);
+            cmd.AddParameter("Username", username);
+            return _connection.ExecuteNonQuery(cmd) == 1;
+        }
     }
 }

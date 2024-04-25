@@ -65,7 +65,7 @@ namespace DAL.Tools
             return new Rating
             {
                 Id_Rating = Convert.IsDBNull((int)reader["Id_Rating"]) ? 0 : (int)reader["Id_Rating"],
-                Id_User = Convert.IsDBNull((int)reader["Id_User"]) ? 0 : (int)reader["Id_User"],
+                ID_User = Convert.IsDBNull((int)reader["ID_User"]) ? 0 : (int)reader["ID_User"],
                 Id_Movie = Convert.IsDBNull((int)reader["Id_Movie"]) ? 0 : (int)reader["Id_Movie"],
                 Ratings = Convert.IsDBNull((int)reader["Rating"]) ? 0 : (int)reader["Rating"],
                 Date = Convert.IsDBNull((DateTime)reader["Date"]) ? new DateTime() : (DateTime)reader["Date"],

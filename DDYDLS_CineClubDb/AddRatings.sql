@@ -13,7 +13,7 @@ USE [DDYDLS_CineClubDb]
 GO
 
 INSERT INTO [dbo].[T_Rating]
-           ([Id_User]
+           ([ID_User]
            ,[Id_Movie]
            ,[Rating]
            ,[Date]
@@ -27,7 +27,7 @@ INSERT INTO [dbo].[T_Rating]
            ,'Commentaire sur Star Wars')
 GO
 INSERT INTO [dbo].[T_Rating]
-           ([Id_User]
+           ([ID_User]
            ,[Id_Movie]
            ,[Rating]
            ,[Date]
@@ -41,7 +41,7 @@ INSERT INTO [dbo].[T_Rating]
            ,'Commentaire sur Star Wars Yralis')
 GO
 INSERT INTO [dbo].[T_Rating]
-           ([Id_User]
+           ([ID_User]
            ,[Id_Movie]
            ,[Rating]
            ,[Date]
@@ -55,7 +55,7 @@ INSERT INTO [dbo].[T_Rating]
            ,'Commentaire sur Gladiator')
 GO
 INSERT INTO [dbo].[T_Rating]
-           ([Id_User]
+           ([ID_User]
            ,[Id_Movie]
            ,[Rating]
            ,[Date]
@@ -69,7 +69,7 @@ INSERT INTO [dbo].[T_Rating]
            ,'Commentaire sur Gladiator Yralis')
 GO
 INSERT INTO [dbo].[T_Rating]
-           ([Id_User]
+           ([ID_User]
            ,[Id_Movie]
            ,[Rating]
            ,[Date]
