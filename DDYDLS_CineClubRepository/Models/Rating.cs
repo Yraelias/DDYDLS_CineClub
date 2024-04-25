@@ -9,7 +9,7 @@ namespace DDYDLS_CineClubDAL.Models
     public class Rating
     {
         public int Id_Rating { get; set; }
-        public int Id_User { get; set; }
+        public int ID_User { get; set; }
         public int Id_Movie { get; set; }
         public int Ratings { get; set; }
 

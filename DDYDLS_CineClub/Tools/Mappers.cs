@@ -142,7 +142,7 @@ namespace DDYDLS_CineClubApi.Tools
             {
                 Id_Movie = newMovie.Id_Movie,
                 Id_Rating = newMovie.Id_Rating,
-                Id_User = newMovie.Id_User, 
+                ID_User = newMovie.ID_User, 
                 Ratings = newMovie.Ratings,
                 Date = newMovie.Date ,
                 Commentary = newMovie.Commentary,
@@ -156,7 +156,7 @@ namespace DDYDLS_CineClubApi.Tools
             {
                 Id_Movie = newMovie.Id_Movie,
                 Id_Rating = newMovie.Id_Rating,
-                Id_User = newMovie.Id_User,
+                ID_User = newMovie.ID_User,
                 Ratings = newMovie.Ratings,
                 Date = newMovie.Date,
                 Commentary = newMovie.Commentary,

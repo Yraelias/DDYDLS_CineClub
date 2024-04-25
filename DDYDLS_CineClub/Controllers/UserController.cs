@@ -92,25 +92,24 @@ namespace DDYDLS_CineClubApi.Controllers
         {
             string pass = user.Password;
             string passHash = user.Password;
-            //try
-            //{ 
+            try
+            { 
                 passHash = _tokenService.HashPassword(pass);
                 return Ok(_userService.changePassword(user.ID_User,passHash));
-            //}
-            //catch (Exception e)
-            //{
-            //    return BadRequest(e.Message);
-            //}
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
 
         // POST api/<User>/changeUsername
         [HttpPost("changeUsername")]
-        public IActionResult changeUsername(int id, string password)
+        public IActionResult changeUsername([FromBody] api.User user)
         {
             try
             {
-
-                return Ok(_userService.changeUsername(id, password) );
+                return Ok(_userService.changeUsername(user.ID_User, user.Username) );
             }
             catch (Exception e)
             {

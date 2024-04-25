@@ -14,11 +14,11 @@ import { Router } from '@angular/router';
 export class SettingsComponent {
   Desac : boolean = false;
   userService : UserService
-  id_User : any
+  iD_User : any
 
   constructor(public dialog: MatDialog, _userService : UserService, public _router : Router) {
     this.userService = _userService;
-    this.id_User = sessionStorage.getItem('id');
+    this.iD_User = sessionStorage.getItem('id');
   }
   openDesactDialog(): void {
     const dialogRef = this.dialog.open(DesactivateDialogComponent,{
@@ -31,8 +31,8 @@ export class SettingsComponent {
       console.log(this.Desac);
       if(this.Desac == true)
         {
-          this.id_User = sessionStorage.getItem('id');
-          this.userService.DesactivateAccount(this.id_User).subscribe(result =>{
+          this.iD_User = sessionStorage.getItem('id');
+          this.userService.DesactivateAccount(this.iD_User).subscribe(result =>{
           sessionStorage.clear();
           window.location.reload();
           });
@@ -42,7 +42,7 @@ export class SettingsComponent {
 
   openChangepasswordDialog(): void {
     const dialogRef = this.dialog.open(ChangePasswordComponent,{
-      data: {id_User: this.id_User},
+      data: {iD_User: this.iD_User},
       width : '90%' 
     });
 
@@ -50,8 +50,8 @@ export class SettingsComponent {
       console.log('apres dialog : '+result)
       if(this.Desac == true)
         {
-          this.id_User = sessionStorage.getItem('id');
-          this.userService.updatePassword(this.id_User,result);
+          this.iD_User = sessionStorage.getItem('id');
+          this.userService.updatePassword(this.iD_User,result);
         } 
     });
   }

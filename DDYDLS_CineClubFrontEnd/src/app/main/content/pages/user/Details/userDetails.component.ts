@@ -15,7 +15,7 @@ export class UserComponent implements OnInit {
   Username : any = '';
   isConnected : boolean;
   _ratingService : RatingService
-  id_User : any = 0;
+  iD_User : any = 0;
   listRatings : Rating[];
  dateDuJour : Date = new Date();
  listRatingsByMonth : Rating[];
@@ -36,7 +36,7 @@ export class UserComponent implements OnInit {
       {
         this.isConnected = true;
         this.Username = sessionStorage.getItem('Username');
-        this.id_User = sessionStorage.getItem('id');
+        this.iD_User = sessionStorage.getItem('id');
       }
       this.getUserCommentary();
   
@@ -44,7 +44,7 @@ export class UserComponent implements OnInit {
 
   getUserCommentary(): void
   {
-      this._ratingService.getRatingForUser(this.id_User).subscribe({
+      this._ratingService.getRatingForUser(this.iD_User).subscribe({
         next: (data:Rating[]) =>
         {
           this.listRatings = data;
@@ -54,7 +54,7 @@ export class UserComponent implements OnInit {
         }
       })
 
-      this._ratingService.getRatingForUserbyYear(this.id_User, this.dateDuJour.getFullYear()).subscribe({
+      this._ratingService.getRatingForUserbyYear(this.iD_User, this.dateDuJour.getFullYear()).subscribe({
         next: (data:Rating[]) =>
         {
           this.listRatingsByYear = data;
@@ -64,7 +64,7 @@ export class UserComponent implements OnInit {
         }
       })
 
-      this._ratingService.getRatingForUserbyMonth(this.id_User,this.dateDuJour.getMonth() +1,this.dateDuJour.getFullYear()).subscribe({
+      this._ratingService.getRatingForUserbyMonth(this.iD_User,this.dateDuJour.getMonth() +1,this.dateDuJour.getFullYear()).subscribe({
         next: (data:Rating[]) =>
         {
           this.listRatingsByMonth = data;

@@ -32,10 +32,10 @@ export class RegisterComponent implements OnInit {
     const values = this.loginFG.value;
     this._authService.login(values['email'], values['newpassword']).subscribe({
       next: (data:User) => {
-            if(data.ID_User != 0 || data.ID_User != null)
+            if(data.iD_User != 0 || data.iD_User != null)
             {
               sessionStorage.setItem('token',data.token);
-              sessionStorage.setItem('id' , data.ID_User.toString());
+              sessionStorage.setItem('id' , data.iD_User.toString());
               sessionStorage.setItem('isAdmin',data.isAdministrator.toString());
               sessionStorage.setItem('isConnected',"True");
               sessionStorage.setItem('Username',data.username);

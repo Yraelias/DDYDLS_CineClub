@@ -30,7 +30,7 @@ export class ChangePasswordComponent implements OnInit {
  }
   onSubmit(){
     if (this.passwordFG.value.newPassword === this.passwordFG.value.confirmPassword) {
-      this.userService.updatePassword(this.data.id_User,this.passwordFG.value.newPassword).subscribe(result =>{
+      this.userService.updatePassword(this.data.iD_User,this.passwordFG.value.newPassword).subscribe(result =>{
         this.dialogRef.close();
         });
     }

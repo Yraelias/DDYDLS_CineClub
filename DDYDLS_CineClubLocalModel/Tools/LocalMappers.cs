@@ -140,7 +140,7 @@ namespace DDYDLS_CineClubLocalModel.Tools
             {
                Id_Rating = newRating.Id_Rating ,
                Id_Movie = newRating.Id_Movie,
-               Id_User = newRating.Id_User,
+               ID_User = newRating.ID_User,
                Date = newRating.Date,
                Ratings = newRating.Ratings,
                Commentary = newRating.Commentary,
@@ -154,7 +154,7 @@ namespace DDYDLS_CineClubLocalModel.Tools
             {
                 Id_Rating = newRating.Id_Rating,
                 Id_Movie = newRating.Id_Movie,
-                Id_User = newRating.Id_User,
+                ID_User = newRating.ID_User,
                 Date = newRating.Date,
                 Ratings = newRating.Ratings,
                 Commentary = newRating.Commentary,
