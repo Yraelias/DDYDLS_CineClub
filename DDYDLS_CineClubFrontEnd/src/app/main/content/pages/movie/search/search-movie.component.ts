@@ -34,7 +34,7 @@ export class SearchMovieComponent implements OnInit  {
           console.log(data);
           this.result = data;
           this.URLimg = "https://image.tmdb.org/t/p/w500/" + this.result.results[this.selector].poster_path;
-          if(this.result.results.length < 20) this.maxResult = this.result.results.length;
+          if(this.result.results.length < 20) this.maxResult = this.result.results.length -1;
         },
       error: (error) => {console.log(error)}
     })
