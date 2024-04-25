@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using DDYDLS_CineClubApi.Tools;
 #pragma warning disable CS8981 // Le nom de type contient uniquement des caractères ascii en minuscules. De tels noms peuvent devenir réservés pour la langue.
 using api = DDYDLS_CineClubApi.Models;
+using DDYDLS_CineClubApi.Services;
 #pragma warning restore CS8981 // Le nom de type contient uniquement des caractères ascii en minuscules. De tels noms peuvent devenir réservés pour la langue.
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -18,9 +19,11 @@ namespace DDYDLS_CineClubApi.Controllers
     public class UserController : ControllerBase
     {
         private IUserService _userService;
-        public UserController(IUserService userService)
+        private ITokenService _tokenService;
+        public UserController(IUserService userService, ITokenService tokenService)
         {
             _userService = userService;
+            _tokenService = tokenService;
         }
         // GET: api/<User>
         [HttpGet]
@@ -81,7 +84,39 @@ namespace DDYDLS_CineClubApi.Controllers
             {
                 return BadRequest(e.Message);
             }
-}
+        }
+
+        // POST api/<User>/changePassword
+        [HttpPost("changePassword")]
+        public IActionResult changePassword([FromBody] api.User user)
+        {
+            string pass = user.Password;
+            string passHash = user.Password;
+            //try
+            //{ 
+                passHash = _tokenService.HashPassword(pass);
+                return Ok(_userService.changePassword(user.ID_User,passHash));
+            //}
+            //catch (Exception e)
+            //{
+            //    return BadRequest(e.Message);
+            //}
+        }
+
+        // POST api/<User>/changeUsername
+        [HttpPost("changeUsername")]
+        public IActionResult changeUsername(int id, string password)
+        {
+            try
+            {
+
+                return Ok(_userService.changeUsername(id, password) );
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
 
         // PUT api/<User>/5
         [HttpPut("{id}")]

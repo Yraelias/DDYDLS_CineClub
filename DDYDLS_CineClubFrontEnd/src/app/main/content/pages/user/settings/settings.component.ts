@@ -18,6 +18,7 @@ export class SettingsComponent {
 
   constructor(public dialog: MatDialog, _userService : UserService, public _router : Router) {
     this.userService = _userService;
+    this.id_User = sessionStorage.getItem('id');
   }
   openDesactDialog(): void {
     const dialogRef = this.dialog.open(DesactivateDialogComponent,{
@@ -41,17 +42,16 @@ export class SettingsComponent {
 
   openChangepasswordDialog(): void {
     const dialogRef = this.dialog.open(ChangePasswordComponent,{
+      data: {id_User: this.id_User},
       width : '90%' 
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('apres dialog : '+result)
-      this.Desac = result;
-      console.log(this.Desac);
       if(this.Desac == true)
         {
           this.id_User = sessionStorage.getItem('id');
-          this.userService.DesactivateAccount(this.id_User);
+          this.userService.updatePassword(this.id_User,result);
         } 
     });
   }
