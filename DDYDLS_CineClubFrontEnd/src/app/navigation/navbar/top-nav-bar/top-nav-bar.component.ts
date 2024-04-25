@@ -26,6 +26,10 @@ export class TopNavBarComponent implements OnInit {
       this.isConnected = true;
       this.Username = sessionStorage.getItem('Username');
     }
+
+    this.sharedDataService.barreTacheData$.subscribe((data) =>
+    this.ngOnInit()
+    )
   }
 
   private subscribeToChanges() {
