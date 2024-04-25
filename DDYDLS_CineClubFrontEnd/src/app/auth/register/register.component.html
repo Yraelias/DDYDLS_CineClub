@@ -1,22 +1,27 @@
 <main>
     <h1>Inscription</h1>
-    <form [formGroup]="loginFG">
-        <mat-form-field appearance="fill">
-            <label for="Mail">Adresse Mail</label>
-            <input type="text" matInput>
-        </mat-form-field>
+    <form [formGroup]="loginFG" (ngSubmit)="onSubmit()">
         <mat-form-field appearance="fill">
             <mat-label>Username</mat-label> 
-            <input type="text" matInput>
+            <input type="text" formControlName="username" matInput>
+            <mat-error >Le nom d'utilisateur est requis</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label for="Mail">Adresse Mail</mat-label>
+            <input type="text" formControlName="email" matInput>
+            <mat-error >Veuillez entrer une adresse email valide</mat-error>
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Mot de Passe</mat-label> 
-            <input type="text" matInput>
+            <input type="text" formControlName="newpassword" matInput>
+            <mat-error >Le mot de passe est requis</mat-error>
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Mot de passe</mat-label> 
-            <input type="text" matInput>
+            <input type="text" formControlName="newpassword2" matInput>
+            <mat-error >Veuillez confirmer le mot de passe</mat-error>
+            <div *ngIf="loginFG.hasError('passwordMismatch')" >  <mat-error >Les mots de passe ne correspondent pas</mat-error></div>
         </mat-form-field>
+        <button mat-raised-button style="color: #87FF00; background-color: #242423;">S'inscrire</button>
     </form>
-    <button mat-raised-button style="color: #87FF00; background-color: #242423;">S'inscrire</button>
 </main>

@@ -71,7 +71,7 @@ namespace DDYDLS_CineClubApi.Controllers
 
         // POST api/<User>
         [HttpPost]
-        public IActionResult Post([FromForm] api.UserCreate user)
+        public IActionResult Post([FromBody] api.UserCreate user)
         //public IActionResult Post(api.UserCreate user)
         {
             User newUser = new User();

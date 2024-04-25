@@ -13,6 +13,7 @@ import { SharedDataService } from 'src/app/navigation/shared.service';
 export class RegisterComponent implements OnInit {
 
   loginFG : FormGroup
+  user : User = new User
   
   constructor(private _router : Router,private _builder : FormBuilder,private _authService : AuthService,private sharedDataService: SharedDataService) {
     
@@ -22,26 +23,37 @@ export class RegisterComponent implements OnInit {
     this.loginFG = this._builder.group({
       username : ['',Validators.required],
       email:['',[Validators.email, Validators.required]],
-      password : ['',Validators.required],
       newpassword : ['',Validators.required],
       newpassword2 : ['',Validators.required]
     });
   }
 
   onSubmit() {
-    const values = this.loginFG.value;
-    this._authService.login(values['email'], values['newpassword']).subscribe({
-      next: (data:User) => {
-            if(data.iD_User != 0 || data.iD_User != null)
-            {
-              this._router.navigate(['/login']);
-            }
-            else { console.log("Erreur de log"), this._router.navigate(['/login']);}
-            
+    if (this.loginFG.valid) {
+      const values = this.loginFG.value;
+
+      if (values['newpassword'] !== values['newpassword2']) {
+          console.log("Les mots de passe ne correspondent pas");
+          this.loginFG.setErrors({ passwordMismatch: true });
+          return; 
+      }
+
+      this.user.email = values['email'];
+      this.user.username = values['username'];
+      this.user.password = values['newpassword'];
+      this.user.iD_User = 1;
+
+      this._authService.register(this.user).subscribe({
+          next: (data: any) => {
+              console.log(data);
           },
-          error : (error) => {console.log(error)},
-          
-    })   
-    }
+          error: (error) => {
+              console.log(error);
+          },
+      });
+  } else {
+      console.log("Veuillez remplir tous les champs correctement.");
+  }
+}
 
 }
