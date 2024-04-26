@@ -2,6 +2,7 @@
 @for (cineclub of cineclub; track cineclub){
 
 <main>
+    <button mat-stroked-button color="accent"  [routerLink]="['add']"> Ajouter un film</button>
     <article cols="2" rowHeight="4:1" class="blocCineClub">
         <h1>
             {{cineclub.title}}

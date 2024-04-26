@@ -29,7 +29,7 @@ namespace DDYDLS_CineClubDAL.Repository
 
         public Cineclub GetOne(int Id)
         {
-            Command cmd = new Command("SELECT * FROM [T_Cineclub] WHERE ID_Genre = @Id");
+            Command cmd = new Command("SELECT * FROM [T_Cineclub] WHERE Id_Cineclub = @Id");
             cmd.AddParameter("Id", Id);
             return _connection.ExecuteReader(cmd, Converters.CineclubConvert).FirstOrDefault();
         }

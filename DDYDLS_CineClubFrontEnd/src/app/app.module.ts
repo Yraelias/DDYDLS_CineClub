@@ -46,7 +46,10 @@ import { DesactivateDialogComponent } from './main/content/pages/user/desactivat
 import { ChangePasswordComponent } from './main/content/pages/user/change-password/change-password.component';
 import { ChangeUsernameComponent } from './main/content/pages/user/change-username/change-username.component';
 import { SharedDataService } from './navigation/shared.service';
-
+import { CineclubAddComponent } from './main/content/pages/cineclub/cineclub-add/cineclub-add.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 const appRoutes: Routes = [
@@ -78,6 +81,11 @@ const appRoutes: Routes = [
     path:'movies',
     component: MoviesListComponent,
     //resolve: {data: MovieService}
+  },
+  {
+    path:'cineclub/add',
+    component: CineclubAddComponent,
+    canActivate :[AuthGuardService]
   },
   {
     path:'cineclub',
@@ -115,7 +123,8 @@ const appRoutes: Routes = [
         RegisterComponent,
         DesactivateDialogComponent,
         ChangePasswordComponent,
-        ChangeUsernameComponent
+        ChangeUsernameComponent,
+        CineclubAddComponent
     ],
     providers: [MovieService, AuthService, AuthGuardService, RatingService,CineclubService,UserService,SharedDataService ],
     bootstrap: [AppComponent],
@@ -140,7 +149,10 @@ const appRoutes: Routes = [
         MatDialogModule,
         MatToolbarModule,
         MatGridListModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatStepperModule,
+        MatDatepickerModule,
+        MatNativeDateModule
     ]
 })
 export class AppModule { }

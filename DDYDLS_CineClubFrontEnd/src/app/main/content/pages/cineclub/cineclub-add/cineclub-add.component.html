@@ -1,0 +1,119 @@
+<p>Titre du cineclub</p> 
+<p>numero du cineclub</p>
+<p>Date de début</p>
+<p>Date de fin</p>
+<p>Film 1</p>
+<p>Film 2</p>
+<p>Film 3</p>
+<p>Film 4</p>
+
+<mat-stepper #stepper>
+    <mat-step [stepControl]="DetailsFormGroup" errorMessage="Name is required.">
+      <form [formGroup]="DetailsFormGroup">
+        <ng-template matStepLabel>Choisissez le nom du Cinéclub</ng-template>
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Nom du Cinéclub" formControlName="nameCineclub" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Numéro du Cinéclub" formControlName="numberCineclub" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [formGroup]="rangeFormGroup" [rangePicker]="picker">
+              <input matStartDate formControlName="start" placeholder="Start date" required>
+              <input matEndDate formControlName="end" placeholder="End date" required>
+            </mat-date-range-input>
+            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          
+            @if (rangeFormGroup.controls.start.hasError('matStartDateInvalid')) {
+              <mat-error>Invalid start date</mat-error>
+            }
+            @if (rangeFormGroup.controls.end.hasError('matEndDateInvalid')) {
+              <mat-error>Invalid end date</mat-error>
+            }
+          </mat-form-field>
+          
+          <p>Selected range: {{rangeFormGroup.value | json}}</p>
+        <div>
+          <button mat-button matStepperNext [disabled]="!DetailsFormGroup.valid || !rangeFormGroup.valid" >Suivant</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="firstMovieFormGroup" errorMessage="Address is required.">
+      <form [formGroup]="firstMovieFormGroup">
+        <ng-template matStepLabel>Film 1</ng-template>
+        <mat-form-field>
+          <mat-label>1er film</mat-label>
+          <input matInput placeholder="Titre du film" formControlName="movieName" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondMovieFormGroup" errorMessage="Address is required.">
+        <form [formGroup]="secondMovieFormGroup">
+          <ng-template matStepLabel>Film 2</ng-template>
+          <mat-form-field>
+            <mat-label>1er film</mat-label>
+            <input matInput placeholder="Titre du film" formControlName="movie2Name" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="thirdMovieFormGroup" errorMessage="Address is required.">
+        <form [formGroup]="thirdMovieFormGroup">
+          <ng-template matStepLabel>Film 3</ng-template>
+          <mat-form-field>
+            <mat-label>1er film</mat-label>
+            <input matInput placeholder="Titre du film" formControlName="movie3Name" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="fourMovieFormGroup" errorMessage="Address is required.">
+        <form [formGroup]="fourMovieFormGroup">
+          <ng-template matStepLabel>Film 4</ng-template>
+          <mat-form-field>
+            <mat-label>1er film</mat-label>
+            <input matInput placeholder="Titre du film" formControlName="movie4Name" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="bonusMovieFormGroup" errorMessage="Address is required.">
+        <form [formGroup]="bonusMovieFormGroup">
+          <ng-template matStepLabel>Film bonus</ng-template>
+          <mat-form-field>
+            <mat-label>1er film</mat-label>
+            <input matInput placeholder="Titre du film" formControlName="movie5Name" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Confirmation</ng-template>
+      <button mat-button>Confirmer</button>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
