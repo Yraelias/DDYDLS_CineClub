@@ -6,7 +6,7 @@
             <img [src]="URLimg" class="image" alt="affiche du film {{movie.name}}"/>
       </div>
       <div class='DetailsMoviecontent backgroundBloc'>
-        <p>{{result.results[0].release_date}}</p>
+        <p>Année de sortie : {{movie.year}}</p>
 
         <a *ngIf="isConnected && movie.ratingForUser != 10" >Ma note :  {{movie.ratingForUser}}/6</a>
         
@@ -16,7 +16,7 @@
         <button *ngIf="isConnected && movie.ratingForUser == 10" mat-raised-button (click)="openDialog('0ms', '0ms')" style="color: #2CCED2; background-color: #242423;" >Ajouter ma note</button> 
       </div>
     
-    <div class="blocSyn backgroundBloc"><p>{{result.results[0].overview}}</p></div>
+    <div class="blocSyn backgroundBloc"><p>{{movie.synopsis}}</p></div>
   </article>
   <app-commentary class="blocCommentaire"></app-commentary>
 </main>
