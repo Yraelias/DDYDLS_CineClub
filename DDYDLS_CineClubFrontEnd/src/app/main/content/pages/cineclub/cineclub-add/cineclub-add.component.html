@@ -1,12 +1,3 @@
-<p>Titre du cineclub</p> 
-<p>numero du cineclub</p>
-<p>Date de début</p>
-<p>Date de fin</p>
-<p>Film 1</p>
-<p>Film 2</p>
-<p>Film 3</p>
-<p>Film 4</p>
-
 <mat-stepper linear #stepper>
     <mat-step [stepControl]="DetailsFormGroup" errorMessage="Name is required.">
       <form [formGroup]="DetailsFormGroup">
@@ -134,8 +125,8 @@
     </div>
     </mat-step>
     <mat-step>
-      <ng-template matStepLabel>Confirmation</ng-template>
-      <button mat-button>Confirmer</button>
+      <ng-template matStepLabel >Confirmation</ng-template>
+      <button mat-button (click)="ConfirmCineClub()" >Confirmer</button>
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="stepper.reset()">Reset</button>

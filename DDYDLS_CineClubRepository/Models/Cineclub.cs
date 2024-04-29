@@ -18,5 +18,6 @@ namespace DDYDLS_CineClubDAL.Models
         public DateTime Begin {  get; set; }
         public DateTime End { get; set; }
         public string Title { get; set; }
+
     }
 }
