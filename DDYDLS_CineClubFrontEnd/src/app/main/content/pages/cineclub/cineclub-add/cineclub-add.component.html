@@ -30,21 +30,21 @@
             </mat-form-field>
             <p>Selected range: {{rangeFormGroup.value | json}}</p>
           <div>
-            <button mat-button matStepperNext [disabled]="!DetailsFormGroup.valid || !rangeFormGroup.valid" style="color: #87FF00;">Suivant</button>
+            <button mat-button mat-raised-button matStepperNext [disabled]="!DetailsFormGroup.valid || !rangeFormGroup.valid" style="color: #87FF00; background-color: #333031">Suivant</button>
           </div>
         </form>
       </mat-step>
       <mat-step [stepControl]="firstMovieFormGroup" [editable]="!DetailsFormGroup.valid || !rangeFormGroup.valid">
-        <form [formGroup]="firstMovieFormGroup" style="height: 30vh;">
+        <form [formGroup]="firstMovieFormGroup" style="height: 60vh;">
           <ng-template matStepLabel><p style="color: #87FF00;">Film 1</p></ng-template>
           <mat-form-field>
             <mat-label>1er film</mat-label>
             <input matInput placeholder="Titre du film" formControlName="moviename"  [(ngModel)]="moviename" required>
           </mat-form-field>
-          <button mat-raised-button type="submit" (click)="openDialog(moviename,0)" style="color: #87FF00; background-color: #333031" > Chercher le film</button>
-          <div>
-            <button mat-button matStepperPrevious style="color: #87FF00;">Back</button>
-            <button mat-button matStepperNext style="color: #87FF00;">Next</button>
+          <button mat-button mat-raised-button type="submit" (click)="openDialog(moviename,0)" style="color: #87FF00; background-color: #333031" > Chercher le film</button>
+          <div class="blocButton">
+            <button mat-button mat-raised-button matStepperPrevious style="color: #87FF00; background-color: #333031">Back</button>
+            <button mat-button mat-raised-button matStepperNext style="color: #87FF00; background-color: #333031">Next</button>
           </div>
         </form>
         <div *ngIf="result[0]" class="blocResult"> {{result[0].title}}
@@ -60,14 +60,14 @@
               <input matInput placeholder="Titre du film" formControlName="movie2name"  [(ngModel)]="movie2name" required>
             </mat-form-field>
             <button mat-raised-button type="submit" (click)="openDialog(movie2name,1)" style="color: #87FF00; background-color: #333031" > Chercher le film</button>
-            <div>
-              <button mat-button matStepperPrevious style="color: #87FF00;">Back</button>
-              <button mat-button matStepperNext style="color: #87FF00;">Next</button>
+            <div class="blocButton">
+              <button mat-button mat-raised-button matStepperPrevious style="color: #87FF00; background-color: #333031">Back</button>
+              <button mat-button mat-raised-button matStepperNext style="color: #87FF00; background-color: #333031">Next</button>
             </div>
           </form>
           <div *ngIf="result[1]" class="blocResult"> {{result[1].title}}
             <img [src]="URLimg[1]" class="image"/>
-            <p>{{result[1].overview}}</p>
+            <p class="pResult">{{result[1].overview}}</p>
         </div>
         </mat-step>
         <mat-step [stepControl]="thirdMovieFormGroup">
@@ -78,14 +78,14 @@
               <input matInput placeholder="Titre du film" formControlName="movie3name"  [(ngModel)]="movie3name" required>
             </mat-form-field>
             <button mat-raised-button type="submit" (click)="openDialog(movie3name,2)" style="color: #87FF00; background-color: #333031" > Chercher le film</button>
-            <div>
-              <button mat-button matStepperPrevious style="color: #87FF00;">Back</button>
-              <button mat-button matStepperNext style="color: #87FF00;">Next</button>
+            <div class="blocButton">
+              <button mat-button mat-raised-button matStepperPrevious style="color: #87FF00; background-color: #333031">Back</button>
+              <button mat-button mat-raised-button matStepperNext style="color: #87FF00; background-color: #333031">Next</button>
             </div>
           </form>
           <div *ngIf="result[2]" class="blocResult"> {{result[2].title}}
             <img [src]="URLimg[2]" class="image"/>
-            <p>{{result[2].overview}}</p>
+            <p class="pResult">{{result[2].overview}}</p>
         </div>
         </mat-step>
         <mat-step [stepControl]="fourMovieFormGroup">
@@ -96,14 +96,14 @@
               <input matInput placeholder="Titre du film" formControlName="movie4name"  [(ngModel)]="movie4name" required>
             </mat-form-field>
             <button mat-raised-button type="submit" (click)="openDialog(movie4name,3)" style="color: #87FF00; background-color: #333031" > Chercher le film</button>
-            <div>
-              <button mat-button matStepperPrevious style="color: #87FF00;">Back</button>
-              <button mat-button matStepperNext style="color: #87FF00;">Next</button>
+            <div class="blocButton">
+              <button mat-button mat-raised-button matStepperPrevious style="color: #87FF00; background-color: #333031">Back</button>
+              <button mat-button mat-raised-button matStepperNext style="color: #87FF00; background-color: #333031">Next</button>
             </div>
           </form>
           <div *ngIf="result[3]" class="blocResult"> {{result[3].title}}
             <img [src]="URLimg[3]" class="image"/>
-            <p>{{result[3].overview}}</p>
+            <p class="pResult">{{result[3].overview}}</p>
         </div>
         </mat-step>
         <mat-step [stepControl]="bonusMovieFormGroup">
@@ -114,23 +114,30 @@
               <input matInput placeholder="Titre du film" formControlName="movie5name"  [(ngModel)]="movie5name" >
             </mat-form-field>
             <button mat-raised-button type="submit" (click)="openDialog(movie5name,4)" style="color: #87FF00; background-color: #333031" > Chercher le film</button>
-            <div>
-              <button mat-button matStepperPrevious style="color: #87FF00;">Back</button>
-              <button mat-button matStepperNext style="color: #87FF00;">Next</button>
+            <div class="blocButton">
+              <button mat-button mat-raised-button matStepperPrevious style="color: #87FF00; background-color: #333031">Back</button>
+              <button mat-button mat-raised-button matStepperNext style="color: #87FF00; background-color: #333031">Next</button>
             </div>
           </form>
       <div *ngIf="result[4]" class="blocResult"> {{result[4].title}}
         <img [src]="URLimg[4]" class="image"/>
-        <p>{{result[4].overview}}</p>
+        <p class="pResult">{{result[4].overview}}</p>
       </div>
       </mat-step>
       <mat-step>
         <ng-template matStepLabel ><p style="color: #87FF00;">Confirmation</p></ng-template>
         <article>
-          <button mat-button (click)="ConfirmCineClub()" style="color: #87FF00;" >Confirmer</button>
-        <div>
-          <button mat-button matStepperPrevious style="color: #87FF00;">Back</button>
-          <button mat-button (click)="stepper.reset()" style="color: #87FF00;">Reset</button>
+          <div class="blocConfirmation">
+            <img [src]="URLimg[0]" class="image"/>
+            <img [src]="URLimg[1]" class="image"/>
+            <img [src]="URLimg[2]" class="image"/>
+            <img [src]="URLimg[3]" class="image"/>
+            <img [src]="URLimg[4]" class="image"/>
+          </div>
+          <button mat-button mat-raised-button (click)="ConfirmCineClub()" style="color: #87FF00; background-color: #333031">Confirmer</button>
+        <div class="blocButton">
+          <button mat-button mat-raised-button matStepperPrevious style="color: #87FF00; background-color: #333031">Back</button>
+          <button mat-button mat-raised-button (click)="stepper.reset()" style="color: #87FF00; background-color: #333031">Reset</button>
         </div>
         </article>
         

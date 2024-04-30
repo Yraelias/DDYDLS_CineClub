@@ -37,7 +37,7 @@ export class CineclubListComponent implements OnInit {
               this.loadTMDBMovie_2(i,this.cineclub[i].movie_2.name)
               this.loadTMDBMovie_3(i,this.cineclub[i].movie_3.name)
               this.loadTMDBMovie_4(i,this.cineclub[i].movie_4.name)
-                
+              this.loadTMDBMovie_5(i,this.cineclub[i].movie_5.name)
               }
       },
       error : (error : any) => console.log(error)}
@@ -131,6 +131,31 @@ export class CineclubListComponent implements OnInit {
                 this.cineclub[i].movie_4.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
                 this.cineclub[i].movie_4.synopsis =  this.result.results[a].overview;
                 console.log(this.cineclub[i].movie_4.synopsis);
+                this.sameDate = true;
+              }
+              a++;
+          }
+          this.sameDate = false;
+      }
+    })
+  }
+
+  loadTMDBMovie_5(i :number, titlemovie : string): void{
+    let a  = 0;
+    this.movie_service.getTMDBMovie(titlemovie).subscribe({
+      next:(data :Result) =>
+      {
+        this.result = data;
+        this.URLimg = "https://image.tmdb.org/t/p/w500/" + this.result.results[0].poster_path;
+        
+        while(!this.sameDate && a < this.result.results.length)
+          {
+            if(this.cineclub[i].movie_5.year == parseInt(this.result.results[a].release_date.split('-')[0], 10))
+              {
+                console.log ("je passe ici")
+                this.cineclub[i].movie_5.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
+                this.cineclub[i].movie_5.synopsis =  this.result.results[a].overview;
+                console.log(this.cineclub[i].movie_5.synopsis);
                 this.sameDate = true;
               }
               a++;

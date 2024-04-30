@@ -11,7 +11,7 @@ div{
 form{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
     height: 60vh;
 }
@@ -30,6 +30,22 @@ img{
 article{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
+    height: 60vh;
+}
+.blocButton{
+    display: flex;
+    width: 20%;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.blocConfirmation{
+    display: flex;
+    justify-content: space-around;
+}
+.blocConfirmation img{
+    width: 15%;
 }
