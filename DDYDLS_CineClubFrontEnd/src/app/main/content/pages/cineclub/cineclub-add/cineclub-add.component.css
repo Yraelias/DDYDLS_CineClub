@@ -1,0 +1,35 @@
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    color: #87FF00;
+}
+div{
+    color: #87FF00;
+}
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 60vh;
+}
+.blocResult{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+img{
+    width: 33%;
+}
+.pResult{
+    width: 50%;
+}
+article{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
