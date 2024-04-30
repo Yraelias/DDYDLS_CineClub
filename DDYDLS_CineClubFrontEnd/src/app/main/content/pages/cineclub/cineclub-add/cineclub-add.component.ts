@@ -17,7 +17,7 @@ import { MovieService } from '../../movie.service';
 export class CineclubAddComponent implements OnInit {
 
 cineclubService : CineclubService;
-cineclub : Cineclub;
+cineclub : Cineclub = new Cineclub;
 errorSnackBar : MatSnackBar;
 moviename : string 
 movie2name : string 
@@ -112,12 +112,38 @@ constructor(_cineclubService : CineclubService, private _router : Router, _Error
   
   ConfirmCineClub():void
   {
+    console.log();
+    console.log("end "+this.rangeFormGroup.value.end);
+    
     console.log(this.id_movie)
     this.cineclub.id_movie_1 = this.id_movie[0];
     this.cineclub.id_movie_2 = this.id_movie[1];
     this.cineclub.id_movie_3 = this.id_movie[2];
     this.cineclub.id_movie_4 = this.id_movie[3];
     this.cineclub.id_movie_5 = this.id_movie[4];
-    this.cineclub.title = this.DetailsFormGroup.get('nameCineclub')?.value || '';
+    this.cineclub.title = this.DetailsFormGroup.value.nameCineclub || 'Pas de titre';
+    if (this.DetailsFormGroup.value.numberCineclub !== null && this.DetailsFormGroup.value.numberCineclub !== undefined) {
+      this.cineclub.numberOfCineclub = parseInt(this.DetailsFormGroup.value.numberCineclub, 10);
+    } else {
+      this.cineclub.numberOfCineclub = 0;
+    }
+    this.cineclub.begin = this.rangeFormGroup.value.start || new Date; 
+    this.cineclub.end = this.rangeFormGroup.value.end || new Date; 
+    console.log("cineclub titre " + this.cineclub.title);
+    console.log("cineclub debut " + this.cineclub.begin);
+    console.log("cineclub fin " + this.cineclub.end);
+    console.log("cineclub id 1" + this.cineclub.id_movie_1);
+    console.log("cineclub id 2" + this.cineclub.id_movie_2);
+    console.log("cineclub id 3" + this.cineclub.id_movie_3);
+    console.log("cineclub id 4" + this.cineclub.id_movie_4);
+    console.log("cineclub id 5 " + this.cineclub.id_movie_5);
+    console.log("cineclub numero " + this.cineclub.numberOfCineclub);
+
+    this.cineclubService.addCineclub(this.cineclub).subscribe({
+      next : (data : any) =>{
+        console.log(data);
+      },
+      error : (error) => {this.errorSnackBar.open(error,'Ok')}
+    })
   }
 }

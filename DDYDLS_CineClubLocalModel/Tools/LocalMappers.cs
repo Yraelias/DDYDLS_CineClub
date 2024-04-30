@@ -178,16 +178,16 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Title = newRating.Title
             };
         }
-        public static dal.Cineclub toDal(this Models.Cineclub newRating)
+        public static dal.Cineclub toDal(this Models.Cineclub newRating, string Add)
         {
             return new dal.Cineclub
             {
                 Id_Cineclub = newRating.Id_Cineclub,
-                Id_Movie_1 = newRating.Movie_1.Id_Movie,
-                Id_Movie_2 = newRating.Movie_2.Id_Movie,
-                Id_Movie_3 = newRating.Movie_3.Id_Movie,
-                Id_Movie_4 = newRating.Movie_4.Id_Movie,
-                Id_Movie_5 = newRating.Movie_5.Id_Movie,
+                Id_Movie_1 = newRating.Id_Movie_1,
+                Id_Movie_2 = newRating.Id_Movie_2,
+                Id_Movie_3 = newRating.Id_Movie_3,
+                Id_Movie_4 = newRating.Id_Movie_4,
+                Id_Movie_5 = newRating.Id_Movie_5,
                 NumberOfCineclub = newRating.NumberOfCineclub,
                 Begin = newRating.Begin,
                 End = newRating.End,

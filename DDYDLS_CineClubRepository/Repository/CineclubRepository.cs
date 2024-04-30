@@ -36,12 +36,13 @@ namespace DDYDLS_CineClubDAL.Repository
 
         public void Insert(Cineclub g)
         {
-            Command cmd = new Command("INSERT INTO [dbo].[T_Cineclub]([Id_Movie_1],[Id_Movie_2],[Id_Movie_3],[Id_Movie_4],[Id_Movie_5],[NumberOfCineclub],[Begin],[End],[Link_Yt]) " +
-                                      "VALUES (@Id_Movie_1,@Id_Movie_2,@Id_Movie_3,@Id_Movie_4,@Id_Movie_5,@NumberOfCineclub,@Begin,@End,@Link_Yt) GO");
+            Command cmd = new Command("INSERT INTO [dbo].[T_Cineclub]([Id_Movie_1],[Id_Movie_2],[Id_Movie_3],[Id_Movie_4],[Id_Movie_5],[NumberOfCineclub],[Begin],[End], [Title] ) " +
+                                      "VALUES (@Id_Movie_1,@Id_Movie_2,@Id_Movie_3,@Id_Movie_4,@Id_Movie_5,@NumberOfCineclub,@Begin,@End,@Title) ");
             cmd.AddParameter("Id_Movie_1", g.Id_Movie_1);
             cmd.AddParameter("Id_Movie_2", g.Id_Movie_2);
             cmd.AddParameter("Id_Movie_3", g.Id_Movie_3);
             cmd.AddParameter("Id_Movie_4", g.Id_Movie_4);
+            if (g.Id_Movie_5 == 0) g.Id_Movie_5 = 1;
             cmd.AddParameter("Id_Movie_5", g.Id_Movie_5);
             cmd.AddParameter("NumberOfCineclub", g.NumberOfCineclub);
             cmd.AddParameter("Begin", g.Begin);

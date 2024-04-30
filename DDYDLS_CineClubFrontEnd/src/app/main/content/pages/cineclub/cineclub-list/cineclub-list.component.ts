@@ -31,7 +31,7 @@ export class CineclubListComponent implements OnInit {
         {
         this.cineclub = data;
         
-            for (let i = 0; i<2; i++)
+            for (let i = 0; i<3; i++)
               {
               this.loadTMDBMovie_1(i,this.cineclub[i].movie_1.name)
               this.loadTMDBMovie_2(i,this.cineclub[i].movie_2.name)

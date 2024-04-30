@@ -165,7 +165,7 @@ namespace DDYDLS_CineClubApi.Tools
             };
         }
 
-        public static model.Cineclub toLocal(this api.Cineclub newCineclub)   
+        public static model.Cineclub toLocal(this api.Cineclub newCineclub)
         {
             return new model.Cineclub
             {
@@ -175,6 +175,27 @@ namespace DDYDLS_CineClubApi.Tools
                 Movie_3 = newCineclub.Movie_3.toLocal(),
                 Movie_4 = newCineclub.Movie_4.toLocal(),
                 Movie_5 = newCineclub.Movie_5.toLocal(),
+                NumberOfCineclub = newCineclub.NumberOfCineclub,
+                Begin = newCineclub.Begin,
+                End = newCineclub.End,
+                Title = newCineclub.Title
+            };
+        }
+        public static model.Cineclub toLocal(this api.Cineclub newCineclub, string Add)   
+        {
+            return new model.Cineclub
+            {
+                Id_Cineclub = newCineclub.Id_Cineclub,
+                Movie_1 = new model.Movie(),
+                Movie_2 = new model.Movie(),
+                Movie_3 = new model.Movie(),
+                Movie_4 = new model.Movie(),
+                Movie_5 = new model.Movie(),
+                Id_Movie_1 = newCineclub.Id_Movie_1,
+                Id_Movie_2 = newCineclub.Id_Movie_2,
+                Id_Movie_3 = newCineclub.Id_Movie_3,
+                Id_Movie_4 = newCineclub.Id_Movie_4,
+                Id_Movie_5 = newCineclub.Id_Movie_5,
                 NumberOfCineclub = newCineclub.NumberOfCineclub,
                 Begin = newCineclub.Begin,
                 End = newCineclub.End,

@@ -24,7 +24,7 @@ namespace DDYDLS_CineClubLocalModel.Services
 
         public bool Add(Cineclub g)
         {
-            _CineclubRepository.Insert(g.toDal());
+            _CineclubRepository.Insert(g.toDal("Add"));
             return true;
         }
 
@@ -47,7 +47,7 @@ namespace DDYDLS_CineClubLocalModel.Services
 
         public void Update(Cineclub g)
         {
-            _CineclubRepository.Update(g.toDal());
+            _CineclubRepository.Update(g.toDal("Add"));
         }
     }
 }
