@@ -1,7 +1,7 @@
 
 
 <main>
-    <button mat-stroked-button color="accent"  [routerLink]="['add']"> Ajouter un cinéclub</button>
+    <button mat-stroked-button color="accent"  *ngIf="isConnected"  [routerLink]="['add']"> Ajouter un cinéclub</button>
     @for (cineclub of cineclub; track cineclub){
     <article cols="2" rowHeight="4:1" class="blocCineClub">
         <h1>
