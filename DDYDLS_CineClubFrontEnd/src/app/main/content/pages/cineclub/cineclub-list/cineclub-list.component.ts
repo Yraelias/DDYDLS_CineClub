@@ -28,7 +28,7 @@ export class CineclubListComponent implements OnInit {
       {
         this.isConnected = true;
       }
-   this.loadCineclub();
+      this.loadCineclub();
   }
 
   loadCineclub() : void{
@@ -43,16 +43,12 @@ export class CineclubListComponent implements OnInit {
               this.loadTMDBMovie_2(i,this.cineclub[i].movie_2.name)
               this.loadTMDBMovie_3(i,this.cineclub[i].movie_3.name)
               this.loadTMDBMovie_4(i,this.cineclub[i].movie_4.name)
-              if (this.cineclub[i].id_movie_5 == 1)
-                {
-                  console.log("je passe ici")
-                  this.bonusMovie = true
-                }
-                this.loadTMDBMovie_5(i,this.cineclub[i].movie_5.name)
+              this.loadTMDBMovie_5(i,this.cineclub[i].movie_5.name)
+              console.log(this.cineclub);
               }
       },
       error : (error : any) => console.log(error)}
-     )
+    )
   }
   loadTMDBMovie_1(i :number, titlemovie : string): void{
     let a  = 0;
@@ -170,6 +166,4 @@ export class CineclubListComponent implements OnInit {
       }
     })
   }
-
-
 }

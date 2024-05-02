@@ -1,12 +1,13 @@
 mat-toolbar{
   display: flex;
   justify-content: space-between;
+  padding: 0;
 }
 div{
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 2%;
+  padding: 1%;
 }
 .divIcon{
   width: 10%;
