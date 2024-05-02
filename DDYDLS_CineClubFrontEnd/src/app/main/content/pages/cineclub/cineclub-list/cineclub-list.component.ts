@@ -19,6 +19,7 @@ export class CineclubListComponent implements OnInit {
   URLimg:string;
   sameDate : boolean = false;
   isConnected:boolean = false;
+  bonusMovie : boolean = false;
   
   constructor(private _cineclubService : CineclubService, private movie_service : MovieService) {}
 
@@ -42,7 +43,12 @@ export class CineclubListComponent implements OnInit {
               this.loadTMDBMovie_2(i,this.cineclub[i].movie_2.name)
               this.loadTMDBMovie_3(i,this.cineclub[i].movie_3.name)
               this.loadTMDBMovie_4(i,this.cineclub[i].movie_4.name)
-              this.loadTMDBMovie_5(i,this.cineclub[i].movie_5.name)
+              if (this.cineclub[i].id_movie_5 == 1)
+                {
+                  console.log("je passe ici")
+                  this.bonusMovie = true
+                }
+                this.loadTMDBMovie_5(i,this.cineclub[i].movie_5.name)
               }
       },
       error : (error : any) => console.log(error)}
@@ -63,7 +69,6 @@ export class CineclubListComponent implements OnInit {
                 console.log ("je passe ici")
                 this.cineclub[i].movie_1.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
                 this.cineclub[i].movie_1.synopsis =  this.result.results[a].overview;
-                console.log(this.cineclub[i].movie_1.synopsis);
                 this.sameDate = true;
               }
               a++;
@@ -85,7 +90,6 @@ export class CineclubListComponent implements OnInit {
               {
                 this.cineclub[i].movie_2.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
                 this.cineclub[i].movie_2.synopsis =  this.result.results[a].overview;
-                console.log(this.cineclub[i].movie_2.synopsis);
                 this.sameDate = true;
               }
               a++;
@@ -110,7 +114,6 @@ export class CineclubListComponent implements OnInit {
                 console.log ("je passe ici")
                 this.cineclub[i].movie_3.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
                 this.cineclub[i].movie_3.synopsis =  this.result.results[a].overview;
-                console.log(this.cineclub[i].movie_3.synopsis);
                 this.sameDate = true;
               }
               a++;
@@ -135,7 +138,6 @@ export class CineclubListComponent implements OnInit {
                 console.log ("je passe ici")
                 this.cineclub[i].movie_4.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
                 this.cineclub[i].movie_4.synopsis =  this.result.results[a].overview;
-                console.log(this.cineclub[i].movie_4.synopsis);
                 this.sameDate = true;
               }
               a++;
@@ -160,7 +162,6 @@ export class CineclubListComponent implements OnInit {
                 console.log ("je passe ici")
                 this.cineclub[i].movie_5.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
                 this.cineclub[i].movie_5.synopsis =  this.result.results[a].overview;
-                console.log(this.cineclub[i].movie_5.synopsis);
                 this.sameDate = true;
               }
               a++;
