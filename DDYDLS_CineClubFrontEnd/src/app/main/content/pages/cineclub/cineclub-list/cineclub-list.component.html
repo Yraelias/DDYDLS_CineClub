@@ -6,8 +6,10 @@
     <article cols="2" rowHeight="4:1" class="blocCineClub">
         <aside>
         <h1>
-            {{cineclub.title}}
+            {{cineclub.title}} #{{cineclub.numberOfCineclub}}
         </h1>
+        <mat-icon *ngIf="isConnected"  style="color: #FE277E;">settings</mat-icon>
+        <mat-icon *ngIf="isConnected"  style="color: #FE277E;">delete</mat-icon>
             <img *ngIf="cineclub.movie_5.id_Movie != 1" [src]="cineclub.movie_5.UrlIMG" />
         </aside>
         <div class="blocFilms">

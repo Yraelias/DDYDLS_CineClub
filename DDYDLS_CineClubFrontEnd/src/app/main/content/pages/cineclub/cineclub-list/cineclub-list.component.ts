@@ -19,16 +19,16 @@ export class CineclubListComponent implements OnInit {
   URLimg:string;
   sameDate : boolean = false;
   isConnected:boolean = false;
-  bonusMovie : boolean = false;
   
-  constructor(private _cineclubService : CineclubService, private movie_service : MovieService) {}
+  constructor(private _cineclubService : CineclubService, private movie_service : MovieService) {
+  }
 
   ngOnInit(): void {
     if (sessionStorage.getItem('isConnected'))
       {
         this.isConnected = true;
       }
-      this.loadCineclub();
+   this.loadCineclub();
   }
 
   loadCineclub() : void{
@@ -36,19 +36,20 @@ export class CineclubListComponent implements OnInit {
       next: (data : Cineclub[]) =>  
         {
         this.cineclub = data;
-        
             for (let i = 0; i< this.cineclub.length ; i++)
               {
+                console.log("testt");
               this.loadTMDBMovie_1(i,this.cineclub[i].movie_1.name)
               this.loadTMDBMovie_2(i,this.cineclub[i].movie_2.name)
               this.loadTMDBMovie_3(i,this.cineclub[i].movie_3.name)
               this.loadTMDBMovie_4(i,this.cineclub[i].movie_4.name)
-              this.loadTMDBMovie_5(i,this.cineclub[i].movie_5.name)
-              console.log(this.cineclub);
+              console.log(this.cineclub[i].movie_5.id_Movie)
+              this.loadTMDBMovie_5(i, this.cineclub[i].movie_5.name);
+                
               }
       },
       error : (error : any) => console.log(error)}
-    )
+     )
   }
   loadTMDBMovie_1(i :number, titlemovie : string): void{
     let a  = 0;
@@ -155,7 +156,6 @@ export class CineclubListComponent implements OnInit {
           {
             if(this.cineclub[i].movie_5.year == parseInt(this.result.results[a].release_date.split('-')[0], 10))
               {
-                console.log ("je passe ici")
                 this.cineclub[i].movie_5.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
                 this.cineclub[i].movie_5.synopsis =  this.result.results[a].overview;
                 this.sameDate = true;
@@ -166,4 +166,6 @@ export class CineclubListComponent implements OnInit {
       }
     })
   }
+
+
 }
