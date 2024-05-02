@@ -18,10 +18,15 @@ export class CineclubListComponent implements OnInit {
   movie : Movie = {id_Movie : 1, name : '', id_Studio : 0, year:0, synopsis : '', rating:{ id_Movie :0, iD_User:0,id_Rating:0,date : new Date, ratings : 0,  approbate:0, commentary:"", username:""}, avgRating:0 ,ratingForUser:0 };
   URLimg:string;
   sameDate : boolean = false;
+  isConnected:boolean = false;
   
   constructor(private _cineclubService : CineclubService, private movie_service : MovieService) {}
 
   ngOnInit(): void {
+    if (sessionStorage.getItem('isConnected'))
+      {
+        this.isConnected = true;
+      }
    this.loadCineclub();
   }
 
@@ -31,7 +36,7 @@ export class CineclubListComponent implements OnInit {
         {
         this.cineclub = data;
         
-            for (let i = 0; i<3; i++)
+            for (let i = 0; i< this.cineclub.length ; i++)
               {
               this.loadTMDBMovie_1(i,this.cineclub[i].movie_1.name)
               this.loadTMDBMovie_2(i,this.cineclub[i].movie_2.name)
