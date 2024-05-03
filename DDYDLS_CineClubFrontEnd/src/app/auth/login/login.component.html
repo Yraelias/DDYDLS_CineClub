@@ -8,10 +8,13 @@
         <form [formGroup]="loginFG" (ngSubmit)="onSubmit()">
             <mat-form-field appearance="fill">
                 <mat-label> Email</mat-label> <input  formControlName="email" matInput>
+                <mat-error >L'adresse mail est obligatoire</mat-error>
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>'Mot de passe </mat-label><input  formControlName="password" type="password" matInput>
+                <mat-error >Le mot de passe est requis</mat-error>
             </mat-form-field>
+            <div *ngIf="loginError">{{ loginError}}</div>
             <div class="divButton">
                 <button mat-raised-button type="submit" [disabled]="loginFG.invalid" style="color: #87FF00; background-color: #242423;">{{'Se connecter' }}</button>
                 <button mat-raised-button  style="color: #87FF00; background-color: #242423;" [routerLink]="['/inscription']">{{'inscription' }}</button>
