@@ -4,6 +4,8 @@ import { CineclubService } from '../cineclub.service';
 import { MovieService } from '../../movie.service';
 import { Movie } from 'src/app/models/movie';
 import { TMDBMovie, Result } from 'src/app/models/tmdbmovie';
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-cineclub-list',
@@ -19,8 +21,9 @@ export class CineclubListComponent implements OnInit {
   URLimg:string;
   sameDate : boolean = false;
   isConnected:boolean = false;
+  deleted : boolean = false;
   
-  constructor(private _cineclubService : CineclubService, private movie_service : MovieService) {
+  constructor(private _cineclubService : CineclubService, private movie_service : MovieService,public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -165,6 +168,26 @@ export class CineclubListComponent implements OnInit {
           this.sameDate = false;
       }
     })
+  }
+
+  openDeletDialog(id_cineclub : number): void {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent,{
+      width : '90%' 
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('apres dialog : '+result)
+      this.deleted = result;
+      console.log(this.deleted);
+      if(this.deleted == true)
+        {
+          this._cineclubService.deleteCineclub(id_cineclub).subscribe(result =>{
+            
+          })
+          
+          //window.location.reload();
+        } 
+    });
   }
 
 

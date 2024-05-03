@@ -8,8 +8,8 @@
         <h1>
             {{cineclub.title}} #{{cineclub.numberOfCineclub}}
         </h1>
-        <mat-icon *ngIf="isConnected"  style="color: #FE277E;">settings</mat-icon>
-        <mat-icon *ngIf="isConnected"  style="color: #FE277E;">delete</mat-icon>
+        <mat-icon *ngIf="isConnected" style="color: #FE277E;" >settings</mat-icon>
+        <mat-icon *ngIf="isConnected"  style="color: #FE277E;" (click)="openDeletDialog(cineclub.id_Cineclub)" >delete</mat-icon>
             <img *ngIf="cineclub.movie_5.id_Movie != 1" [src]="cineclub.movie_5.UrlIMG" />
         </aside>
         <div class="blocFilms">

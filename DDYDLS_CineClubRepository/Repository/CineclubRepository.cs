@@ -16,7 +16,7 @@ namespace DDYDLS_CineClubDAL.Repository
         { }
         public bool Delete(int Id)
         {
-            Command cmd = new Command("DELETE FROM [dbo].[T_Cineclub] WHERE ID_Genre = @Id ");
+            Command cmd = new Command("DELETE FROM [dbo].[T_Cineclub] WHERE ID_Cineclub = @Id ");
             cmd.AddParameter("Id", Id);
             return _connection.ExecuteNonQuery(cmd) == 1;
         }
