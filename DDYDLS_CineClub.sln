@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DDYDLS_CineClubDAL", "DDYDL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DDYDLS_CineClubLocalModel", "DDYDLS_CineClubLocalModel\DDYDLS_CineClubLocalModel.csproj", "{975A26FD-F61D-4BDE-B9E6-3BBB8A383931}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADO Toolbox", "ADO Toolbox\ADO Toolbox.csproj", "{7AEBCFB5-988D-458D-8E8D-8672E3D9981C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADO_Toolbox", "ADO_Toolbox\ADO_Toolbox.csproj", "{7AEBCFB5-988D-458D-8E8D-8672E3D9981C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

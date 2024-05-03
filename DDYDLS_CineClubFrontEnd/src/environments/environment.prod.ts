@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiurl : "https://cineclubapp.baudouin-dumont.eu/api"
 };
