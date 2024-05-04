@@ -13,7 +13,7 @@ COPY ./ /usr/local/app/
 RUN npm install
 
 # Generate the build of the application
-RUN npm run build:prod
+RUN npm run build --configuration=prod
 
 # Stage 2: Serve app with nginx server
 
