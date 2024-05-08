@@ -51,6 +51,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ConfirmationDialogComponent } from './main/content/pages/cineclub/confirmation-dialog/confirmation-dialog.component';
+import { CineclubDetailsComponent } from './main/content/pages/cineclub/cineclub-details/cineclub-details.component';
 
 
 const appRoutes: Routes = [
@@ -82,6 +83,10 @@ const appRoutes: Routes = [
     path:'movies',
     component: MoviesListComponent,
     //resolve: {data: MovieService}
+  },
+  {
+    path:'cineclub/:id',
+    component: CineclubDetailsComponent,
   },
   {
     path:'cineclub/add',
@@ -126,7 +131,8 @@ const appRoutes: Routes = [
         ChangePasswordComponent,
         ChangeUsernameComponent,
         CineclubAddComponent,
-        ConfirmationDialogComponent
+        ConfirmationDialogComponent,
+        CineclubDetailsComponent
     ],
     providers: [MovieService, AuthService, AuthGuardService, RatingService,CineclubService,UserService,SharedDataService ],
     bootstrap: [AppComponent],
