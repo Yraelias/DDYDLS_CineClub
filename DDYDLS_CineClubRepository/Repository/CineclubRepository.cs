@@ -23,6 +23,7 @@ namespace DDYDLS_CineClubDAL.Repository
 
         public IEnumerable<Cineclub> GetAll()
         {
+            
             Command cmd = new Command("SELECT * FROM [T_Cineclub]");
             return _connection.ExecuteReader(cmd, Converters.CineclubConvert);
         }

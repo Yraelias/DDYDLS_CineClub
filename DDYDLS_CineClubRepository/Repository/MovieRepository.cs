@@ -7,16 +7,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using static DDYDLS_CineClubDAL.Repository.CineclubContext;
 
 
 namespace DDYDLS_CineClubDAL.Repository
 {
     public class MovieRepository : BaseRepository, IMovieRepository<Movie>
     {
-        
+        //private readonly CineclubContext _dbContext;
         public MovieRepository(IConfiguration config) : base(config)
         {
-            
+           // _dbContext = dbContext;
         }
 
         public IEnumerable<Movie> GetAll()

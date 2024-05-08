@@ -19,6 +19,8 @@ namespace DDYDLS_CineClubDAL.Models
 
         public string Commentary { get; set; }
 
-        public string Username { get; set; }
+
+        public Movie Movie { get; set; }
+
     }
 }

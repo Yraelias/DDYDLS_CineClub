@@ -16,7 +16,6 @@ namespace DDYDLS_CineClubLocalModel.Tools
             return new Models.User
             {
                 ID_User = newUser.ID_User,
-                Login = newUser.Login,
                 Password = newUser.Password,
                 Email = newUser.Email,
                 Username = newUser.Username,
@@ -29,7 +28,6 @@ namespace DDYDLS_CineClubLocalModel.Tools
             return new dal.User
             {
                 ID_User = newUser.ID_User,
-                Login = newUser.Login,
                 Password = newUser.Password,
                 Email = newUser.Email,
                 Username = newUser.Username,
@@ -117,7 +115,7 @@ namespace DDYDLS_CineClubLocalModel.Tools
                Ratings = newRating.Ratings,
                Commentary = newRating.Commentary,
                Approbate = newRating.Approbate,
-               Username = newRating.Username,
+               Username = "Test"
             };
         }
         public static dal.Rating toDal(this Models.Rating newRating)
@@ -130,8 +128,7 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Date = newRating.Date,
                 Ratings = newRating.Ratings,
                 Commentary = newRating.Commentary,
-                Approbate = newRating.Approbate,
-                Username=newRating.Username,
+                Approbate = newRating.Approbate
             };
         }
         public static Models.Cineclub toLocal(this dal.Cineclub newRating, IMovieRepository<dal.Movie> movieRepository)
@@ -143,10 +140,10 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Movie_2 = movieRepository.GetOne(newRating.Id_Movie_2).toLocal(),
                 Movie_3 = movieRepository.GetOne(newRating.Id_Movie_3).toLocal(),
                 Movie_4 = movieRepository.GetOne(newRating.Id_Movie_4).toLocal(),
-                Movie_5 = movieRepository.GetOne(newRating.Id_Movie_5).toLocal(),
+                //Movie_5 = movieRepository.GetOne(newRating.Id_Movie_5).toLocal(),
                 NumberOfCineclub = newRating.NumberOfCineclub,
                 Begin = newRating.Begin,
-                End = newRating.End,
+                //End = newRating.End,
                 Title = newRating.Title
             };
         }

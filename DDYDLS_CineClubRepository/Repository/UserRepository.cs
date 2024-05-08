@@ -63,8 +63,6 @@ namespace DDYDLS_CineClubDAL.Repository
         {
             //Command cmd = new Command("INSERT INTO [dbo].[T_User] ([Login],[Password],[Email],[UserName],[Language],[Country],[isActive],[Registration_Date],[IsAdministrator],[IsModerator]) VALUES (@Login, @Password, @Email, @UserName, @Language, @Country, @isActive, @Registration_Date, @IsAdministrator, @IsModerator)");
             Command cmd = new Command("INSERT INTO [dbo].[T_User] ([Email], [Password],[UserName],[ID_UserRole],[IsActive], [Registration_Date]) VALUES (@Email, @Password, @UserName, @UserRole, @isActive, @Registration_Date)");
-            u.Login = u.Email;
-            cmd.AddParameter("Login", u.Login);
             cmd.AddParameter("Password", u.Password);
             cmd.AddParameter("Email", u.Email);
             if (u.Username != null) cmd.AddParameter("UserName", u.Username); else cmd.AddParameter("Username", "");
@@ -81,9 +79,8 @@ namespace DDYDLS_CineClubDAL.Repository
 
         public void Update(User u)
         {
-            Command cmd = new Command("UPDATE [dbo].[T_User] SET[Login] = @Login,[Password] = @Password,[Email] = @Email,[UserName] = @UserName,[Language] = @Language" +
+            Command cmd = new Command("UPDATE [dbo].[T_User] SET [Password] = @Password,[Email] = @Email,[UserName] = @UserName,[Language] = @Language" +
                 ",[Country] = @Country WHERE ID_User = @Id");
-            cmd.AddParameter("Login", u.Login);
             cmd.AddParameter("Password", u.Password);
             cmd.AddParameter("Email", u.Email);
             if (u.Username != null) cmd.AddParameter("UserName", u.Username); else cmd.AddParameter("Username", "");

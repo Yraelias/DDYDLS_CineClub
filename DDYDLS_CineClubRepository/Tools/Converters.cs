@@ -61,8 +61,7 @@ namespace DAL.Tools
                 Ratings = Convert.IsDBNull((int)reader["Rating"]) ? 0 : (int)reader["Rating"],
                 Date = Convert.IsDBNull((DateTime)reader["Date"]) ? new DateTime() : (DateTime)reader["Date"],
                 Approbate = Convert.IsDBNull((int)reader["Approbate"]) ? 0 : (int)reader["Approbate"],
-                Commentary = reader["Commentary"].ToString(),
-                Username = reader["Username"].ToString() 
+                Commentary = reader["Commentary"].ToString()
             };
         }
         public static Cineclub CineclubConvert(SqlDataReader reader)

@@ -12,11 +12,14 @@ using DDYDLS_CineClubLocalModel.Services.Interfaces ;
 using DDYDLS_CineClubLocalModel.Services;
 using DDYDLS_CineClubApi.Services;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace DDYDLS_CineClub
 {
     public class Startup
     {
+        
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -37,6 +40,7 @@ namespace DDYDLS_CineClub
             services.AddScoped<IMovieRepository<Movie>, MovieRepository>();
             services.AddScoped<IRatingRepository<Rating>, RatingRepository>();
             services.AddScoped<ICineclubRepository<Cineclub>, CineclubRepository>();
+            services.AddDbContext<CineclubContext>(options => options.UseSqlServer("Data Source=localhost;Initial Catalog=CodeFirstTest;Integrated Security=True;Connect Timeout=60;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False"));
             #endregion
 
             #region Services
@@ -88,11 +92,13 @@ namespace DDYDLS_CineClub
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, CineclubContext cineclubContext )
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                cineclubContext.Database.EnsureCreated();
+                Console.WriteLine("Connexion à la base de données réussie !");
             }
             else
             {
@@ -100,7 +106,7 @@ namespace DDYDLS_CineClub
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            
             app.UseHttpsRedirection();
 
             app.UseRouting();
