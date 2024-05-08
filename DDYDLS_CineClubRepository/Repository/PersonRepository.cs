@@ -33,7 +33,6 @@ namespace DDYDLS_CineClubDAL.Repository
             Console.WriteLine("");
             Command cmd = new Command("INSERT INTO [dbo].[T_Person] ([Name],[Country],[FirstName]) VALUES (@Name,@Country,@FirstName)");
             cmd.AddParameter("Name", p.Name);
-            cmd.AddParameter("Country", p.Country);
             cmd.AddParameter("FirstName", p.FirstName);
             _connection.ExecuteNonQuery(cmd);
         }
@@ -42,7 +41,6 @@ namespace DDYDLS_CineClubDAL.Repository
         {
             Command cmd = new Command("UPDATE [dbo].[T_Genre] SET[Name] = @Name,[Country] = @Country,[FirstName] = @FirstName WHERE ID_Person = @Id");
             cmd.AddParameter("Name", p.Name);
-            cmd.AddParameter("Country", p.Country);
             cmd.AddParameter("FirstName", p.FirstName);
             _connection.ExecuteNonQuery(cmd);
         }

@@ -87,8 +87,6 @@ namespace DDYDLS_CineClubDAL.Repository
             cmd.AddParameter("Password", u.Password);
             cmd.AddParameter("Email", u.Email);
             if (u.Username != null) cmd.AddParameter("UserName", u.Username); else cmd.AddParameter("Username", "");
-            if (u.Language != null) cmd.AddParameter("Language", u.Language); else cmd.AddParameter("Language", "");
-            if (u.Country != null) cmd.AddParameter("Country", u.Country); else cmd.AddParameter("Country", "");
             cmd.AddParameter("Id", u.ID_User);
             _connection.ExecuteNonQuery(cmd);
         }

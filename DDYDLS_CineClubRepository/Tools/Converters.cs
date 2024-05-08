@@ -23,22 +23,13 @@ namespace DAL.Tools
                 UserRole = (int)reader["ID_UserRole"]
             };
         }
-        public static Genre GenreConvert(SqlDataReader reader)
-        {
-            return new Genre
-            {
-                Id_Genre = (int)reader["ID_Genre"],
-                Name = reader["Name"].ToString()
-            };
-        }
         public static Person PersonConvert( SqlDataReader reader) 
         {
             return new Person
             {
                 Id_Person = (int)reader["Id_Person"],
                 Name = reader["Name"].ToString(),
-                FirstName = reader["Name"].ToString(),
-                Country = reader["Country"].ToString()
+                FirstName = reader["Name"].ToString()
             };
         }
         public static Role RoleConvert(SqlDataReader reader)

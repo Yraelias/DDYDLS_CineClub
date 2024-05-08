@@ -20,11 +20,8 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Password = newUser.Password,
                 Email = newUser.Email,
                 Username = newUser.Username,
-                Language = newUser.Language,
-                Country = newUser.Country,
                 IsActive = newUser.IsActive,
-                Registration_Date = newUser.Registration_Date,
-                IsAdministrator = newUser.IsAdministrator
+                Registration_Date = newUser.Registration_Date
             };
         }
         public static dal.User toDal (this Models.User newUser)
@@ -36,27 +33,8 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Password = newUser.Password,
                 Email = newUser.Email,
                 Username = newUser.Username,
-                Language = newUser.Language,
-                Country = newUser.Country,
                 IsActive = newUser.IsActive,
-                Registration_Date = newUser.Registration_Date,
-                IsAdministrator = newUser.IsAdministrator
-            };
-        }
-        public static Models.Genre toLocal(this dal.Genre newGenre)
-        {
-            return new Models.Genre
-            {
-                ID_Genre = newGenre.Id_Genre,
-                Name  = newGenre.Name
-            };
-        }
-        public static dal.Genre toDal(this Models.Genre newGenre)
-        {
-            return new dal.Genre
-            {
-                Id_Genre = newGenre.ID_Genre, 
-                Name = newGenre.Name
+                Registration_Date = newUser.Registration_Date
             };
         }
         public static Models.Person toLocal(this dal.Person newPerson)
@@ -65,7 +43,6 @@ namespace DDYDLS_CineClubLocalModel.Tools
             {
                 Id_Person = newPerson.Id_Person,
                 Name = newPerson.Name,
-                Country = newPerson.Country,
                 FirstName = newPerson.FirstName
             };
         }
@@ -75,7 +52,6 @@ namespace DDYDLS_CineClubLocalModel.Tools
             {
                 Id_Person = newPerson.Id_Person,
                 Name = newPerson.Name,
-                Country = newPerson.Country,
                 FirstName = newPerson.FirstName
             };
         }
@@ -102,8 +78,6 @@ namespace DDYDLS_CineClubLocalModel.Tools
             {
                 Id_Movie = newMovie.Id_Movie,
                 Name = newMovie.Name,
-                Id_Studio = newMovie.Id_Studio,
-                Synopsis = newMovie.Synopsis,
                 Year = newMovie.Year
                 
 
@@ -115,7 +89,6 @@ namespace DDYDLS_CineClubLocalModel.Tools
             {
                 Id_Movie = newMovie.Id_Movie,
                 Name = newMovie.Name,
-                Id_Studio = newMovie.Id_Studio,
                 Year = newMovie.Year,
                 Rating = null,
                 AvgRating = ratingRepository.AvgRate(newMovie.Id_Movie),
@@ -127,7 +100,6 @@ namespace DDYDLS_CineClubLocalModel.Tools
             return new dal.Movie
             {
                 Id_Movie = newStudio.Id_Movie,
-                Id_Studio = newStudio.Id_Studio,
                 Name = newStudio.Name,
                 Year = newStudio.Year,
                 TMDB_ID = newStudio.TMDB_ID,

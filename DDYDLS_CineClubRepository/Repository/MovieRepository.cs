@@ -45,7 +45,6 @@ namespace DDYDLS_CineClubDAL.Repository
         {
             Command cmd = new Command("UPDATE [dbo].[T_Movie] SET[Name] = @Name,[Id_Studio] = @Id_Studio,[Year] = @Year WHERE ID_Movie = @Id");
             cmd.AddParameter("Name", g.Name);
-            cmd.AddParameter("Id_Studio", g.Id_Studio);
             cmd.AddParameter("Year", g.Year);
             _connection.ExecuteNonQuery(cmd);
         }
