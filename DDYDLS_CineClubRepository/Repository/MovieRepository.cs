@@ -14,16 +14,15 @@ namespace DDYDLS_CineClubDAL.Repository
 {
     public class MovieRepository : BaseRepository, IMovieRepository<Movie>
     {
-        //private readonly CineclubContext _dbContext;
-        public MovieRepository(IConfiguration config) : base(config)
+        private readonly CineclubContext _dbContext;
+        public MovieRepository(IConfiguration config, CineclubContext dbContext) : base(config)
         {
-           // _dbContext = dbContext;
+            _dbContext = dbContext;
         }
 
         public IEnumerable<Movie> GetAll()
         {
-            Command cmd = new Command("SELECT * FROM [T_Movie]");
-            return _connection.ExecuteReader(cmd, Converters.MovieConvert);
+           return _dbContext.Movies.ToList();
         }
 
         public Movie GetOne(int Id)

@@ -12,6 +12,7 @@ namespace DDYDLS_CineClubDAL.Repository
 {
     public class CineclubRepository : BaseRepository, ICineclubRepository<Cineclub>
     {
+        private readonly CineclubContext _dbContext;
         public CineclubRepository(IConfiguration config) : base(config)
         { }
         public bool Delete(int Id)
