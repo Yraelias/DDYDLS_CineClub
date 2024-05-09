@@ -9,8 +9,6 @@ namespace DDYDLS_CineClubLocalModel.Tools
 {
     public static class  LocalMappers
     {
-       
-       
         public static Models.User toLocal(this dal.User newUser)
         {
             return new Models.User
@@ -33,24 +31,6 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Username = newUser.Username,
                 IsActive = newUser.IsActive,
                 Registration_Date = newUser.Registration_Date
-            };
-        }
-        public static Models.Person toLocal(this dal.Person newPerson)
-        {
-            return new Models.Person
-            {
-                Id_Person = newPerson.Id_Person,
-                Name = newPerson.Name,
-                FirstName = newPerson.FirstName
-            };
-        }
-        public static dal.Person toDal(this Models.Person newPerson)
-        {
-            return new dal.Person
-            {
-                Id_Person = newPerson.Id_Person,
-                Name = newPerson.Name,
-                FirstName = newPerson.FirstName
             };
         }
         public static Models.Role toLocal(this dal.Role newRole)
@@ -81,7 +61,7 @@ namespace DDYDLS_CineClubLocalModel.Tools
 
             };
         }
-        public static Models.Movie toLocal(this dal.Movie newMovie, IRatingRepository<dal.Rating> ratingRepository)
+        public static Models.Movie toLocal(this dal.Movie newMovie, IRatingRepository<dal.Ratings> ratingRepository)
         {
             return new Models.Movie
             {
@@ -103,30 +83,30 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 TMDB_ID = newStudio.TMDB_ID,
             };
         }
-        public static Models.Rating toLocal(this dal.Rating newRating)
+        public static Models.Ratings toLocal(this dal.Ratings newRating)
         {
-            if (newRating == null) { return new Models.Rating(); }
-            return new Models.Rating
+            if (newRating == null) { return new Models.Ratings(); }
+            return new Models.Ratings
             {
                Id_Rating = newRating.Id_Rating ,
                Id_Movie = newRating.Id_Movie,
                ID_User = newRating.ID_User,
                Date = newRating.Date,
-               Ratings = newRating.Ratings,
+               Rating = newRating.Rating,
                Commentary = newRating.Commentary,
                Approbate = newRating.Approbate,
                Username = "Test"
             };
         }
-        public static dal.Rating toDal(this Models.Rating newRating)
+        public static dal.Ratings toDal(this Models.Ratings newRating)
         {
-            return new dal.Rating
+            return new dal.Ratings
             {
                 Id_Rating = newRating.Id_Rating,
                 Id_Movie = newRating.Id_Movie,
                 ID_User = newRating.ID_User,
                 Date = newRating.Date,
-                Ratings = newRating.Ratings,
+                Rating = newRating.Rating,
                 Commentary = newRating.Commentary,
                 Approbate = newRating.Approbate
             };

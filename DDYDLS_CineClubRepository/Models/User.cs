@@ -14,6 +14,6 @@ namespace DDYDLS_CineClubDAL.Models
         [Required]
         public bool IsActive { get; set; }
         public DateTime Registration_Date { get; set; }
-        public int UserRole { get; set; }
+        public int ID_UserRole { get; set; }
     }
 }

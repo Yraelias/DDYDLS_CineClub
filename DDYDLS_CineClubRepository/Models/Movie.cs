@@ -14,7 +14,7 @@ namespace DDYDLS_CineClubDAL.Models
         [Required]
         public string Name { get; set; }
         public int Year { get; set; }
-        public Rating Rating { get; set; }
+        public Ratings Rating { get; set; }
         
         public int TMDB_ID { get; set; }
 

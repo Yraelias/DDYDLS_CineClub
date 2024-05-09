@@ -10,7 +10,7 @@ namespace DDYDLS_CineClubLocalModel.Models
         public string Name { get; set; }
         public string Synopsis { get; set; }
         public int Year { get; set; }
-        public Rating Rating { get; set; }
+        public Ratings Rating { get; set; }
         public int AvgRating { get; set; }
         public int RatingForUser { get; set; }
         public int TMDB_ID { get; set; }

@@ -9,7 +9,7 @@
     <article>
         <div *ngFor="let rating of listRatings" class="divCom" >
             <p class="commentaire">{{ rating.commentary }}</p>
-            <p>NOTE : {{ rating.ratings }}</p>
+            <p>NOTE : {{ rating.rating }}</p>
             <img mat-card-image src="/assets/icons/OeufGreen.webp" *ngIf=" rating.approbate  == 1" alt="Oeuf Vert">
             <img mat-card-image src="/assets/icons/OeufRed.webp" *ngIf=" rating.approbate  == 0" alt="Oeuf Rouge">  
         </div>

@@ -16,8 +16,8 @@ namespace DDYDLS_CineClubLocalModel.Services
     public class MovieService : Interfaces.IMovieService
     {
         private IMovieRepository<dal.Movie> _MovieRepository;
-        private IRatingRepository<dal.Rating> _ratingRepo;
-        public MovieService(IMovieRepository<dal.Movie> MovieRepository, IRatingRepository<dal.Rating> ratingRepo)
+        private IRatingRepository<dal.Ratings> _ratingRepo;
+        public MovieService(IMovieRepository<dal.Movie> MovieRepository, IRatingRepository<dal.Ratings> ratingRepo)
         {
             _MovieRepository = MovieRepository;
             _ratingRepo = ratingRepo;

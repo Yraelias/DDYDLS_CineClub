@@ -14,8 +14,8 @@ namespace DDYDLS_CineClubDAL.Repository
             public DbSet<Cineclub> T_Cineclub { get; set; }
             public DbSet<Movie> T_Movie { get; set; }
             public DbSet<CineclubMovie> CineclubMovies { get; set; }
-            public DbSet<Rating> Ratings { get; set; }
-            public DbSet<User> Users { get; set; }
+            public DbSet<Ratings> T_Rating { get; set; }
+            public DbSet<User> T_User { get; set; }
 
             private readonly IConfiguration _configuration;
 
@@ -44,7 +44,7 @@ namespace DDYDLS_CineClubDAL.Repository
                     .HasKey(c => c.Id_Cineclub);
                 modelBuilder.Entity<Movie>()
                     .HasKey(m => m.Id_Movie);
-                modelBuilder.Entity<Rating>()
+                modelBuilder.Entity<Ratings>()
                     .HasKey(r => r.Id_Rating);
                 modelBuilder.Entity<User>()
                     .HasKey(u => u.ID_User);
@@ -57,7 +57,7 @@ namespace DDYDLS_CineClubDAL.Repository
                 modelBuilder.Entity<Movie>()
                 .HasOne(m => m.Rating)
                 .WithOne(r => r.Movie)
-                .HasForeignKey<Rating>(r => r.Id_Movie);
+                .HasForeignKey<Ratings>(r => r.Id_Movie);
         }
 
     }
