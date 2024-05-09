@@ -41,14 +41,14 @@ export class CineclubListComponent implements OnInit {
         this.cineclub = data;
             for (let i = 0; i< this.cineclub.length ; i++)
               {
-                console.log("testt");
               this.loadTMDBMovie_1(i,this.cineclub[i].movie_1.name)
               this.loadTMDBMovie_2(i,this.cineclub[i].movie_2.name)
               this.loadTMDBMovie_3(i,this.cineclub[i].movie_3.name)
               this.loadTMDBMovie_4(i,this.cineclub[i].movie_4.name)
-              console.log(this.cineclub[i].movie_5.id_Movie)
-              this.loadTMDBMovie_5(i, this.cineclub[i].movie_5.name);
-                
+              if(this.cineclub[i].movie_5 != null)
+                {
+                  this.loadTMDBMovie_5(i, this.cineclub[i].movie_5.name);
+                }
               }
       },
       error : (error : any) => console.log(error)}
@@ -66,7 +66,6 @@ export class CineclubListComponent implements OnInit {
           {
             if(this.cineclub[i].movie_1.year == parseInt(this.result.results[a].release_date.split('-')[0], 10))
               {
-                console.log ("je passe ici")
                 this.cineclub[i].movie_1.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
                 this.cineclub[i].movie_1.synopsis =  this.result.results[a].overview;
                 this.sameDate = true;
@@ -111,7 +110,6 @@ export class CineclubListComponent implements OnInit {
           {
             if(this.cineclub[i].movie_3.year == parseInt(this.result.results[a].release_date.split('-')[0], 10))
               {
-                console.log ("je passe ici")
                 this.cineclub[i].movie_3.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
                 this.cineclub[i].movie_3.synopsis =  this.result.results[a].overview;
                 this.sameDate = true;
@@ -135,7 +133,6 @@ export class CineclubListComponent implements OnInit {
           {
             if(this.cineclub[i].movie_4.year == parseInt(this.result.results[a].release_date.split('-')[0], 10))
               {
-                console.log ("je passe ici")
                 this.cineclub[i].movie_4.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
                 this.cineclub[i].movie_4.synopsis =  this.result.results[a].overview;
                 this.sameDate = true;
@@ -176,9 +173,7 @@ export class CineclubListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('apres dialog : '+result)
       this.deleted = result;
-      console.log(this.deleted);
       if(this.deleted == true)
         {
           this._cineclubService.deleteCineclub(id_cineclub).subscribe(result =>{

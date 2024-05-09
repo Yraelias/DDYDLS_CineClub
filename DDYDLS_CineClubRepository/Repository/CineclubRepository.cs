@@ -7,68 +7,50 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 
 namespace DDYDLS_CineClubDAL.Repository
 {
     public class CineclubRepository : BaseRepository, ICineclubRepository<Cineclub>
     {
         private readonly CineclubContext _dbContext;
-        public CineclubRepository(IConfiguration config) : base(config)
-        { }
+        public CineclubRepository(IConfiguration config, CineclubContext dbContext) : base(config)
+        { _dbContext = dbContext; }
         public bool Delete(int Id)
         {
-            Command cmd = new Command("DELETE FROM [dbo].[T_Cineclub] WHERE ID_Cineclub = @Id ");
-            cmd.AddParameter("Id", Id);
-            return _connection.ExecuteNonQuery(cmd) == 1;
+            var cineclubToDelete = _dbContext.T_Cineclub.Find(Id);
+            if (cineclubToDelete != null)
+            {
+                _dbContext.T_Cineclub.Remove(cineclubToDelete);
+                _dbContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false; 
+            }
         }
 
         public IEnumerable<Cineclub> GetAll()
         {
-            
-            Command cmd = new Command("SELECT * FROM [T_Cineclub]");
-            return _connection.ExecuteReader(cmd, Converters.CineclubConvert);
+            return _dbContext.T_Cineclub.ToList();
         }
 
         public Cineclub GetOne(int Id)
         {
-            Command cmd = new Command("SELECT * FROM [T_Cineclub] WHERE Id_Cineclub = @Id");
-            cmd.AddParameter("Id", Id);
-            return _connection.ExecuteReader(cmd, Converters.CineclubConvert).FirstOrDefault();
+            return _dbContext.T_Cineclub.Find(Id);
         }
 
         public void Insert(Cineclub g)
         {
-            Command cmd = new Command("INSERT INTO [dbo].[T_Cineclub]([Id_Movie_1],[Id_Movie_2],[Id_Movie_3],[Id_Movie_4],[Id_Movie_5],[NumberOfCineclub],[Begin],[End], [Title] ) " +
-                                      "VALUES (@Id_Movie_1,@Id_Movie_2,@Id_Movie_3,@Id_Movie_4,@Id_Movie_5,@NumberOfCineclub,@Begin,@End,@Title) ");
-            cmd.AddParameter("Id_Movie_1", g.Id_Movie_1);
-            cmd.AddParameter("Id_Movie_2", g.Id_Movie_2);
-            cmd.AddParameter("Id_Movie_3", g.Id_Movie_3);
-            cmd.AddParameter("Id_Movie_4", g.Id_Movie_4);
-            if (g.Id_Movie_5 == 0) g.Id_Movie_5 = 1;
-            cmd.AddParameter("Id_Movie_5", g.Id_Movie_5);
-            cmd.AddParameter("NumberOfCineclub", g.NumberOfCineclub);
-            cmd.AddParameter("Begin", g.Begin);
-            cmd.AddParameter("End", g.End);
-            cmd.AddParameter("Title", g.Title);
-            _connection.ExecuteNonQuery(cmd);
+            _dbContext.T_Cineclub.Update(g);
+            _dbContext.SaveChanges();
         }
 
         public void Update(Cineclub g)
         {
-            Command cmd = new Command("UPDATE [dbo].[T_Cineclub]([Id_Movie_1],[Id_Movie_2],[Id_Movie_3],[Id_Movie_4],[Id_Movie_5],[NumberOfCineclub],[Begin],[End],[Title]) " +
-                                      "VALUES (@Id_Movie_1,@Id_Movie_2,@Id_Movie_3,@Id_Movie_4,@Id_Movie_5,@NumberOfCineclub,@Begin,@End,@Link_Yt) GO" +
-                                      "WHERE @Id_Cineclub == @Id_Cineclub" );
-            cmd.AddParameter("Id_Movie_1", g.Id_Movie_1);
-            cmd.AddParameter("Id_Movie_2", g.Id_Movie_2);
-            cmd.AddParameter("Id_Movie_3", g.Id_Movie_3);
-            cmd.AddParameter("Id_Movie_4", g.Id_Movie_4);
-            cmd.AddParameter("Id_Movie_5", g.Id_Movie_5);
-            cmd.AddParameter("NumberOfCineclub", g.NumberOfCineclub);
-            cmd.AddParameter("Begin", g.Begin);
-            cmd.AddParameter("End", g.End);
-            cmd.AddParameter("Title", g.Title);
-            cmd.AddParameter("Id_Cineclub", g.Id_Cineclub);
-            _connection.ExecuteNonQuery(cmd);
+            _dbContext.T_Cineclub.Update(g);
+            _dbContext.SaveChanges();
         }
     }
 }

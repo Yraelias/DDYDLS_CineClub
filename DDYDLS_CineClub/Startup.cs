@@ -40,7 +40,7 @@ namespace DDYDLS_CineClub
             services.AddScoped<IMovieRepository<Movie>, MovieRepository>();
             services.AddScoped<IRatingRepository<Rating>, RatingRepository>();
             services.AddScoped<ICineclubRepository<Cineclub>, CineclubRepository>();
-            services.AddDbContext<CineclubContext>(options => options.UseSqlServer("Data Source=localhost;Initial Catalog=CodeFirstTest;Integrated Security=True;Connect Timeout=60;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False"));
+            services.AddDbContext<CineclubContext>(options => options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
             #endregion
 
             #region Services

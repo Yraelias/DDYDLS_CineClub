@@ -61,11 +61,5 @@ namespace DDYDLS_CineClubLocalModel.Services
         {
             return _MovieRepository.GetOne(Id).toLocal(_ratingRepo);
         }
-        /*
-public int GetRatingForOneUser(int movieId, int userId)
-{
-   return _ratingRepo.RatebyIdMovieAndIdUser(movieId, userId);
-}
-*/
     }
 }

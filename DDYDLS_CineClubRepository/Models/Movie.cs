@@ -17,5 +17,11 @@ namespace DDYDLS_CineClubDAL.Models
         public Rating Rating { get; set; }
         
         public int TMDB_ID { get; set; }
+
+        public Movie()
+        {
+            Id_Movie = 0; // Initialisation de l'ID du film à zéro par défaut
+        }
     }
+
 }

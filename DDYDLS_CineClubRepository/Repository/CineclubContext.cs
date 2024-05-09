@@ -11,8 +11,8 @@ namespace DDYDLS_CineClubDAL.Repository
 {
     public class CineclubContext : DbContext
     {
-            public DbSet<Cineclub> Cineclubs { get; set; }
-            public DbSet<Movie> Movies { get; set; }
+            public DbSet<Cineclub> T_Cineclub { get; set; }
+            public DbSet<Movie> T_Movie { get; set; }
             public DbSet<CineclubMovie> CineclubMovies { get; set; }
             public DbSet<Rating> Ratings { get; set; }
             public DbSet<User> Users { get; set; }
@@ -30,8 +30,8 @@ namespace DDYDLS_CineClubDAL.Repository
 
                 if (!optionsBuilder.IsConfigured)
                 {
-                    //optionsBuilder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"));
-                    optionsBuilder.UseSqlServer(_configuration.GetConnectionString("Data Source=localhost;Initial Catalog=CodeFirstTest;Integrated Security=True;Connect Timeout=60;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False"));
+                    optionsBuilder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"));
+                    //optionsBuilder.UseSqlServer(_configuration.GetConnectionString("Data Source=localhost;Initial Catalog=CodeFirstTest;Integrated Security=True;Connect Timeout=60;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False"));
                 }
             }
 

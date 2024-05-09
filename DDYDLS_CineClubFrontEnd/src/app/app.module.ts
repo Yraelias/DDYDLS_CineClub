@@ -85,13 +85,13 @@ const appRoutes: Routes = [
     //resolve: {data: MovieService}
   },
   {
-    path:'cineclub/:id',
-    component: CineclubDetailsComponent,
-  },
-  {
     path:'cineclub/add',
     component: CineclubAddComponent,
     canActivate :[AuthGuardService]
+  },
+  {
+    path:'cineclub/:id',
+    component: CineclubDetailsComponent,
   },
   {
     path:'cineclub',

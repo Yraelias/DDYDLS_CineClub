@@ -22,44 +22,43 @@ namespace DDYDLS_CineClubDAL.Repository
 
         public IEnumerable<Movie> GetAll()
         {
-           return _dbContext.Movies.ToList();
+           return _dbContext.T_Movie.ToList();
         }
 
         public Movie GetOne(int Id)
         {
-            Command cmd = new Command("SELECT * FROM [T_Movie] WHERE ID_Movie = @Id");
-            cmd.AddParameter("Id", Id);
-            return _connection.ExecuteReader(cmd, Converters.MovieConvert).FirstOrDefault();
+            return _dbContext.T_Movie.Find(Id);
         }
 
         public void Insert(Movie g)
         {
-            Command cmd = new Command("INSERT INTO [dbo].[T_Movie] ([Name],[Year],[TMDB_Id]) VALUES (@Name,@Year,@TMDB_Id)");
-            cmd.AddParameter("Name", g.Name);
-            cmd.AddParameter("Year", g.Year);
-            cmd.AddParameter("TMDB_Id", g.TMDB_ID);
-            _connection.ExecuteNonQuery(cmd);
+            _dbContext.Add(g);
+            _dbContext.SaveChanges();
         }
 
         public void Update(Movie g)
         {
-            Command cmd = new Command("UPDATE [dbo].[T_Movie] SET[Name] = @Name,[Id_Studio] = @Id_Studio,[Year] = @Year WHERE ID_Movie = @Id");
-            cmd.AddParameter("Name", g.Name);
-            cmd.AddParameter("Year", g.Year);
-            _connection.ExecuteNonQuery(cmd);
+            _dbContext.T_Movie.Update(g);
+            _dbContext.SaveChanges();
         }
         public bool Delete(int iD)
         {
-            Command cmd = new Command("DELETE FROM [dbo].[T_Movie] WHERE ID_Movie = @Id ");
-            cmd.AddParameter("Id", iD);
-            return _connection.ExecuteNonQuery(cmd) == 1;
+            var movieToDelete = _dbContext.T_Movie.Find(iD);
+            if (movieToDelete != null)
+            {
+                _dbContext.T_Movie.Remove(movieToDelete);
+                _dbContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false; // L'élément avec l'ID spécifié n'existe pas dans la base de données
+            }
         }
 
         public Movie GetOnewithTMBD(int IdTMDB)
         {
-            Command cmd = new Command("SELECT * FROM [T_Movie] WHERE TMDB_Id = @Id");
-            cmd.AddParameter("Id", IdTMDB);
-            return _connection.ExecuteReader(cmd, Converters.MovieConvert).FirstOrDefault();
+            return _dbContext.T_Movie.FirstOrDefault(m => m.TMDB_ID == IdTMDB);
         }
 
     }
