@@ -52,6 +52,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ConfirmationDialogComponent } from './main/content/pages/cineclub/confirmation-dialog/confirmation-dialog.component';
 import { CineclubDetailsComponent } from './main/content/pages/cineclub/cineclub-details/cineclub-details.component';
+import { CommentaryCineclubComponent } from './main/content/pages/cineclub/commentary/commentaryCineclub.component';
 
 
 const appRoutes: Routes = [
@@ -132,7 +133,8 @@ const appRoutes: Routes = [
         ChangeUsernameComponent,
         CineclubAddComponent,
         ConfirmationDialogComponent,
-        CineclubDetailsComponent
+        CineclubDetailsComponent,
+        CommentaryCineclubComponent
     ],
     providers: [MovieService, AuthService, AuthGuardService, RatingService,CineclubService,UserService,SharedDataService ],
     bootstrap: [AppComponent],

@@ -59,5 +59,9 @@ export class RatingService {
   getRatingForUserbyMonth(Id_Movie :number, Month:number, Year:number ) : Observable<Rating[]>{
     return this.httpClient.get<Rating[]>('https://localhost:44379/api/rating/user/month/'+Id_Movie+'/'+ Month + '/'+Year)
   }
+
+  getRatingForCineclub(id_Cineclub : number){
+    return this.httpClient.get<Rating[]>('https://localhost:44379/api/rating/cineclub/'+id_Cineclub)
+  }
   
 }

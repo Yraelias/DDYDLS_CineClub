@@ -4,7 +4,7 @@ import { Rating } from 'src/app/models/rating';
 import { RatingService } from '../../rating/rating.service';
 
 @Component({
-  selector: 'app-commentary',
+  selector: 'app-commentarycineclub',
   templateUrl: './commentary.component.html',
   styleUrls: ['./commentary.component.css']
 })
@@ -19,7 +19,7 @@ export class CommentaryCineclubComponent implements OnInit {
     this.loadCommentary();
   }
   loadCommentary():void{
-    this._ratingService.getRatingForMovie(this.id_cineclub).subscribe({
+    this._ratingService.getRatingForCineclub(this.id_cineclub).subscribe({
       next: (data:Rating[]) =>
       {
         this.listRatings = data;
