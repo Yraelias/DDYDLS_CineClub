@@ -33,22 +33,6 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Registration_Date = newUser.Registration_Date
             };
         }
-        public static Models.Role toLocal(this dal.Role newRole)
-        {
-            return new Models.Role
-            {
-                ID_Role = newRole.Id_Role,
-                Name = newRole.Name
-            };
-        }
-        public static dal.Role toDal(this Models.Role newRole)
-        {
-            return new dal.Role
-            {
-                Id_Role = newRole.ID_Role,
-                Name = newRole.Name
-            };
-        }
         
         public static Models.Movie toLocal(this dal.Movie newMovie)
         {

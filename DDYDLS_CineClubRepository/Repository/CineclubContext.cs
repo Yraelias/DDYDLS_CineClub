@@ -19,7 +19,7 @@ namespace DDYDLS_CineClubDAL.Repository
 
             private readonly IConfiguration _configuration;
 
-            public CineclubContext(DbContextOptions<CineclubContext> options, IConfiguration configuration) : base(options)
+            public CineclubContext(IConfiguration configuration)
             {
                 _configuration = configuration;
             }
