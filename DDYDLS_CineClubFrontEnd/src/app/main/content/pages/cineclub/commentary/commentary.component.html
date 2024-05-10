@@ -1,0 +1,13 @@
+<article>
+    <li *ngFor="let rating of listRatings"  >
+        <mat-card class="blocCommentaire">
+            <mat-card-header style="font-size: 25px; padding: 1%;">
+                {{ rating.username }}
+            </mat-card-header>
+            <p class="commentaire">{{ rating.commentary }}</p>
+            <p>NOTE : {{ rating.rating }}</p>
+            <img mat-card-image src="/assets/icons/OeufGreen.webp" *ngIf=" rating.approbate  == 1">
+            <img mat-card-image src="/assets/icons/OeufRed.webp" *ngIf=" rating.approbate  == 0">
+        </mat-card>
+    </li>
+</article>

@@ -3,10 +3,40 @@
 
     {{cineclub.begin}}     {{cineclub.end}}
 
-    Film 1
-    Film 2
-    Film 3
-    Film 4
-    Film 5
+    <article cols="2" rowHeight="4:1" class="blocCineClub">
+        <aside>
+            <button mat-stroked-button color="accent" [routerLink]="['/cineclub',cineclub.id_Cineclub]">
+        <h1  >
+            {{cineclub.title}} #{{cineclub.numberOfCineclub}}
+        </h1>
+    </button>
+            <img *ngIf="cineclub.movie_5 != null " [src]="cineclub.movie_5.UrlIMG" />
+        </aside>
+        <div class="blocFilms">
+            <div>
+                <img [src]="cineclub.movie_1.UrlIMG" />
+                {{cineclub.movie_1.name}} ({{cineclub.movie_1.EN_name}}) {{cineclub.movie_1.year}}
+                <a *ngIf="isConnected && cineclub.movie_1.ratingForUser != 10" >Ma note :  {{cineclub.movie_1.ratingForUser}}/6</a>
+                {{cineclub.movie_1.synopsis}}
+            </div>
+            <div>
+                <img [src]="cineclub.movie_2.UrlIMG" />
+                {{cineclub.movie_2.name}} ({{cineclub.movie_2.EN_name}}) {{cineclub.movie_2.year}}
+                <a *ngIf="isConnected && cineclub.movie_2.ratingForUser != 10" >Ma note :  {{cineclub.movie_2.ratingForUser}}/6</a>
+                {{cineclub.movie_2.synopsis}}
+            </div>
+            <div>
+                <img [src]="cineclub.movie_3.UrlIMG" />
+                {{cineclub.movie_3.name}} ({{cineclub.movie_3.EN_name}}) {{cineclub.movie_3.year}}
+                <a *ngIf="isConnected && cineclub.movie_3.ratingForUser != 10" >Ma note :  {{cineclub.movie_3.ratingForUser}}/6</a>
+                {{cineclub.movie_3.synopsis}}
+            </div>
+            <div>
+                <img [src]="cineclub.movie_4.UrlIMG" />
+                {{cineclub.movie_4.name}} ({{cineclub.movie_4.EN_name}}) {{cineclub.movie_4.year}}
+                <a *ngIf="isConnected && cineclub.movie_4.ratingForUser != 10" >Ma note :  {{cineclub.movie_4.ratingForUser}}/6</a>
+                {{cineclub.movie_4.synopsis}}
+            </div>
+        </div> 
+    </article>
 </main>
-<p>cineclub-details works!</p>
