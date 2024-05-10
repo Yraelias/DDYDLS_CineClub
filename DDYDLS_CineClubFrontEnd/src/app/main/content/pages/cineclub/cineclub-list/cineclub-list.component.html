@@ -5,10 +5,11 @@
     @for (cineclub of cineclub; track cineclub){
     <article cols="2" rowHeight="4:1" class="blocCineClub">
         <aside>
-        <h1>
+            <button mat-stroked-button color="accent" [routerLink]="['/cineclub',cineclub.id_Cineclub]">
+        <h1  >
             {{cineclub.title}} #{{cineclub.numberOfCineclub}}
         </h1>
-        <mat-icon *ngIf="isConnected" style="color: #FE277E;" >settings</mat-icon>
+    </button>
         <mat-icon *ngIf="isConnected"  style="color: #FE277E;" (click)="openDeletDialog(cineclub.id_Cineclub)" >delete</mat-icon>
             <img *ngIf="cineclub.movie_5 != null " [src]="cineclub.movie_5.UrlIMG" />
         </aside>

@@ -17,7 +17,6 @@ export class CineclubListComponent implements OnInit {
   dataSource : any;
   tmdbmovie!: TMDBMovie;
   result !: Result; 
-  movie : Movie = {id_Movie : 1, name : '', id_Studio : 0, year:0, synopsis : '', rating:{ id_Movie :0, iD_User:0,id_Rating:0,date : new Date, rating : 0,  approbate:0, commentary:"", username:""}, avgRating:0 ,ratingForUser:0 };
   URLimg:string;
   sameDate : boolean = false;
   isConnected:boolean = false;
