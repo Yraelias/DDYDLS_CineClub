@@ -24,7 +24,7 @@ namespace DDYDLS_CineClubLocalModel.Services
 
         public bool Add(Cineclub g)
         {
-            _CineclubRepository.Insert(g.toDal("Add"));
+            _CineclubRepository.Insert(g.ToDal("Add"));
             return true;
         }
 
@@ -35,19 +35,19 @@ namespace DDYDLS_CineClubLocalModel.Services
 
         public IEnumerable<Cineclub> GetAll()
         {
-            return _CineclubRepository.GetAll().Select(g => g.toLocal(_movieRepository));
+            return _CineclubRepository.GetAll().Select(g => g.ToLocal(_movieRepository));
         }
 
         public Cineclub GetOne(int Id)
         {
             Cineclub cineclub = new Cineclub();
-            cineclub = _CineclubRepository.GetOne(Id).toLocal(_movieRepository);
+            cineclub = _CineclubRepository.GetOne(Id).ToLocal(_movieRepository);
             return cineclub;
         }
 
         public void Update(Cineclub g)
         {
-            _CineclubRepository.Update(g.toDal("Add"));
+            _CineclubRepository.Update(g.ToDal("Add"));
         }
     }
 }

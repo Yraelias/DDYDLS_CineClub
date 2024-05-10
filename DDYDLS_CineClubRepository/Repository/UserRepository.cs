@@ -1,5 +1,4 @@
-﻿using ADO_Toolbox;
-using DDYDLS_CineClubDAL.Interfaces;
+﻿using DDYDLS_CineClubDAL.Interfaces;
 using DDYDLS_CineClubDAL.Models;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -9,7 +8,7 @@ using System.Text;
 
 namespace DDYDLS_CineClubDAL.Repository
 {
-    public class UserRepository : BaseRepository, IUserRepository<User>
+    public class UserRepository : CineclubContext, IUserRepository<User>
     {
         private readonly CineclubContext _dbContext;
         public UserRepository(IConfiguration config, CineclubContext dbContext) : base(config)

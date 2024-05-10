@@ -43,7 +43,7 @@ namespace DDYDLS_CineClubLocalModel.Services
         public bool? CheckUser(User u)
         {
             u.Password = u.Password.Sha256();
-            bool? reponse = _userRepository.CheckUser(u.toDal());
+            bool? reponse = _userRepository.CheckUser(u.ToDal());
 
             return reponse;
         }
@@ -60,12 +60,12 @@ namespace DDYDLS_CineClubLocalModel.Services
 
         public IEnumerable<User> GetAll()
         {
-            return _userRepository.GetAll().Select(x => x.toLocal());
+            return _userRepository.GetAll().Select(x => x.ToLocal());
         }
 
         public User GetByEmail(string email)
         {
-            return _userRepository.GetByEmail(email).toLocal();
+            return _userRepository.GetByEmail(email).ToLocal();
         }
 
         public User GetOne(int Id)
@@ -79,14 +79,14 @@ namespace DDYDLS_CineClubLocalModel.Services
             m.Registration_Date = DateTime.Now;
             m.Password = m.Password.Sha256();
 
-            _userRepository.Insert(m.toDal());
+            _userRepository.Insert(m.ToDal());
 
             return true;
         }
 
         public void Update(User m)
         {
-            _userRepository.Update(m.toDal());
+            _userRepository.Update(m.ToDal());
         }
         
     }

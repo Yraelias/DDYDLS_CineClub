@@ -1,5 +1,4 @@
-﻿using ADO_Toolbox;
-using DDYDLS_CineClubDAL.Interfaces;
+﻿using DDYDLS_CineClubDAL.Interfaces;
 using DDYDLS_CineClubDAL.Models;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -10,7 +9,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace DDYDLS_CineClubDAL.Repository
 {
-    public class RatingRepository : BaseRepository, IRatingRepository<Ratings>
+    public class RatingRepository : CineclubContext, IRatingRepository<Ratings>
     {
         private readonly CineclubContext _dbContext;
         public RatingRepository(IConfiguration config, CineclubContext dbContext) : base(config)

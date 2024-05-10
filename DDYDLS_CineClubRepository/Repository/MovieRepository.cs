@@ -1,4 +1,4 @@
-﻿using ADO_Toolbox;
+﻿
 using DDYDLS_CineClubDAL.Interfaces;
 using DDYDLS_CineClubDAL.Models;
 using Microsoft.Extensions.Configuration;
@@ -11,7 +11,7 @@ using static DDYDLS_CineClubDAL.Repository.CineclubContext;
 
 namespace DDYDLS_CineClubDAL.Repository
 {
-    public class MovieRepository : BaseRepository, IMovieRepository<Movie>
+    public class MovieRepository : CineclubContext, IMovieRepository<Movie>
     {
         private readonly CineclubContext _dbContext;
         public MovieRepository(IConfiguration config, CineclubContext dbContext) : base(config)

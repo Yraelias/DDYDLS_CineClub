@@ -30,13 +30,13 @@ namespace DDYDLS_CineClubLocalModel.Services
 
         public IEnumerable<Movie> GetAll()
         {
-            return _MovieRepository.GetAll().Select(g => g.toLocal());
+            return _MovieRepository.GetAll().Select(g => g.ToLocal());
         }
 
         public Movie GetOne(int userId, int Id)
         {
             Movie movie = new Movie();
-            movie = _MovieRepository.GetOne(Id).toLocal(_ratingRepo);
+            movie = _MovieRepository.GetOne(Id).ToLocal(_ratingRepo);
             movie.RatingForUser = _ratingRepo.RatebyIdMovieAndIdUser(Id, userId);
             return movie;
         }
@@ -46,20 +46,20 @@ namespace DDYDLS_CineClubLocalModel.Services
             Movie newMovie = new Movie();
             if(_MovieRepository.GetOnewithTMBD(g.TMDB_ID)  == null)
             {
-                _MovieRepository.Insert(g.toDal());
+                _MovieRepository.Insert(g.ToDal());
             }
-            newMovie = _MovieRepository.GetOnewithTMBD(g.TMDB_ID).toLocal();
+            newMovie = _MovieRepository.GetOnewithTMBD(g.TMDB_ID).ToLocal();
             return newMovie.Id_Movie;
         }
 
         public void Update(Movie g)
         {
-            _MovieRepository.Update(g.toDal());
+            _MovieRepository.Update(g.ToDal());
         }
 
         public Movie GetOnevisitor(int Id)
         {
-            return _MovieRepository.GetOne(Id).toLocal(_ratingRepo);
+            return _MovieRepository.GetOne(Id).ToLocal(_ratingRepo);
         }
     }
 }

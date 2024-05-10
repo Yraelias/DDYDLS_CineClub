@@ -9,7 +9,7 @@ namespace DDYDLS_CineClubLocalModel.Tools
 {
     public static class  LocalMappers
     {
-        public static Models.User toLocal(this dal.User newUser)
+        public static Models.User ToLocal(this dal.User newUser)
         {
             return new Models.User
             {
@@ -21,7 +21,7 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Registration_Date = newUser.Registration_Date
             };
         }
-        public static dal.User toDal (this Models.User newUser)
+        public static dal.User ToDal (this Models.User newUser)
         {
             return new dal.User
             {
@@ -34,7 +34,7 @@ namespace DDYDLS_CineClubLocalModel.Tools
             };
         }
         
-        public static Models.Movie toLocal(this dal.Movie newMovie)
+        public static Models.Movie ToLocal(this dal.Movie newMovie)
         {
             return new Models.Movie
             {
@@ -45,7 +45,7 @@ namespace DDYDLS_CineClubLocalModel.Tools
 
             };
         }
-        public static Models.Movie toLocal(this dal.Movie newMovie, IRatingRepository<dal.Ratings> ratingRepository)
+        public static Models.Movie ToLocal(this dal.Movie newMovie, IRatingRepository<dal.Ratings> ratingRepository)
         {
             return new Models.Movie
             {
@@ -57,7 +57,7 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 TMDB_ID = newMovie.TMDB_ID
             };
         }
-        public static dal.Movie toDal(this Models.Movie newStudio)
+        public static dal.Movie ToDal(this Models.Movie newStudio)
         {
             return new dal.Movie
             {
@@ -67,7 +67,7 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 TMDB_ID = newStudio.TMDB_ID,
             };
         }
-        public static Models.Ratings toLocal(this dal.Ratings newRating)
+        public static Models.Ratings ToLocal(this dal.Ratings newRating)
         {
             if (newRating == null) { return new Models.Ratings(); }
             return new Models.Ratings
@@ -82,7 +82,7 @@ namespace DDYDLS_CineClubLocalModel.Tools
                Username = "Test"
             };
         }
-        public static dal.Ratings toDal(this Models.Ratings newRating)
+        public static dal.Ratings ToDal(this Models.Ratings newRating)
         {
             return new dal.Ratings
             {
@@ -95,15 +95,15 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Approbate = newRating.Approbate
             };
         }
-        public static Models.Cineclub toLocal(this dal.Cineclub newRating, IMovieRepository<dal.Movie> movieRepository)
+        public static Models.Cineclub ToLocal(this dal.Cineclub newRating, IMovieRepository<dal.Movie> movieRepository)
         {
             return new Models.Cineclub
             {
                 Id_Cineclub = newRating.Id_Cineclub,
-                Movie_1 = movieRepository.GetOne(newRating.Id_Movie_1).toLocal(),
-                Movie_2 = movieRepository.GetOne(newRating.Id_Movie_2).toLocal(),
-                Movie_3 = movieRepository.GetOne(newRating.Id_Movie_3).toLocal(),
-                Movie_4 = movieRepository.GetOne(newRating.Id_Movie_4).toLocal(),
+                Movie_1 = movieRepository.GetOne(newRating.Id_Movie_1).ToLocal(),
+                Movie_2 = movieRepository.GetOne(newRating.Id_Movie_2).ToLocal(),
+                Movie_3 = movieRepository.GetOne(newRating.Id_Movie_3).ToLocal(),
+                Movie_4 = movieRepository.GetOne(newRating.Id_Movie_4).ToLocal(),
                 //Movie_5 = movieRepository.GetOne(newRating.Id_Movie_5).toLocal(),
                 NumberOfCineclub = newRating.NumberOfCineclub,
                 Begin = newRating.Begin,
@@ -111,7 +111,7 @@ namespace DDYDLS_CineClubLocalModel.Tools
                 Title = newRating.Title
             };
         }
-        public static dal.Cineclub toDal(this Models.Cineclub newRating, string Add)
+        public static dal.Cineclub ToDal(this Models.Cineclub newRating, string Add)
         {
             return new dal.Cineclub
             {

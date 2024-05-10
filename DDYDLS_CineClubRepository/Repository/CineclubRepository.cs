@@ -1,5 +1,4 @@
-﻿using ADO_Toolbox;
-using DDYDLS_CineClubDAL.Interfaces;
+﻿using DDYDLS_CineClubDAL.Interfaces;
 using DDYDLS_CineClubDAL.Models;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -10,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DDYDLS_CineClubDAL.Repository
 {
-    public class CineclubRepository : BaseRepository, ICineclubRepository<Cineclub>
+    public class CineclubRepository : CineclubContext, ICineclubRepository<Cineclub>
     {
         private readonly CineclubContext _dbContext;
         public CineclubRepository(IConfiguration config, CineclubContext dbContext) : base(config)
@@ -32,7 +31,7 @@ namespace DDYDLS_CineClubDAL.Repository
 
         public IEnumerable<Cineclub> GetAll()
         {
-            return _dbContext.T_Cineclub.ToList();
+            return [.. _dbContext.T_Cineclub];
         }
 
         public Cineclub GetOne(int Id)
