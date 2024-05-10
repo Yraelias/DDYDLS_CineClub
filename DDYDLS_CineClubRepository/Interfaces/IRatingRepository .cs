@@ -20,5 +20,6 @@ namespace DDYDLS_CineClubDAL.Interfaces
         IEnumerable<Ratings> RatingsbyUser(int ID_User);
         IEnumerable<Ratings> RatingsbyUserbyYear(int ID_User, int Month);
         IEnumerable<Ratings> RatingsbyUserbyMonth(int ID_User, int Month, int Year);
+        IEnumerable<Ratings> RatingsForCineclub(int ID_Cineclub);
     }
 }

@@ -105,6 +105,19 @@ namespace DDYDLS_CineClubDAL.Repository
                              .ToList();
         }
 
+        public IEnumerable<Ratings> RatingsForCineclub(int ID_Cineclub)
+        {
+            Cineclub cineclub = _dbContext.T_Cineclub
+                               .Where(cm => cm.Id_Cineclub == ID_Cineclub)
+                               .FirstOrDefault();
+
+            IEnumerable<Ratings> Cineclubrating = _dbContext.T_Rating
+                                .Where(r => r.Id_Movie == cineclub.Id_Movie_1 || r.Id_Movie == cineclub.Id_Movie_2 || 
+                                       r.Id_Movie == cineclub.Id_Movie_3 || r.Id_Movie == cineclub.Id_Movie_4 || r.Id_Movie == cineclub.Id_Movie_5)
+                                .ToList();
+            return Cineclubrating;
+        }
+
 
     }
 }

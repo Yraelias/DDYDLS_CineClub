@@ -49,7 +49,6 @@ namespace DDYDLS_CineClubApi.Controllers
             return BadRequest(e.Message);
             }
         }
-
         // POST api/<Movie>
         [HttpPost]
         public IActionResult Post([FromBody] api.Cineclub Cineclub)

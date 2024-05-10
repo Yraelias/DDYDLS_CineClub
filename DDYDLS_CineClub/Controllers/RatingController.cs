@@ -110,6 +110,18 @@ namespace DDYDLS_CineClubApi.Controllers
                 return BadRequest(e.Message);
             }
         }
+        [HttpGet("cineclub/{id}")]
+        public IActionResult GetRatingsForCineclub(int id)
+        {
+            try
+            {
+                return Ok(_RatingService.RatingsForCineclub(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
         // POST api/<Rating>
         [HttpPost]
         public IActionResult Post([FromBody] api.Rating Rating)
