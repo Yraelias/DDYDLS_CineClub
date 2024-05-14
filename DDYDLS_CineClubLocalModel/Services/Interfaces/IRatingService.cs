@@ -7,8 +7,7 @@ namespace DDYDLS_CineClubLocalModel.Services.Interfaces
     {
         Ratings GetOne(int Id);
         IEnumerable<Ratings> GetAll();
-        void Update(Ratings g);
-        bool AddRating(Ratings g);
+        bool AddOrUpdate(Ratings g);
         bool Delete(int Id);
         IEnumerable<Ratings> GetRatingbyMovie(int MovieID);
         IEnumerable<Ratings> RatingsbyUser(int ID_User);

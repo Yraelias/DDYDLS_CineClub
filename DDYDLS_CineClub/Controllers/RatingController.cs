@@ -128,7 +128,7 @@ namespace DDYDLS_CineClubApi.Controllers
         {
             try
             {
-                _RatingService.AddRating(Rating.toLocal());
+                _RatingService.AddOrUpdate(Rating.toLocal());
                 return Ok();
             }
             catch (Exception e)
@@ -144,7 +144,7 @@ namespace DDYDLS_CineClubApi.Controllers
             try
             {
                 
-                _RatingService.Update(Rating.toLocal());
+                _RatingService.AddOrUpdate(Rating.toLocal());
                 return Ok();
             }
             catch (Exception e)

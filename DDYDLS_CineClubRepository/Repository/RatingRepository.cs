@@ -1,5 +1,6 @@
 ﻿using DDYDLS_CineClubDAL.Interfaces;
 using DDYDLS_CineClubDAL.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -27,10 +28,28 @@ namespace DDYDLS_CineClubDAL.Repository
             return _dbContext.T_Rating.Find(Id);
         }
 
-        public void Insert(Ratings g)
+        public void AddOrUpdate(Ratings g)
         {
-            _dbContext.T_Rating.Add(g);
-            _dbContext.SaveChanges();
+            Ratings existingRating = _dbContext.T_Rating
+            .FirstOrDefault(r => r.ID_User == g.ID_User && r.Id_Movie == g.Id_Movie);
+            if (existingRating != null)
+            {
+                existingRating.Approbate = g.Approbate;
+                existingRating.Rating = g.Rating;
+                existingRating.Commentary = g.Commentary;
+                existingRating.Date = g.Date;
+                //g.Date = existingRating.Date;
+                //g.Id_Rating = existingRating.Id_Rating;
+                //_dbContext.Entry(existingRating).State = EntityState.Modified;
+                //_dbContext.T_Rating.Update(g);
+                _dbContext.SaveChanges();
+            }
+            else
+            {
+                _dbContext.T_Rating.Add(g);
+                _dbContext.SaveChanges();
+            }
+            
         }
 
         public void Update(Ratings g)

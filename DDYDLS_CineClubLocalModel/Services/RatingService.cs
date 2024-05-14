@@ -35,17 +35,12 @@ namespace DDYDLS_CineClubLocalModel.Services
             return _RatingRepository.GetOne(Id).ToLocal();
         }
 
-        public bool AddRating(Ratings g)
+        public bool AddOrUpdate(Ratings g)
         {
             
-            _RatingRepository.Insert(g.ToDal());
+            _RatingRepository.AddOrUpdate(g.ToDal());
 
             return true;
-        }
-
-        public void Update(Ratings g)
-        {
-            _RatingRepository.Update(g.ToDal());
         }
         public IEnumerable<Ratings> GetRatingbyMovie(int MovieId)
         {

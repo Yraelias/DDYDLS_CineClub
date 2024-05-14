@@ -8,7 +8,7 @@ namespace DDYDLS_CineClubDAL.Interfaces
     {
         IEnumerable<Ratings> GetAll();
         Ratings GetOne(int Id);
-        void Insert(Ratings r);
+        void AddOrUpdate(Ratings r);
         void Update(Ratings r);
         bool Delete(int Id);
         public int AvgRate(int iD);
