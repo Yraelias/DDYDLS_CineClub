@@ -6,6 +6,7 @@ import { Movie } from 'src/app/models/movie';
 import { TMDBMovie, Result } from 'src/app/models/tmdbmovie';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { CineclubUpdateComponent } from '../cineclub-update/cineclub-update.component';
 
 @Component({
   selector: 'app-cineclub-list',
@@ -179,8 +180,19 @@ export class CineclubListComponent implements OnInit {
             
           })
           
-          //window.location.reload();
+          window.location.reload();
         } 
+    });
+  }
+
+  openUpdateDialog(id_cineclub : number): void {
+    const dialogRef = this.dialog.open(CineclubUpdateComponent,{
+      data:id_cineclub,
+      width : '90%' 
+    });
+
+    dialogRef.afterClosed().subscribe(result => {          
+          window.location.reload();
     });
   }
 

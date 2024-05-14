@@ -53,6 +53,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { ConfirmationDialogComponent } from './main/content/pages/cineclub/confirmation-dialog/confirmation-dialog.component';
 import { CineclubDetailsComponent } from './main/content/pages/cineclub/cineclub-details/cineclub-details.component';
 import { CommentaryCineclubComponent } from './main/content/pages/cineclub/commentary/commentaryCineclub.component';
+import { CineclubUpdateComponent } from './main/content/pages/cineclub/cineclub-update/cineclub-update.component';
 
 
 const appRoutes: Routes = [
@@ -134,7 +135,8 @@ const appRoutes: Routes = [
         CineclubAddComponent,
         ConfirmationDialogComponent,
         CineclubDetailsComponent,
-        CommentaryCineclubComponent
+        CommentaryCineclubComponent,
+        CineclubUpdateComponent
     ],
     providers: [MovieService, AuthService, AuthGuardService, RatingService,CineclubService,UserService,SharedDataService ],
     bootstrap: [AppComponent],

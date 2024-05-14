@@ -10,6 +10,7 @@
             {{cineclub.title}} #{{cineclub.numberOfCineclub}}
         </h1>
     </button>
+        <mat-icon *ngIf="isConnected"  style="color: #FE277E;" (click)="openUpdateDialog(cineclub.id_Cineclub)" >edit</mat-icon>
         <mat-icon *ngIf="isConnected"  style="color: #FE277E;" (click)="openDeletDialog(cineclub.id_Cineclub)" >delete</mat-icon>
             <img *ngIf="cineclub.movie_5 != null " [src]="cineclub.movie_5.UrlIMG" />
         </aside>

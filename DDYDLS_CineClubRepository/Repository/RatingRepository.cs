@@ -117,7 +117,5 @@ namespace DDYDLS_CineClubDAL.Repository
                                 .ToList();
             return Cineclubrating;
         }
-
-
     }
 }

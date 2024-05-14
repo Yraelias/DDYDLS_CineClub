@@ -39,15 +39,15 @@ namespace DDYDLS_CineClubApi.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-             try
-             {
+            // try
+            // {
                  
             return Ok(_CineclubService.GetOne(id));
-            }
-        catch (Exception e)
-            { 
-            return BadRequest(e.Message);
-            }
+           /// }
+        //catch (Exception e)
+          //  { 
+          //  return BadRequest(e.Message);
+          //  }
         }
         // POST api/<Movie>
         [HttpPost]

@@ -1,6 +1,10 @@
 ﻿using DDYDLS_CineClubDAL.Interfaces;
 using DDYDLS_CineClubDAL.Models;
 using DDYDLS_CineClubDAL.Repository;
+using Microsoft.VisualBasic;
+using System;
+
+
 #pragma warning disable CS8981 // Le nom de type contient uniquement des caractères ascii en minuscules. De tels noms peuvent devenir réservés pour la langue.
 using dal = DDYDLS_CineClubDAL.Models;
 #pragma warning restore CS8981 // Le nom de type contient uniquement des caractères ascii en minuscules. De tels noms peuvent devenir réservés pour la langue.
@@ -100,14 +104,14 @@ namespace DDYDLS_CineClubLocalModel.Tools
             return new Models.Cineclub
             {
                 Id_Cineclub = newRating.Id_Cineclub,
-                Movie_1 = movieRepository.GetOne(newRating.Id_Movie_1).ToLocal(),
-                Movie_2 = movieRepository.GetOne(newRating.Id_Movie_2).ToLocal(),
-                Movie_3 = movieRepository.GetOne(newRating.Id_Movie_3).ToLocal(),
-                Movie_4 = movieRepository.GetOne(newRating.Id_Movie_4).ToLocal(),
-                //Movie_5 = movieRepository.GetOne(newRating.Id_Movie_5).toLocal(),
+                Movie_1 = movieRepository.GetOne(newRating.Id_Movie_1)?.ToLocal(),
+                Movie_2 = movieRepository.GetOne(newRating.Id_Movie_2)?.ToLocal(),
+                Movie_3 = movieRepository.GetOne(newRating.Id_Movie_3)?.ToLocal(),
+                Movie_4 = movieRepository.GetOne(newRating.Id_Movie_4)?.ToLocal(),
+                Movie_5 = newRating.Id_Movie_5.HasValue ? movieRepository.GetOne(newRating.Id_Movie_5.Value)?.ToLocal() : null,
                 NumberOfCineclub = newRating.NumberOfCineclub,
                 Begin = newRating.Begin,
-                //End = newRating.End,
+                End = newRating.End ?? DateTime.MinValue,
                 Title = newRating.Title
             };
         }
@@ -116,11 +120,11 @@ namespace DDYDLS_CineClubLocalModel.Tools
             return new dal.Cineclub
             {
                 Id_Cineclub = newRating.Id_Cineclub,
-                Id_Movie_1 = newRating.Id_Movie_1,
-                Id_Movie_2 = newRating.Id_Movie_2,
-                Id_Movie_3 = newRating.Id_Movie_3,
-                Id_Movie_4 = newRating.Id_Movie_4,
-                Id_Movie_5 = newRating.Id_Movie_5,
+                Id_Movie_1 = newRating.Movie_1.Id_Movie,
+                Id_Movie_2 = newRating.Movie_2.Id_Movie,
+                Id_Movie_3 = newRating.Movie_3.Id_Movie,
+                Id_Movie_4 = newRating.Movie_4.Id_Movie,
+                Id_Movie_5 = newRating.Movie_5.Id_Movie,
                 NumberOfCineclub = newRating.NumberOfCineclub,
                 Begin = newRating.Begin,
                 End = newRating.End,

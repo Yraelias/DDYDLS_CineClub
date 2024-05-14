@@ -41,12 +41,14 @@ namespace DDYDLS_CineClubDAL.Repository
 
         public void Insert(Cineclub g)
         {
+            if (g.Id_Movie_5 == 0) g.Id_Movie_5 = 1;
             _dbContext.T_Cineclub.Update(g);
             _dbContext.SaveChanges();
         }
 
         public void Update(Cineclub g)
         {
+            if (g.Id_Movie_5 == 0) g.Id_Movie_5 = 1;
             _dbContext.T_Cineclub.Update(g);
             _dbContext.SaveChanges();
         }

@@ -29,5 +29,10 @@ export class CineclubService {
     return this.httpClient.delete<Cineclub>(this._bookListUrl+"/"+id_cineclub);
   }
 
-
+  updateCineclub(cineclub: Cineclub) : Observable<Cineclub>{
+    this.cineclub = cineclub;
+    console.log("koio")
+    console.log(cineclub)
+   return this.httpClient.put<Cineclub>(this._bookListUrl+"/"+cineclub.id_Cineclub,cineclub);
+  }
 }
