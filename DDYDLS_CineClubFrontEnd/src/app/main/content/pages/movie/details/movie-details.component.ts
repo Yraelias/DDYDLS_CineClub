@@ -101,7 +101,7 @@ export class MovieDetailsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(data => {
       console.log ("Dialog fermé : "+ data);
-      this.loadOnlyMovie()
+      location.reload();
     });
   }
 
