@@ -1,7 +1,7 @@
 p{
     color: #87FF00;
 }
-h1{
+h1,h2{
     color: #87FF00;
 }
 .pIntro{
@@ -17,6 +17,10 @@ h1{
     box-shadow: 4px 4px 10px 1px #FE277E;
     margin: 2%;
     padding: 1%;
+    height: 20vh;
+}
+img{
+    width: 10%;
 }
 article{
     display: flex;
