@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -15,12 +16,12 @@ namespace DDYDLS_CineClubDAL.Models
         public string Name { get; set; }
         public int Year { get; set; }
         public Ratings Rating { get; set; }
-        
+        [Required]
         public int TMDB_ID { get; set; }
 
         public Movie()
         {
-            Id_Movie = 0; // Initialisation de l'ID du film à zéro par défaut
+            Id_Movie = 1; // Initialisation de l'ID du film à zéro par défaut
         }
     }
 

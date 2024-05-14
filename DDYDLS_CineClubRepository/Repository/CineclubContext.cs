@@ -44,6 +44,9 @@ namespace DDYDLS_CineClubDAL.Repository
                     .HasKey(c => c.Id_Cineclub);
                 modelBuilder.Entity<Movie>()
                     .HasKey(m => m.Id_Movie);
+            modelBuilder.Entity<Movie>()
+                .HasIndex(m => m.TMDB_ID)
+                .IsUnique();
                 modelBuilder.Entity<Ratings>()
                     .HasKey(r => r.Id_Rating);
                 modelBuilder.Entity<User>()
