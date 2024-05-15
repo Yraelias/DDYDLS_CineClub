@@ -15,7 +15,7 @@ export class SearchMovieComponent implements OnInit  {
   movieService : MovieService;
   result !: Result; 
   selector : number = 0;
-  URLimg:any = "https://image.tmdb.org/t/p/w500//gEU2QniE6E77NI6lCU6MxlNBvIx.jpg";
+  URLimg:any = 'assets/icons/NotFound.webp';
   maxResult:number =19;
 
   constructor( public dialogRef: MatDialogRef<MovieAddComponent>, @Inject(MAT_DIALOG_DATA) public datas: any, _movieservice : MovieService) {
@@ -33,7 +33,7 @@ export class SearchMovieComponent implements OnInit  {
         {
           console.log(data);
           this.result = data;
-          this.URLimg = "https://image.tmdb.org/t/p/w500/" + this.result.results[this.selector].poster_path;
+          if(this.result.results[this.selector].poster_path) this.URLimg = "https://image.tmdb.org/t/p/w500/" + this.result.results[this.selector].poster_path;
           if(this.result.results.length < 20) this.maxResult = this.result.results.length -1;
         },
       error: (error) => {console.log(error)}
@@ -42,11 +42,13 @@ export class SearchMovieComponent implements OnInit  {
 
   PreviousMovie() :void{
     this.selector = this.selector -1;
-    this.URLimg = "https://image.tmdb.org/t/p/w500/" + this.result.results[this.selector].poster_path;
+    if(!this.result.results[this.selector].poster_path) this.URLimg = 'assets/icons/NotFound.webp';
+    else this.URLimg = "https://image.tmdb.org/t/p/w500/" + this.result.results[this.selector].poster_path;
   }
   NextMovie() :void{
     this.selector = this.selector +1;
-    this.URLimg = "https://image.tmdb.org/t/p/w500/" + this.result.results[this.selector].poster_path;
+    if(!this.result.results[this.selector].poster_path) this.URLimg = 'assets/icons/NotFound.webp';
+    else this.URLimg = "https://image.tmdb.org/t/p/w500/" + this.result.results[this.selector].poster_path;
   }
 
   SelectMovie():number{

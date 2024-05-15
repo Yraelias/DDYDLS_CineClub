@@ -53,16 +53,16 @@ namespace DDYDLS_CineClubApi.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] api.Cineclub Cineclub)
         {
-            Cineclub cineclub = new Cineclub();
-            try
-            {
+          //  Cineclub cineclub = new Cineclub();
+          //  try
+         //   {
                 _CineclubService.Add(Cineclub.toLocal("Add"));
                 return Ok();
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
+          //  }
+//catch (Exception e)
+           // {
+            //    return BadRequest(e.Message);
+            //}
         }
 
         // PUT api/<User>/5

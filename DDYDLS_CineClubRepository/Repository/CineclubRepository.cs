@@ -42,7 +42,7 @@ namespace DDYDLS_CineClubDAL.Repository
         public void Insert(Cineclub g)
         {
             if (g.Id_Movie_5 == 0) g.Id_Movie_5 = 1;
-            _dbContext.T_Cineclub.Update(g);
+            _dbContext.T_Cineclub.Add(g);
             _dbContext.SaveChanges();
         }
 
