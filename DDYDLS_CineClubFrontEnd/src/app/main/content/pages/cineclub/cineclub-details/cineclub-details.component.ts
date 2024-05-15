@@ -16,7 +16,7 @@ export class CineclubDetailsComponent implements OnInit {
   cineclubService : CineclubService
   sameDate : boolean = false;
   result !: Result; 
-  URLimg:string = "https://image.tmdb.org/t/p/w500//gEU2QniE6E77NI6lCU6MxlNBvIx.jpg";
+  URLimg:any = 'assets/icons/NotFound.webp';
   isConnected : boolean
 
   constructor(_cineclubService : CineclubService,private movie_service : MovieService, private activedRoute : ActivatedRoute) {
@@ -51,13 +51,12 @@ export class CineclubDetailsComponent implements OnInit {
       next:(data :Result) =>
       {
         this.result = data;
-        this.URLimg = "https://image.tmdb.org/t/p/w500/" + this.result.results[0].poster_path;
-        
         while(!this.sameDate && a < this.result.results.length)
           {
             if(this.cineclub.movie_1.year == parseInt(this.result.results[a].release_date.split('-')[0], 10))
               {
-                this.cineclub.movie_1.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
+                if (this.result.results[a].poster_path != null) this.cineclub.movie_1.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;
+                else this.cineclub.movie_1.UrlIMG = this.URLimg;       
                 this.cineclub.movie_1.synopsis =  this.result.results[a].overview;
                 this.cineclub.movie_1.EN_name = this.result.results[a].original_title;
                 this.sameDate = true;
@@ -74,14 +73,13 @@ export class CineclubDetailsComponent implements OnInit {
     this.movie_service.getTMDBMovie(titlemovie).subscribe({
       next:(data :Result) =>
       {
-        this.result = data;
-        this.URLimg = "https://image.tmdb.org/t/p/w500/" + this.result.results[0].poster_path;
-        
+        this.result = data;        
         while(!this.sameDate && a < this.result.results.length)
           {
             if(this.cineclub.movie_2.year == parseInt(this.result.results[a].release_date.split('-')[0], 10))
               {
-                this.cineclub.movie_2.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
+                if (this.result.results[a].poster_path != null) this.cineclub.movie_2.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;
+                else this.cineclub.movie_2.UrlIMG = this.URLimg;               
                 this.cineclub.movie_2.synopsis =  this.result.results[a].overview;
                 this.cineclub.movie_2.EN_name = this.result.results[a].original_title;
                 this.sameDate = true;
@@ -105,6 +103,8 @@ export class CineclubDetailsComponent implements OnInit {
           {
             if(this.cineclub.movie_3.year == parseInt(this.result.results[a].release_date.split('-')[0], 10))
               {
+                if (this.result.results[a].poster_path != null) this.cineclub.movie_3.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;
+                else this.cineclub.movie_3.UrlIMG = this.URLimg;       
                 this.cineclub.movie_3.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
                 this.cineclub.movie_3.synopsis =  this.result.results[a].overview;
                 this.cineclub.movie_3.EN_name = this.result.results[a].original_title;
@@ -129,7 +129,8 @@ export class CineclubDetailsComponent implements OnInit {
           {
             if(this.cineclub.movie_4.year == parseInt(this.result.results[a].release_date.split('-')[0], 10))
               {
-                this.cineclub.movie_4.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
+                if (this.result.results[a].poster_path != null) this.cineclub.movie_4.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;
+                else this.cineclub.movie_4.UrlIMG = this.URLimg;
                 this.cineclub.movie_4.synopsis =  this.result.results[a].overview;
                 this.cineclub.movie_4.EN_name = this.result.results[a].original_title;
                 this.sameDate = true;

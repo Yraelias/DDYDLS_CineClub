@@ -38,10 +38,6 @@ namespace DDYDLS_CineClubDAL.Repository
                 existingRating.Rating = g.Rating;
                 existingRating.Commentary = g.Commentary;
                 existingRating.Date = g.Date;
-                //g.Date = existingRating.Date;
-                //g.Id_Rating = existingRating.Id_Rating;
-                //_dbContext.Entry(existingRating).State = EntityState.Modified;
-                //_dbContext.T_Rating.Update(g);
                 _dbContext.SaveChanges();
             }
             else
