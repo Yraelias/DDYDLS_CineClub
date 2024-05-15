@@ -15,11 +15,6 @@ export class RatingService {
   constructor( private httpClient: HttpClient) { }
   
   addRatingForMovie(iD_User : number, Id_Movie : number, rating : number, commentary:string, approbate : number ) : Observable<Rating> {
-    console.log(iD_User)
-    console.log(Id_Movie)
-    console.log(rating)
-    console.log(this.today)
-    
     return this.httpClient.post<Rating>(this._Url  , {
       iD_User : iD_User,
       Id_Movie : Id_Movie,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, AbstractControl, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { User } from 'src/app/models/user';
@@ -23,9 +23,10 @@ export class RegisterComponent implements OnInit {
     this.loginFG = this._builder.group({
       username : ['',Validators.required],
       email:['',[Validators.email, Validators.required]],
-      newpassword : ['',Validators.required],
+      newpassword : ['', [Validators.required, passwordValidator()]],
       newpassword2 : ['',Validators.required]
     });
+    
   }
 
   onSubmit() {
@@ -57,3 +58,30 @@ export class RegisterComponent implements OnInit {
 }
 
 }
+
+
+
+export function passwordValidator(): ValidatorFn {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    const value: string = control.value;
+    if (!value) {
+      return null; // Si aucune valeur n'est fournie, considérez-la comme valide (peut être facultatif)
+    }
+
+    // Regex pour vérifier la présence d'une majuscule, d'une minuscule et d'un chiffre
+    const upperCaseRegex = /[A-Z]/;
+    const lowerCaseRegex = /[a-z]/;
+    const digitRegex = /[0-9]/;
+
+    if (
+      !upperCaseRegex.test(value) ||
+      !lowerCaseRegex.test(value) ||
+      !digitRegex.test(value) ||
+      value.length < 8
+    ) {
+      return { passwordRequirements: true }; // Renvoie une erreur si les exigences ne sont pas remplies
+    }
+    return null; // Le mot de passe est valide
+  };
+}
+
