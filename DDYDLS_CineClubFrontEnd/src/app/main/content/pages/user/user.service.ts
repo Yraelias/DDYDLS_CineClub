@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { title } from 'process';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/models/user';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { User } from 'src/app/models/user';
 export class UserService {
 
   public user : User = new User
-  private _Url = 'https://localhost:44379/api/user';
+  private _Url = environment.apiurl + '/api/user';
   constructor(private httpClient: HttpClient) { }
   updateUsername(iD_User : number, username : string) : Observable<any>{
     console.log("Je change le pseudo en " +username )
