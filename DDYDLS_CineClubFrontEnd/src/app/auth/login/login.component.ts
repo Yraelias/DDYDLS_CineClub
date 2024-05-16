@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
 
 
   loginFG : FormGroup 
+  loginError : string
 
   constructor(
     private _builder : FormBuilder,
@@ -49,7 +50,7 @@ export class LoginComponent implements OnInit {
             else { console.log("Erreur de log"), this._router.navigate(['/login']);}
             
           },
-          error : (error) => {console.log(error)},
+          error : (error) => {console.log(error), this.loginError = error.error.message},
           
     })   
     }

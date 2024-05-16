@@ -30,7 +30,7 @@ namespace DDYDLS_CineClubApi.Controllers
 
             if (user.ID_User == 0)
             {
-                return BadRequest(new { message = "Utilisateur inexistant !" });
+                return BadRequest(new { message = "Erreur d'authentification !" });
             }
             else
             {

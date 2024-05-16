@@ -14,13 +14,14 @@
         <mat-form-field appearance="fill">
             <mat-label>Mot de Passe</mat-label> 
             <input type="password" formControlName="newpassword" matInput>
-            <mat-error >Le mot de passe est requis</mat-error>
-        </mat-form-field>
+            <mat-error *ngIf="loginFG.get('newpassword')?.hasError('required')">Le mot de passe est requis</mat-error>
+            <mat-error *ngIf="loginFG.get('newpassword')?.hasError('passwordRequirements')">Le mot de passe doit contenir au moins une lettre majuscule, une lettre minuscule, un chiffre et avoir une longueur d'au moins 8 caractères.</mat-error>
+            </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Mot de passe</mat-label> 
             <input type="password" formControlName="newpassword2" matInput>
             <mat-error >Veuillez confirmer le mot de passe</mat-error>
-            <div *ngIf="loginFG.hasError('passwordMismatch')" >  <mat-error >Les mots de passe ne correspondent pas</mat-error></div>
+            <mat-error *ngIf="loginFG.get('newpassword2')?.hasError('required')">Veuillez confirmer le mot de passe</mat-error>
         </mat-form-field>
         <button mat-raised-button style="color: #87FF00; background-color: #242423;">S'inscrire</button>
     </form>

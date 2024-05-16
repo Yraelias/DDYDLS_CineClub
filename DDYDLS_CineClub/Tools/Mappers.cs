@@ -59,61 +59,6 @@ namespace DDYDLS_CineClubApi.Tools
                 IsAdministrator = newUser.IsAdministrator
             };
         }
-        public static model.Genre toLocal(this api.Genre newGenre)
-        {
-            return new model.Genre
-            {
-                ID_Genre = newGenre.ID_Genre,
-                Name = newGenre.Name
-            };
-        }
-
-        public static api.Genre toApi(this model.Genre newGenre)
-        {
-            return new api.Genre
-            {
-                ID_Genre = newGenre.ID_Genre,
-                Name = newGenre.Name
-            };
-        }
-        public static model.Person toLocal(this api.Person newPerson)
-        {
-            return new model.Person
-            {
-                Id_Person = newPerson.Id_Person, 
-                Name = newPerson.Name,
-                Country = newPerson.Country,
-                FirstName = newPerson.FirstName
-            };
-        }
-
-        public static api.Person toApi(this model.Person newPerson)
-        {
-            return new api.Person
-            {
-                Id_Person = newPerson.Id_Person,
-                Name = newPerson.Name,
-                Country = newPerson.Country,
-                FirstName = newPerson.FirstName
-            };
-        }
-        public static model.Role toLocal(this api.Role newRole)
-        {
-            return new model.Role
-            {
-                ID_Role = newRole.ID_Role,
-                Name = newRole.Name
-            };
-        }
-
-        public static api.Role toApi(this model.Role newRole)
-        {
-            return new api.Role
-            {
-                ID_Role = newRole.ID_Role,
-                Name = newRole.Name
-            };
-        }
         public static model.Movie toLocal(this api.Movie newMovie)
         {
             return new model.Movie
@@ -136,36 +81,22 @@ namespace DDYDLS_CineClubApi.Tools
             };
         }
 
-        public static model.Rating toLocal(this api.Rating newMovie)
+        public static model.Ratings toLocal(this api.Rating newMovie)
         {
-            return new model.Rating
+            return new model.Ratings
             {
                 Id_Movie = newMovie.Id_Movie,
                 Id_Rating = newMovie.Id_Rating,
                 ID_User = newMovie.ID_User, 
-                Ratings = newMovie.Ratings,
+                Rating = newMovie.Ratings,
                 Date = newMovie.Date ,
                 Commentary = newMovie.Commentary,
                 Approbate = newMovie.Approbate,
                 Username = newMovie.Username,
     };
         }
-        public static api.Rating toApi(this model.Rating newMovie)
-        {
-            return new api.Rating
-            {
-                Id_Movie = newMovie.Id_Movie,
-                Id_Rating = newMovie.Id_Rating,
-                ID_User = newMovie.ID_User,
-                Ratings = newMovie.Ratings,
-                Date = newMovie.Date,
-                Commentary = newMovie.Commentary,
-                Approbate = newMovie.Approbate,
-                Username = newMovie.Username,
-            };
-        }
 
-        public static model.Cineclub toLocal(this api.Cineclub newCineclub)   
+        public static model.Cineclub toLocal(this api.Cineclub newCineclub)
         {
             return new model.Cineclub
             {
@@ -181,22 +112,26 @@ namespace DDYDLS_CineClubApi.Tools
                 Title = newCineclub.Title
             };
         }
-        public static api.Cineclub toApi(this model.Cineclub newCineclub)
+        public static model.Cineclub toLocal(this api.Cineclub newCineclub, string Add)   
         {
-            return new api.Cineclub
+            return new model.Cineclub
             {
                 Id_Cineclub = newCineclub.Id_Cineclub,
-                Movie_1 = newCineclub.Movie_1.toApi(),
-                Movie_2 = newCineclub.Movie_2.toApi(),
-                Movie_3 = newCineclub.Movie_3.toApi(),
-                Movie_4 = newCineclub.Movie_4.toApi(),
-                Movie_5 = newCineclub.Movie_5.toApi(),
+                Movie_1 = new model.Movie(),
+                Movie_2 = new model.Movie(),
+                Movie_3 = new model.Movie(),
+                Movie_4 = new model.Movie(),
+                Movie_5 = new model.Movie(),
+                Id_Movie_1 = newCineclub.Id_Movie_1,
+                Id_Movie_2 = newCineclub.Id_Movie_2,
+                Id_Movie_3 = newCineclub.Id_Movie_3,
+                Id_Movie_4 = newCineclub.Id_Movie_4,
+                Id_Movie_5 = newCineclub.Id_Movie_5,
                 NumberOfCineclub = newCineclub.NumberOfCineclub,
                 Begin = newCineclub.Begin,
                 End = newCineclub.End,
                 Title = newCineclub.Title
             };
         }
-
     }
 }

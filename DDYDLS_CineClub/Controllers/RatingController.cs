@@ -110,13 +110,25 @@ namespace DDYDLS_CineClubApi.Controllers
                 return BadRequest(e.Message);
             }
         }
+        [HttpGet("cineclub/{id}")]
+        public IActionResult GetRatingsForCineclub(int id)
+        {
+            try
+            {
+                return Ok(_RatingService.RatingsForCineclub(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
         // POST api/<Rating>
         [HttpPost]
         public IActionResult Post([FromBody] api.Rating Rating)
         {
             try
             {
-                _RatingService.AddRating(Rating.toLocal());
+                _RatingService.AddOrUpdate(Rating.toLocal());
                 return Ok();
             }
             catch (Exception e)
@@ -132,7 +144,7 @@ namespace DDYDLS_CineClubApi.Controllers
             try
             {
                 
-                _RatingService.Update(Rating.toLocal());
+                _RatingService.AddOrUpdate(Rating.toLocal());
                 return Ok();
             }
             catch (Exception e)

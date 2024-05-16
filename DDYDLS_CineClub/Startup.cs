@@ -12,11 +12,14 @@ using DDYDLS_CineClubLocalModel.Services.Interfaces ;
 using DDYDLS_CineClubLocalModel.Services;
 using DDYDLS_CineClubApi.Services;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace DDYDLS_CineClub
 {
     public class Startup
     {
+        
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -32,19 +35,14 @@ namespace DDYDLS_CineClub
 
             #region Repository
             services.AddScoped<IUserRepository<User>, UserRepository>();
-            services.AddScoped<IGenreRepository<Genre>, GenreRepository>();
-            services.AddScoped<IPersonRepository<Person>, PersonRepository>();
-            services.AddScoped<IRoleRepository<Role>, RoleRepository>();
             services.AddScoped<IMovieRepository<Movie>, MovieRepository>();
-            services.AddScoped<IRatingRepository<Rating>, RatingRepository>();
+            services.AddScoped<IRatingRepository<Ratings>, RatingRepository>();
             services.AddScoped<ICineclubRepository<Cineclub>, CineclubRepository>();
+            services.AddDbContext<CineclubContext>(options => options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
             #endregion
 
             #region Services
             services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IUserService, UserService>();
-            services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IGenreService, GenreService>();
-            services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IPersonService, PersonService>();
-            services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IRoleService, RoleService>();
             services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IMovieService,MovieService>();
             services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.IRatingService, RatingService>();
             services.AddScoped<DDYDLS_CineClubLocalModel.Services.Interfaces.ICineclubService, CineclubService>();
@@ -90,11 +88,13 @@ namespace DDYDLS_CineClub
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, CineclubContext cineclubContext )
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                cineclubContext.Database.EnsureCreated();
+                Console.WriteLine("Connexion à la base de données réussie !");
             }
             else
             {
@@ -102,7 +102,7 @@ namespace DDYDLS_CineClub
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            
             app.UseHttpsRedirection();
 
             app.UseRouting();

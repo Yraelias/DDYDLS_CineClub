@@ -5,14 +5,14 @@ namespace DDYDLS_CineClubLocalModel.Services.Interfaces
 {
     public interface IRatingService
     {
-        Rating GetOne(int Id);
-        IEnumerable<Rating> GetAll();
-        void Update(Rating g);
-        bool AddRating(Rating g);
+        Ratings GetOne(int Id);
+        IEnumerable<Ratings> GetAll();
+        bool AddOrUpdate(Ratings g);
         bool Delete(int Id);
-        IEnumerable<Rating> GetRatingbyMovie(int MovieID);
-        IEnumerable<Rating> RatingsbyUser(int ID_User);
-        IEnumerable<Rating> RatingsbyUserbyYear(int ID_User, int Year);
-        IEnumerable<Rating> RatingsbyUserbyMonth(int ID_User, int Month, int Year);
+        IEnumerable<Ratings> GetRatingbyMovie(int MovieID);
+        IEnumerable<Ratings> RatingsbyUser(int ID_User);
+        IEnumerable<Ratings> RatingsbyUserbyYear(int ID_User, int Year);
+        IEnumerable<Ratings> RatingsbyUserbyMonth(int ID_User, int Month, int Year);
+        IEnumerable<Ratings> RatingsForCineclub(int ID_Cineclub);
     }
 }

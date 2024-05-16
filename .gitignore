@@ -13,3 +13,4 @@ bin/
 .angular/
 node_modules/
 .vscode/
+appSettings.json

@@ -13,11 +13,11 @@ namespace DDYDLS_CineClubDAL.Interfaces
         bool Delete(int Id);
         bool Desactive(int Id);
         User GetByEmail(string email);
-        bool checkIfOrganisator(int Id);
-        bool checkIfPlayer(int Id);
+        bool CheckIfOrganisator(int Id);
+        bool CheckIfPlayer(int Id);
 
-        bool changePassword(int Id, string password);
-        bool changeUsername(int Id, string username);
+        bool ChangePassword(int Id, string password);
+        bool ChangeUsername(int Id, string username);
 
     }
 }

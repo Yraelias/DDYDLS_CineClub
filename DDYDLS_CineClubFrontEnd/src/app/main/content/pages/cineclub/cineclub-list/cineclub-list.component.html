@@ -1,28 +1,35 @@
 
-@for (cineclub of cineclub; track cineclub){
 
 <main>
+    <button mat-stroked-button color="accent"  *ngIf="isConnected"  [routerLink]="['add']"> Ajouter un cinéclub</button>
+    @for (cineclub of cineclub; track cineclub){
     <article cols="2" rowHeight="4:1" class="blocCineClub">
-        <h1>
-            {{cineclub.title}}
+        <aside>
+            <button mat-stroked-button color="accent" [routerLink]="['/cineclub',cineclub.id_Cineclub]">
+        <h1  >
+            {{cineclub.title}} #{{cineclub.numberOfCineclub}}
         </h1>
-        <article class="blocFilms">
+    </button>
+        <mat-icon *ngIf="isConnected"  style="color: #FE277E;" (click)="openUpdateDialog(cineclub.id_Cineclub)" >edit</mat-icon>
+        <mat-icon *ngIf="isConnected"  style="color: #FE277E;" (click)="openDeletDialog(cineclub.id_Cineclub)" >delete</mat-icon>
+            <img *ngIf="cineclub.movie_5.id_Movie != 1 " [src]="cineclub.movie_5.UrlIMG" />
+        </aside>
+        <div class="blocFilms">
             <div>
                 <img [src]="cineclub.movie_1.UrlIMG" />
             </div>
             <div>
                 <img [src]="cineclub.movie_2.UrlIMG" />
             </div>
-            
             <div>
                 <img [src]="cineclub.movie_3.UrlIMG" />
             </div>
-                <div>
-                    <img [src]="cineclub.movie_4.UrlIMG" />
+            <div>
+                <img [src]="cineclub.movie_4.UrlIMG" />
             </div>
-        </article> 
-        
+        </div> 
     </article>
+    }
 </main>
-}
+
 

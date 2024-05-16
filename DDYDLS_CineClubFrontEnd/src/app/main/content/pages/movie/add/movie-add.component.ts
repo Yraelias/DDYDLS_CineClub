@@ -19,7 +19,7 @@ export class MovieAddComponent implements OnInit {
   moviename : string 
   result : any
   selector : number
-  URLimg : string
+  URLimg : string = 'assets/icons/NotFound.webp'
   movieService : MovieService
   isConnected:boolean = false;
   errorSnackBar : MatSnackBar;
@@ -45,7 +45,8 @@ export class MovieAddComponent implements OnInit {
     dialogRef.afterClosed().subscribe(Resul => {
       console.log('The dialog was closed');
       this.result = Resul;
-      this.URLimg = "https://image.tmdb.org/t/p/w500"+ this.result.poster_path;
+      console.log(this.result.poster_path)
+      if(this.result.poster_path) this.URLimg = "https://image.tmdb.org/t/p/w500"+ this.result.poster_path;
       if(this.result != null) this.choose = true;
       console.log(this.result);
     });

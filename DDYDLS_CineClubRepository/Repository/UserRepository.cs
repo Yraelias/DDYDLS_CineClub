@@ -1,7 +1,5 @@
-﻿using ADO_Toolbox;
-using DDYDLS_CineClubDAL.Interfaces;
+﻿using DDYDLS_CineClubDAL.Interfaces;
 using DDYDLS_CineClubDAL.Models;
-using DAL.Tools;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -10,27 +8,22 @@ using System.Text;
 
 namespace DDYDLS_CineClubDAL.Repository
 {
-    public class UserRepository : BaseRepository, IUserRepository<User>
+    public class UserRepository : CineclubContext, IUserRepository<User>
     {
-        public UserRepository(IConfiguration config) : base(config)
-        { }
+        private readonly CineclubContext _dbContext;
+        public UserRepository(IConfiguration config, CineclubContext dbContext) : base(config)
+        {
+            _dbContext = dbContext;
+        }
         public bool? CheckUser(User u)
         {
-            string Query = "SELECT ID_User FROM [T_User] WHERE Email = @email AND Password = @pass";
-            Command cmd = new Command(Query);
-            cmd.AddParameter("email", u.Email);
-
-            cmd.AddParameter("pass", u.Password);
-
-
-            int Id = Convert.ToInt32(_connection.ExecuteScalar(cmd));
-
-            if (Id > 0)
+           var user = _dbContext.T_User.FirstOrDefault(u => u.Email == u.Email && u.Password == u.Password);
+            if (user != null)
             {
-                Command checkActive = new Command("SELECT ID_User FROM [T_User] WHERE ID_User = " + Id + " AND IsActive = 1");
-
-
-                if (_connection.ExecuteScalar(checkActive) != null) return true;
+                if (user.IsActive)
+                {
+                    return true;
+                }
                 else return false;
             }
             else
@@ -41,37 +34,23 @@ namespace DDYDLS_CineClubDAL.Repository
 
         public IEnumerable<User> GetAll()
         {
-            Command cmd = new Command("SELECT * FROM [T_User]");
-            return _connection.ExecuteReader(cmd, Converters.UserConvert);
+           return _dbContext.T_User.ToList();
         }
 
         public User GetByEmail(string email)
         {
-            Command cmd = new Command("SELECT * FROM [T_User] WHERE Email = @email");
-            cmd.AddParameter("email", email);
-            return _connection.ExecuteReader(cmd, Converters.UserConvert).FirstOrDefault();
+            return _dbContext.T_User.First(u => u.Email == email);
         }
 
         public User GetOne(int Id)
         {
-            Command cmd = new Command("SELECT * FROM [T_User] WHERE ID_User = @Id");
-            cmd.AddParameter("Id", Id);
-            return _connection.ExecuteReader(cmd, Converters.UserConvert).FirstOrDefault();
+            return _dbContext.T_User.Find(Id);
         }
 
         public void Insert(User u)
         {
-            //Command cmd = new Command("INSERT INTO [dbo].[T_User] ([Login],[Password],[Email],[UserName],[Language],[Country],[isActive],[Registration_Date],[IsAdministrator],[IsModerator]) VALUES (@Login, @Password, @Email, @UserName, @Language, @Country, @isActive, @Registration_Date, @IsAdministrator, @IsModerator)");
-            Command cmd = new Command("INSERT INTO [dbo].[T_User] ([Email], [Password],[UserName],[ID_UserRole],[IsActive], [Registration_Date]) VALUES (@Email, @Password, @UserName, @UserRole, @isActive, @Registration_Date)");
-            u.Login = u.Email;
-            cmd.AddParameter("Login", u.Login);
-            cmd.AddParameter("Password", u.Password);
-            cmd.AddParameter("Email", u.Email);
-            if (u.Username != null) cmd.AddParameter("UserName", u.Username); else cmd.AddParameter("Username", "");
-            cmd.AddParameter("UserRole", u.UserRole );
-            cmd.AddParameter("isActive", 1);
-            cmd.AddParameter("Registration_Date", u.Registration_Date);
-            _connection.ExecuteNonQuery(cmd);
+            _dbContext.Add(u);
+            _dbContext.SaveChanges();
         }
 
         public void SetAdmin(int Id)
@@ -81,52 +60,82 @@ namespace DDYDLS_CineClubDAL.Repository
 
         public void Update(User u)
         {
-            Command cmd = new Command("UPDATE [dbo].[T_User] SET[Login] = @Login,[Password] = @Password,[Email] = @Email,[UserName] = @UserName,[Language] = @Language" +
-                ",[Country] = @Country WHERE ID_User = @Id");
-            cmd.AddParameter("Login", u.Login);
-            cmd.AddParameter("Password", u.Password);
-            cmd.AddParameter("Email", u.Email);
-            if (u.Username != null) cmd.AddParameter("UserName", u.Username); else cmd.AddParameter("Username", "");
-            if (u.Language != null) cmd.AddParameter("Language", u.Language); else cmd.AddParameter("Language", "");
-            if (u.Country != null) cmd.AddParameter("Country", u.Country); else cmd.AddParameter("Country", "");
-            cmd.AddParameter("Id", u.ID_User);
-            _connection.ExecuteNonQuery(cmd);
+            _dbContext.Update(u);
+            _dbContext.SaveChanges();
         }
         public bool Delete(int iD)
         {
-            Command cmd = new Command("DELETE FROM [dbo].[T_User] WHERE ID_User = @Id AND isActive = 0");
-            cmd.AddParameter("Id", iD);
-            return _connection.ExecuteNonQuery(cmd) == 1;
+            var userToDelete = _dbContext.T_User.Find(iD);
+            if (userToDelete != null)
+            {
+                _dbContext.T_User.Remove(userToDelete);
+                _dbContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public bool DesactiveUser(int Id)
         {
-            Command cmd = new Command("UPDATE [dbo].[T_User] SET[isActive] = 0  WHERE ID_User = @Id");
-            cmd.AddParameter("Id", Id);
-            return _connection.ExecuteNonQuery(cmd) == 1;
+            var user = _dbContext.T_User.Find(Id);
+            if (user != null)
+            {
+                user.IsActive = false; 
+                _dbContext.SaveChanges(); 
+                return true;
+            }
+            else
+            {
+                return false; 
+            }
         }
 
         public bool ActiveUser(int Id)
         {
-            Command cmd = new Command("UPDATE [dbo].[T_User] SET [isActive] = 1  WHERE ID_User = @Id");
-            cmd.AddParameter("Id", Id);
-            return _connection.ExecuteNonQuery(cmd) == 1;
+            var user = _dbContext.T_User.Find(Id);
+            if (user != null)
+            {
+                user.IsActive = true;
+                _dbContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public bool changePassword(int Id, string password)
         {
-            Command cmd = new Command("UPDATE [dbo].[T_User] SET [Password] = @Pass  WHERE ID_User = @Id");
-            cmd.AddParameter("Id", Id);
-            cmd.AddParameter("Pass", password);
-            return _connection.ExecuteNonQuery(cmd) == 1;
+            var user = _dbContext.T_User.Find(Id);
+            if (user != null)
+            {
+                user.Password = password;
+                _dbContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public bool changeUsername(int Id, string username)
         {
-            Command cmd = new Command("UPDATE [dbo].[T_User] SET [Username] = @Username  WHERE ID_User = @Id");
-            cmd.AddParameter("Id", Id);
-            cmd.AddParameter("Username", username);
-            return _connection.ExecuteNonQuery(cmd) == 1;
+            var user = _dbContext.T_User.Find(Id);
+            if (user != null)
+            {
+                user.Username = username;
+                _dbContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
