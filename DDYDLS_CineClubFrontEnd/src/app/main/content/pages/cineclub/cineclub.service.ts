@@ -11,7 +11,7 @@ export class CineclubService {
 
   public cineclubList : Cineclub[] = []
   public cineclub : Cineclub = new Cineclub();
-  private _cineclubUrl = environment.apiurl + '/api/cineclub/';
+  private _cineclubUrl = environment.apiurl + '/api/cineclub';
   constructor(private httpClient: HttpClient) { }
 
   getCineclub() : Observable<Cineclub[]> {
