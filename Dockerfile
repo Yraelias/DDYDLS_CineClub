@@ -2,16 +2,15 @@
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
+EXPOSE 8083
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
+COPY ["ADO_Toolbox/ADO_Toolbox.csproj", "ADO_Toolbox/"]
 COPY ["DDYDLS_CineClub/DDYDLS_CineClubApi.csproj", "DDYDLS_CineClub/"]
 COPY ["DDYDLS_CineClubLocalModel/DDYDLS_CineClubLocalModel.csproj", "DDYDLS_CineClubLocalModel/"]
 COPY ["DDYDLS_CineClubRepository/DDYDLS_CineClubDAL.csproj", "DDYDLS_CineClubRepository/"]
-COPY ["ADO Toolbox/ADO Toolbox.csproj", "ADO Toolbox/"]
 RUN dotnet restore "./DDYDLS_CineClub/DDYDLS_CineClubApi.csproj"
 COPY . .
 WORKDIR "/src/DDYDLS_CineClub"
