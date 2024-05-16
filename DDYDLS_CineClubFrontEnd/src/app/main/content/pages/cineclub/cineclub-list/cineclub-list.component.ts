@@ -4,6 +4,9 @@ import { CineclubService } from '../cineclub.service';
 import { MovieService } from '../../movie.service';
 import { Movie } from 'src/app/models/movie';
 import { TMDBMovie, Result } from 'src/app/models/tmdbmovie';
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { CineclubUpdateComponent } from '../cineclub-update/cineclub-update.component';
 
 @Component({
   selector: 'app-cineclub-list',
@@ -15,13 +18,19 @@ export class CineclubListComponent implements OnInit {
   dataSource : any;
   tmdbmovie!: TMDBMovie;
   result !: Result; 
-  movie : Movie = {id_Movie : 1, name : '', id_Studio : 0, year:0, synopsis : '', rating:{ id_Movie :0, iD_User:0,id_Rating:0,date : new Date, ratings : 0,  approbate:0, commentary:"", username:""}, avgRating:0 ,ratingForUser:0 };
-  URLimg:string;
+  URLimg:any = 'assets/icons/NotFound.webp';
   sameDate : boolean = false;
+  isConnected:boolean = false;
+  deleted : boolean = false;
   
-  constructor(private _cineclubService : CineclubService, private movie_service : MovieService) {}
+  constructor(private _cineclubService : CineclubService, private movie_service : MovieService,public dialog: MatDialog) {
+  }
 
   ngOnInit(): void {
+    if (sessionStorage.getItem('isConnected'))
+      {
+        this.isConnected = true;
+      }
    this.loadCineclub();
   }
 
@@ -30,14 +39,16 @@ export class CineclubListComponent implements OnInit {
       next: (data : Cineclub[]) =>  
         {
         this.cineclub = data;
-        
-            for (let i = 0; i<2; i++)
+            for (let i = 0; i< this.cineclub.length ; i++)
               {
               this.loadTMDBMovie_1(i,this.cineclub[i].movie_1.name)
               this.loadTMDBMovie_2(i,this.cineclub[i].movie_2.name)
               this.loadTMDBMovie_3(i,this.cineclub[i].movie_3.name)
               this.loadTMDBMovie_4(i,this.cineclub[i].movie_4.name)
-                
+              if(this.cineclub[i].movie_5 != null)
+                {
+                  this.loadTMDBMovie_5(i, this.cineclub[i].movie_5.name);
+                }
               }
       },
       error : (error : any) => console.log(error)}
@@ -49,16 +60,14 @@ export class CineclubListComponent implements OnInit {
       next:(data :Result) =>
       {
         this.result = data;
-        this.URLimg = "https://image.tmdb.org/t/p/w500/" + this.result.results[0].poster_path;
-        
+        console.log(this.result)
         while(!this.sameDate && a < this.result.results.length)
           {
             if(this.cineclub[i].movie_1.year == parseInt(this.result.results[a].release_date.split('-')[0], 10))
               {
-                console.log ("je passe ici")
-                this.cineclub[i].movie_1.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
+                if (this.result.results[a].poster_path != null) this.cineclub[i].movie_1.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;
+                else this.cineclub[i].movie_1.UrlIMG = this.URLimg;
                 this.cineclub[i].movie_1.synopsis =  this.result.results[a].overview;
-                console.log(this.cineclub[i].movie_1.synopsis);
                 this.sameDate = true;
               }
               a++;
@@ -78,9 +87,9 @@ export class CineclubListComponent implements OnInit {
           {
             if(this.cineclub[i].movie_2.year == parseInt(this.result.results[a].release_date.split('-')[0], 10))
               {
-                this.cineclub[i].movie_2.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
+                if (this.result.results[a].poster_path != null) this.cineclub[i].movie_2.UrlIMG = this.cineclub[i].movie_2.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;
+                else this.cineclub[i].movie_2.UrlIMG = this.URLimg;        
                 this.cineclub[i].movie_2.synopsis =  this.result.results[a].overview;
-                console.log(this.cineclub[i].movie_2.synopsis);
                 this.sameDate = true;
               }
               a++;
@@ -96,16 +105,13 @@ export class CineclubListComponent implements OnInit {
       next:(data :Result) =>
       {
         this.result = data;
-        this.URLimg = "https://image.tmdb.org/t/p/w500/" + this.result.results[0].poster_path;
-        
         while(!this.sameDate && a < this.result.results.length)
           {
             if(this.cineclub[i].movie_3.year == parseInt(this.result.results[a].release_date.split('-')[0], 10))
               {
-                console.log ("je passe ici")
-                this.cineclub[i].movie_3.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
+                if (this.result.results[a].poster_path != null) this.cineclub[i].movie_3.UrlIMG = this.cineclub[i].movie_3.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;
+                else this.cineclub[i].movie_3.UrlIMG = this.URLimg;         
                 this.cineclub[i].movie_3.synopsis =  this.result.results[a].overview;
-                console.log(this.cineclub[i].movie_3.synopsis);
                 this.sameDate = true;
               }
               a++;
@@ -120,17 +126,14 @@ export class CineclubListComponent implements OnInit {
     this.movie_service.getTMDBMovie(titlemovie).subscribe({
       next:(data :Result) =>
       {
-        this.result = data;
-        this.URLimg = "https://image.tmdb.org/t/p/w500/" + this.result.results[0].poster_path;
-        
+        this.result = data;        
         while(!this.sameDate && a < this.result.results.length)
           {
             if(this.cineclub[i].movie_4.year == parseInt(this.result.results[a].release_date.split('-')[0], 10))
               {
-                console.log ("je passe ici")
-                this.cineclub[i].movie_4.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
+                if (this.result.results[a].poster_path != null) this.cineclub[i].movie_4.UrlIMG = this.cineclub[i].movie_4.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;
+                else this.cineclub[i].movie_4.UrlIMG = this.URLimg;       
                 this.cineclub[i].movie_4.synopsis =  this.result.results[a].overview;
-                console.log(this.cineclub[i].movie_4.synopsis);
                 this.sameDate = true;
               }
               a++;
@@ -138,6 +141,57 @@ export class CineclubListComponent implements OnInit {
           this.sameDate = false;
       }
     })
+  }
+
+  loadTMDBMovie_5(i :number, titlemovie : string): void{
+    let a  = 0;
+    this.movie_service.getTMDBMovie(titlemovie).subscribe({
+      next:(data :Result) =>
+      {
+        this.result = data;        
+        while(!this.sameDate && a < this.result.results.length)
+          {
+            if(this.cineclub[i].movie_5.year == parseInt(this.result.results[a].release_date.split('-')[0], 10))
+              {
+                if (this.result.results[a].poster_path != null) this.cineclub[i].movie_5.UrlIMG = this.cineclub[i].movie_5.UrlIMG = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;
+                else this.cineclub[i].movie_5.UrlIMG = this.URLimg;       
+                this.cineclub[i].movie_5.synopsis =  this.result.results[a].overview;
+                this.sameDate = true;
+              }
+              a++;
+          }
+          this.sameDate = false;
+      }
+    })
+  }
+
+  openDeletDialog(id_cineclub : number): void {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent,{
+      width : '90%' 
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.deleted = result;
+      if(this.deleted == true)
+        {
+          this._cineclubService.deleteCineclub(id_cineclub).subscribe(result =>{
+            
+          })
+          
+          window.location.reload();
+        } 
+    });
+  }
+
+  openUpdateDialog(id_cineclub : number): void {
+    const dialogRef = this.dialog.open(CineclubUpdateComponent,{
+      data:id_cineclub,
+      width : '90%' 
+    });
+
+    dialogRef.afterClosed().subscribe(result => {          
+          window.location.reload();
+    });
   }
 
 

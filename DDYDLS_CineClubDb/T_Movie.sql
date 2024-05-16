@@ -6,7 +6,7 @@
 CREATE TABLE [T_Movie]
 (
  [Id_Movie] int NOT NULL IDENTITY ,
- [Name]     varchar(50) NOT NULL ,
+ [Name]     varchar(MAX) NOT NULL ,
  [Year]     int NOT NULL ,
  [TMDB_Id]  int NOT NULL ,
 

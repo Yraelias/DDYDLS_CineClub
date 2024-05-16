@@ -39,33 +39,31 @@ namespace DDYDLS_CineClubApi.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            /* try
-             {
-                 */
+            // try
+            // {
+                 
             return Ok(_CineclubService.GetOne(id));
-            /*}
-            catch (Exception e)
-            { */
-            //return BadRequest(e.Message);
-            //}
+           /// }
+        //catch (Exception e)
+          //  { 
+          //  return BadRequest(e.Message);
+          //  }
         }
-
         // POST api/<Movie>
         [HttpPost]
-        public IActionResult Post([FromForm] api.Cineclub Cineclub)
-        //public IActionResult Post(api.UserCreate user)
+        public IActionResult Post([FromBody] api.Cineclub Cineclub)
         {
-            Cineclub cineclub = new Cineclub();
-            try
-            {
-                _CineclubService.Add(Cineclub.toLocal());
+          //  Cineclub cineclub = new Cineclub();
+          //  try
+         //   {
+                _CineclubService.Add(Cineclub.toLocal("Add"));
                 return Ok();
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-}
+          //  }
+//catch (Exception e)
+           // {
+            //    return BadRequest(e.Message);
+            //}
+        }
 
         // PUT api/<User>/5
         [HttpPut("{id}")]

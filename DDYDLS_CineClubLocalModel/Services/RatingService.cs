@@ -14,8 +14,8 @@ namespace DDYDLS_CineClubLocalModel.Services
 {
     public class RatingService : Interfaces.IRatingService
     {
-        private IRatingRepository<dal.Rating> _RatingRepository;
-        public RatingService(IRatingRepository<dal.Rating> RatingRepository)
+        private IRatingRepository<dal.Ratings> _RatingRepository;
+        public RatingService(IRatingRepository<dal.Ratings> RatingRepository)
         {
             _RatingRepository = RatingRepository;
         }
@@ -25,46 +25,45 @@ namespace DDYDLS_CineClubLocalModel.Services
             return _RatingRepository.Delete(Id);
         }
 
-        public IEnumerable<Rating> GetAll()
+        public IEnumerable<Ratings> GetAll()
         {
-            return _RatingRepository.GetAll().Select(g => g.toLocal());
+            return _RatingRepository.GetAll().Select(g => g.ToLocal());
         }
 
-        public Rating GetOne(int Id)
+        public Ratings GetOne(int Id)
         {
-            return _RatingRepository.GetOne(Id).toLocal();
+            return _RatingRepository.GetOne(Id).ToLocal();
         }
 
-        public bool AddRating(Rating g)
+        public bool AddOrUpdate(Ratings g)
         {
             
-            _RatingRepository.Insert(g.toDal());
+            _RatingRepository.AddOrUpdate(g.ToDal());
 
             return true;
         }
-
-        public void Update(Rating g)
+        public IEnumerable<Ratings> GetRatingbyMovie(int MovieId)
         {
-            _RatingRepository.Update(g.toDal());
-        }
-        public IEnumerable<Rating> GetRatingbyMovie(int MovieId)
-        {
-            return _RatingRepository.RatingsbyIdMovie(MovieId).Select(g => g.toLocal());
+            return _RatingRepository.RatingsbyIdMovie(MovieId).Select(g => g.ToLocal());
         }
 
-        public IEnumerable<Rating> RatingsbyUser(int ID_User)
+        public IEnumerable<Ratings> RatingsbyUser(int ID_User)
         {
-            return _RatingRepository.RatingsbyUser(ID_User).Select(g => g.toLocal());
+            return _RatingRepository.RatingsbyUser(ID_User).Select(g => g.ToLocal());
         }
 
-        public IEnumerable<Rating> RatingsbyUserbyYear(int ID_User, int Year)
+        public IEnumerable<Ratings> RatingsbyUserbyYear(int ID_User, int Year)
         {
-            return _RatingRepository.RatingsbyUserbyYear(ID_User,Year).Select(g => g.toLocal());
+            return _RatingRepository.RatingsbyUserbyYear(ID_User,Year).Select(g => g.ToLocal());
         }
 
-        public IEnumerable<Rating> RatingsbyUserbyMonth(int ID_User, int Month, int Year)
+        public IEnumerable<Ratings> RatingsbyUserbyMonth(int ID_User, int Month, int Year)
         {
-            return _RatingRepository.RatingsbyUserbyMonth(ID_User,Month,Year).Select(g => g.toLocal());
+            return _RatingRepository.RatingsbyUserbyMonth(ID_User,Month,Year).Select(g => g.ToLocal());
+        }
+        public IEnumerable<Ratings> RatingsForCineclub(int ID_Cineclub)
+        {
+            return _RatingRepository.RatingsForCineclub(ID_Cineclub).Select(g => g.ToLocal());
         }
     }
 }

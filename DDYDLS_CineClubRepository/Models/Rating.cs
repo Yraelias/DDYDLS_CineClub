@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DDYDLS_CineClubDAL.Models
 {
-    public class Rating
+    public class Ratings
     {
         public int Id_Rating { get; set; }
         public int ID_User { get; set; }
         public int Id_Movie { get; set; }
-        public int Ratings { get; set; }
+        public int Rating { get; set; }
 
         public DateTime Date { get; set; }
 
@@ -19,6 +19,8 @@ namespace DDYDLS_CineClubDAL.Models
 
         public string Commentary { get; set; }
 
-        public string Username { get; set; }
+
+        public Movie Movie { get; set; }
+
     }
 }

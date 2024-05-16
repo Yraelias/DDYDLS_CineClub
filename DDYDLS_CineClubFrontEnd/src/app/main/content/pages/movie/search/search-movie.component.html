@@ -13,8 +13,7 @@
     </div>
     <div class="blocButton">
         <button mat-raised-button  (click)="PreviousMovie()" [disabled]="selector<=0" style="color: #87FF00; background-color: #333031" >Précedent</button>
-        <button mat-raised-button (click)="SelectMovie()" [mat-dialog-close]="result.results[selector]" style="color: #87FF00; background-color: #333031" >Sélectionner</button>
+        <button mat-raised-button (click)="SelectMovie()" [mat-dialog-close]="result.results[selector]" style="color: #FE277E; background-color: #333031" >Sélectionner</button>
         <button mat-raised-button (click)="NextMovie()" [disabled]="selector>=maxResult" style="color: #87FF00; background-color: #333031">Suivant</button>
     </div>
-    
 </main>

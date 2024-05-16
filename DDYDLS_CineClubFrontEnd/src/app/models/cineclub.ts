@@ -11,4 +11,9 @@ export class Cineclub {
     begin : Date
     end : Date
     title :string
+    id_movie_1 :number;
+    id_movie_2 :number;
+    id_movie_3 :number;
+    id_movie_4 :number;
+    id_movie_5 :number;
 }

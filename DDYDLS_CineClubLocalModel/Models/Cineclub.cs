@@ -18,5 +18,10 @@ namespace DDYDLS_CineClubLocalModel.Models
         public DateTime Begin {  get; set; }
         public DateTime End { get; set; }
         public string Title { get; set; }
+        public int Id_Movie_1 { get; set; }
+        public int Id_Movie_2 { get; set; }
+        public int Id_Movie_3 { get; set; }
+        public int Id_Movie_4 { get; set; }
+        public int Id_Movie_5 { get; set; }
     }
 }
