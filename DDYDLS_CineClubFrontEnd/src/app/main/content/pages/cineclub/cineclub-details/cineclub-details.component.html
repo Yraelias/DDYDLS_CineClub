@@ -9,7 +9,7 @@
             {{cineclub.title}} <button *ngIf="isConnected"></button> #{{cineclub.numberOfCineclub}} <button *ngIf="isConnected"></button>
         </h1>
     </button>
-            <img *ngIf="cineclub.movie_5 != null " [src]="cineclub.movie_5.UrlIMG" />
+            
         </aside>
         <div class="blocFilms">
             <div class="detailsFilm">
@@ -47,6 +47,16 @@
                 <a *ngIf="isConnected && cineclub.movie_4.ratingForUser != 10" >Ma note :  {{cineclub.movie_4.ratingForUser}}/6</a>
                 <p>{{cineclub.movie_4.synopsis}}</p>
             </div>
+
+            <div *ngIf="cineclub.movie_5.synopsis  != null " class="detailsFilm">
+                <img [src]="cineclub.movie_5.UrlIMG" />
+                <p>{{cineclub.movie_5.name}}</p> 
+                <p>({{cineclub.movie_5.EN_name}})</p>
+                <p>{{cineclub.movie_5.year}}</p>
+                <a *ngIf="isConnected && cineclub.movie_5.ratingForUser != 10" >Ma note :  {{cineclub.movie_5.ratingForUser}}/6</a>
+                <p>{{cineclub.movie_5.synopsis}}</p>
+            </div>
+
         </div> 
     </article>
     <app-commentarycineclub></app-commentarycineclub>
