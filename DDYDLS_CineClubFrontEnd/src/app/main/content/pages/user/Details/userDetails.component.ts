@@ -4,6 +4,8 @@ import { Rating } from 'src/app/models/rating';
 import { SettingsComponent } from '../settings/settings.component';
 import { User } from 'src/app/models/user';
 import { MatDialog } from '@angular/material/dialog';
+import { MovieService } from '../../movie.service';
+import { Movie } from 'src/app/models/movie';
 
 @Component({
   selector: 'app-user',
@@ -15,6 +17,7 @@ export class UserComponent implements OnInit {
   Username : any = '';
   isConnected : boolean;
   _ratingService : RatingService
+  _movieService : MovieService
   iD_User : any = 0;
   listRatings : Rating[];
  dateDuJour : Date = new Date();
@@ -24,10 +27,12 @@ export class UserComponent implements OnInit {
  YearL : number = 0;
  Lenght : number = 0;
  user : User;
+ a : number = 0;
 
-  constructor(ratingService : RatingService, public dialog: MatDialog) 
+  constructor(ratingService : RatingService, public dialog: MatDialog, movieService : MovieService) 
   {
     this._ratingService = ratingService;
+    this._movieService = movieService;
   }
 
   ngOnInit(): void {
@@ -49,6 +54,11 @@ export class UserComponent implements OnInit {
         {
           this.listRatings = data;
           this.Lenght = this.listRatings.length;
+          for(this.a = 0; this.a < this.Lenght; this.a++)
+            {
+              this.getMovieName(this.a);
+              console.log("test")
+            }
           console.log(this.listRatings);
           console.log(this.Lenght);
         }
@@ -73,6 +83,16 @@ export class UserComponent implements OnInit {
           console.log(this.MonthL);
         }
       })
+  }
+
+  getMovieName(a : number) : void{
+    this._movieService.getOneMovie(this.iD_User,this.listRatings[a].id_Movie).subscribe({
+      next: (data:Movie) =>
+        {
+          console.log(data.name)
+          this.listRatings[a].MovieName = data.name
+        }
+    })
   }
 
   openDialog() : void {

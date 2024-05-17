@@ -19,7 +19,7 @@ export class AuthService {
     this.user.email = email;
     this.user.password = password;
     this.isConnected = false;
-    return this._client.post<User>(environment.apiurl+"/auth",this.user)
+    return this._client.post<User>(environment.apiurl+"/api/auth",this.user)
   }
 
   
@@ -28,7 +28,7 @@ export class AuthService {
   {
     console.log(user);
     console.log(environment.apiurl+"/user/");
-    return this._client.post<User>(environment.apiurl+"/user",user);
+    return this._client.post<User>(environment.apiurl+"/api/user",user);
   }
 
 }

@@ -7,4 +7,5 @@ export class Rating {
     approbate : number;
     commentary : string;
     username:string;
+    MovieName ?: string;
 }
