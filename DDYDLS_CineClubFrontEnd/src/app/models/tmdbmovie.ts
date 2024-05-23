@@ -16,6 +16,7 @@ export class TMDBMovie {
     poster_path : string;
     title : string;
     original_title ?: string
+    vote_average ?: number;
 
     constructor(tmdbMovie : TMDBMovie) {
         
@@ -44,4 +45,8 @@ export class Result{
         this.page = result.page;
         this.results = result.results;
     }
+}
+
+export class RottenResult{
+
 }

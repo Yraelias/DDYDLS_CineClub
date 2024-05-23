@@ -27,6 +27,9 @@ export class MovieService {
   getTMDBMovie(title : string ): Observable<Result>{
     return this.httpClient.get<Result>('https://api.themoviedb.org/3/search/movie?query='+ title +'&api_key=ba39746f310980f977035c97c2cfff66&language=fr');
   }
+  getRottenMovie(title : string, year :number ): Observable<any>{
+    return this.httpClient.get<any>('http://www.omdbapi.com/?apikey=c4baa000&t=' +title+'&y='+year);
+  }
   addMovie(title : string, year : number, tmdbId : number):Observable<Movie>{
     this.movie.name = title;
     this.movie.year = year;

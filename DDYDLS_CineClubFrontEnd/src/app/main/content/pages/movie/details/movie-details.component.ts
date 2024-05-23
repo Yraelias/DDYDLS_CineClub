@@ -15,7 +15,7 @@ import { MatDialog,  MatDialogRef, MatDialogActions, MatDialogClose,  MatDialogT
 })
 export class MovieDetailsComponent implements OnInit {
   iD_User:any  
-  movie : Movie = {id_Movie : 1, name : '', id_Studio : 0, year:0, synopsis : '', rating:{ id_Movie :0, iD_User:0,id_Rating:0,date : new Date, rating : 0,  approbate:0, commentary:"", username:""}, avgRating:0 ,ratingForUser:0 };
+  movie : Movie = {id_Movie : 1, name : '', id_Studio : 0, year:0, synopsis : '', rating:{ id_Movie :0, iD_User:0,id_Rating:0,date : new Date, rating : 0,  approbate:0, commentary:"", username:""}, avgRating:0 ,ratingForUser:0, Rottenrating:0 };
   tmdbmovie!: TMDBMovie;
   result !: Result; 
   URLimg:any = 'assets/icons/NotFound.webp';
@@ -85,12 +85,30 @@ export class MovieDetailsComponent implements OnInit {
                 this.URLimg = "https://image.tmdb.org/t/p/w500/" + this.result.results[a].poster_path;        
                 this.movie.synopsis =  this.result.results[a].overview;
                 this.movie.EN_name = this.result.results[a].original_title
+                this.movie.TMDBrating = this.result.results[a].vote_average;
+                this.loadRottenMovie();
                 this.sameDate = true;
               }
               a++;
           }
       }
     })
+  }
+  loadRottenMovie():void{
+    this.movie_service.getRottenMovie(this.movie.EN_name!,this.movie.year).subscribe({
+      next :(data : any) => {
+        console.log(data)
+        this.movie.Rottenrating = parseFloat(data.Ratings[1].Value.replace('%',''));
+        this.Avg();
+        console.log(this.movie)
+      }
+    })
+  }
+
+  Avg():void{
+          this.movie.Rottenrating = (this.movie.Rottenrating! / 100) * 6;
+          this.movie.TMDBrating = (this.movie.TMDBrating!/10) * 6;
+          this.movie.avgratingEXT = (this.movie.Rottenrating + this.movie.TMDBrating!) /2;
   }
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string) : void {

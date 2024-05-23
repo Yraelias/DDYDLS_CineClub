@@ -12,4 +12,7 @@ export class Movie {
     UrlIMG ?: string ;
     TMDB_Id ?: number ;
     EN_name ?: string
+    Rottenrating ?: number;
+    avgratingEXT ?: number;
+    TMDBrating ?: number;
 }
