@@ -62,7 +62,18 @@ p {
   margin: 1%;
   width: 100%;
 }
-
+.notes{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+}
+span{
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
 @media only screen and (max-width: 768px) {
   .blocSyn{
     font-size: 15px;
