@@ -35,4 +35,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="Id_Movie_1" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="11d3f28f-bbf5-4286-adb2-8669f2d38a58" ChangeDateTime="01/28/2025 20:43:57">
+    <Property Name="ElementName" Value="[dbo].[AK_T_User_Column]" />
+    <Property Name="ElementType" Value="SqlUniqueConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[T_User]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[UQ_Email]" />
+  </Operation>
 </Operations>
