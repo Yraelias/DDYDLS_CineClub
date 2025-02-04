@@ -12,5 +12,6 @@ namespace DDYDLS_CineClubDAL.Interfaces
         void Insert(Movie m);
         void Update(Movie m);
         bool Delete(int Id);
+        Movie GetRandom();
     }
 }

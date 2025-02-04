@@ -23,7 +23,7 @@ namespace DDYDLS_CineClubDAL.Repository
         {
            return _dbContext.T_Movie.ToList();
         }
-
+         
         public Movie GetOne(int Id)
         {
             return _dbContext.T_Movie.Find(Id);
@@ -51,13 +51,23 @@ namespace DDYDLS_CineClubDAL.Repository
             }
             else
             {
-                return false; // L'élément avec l'ID spécifié n'existe pas dans la base de données
+                return false; 
             }
         }
 
         public Movie GetOnewithTMBD(int IdTMDB)
         {
             return _dbContext.T_Movie.FirstOrDefault(m => m.TMDB_ID == IdTMDB);
+        }
+
+        public Movie GetRandom()
+        {
+            int count = _dbContext.T_Movie.Count();
+            if (count == 0) return null;
+
+            int randomIndex = new Random().Next(0, count);
+
+            return _dbContext.T_Movie.Skip(randomIndex).FirstOrDefault();
         }
 
     }

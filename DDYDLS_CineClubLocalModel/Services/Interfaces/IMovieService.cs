@@ -13,6 +13,7 @@ namespace DDYDLS_CineClubLocalModel.Services.Interfaces
         void Update(Movie m);
         int AddMovie(Movie m);
         bool Delete(int Id);
+        Movie GetRandom();
 
         //int GetRatingForOneUser(int movieId, int userId);
 

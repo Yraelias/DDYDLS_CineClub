@@ -110,5 +110,19 @@ namespace DDYDLS_CineClubApi.Controllers
                 return BadRequest(e.Message);
             }
         }
+        // GET api/<Movie>/UserId/5
+        [HttpGet("random")]
+        public IActionResult GetRandom()
+        {
+            /* try
+             {
+                 */
+            return Ok(_MovieService.GetRandom());
+            /*}
+            catch (Exception e)
+            { */
+            //return BadRequest(e.Message);
+            //}
+        }
     }
 }

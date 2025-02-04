@@ -61,5 +61,10 @@ namespace DDYDLS_CineClubLocalModel.Services
         {
             return _MovieRepository.GetOne(Id).ToLocal(_ratingRepo);
         }
+
+        public Movie GetRandom()
+        {
+            return _MovieRepository.GetRandom().ToLocal();
+        }
     }
 }
