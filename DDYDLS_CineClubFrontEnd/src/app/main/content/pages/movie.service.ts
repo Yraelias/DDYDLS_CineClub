@@ -18,6 +18,9 @@ export class MovieService {
   getMovies() : Observable<Movie[]> {
       return this.httpClient.get<Movie[]>( this._Url);
   }
+  getMovieRandom() : Observable<Movie> {
+    return this.httpClient.get<Movie>( this._Url+'/random');
+  }
   getOneMovie(iD_User : number, Id_Movie : number ) : Observable<Movie> {
     return this.httpClient.get<Movie>( this._Url +'/'+iD_User+'/'+Id_Movie);
   }

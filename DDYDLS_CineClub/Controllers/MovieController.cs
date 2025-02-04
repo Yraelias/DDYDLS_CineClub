@@ -114,15 +114,15 @@ namespace DDYDLS_CineClubApi.Controllers
         [HttpGet("random")]
         public IActionResult GetRandom()
         {
-            /* try
-             {
-                 */
-            return Ok(_MovieService.GetRandom());
-            /*}
+            try
+            {
+
+                return Ok(_MovieService.GetRandom());
+            }
             catch (Exception e)
-            { */
-            //return BadRequest(e.Message);
-            //}
+            { 
+            return BadRequest(e.Message);
         }
+    }
     }
 }

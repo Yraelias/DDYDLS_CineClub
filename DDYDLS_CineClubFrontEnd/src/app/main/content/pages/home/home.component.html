@@ -1,4 +1,27 @@
 <main>
-    <h1>Home works !</h1>
+    <h1>Le Cinéclub de DDYDLS</h1>
+    <h1>{{movie.name}} ( {{movie.EN_name}} ) </h1>
+    <article cols="3" rowHeight="3:2" class="blocDetails">
+        <div class="blocImg backgroundBloc">
+              <img [src]="URLimg" class="image" alt="affiche du film {{movie.name}}"/>
+        </div>
+        <div class='DetailsMoviecontent backgroundBloc'>
+          <p>Année de sortie : {{movie.year}}</p>
+  
+          <a *ngIf="isConnected && movie.ratingForUser != 10" >Ma note :  {{movie.ratingForUser}}/6</a>
+          <div class="notes">
+            <span>
+              <p>Moyenne :</p> 
+              <p>{{movie.avgRating}}/6</p>
+            </span>
+            <span>
+              <p>Note exterieur :</p> 
+              <p>{{movie.avgratingEXT?.toFixed(2)}}/6</p>
+            </span>
+          </div>
+        </div>
+      
+      <div class="blocSyn backgroundBloc"><p>{{movie.synopsis}}</p></div>
+    </article>
 </main>
 <router-outlet></router-outlet>
